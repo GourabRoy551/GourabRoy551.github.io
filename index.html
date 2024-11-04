@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourab Roy - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header style="background: linear-gradient(135deg, #e3f2fd, #e1f5fe); padding: 40px; border-bottom: 2px solid #dedede; position: relative;">
+        <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <img src="profile.jpg" alt="Gourab Roy" class="profile-image" style="border-radius: 50%; width: 120px; height: 120px; margin-bottom: 15px;">
+            <h1 style="font-size: 2.2em; color: #343a40; margin-bottom: 8px;">Gourab Roy</h1>
+            <p style="font-size: 1.2em; color: #6c757d; margin: 0;">Machine Learning Researcher & Adjunct Lecturer</p>
+            <p style="font-size: 1em; color: #495057; margin-top: 5px;">
+                Sylhet Engineering College, affiliated with Shahjalal University of Science and Technology <br> 
+                Sylhet-3100, Bangladesh
+            </p>
+            <div style="margin-top: 15px;">
+                <a href="mailto:gourabroysec553@gmail.com" style="margin: 0 10px; color: #495057; text-decoration: none;">
+                    <i class="fas fa-envelope" style="color: #007bff; margin-right: 5px;"></i> gourabroysec553@gmail.com
+                </a> |
+                <a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" style="margin: 0 10px; color: #495057; text-decoration: none;">
+                    <i class="fab fa-linkedin" style="color: #0e76a8; margin-right: 5px;"></i> LinkedIn
+                </a> |
+                <a href="https://scholar.google.com/citations?user=_9tL56YAAAAJ&hl=en&authuser=1" target="_blank" style="margin: 0 10px; color: #495057; text-decoration: none;">
+                    <i class="fas fa-chalkboard-teacher" style="color: #4285f4; margin-right: 5px;"></i> Google Scholar
+                </a> |
+                <a href="https://github.com/GourabRoy551" target="_blank" style="margin: 0 10px; color: #495057; text-decoration: none;">
+                    <i class="fab fa-github" style="color: #333; margin-right: 5px;"></i> GitHub
+                </a>
+            </div>
+        </div>
+        <div class="header-actions" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+            <a href="CV_Gourab_Roy.pdf" class="download-cv" download style="background-color: #007bff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);">
+                <i class="fas fa-file-download"></i> Download CV
+            </a>
+            <button id="theme-toggle" onclick="toggleTheme()" style="background-color: #343a40; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);">
+                🌙 Dark Mode
+            </button>
+        </div>
+    </header>
+    
+    <section id="about" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px; text-align: center;">
+        <h2 style="color: #343a40; margin-bottom: 20px;">About Me</h2>
+        <div class="about-content" style="display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+            <div class="about-text" style="flex: 1; min-width: 300px; margin: 0 20px;">
+                <p style="line-height: 1.6; color: #495057;">
+                    I am a <strong>Machine Learning Researcher</strong> and <strong>Adjunct Lecturer</strong> who specializes in 
+                    <strong>machine learning</strong>, <strong>deep learning</strong>, and <strong>computer vision</strong>. I have earned 
+                    gold badges for problem-solving in <strong>C++</strong> and <strong>Python</strong> on HackerRank. I also have a published 
+                    research paper in <strong>biomedical imaging</strong>, and I currently have several papers under review, demonstrating 
+                    my commitment to making a positive impact in my field.
+                </p>
+                <p style="line-height: 1.6; color: #495057;">
+                    As an Adjunct Lecturer, I work hard to create an engaging learning environment by using my research to enhance 
+                    my teaching. I am currently looking for a <strong>M.Sc.</strong> or <strong>PhD position</strong> in a dynamic academic 
+                    setting where I can tackle important global challenges.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="research" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px; text-align: center;">
+        <h2 style="color: #343a40; margin-bottom: 20px;">Research Areas</h2>
+        <ul style="list-style-type: none; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; margin: 0;">
+            <li style="flex: 1 1 200px; margin: 15px; text-align: center;">
+                <i class="fas fa-robot" style="font-size: 40px; color: #007bff;"></i>
+                <h3 style="color: #343a40;">Artificial Intelligence</h3>
+            </li>
+            <li style="flex: 1 1 200px; margin: 15px; text-align: center;">
+                <i class="fas fa-microchip" style="font-size: 40px; color: #007bff;"></i>
+                <h3 style="color: #343a40;">Machine Learning</h3>
+            </li>
+            <li style="flex: 1 1 200px; margin: 15px; text-align: center;">
+                <i class="fas fa-brain" style="font-size: 40px; color: #007bff;"></i>
+                <h3 style="color: #343a40;">Deep Learning</h3>
+            </li>
+            <li style="flex: 1 1 200px; margin: 15px; text-align: center;">
+                <i class="fas fa-stethoscope" style="font-size: 40px; color: #007bff;"></i>
+                <h3 style="color: #343a40;">Medical Image Analysis</h3>
+            </li>
+            <li style="flex: 1 1 200px; margin: 15px; text-align: center;">
+                <i class="fas fa-comments" style="font-size: 40px; color: #007bff;"></i>
+                <h3 style="color: #343a40;">NLP</h3>
+            </li>
+            <li style="flex: 1 1 200px; margin: 15px; text-align: center;">
+                <i class="fas fa-camera" style="font-size: 40px; color: #007bff;"></i>
+                <h3 style="color: #343a40;">Computer Vision</h3>
+            </li>
+        </ul>
+    </section>
+    
+
+    <section id="education" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px;">
+        <h2 style="text-align: center; color: #343a40; margin-bottom: 30px;">Education</h2>
+        
+        <div style="margin-bottom: 30px; text-align: center;">
+            <h3 style="color: #007bff; margin-bottom: 10px;">Sylhet Engineering College<br><span style="font-size: 0.9em; color: #6c757d;">Affiliated with Shahjalal University of Science and Technology, Bangladesh</span></h3>
+            <p style="color: #495057; font-weight: bold;">B.Sc. (Engg.) in Computer Science and Engineering</p>
+            <p style="color: #495057;"><strong>CGPA:</strong> 3.56/4.00 | <strong>Years:</strong> 2018 - 2023</p>
+        </div>
+        
+        <div style="margin-bottom: 30px; text-align: center;">
+            <h3 style="color: #007bff; margin-bottom: 10px;">Khulna Public College, Bangladesh</h3>
+            <p style="color: #495057; font-weight: bold;">Higher Secondary Certificate</p>
+            <p style="color: #495057;"><strong>GPA:</strong> 4.67/5.00 | <strong>Years:</strong> 2016 - 2017</p>
+        </div>
+        
+        <div style="margin-bottom: 30px; text-align: center;">
+            <h3 style="color: #007bff; margin-bottom: 10px;">St. Paul’s High School, Bangladesh</h3>
+            <p style="color: #495057; font-weight: bold;">Secondary School Certificate</p>
+            <p style="color: #495057;"><strong>GPA:</strong> 5.00/5.00 | <strong>Years:</strong> 2014 - 2015</p>
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="publications" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px;">
+        <h2 style="text-align: center; color: #343a40; margin-bottom: 20px;">Publications and Others</h2>
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: #007bff;">Live</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 20px;">
+                    Ornob, T.R., <strong>Roy, G.</strong> & Hassan, E. (2022). 
+                    “<em>CovidExpert: A Triplet Siamese Neural Network Framework for the Detection of COVID-19</em>”. 
+                    <i>Informatics in Medicine Unlocked</i>, 101156, (Jan 13, 2023). 
+                    DOI: <a href="https://doi.org/10.1016/j.imu.2022.101156" target="_blank">10.1016/j.imu.2022.101156</a>
+                    <br><br>
+                    Developed a few-shot learning model using an ensemble of pre-trained convolutional neural networks to classify CT scans into Normal, COVID-19, and Community-Acquired Pneumonia. 
+                    The model achieved 98.719% accuracy, 99.36% specificity, and 98.72% sensitivity with a 99.9% ROC score using only 200 CT scans per category for training. 
+                    This approach enables early detection of COVID-19 with minimal data.
+                </li>
+            </ul>
+        </div>
+    
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: #007bff;">Undergrad Thesis</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li>
+                    <strong>CerebralNet:</strong> A deep learning model to detect major abnormalities from brain CT and MRI scans via segmentation and classification techniques.
+                </li>
+            </ul>
+        </div>
+    
+        <div>
+            <h3 style="color: #007bff;">Working on & Under Review</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><strong>CrackClassification4:</strong> Classifying Four Types of Cracks in Structural Surfaces Using CNNs (Under Review)</li>
+                <li><strong>Enhancing Concrete Performance:</strong> Machine Learning Models for Predicting and Classifying Mechanical Properties (Under Review)</li>
+                <li><strong>Optical Character Recognition for Syloti Nagri Ancient Scripts:</strong> A case study using deep learning models (Under Review)</li>
+                <li><strong>Optimizing Multilingual Summarization:</strong> Advanced Corpus Creation and Filtering Approach (Under Review)</li>
+                <li><strong>BanglaFont45:</strong> A Benchmark Dataset for Transfer Learning in Bangla Font Classification (Ongoing)</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="experience" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px;">
+        <h2 style="text-align: center; color: #343a40; margin-bottom: 20px;">Experience</h2>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 30px;">
+                <strong style="font-size: 1.3em; color: #007bff;">Adjunct Lecturer</strong> 
+                <span style="font-size: 0.9em; color: #6c757d;">(January 2024 – Present)</span>
+                <br>
+                <span style="font-weight: bold; color: #343a40;">Sylhet Engineering College, Sylhet, Bangladesh</span>
+                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+                    <li>Instruct undergraduate courses, evaluate assessments, and provide academic consultations.</li>
+                    <li>Conduct research and supervise final year thesis students.</li>
+                    <li>
+                        <strong>Courses Instructed:</strong>
+                        <ul style="list-style-type: circle; padding-left: 20px;">
+                            <li>CSE 705: Peripheral and Interfacing</li>
+                            <li>CSE 706: Peripheral and Interfacing (Sessional)</li>
+                            <li>CSE 505: Microprocessor & MicroController</li>
+                            <li>CSE 506: Microprocessor & MicroController (Sessional)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li style="margin-bottom: 30px;">
+                <strong style="font-size: 1.3em; color: #007bff;">Machine Learning Researcher</strong> 
+                <span style="font-size: 0.9em; color: #6c757d;">(January 2022 – Present)</span>
+                <br>
+                <span style="font-weight: bold; color: #343a40;">Shahjalal University of Science and Technology, Sylhet, Bangladesh</span>
+                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+                    <li>Collaborate under the guidance of <strong>A.K.M. Fakhrul Hossain</strong> and <strong>Enamul Hassan</strong>.</li>
+                    <li>Develop and implement advanced machine learning algorithms.</li>
+                    <li>Provide technical support to two research groups.</li>
+                    <li>Maintain and manage research datasets for ongoing projects.</li>
+                </ul>
+            </li>
+            <li style="margin-bottom: 30px;">
+                <strong style="font-size: 1.3em; color: #007bff;">Research Assistant</strong> 
+                <span style="font-size: 0.9em; color: #6c757d;">(December 2023 – Present)</span>
+                <br>
+                <span style="font-weight: bold; color: #343a40;">Sylhet Engineering College, Sylhet, Bangladesh</span>
+                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+                    <li>Assist the Head of Computer Science and Engineering, <strong>Md. Abu Naser Mojumder</strong>, with research initiatives.</li>
+                    <li>Engage in developing machine learning solutions in the department's research lab.</li>
+                    <li>Guide students in their academic projects and final year thesis work.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    
+    
+    <section id="projects" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px;">
+        <h2 style="text-align: center; color: #343a40; margin-bottom: 20px;">Projects</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+            <div style="background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; flex: 1 1 300px;">
+                <h3 style="color: #007bff;"><i class="fas fa-chart-line"></i> Data Analysis Projects</h3>
+                <p style="font-weight: bold;">Technologies Used:</p>
+                <p style="color: #495057;">Python, Numpy, Matplotlib, Pandas</p>
+                <br>
+                <p style="color: #495057;">
+                    Analysis of Boston housing, COVID-19 health outcomes, and Google Play ratings data. 
+                </p>
+                <a href="https://github.com/GourabRoy551/DataVisualization" target="_blank" style="color: #007bff; text-decoration: underline;">GitHub Repository</a>
+            </div>
+            
+            <div style="background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; flex: 1 1 300px;">
+                <h3 style="color: #007bff;"><i class="fas fa-gamepad"></i> Python Projects</h3>
+                <p style="font-weight: bold;">Technologies Used:</p>
+                <p style="color: #495057;">Python, PyCharm, Jupyter Notebook</p>
+                <br>
+                <p style="color: #495057;">Includes a variety of games: Calculator, Dice Simulator, Tic Tac Toe, and Hangman.</p>
+                <a href="https://github.com/GourabRoy551/Python-Projects" target="_blank" style="color: #007bff; text-decoration: underline;">GitHub Repository</a>
+            </div>
+            
+            <div style="background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; flex: 1 1 300px;">
+                <h3 style="color: #007bff;"><i class="fas fa-file-invoice-dollar"></i> Java Billing System Application</h3>
+                <p style="font-weight: bold;">Technologies Used:</p>
+                <p style="color: #495057;">Java, MySQL</p>
+                <p style="color: #495057;">A billing system developed as a university project.</p>
+                <a href="https://github.com/GourabRoy551/BillingSystem" target="_blank" style="color: #007bff; text-decoration: underline;">GitHub Repository</a>
+
+            </div>
+            
+            <div style="background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; flex: 1 1 300px;">
+                <h3 style="color: #007bff;"><i class="fas fa-globe"></i> Web Project</h3>
+                <p style="font-weight: bold;">Technologies Used:</p>
+                <p style="color: #495057;">HTML, CSS, JavaScript</p>
+                <br>
+                <p style="color: #495057;">
+                    A simple website for Pioneer Bank. 
+                </p>
+                <br>
+                <a href="https://github.com/GourabRoy551/Pioneer_Bank_Complete" target="_blank" style="color: #007bff; text-decoration: underline;">GitHub Repository</a>
+
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="skills" class="fade-in" style="background-color: #f0f4f8; padding: 50px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+        <h2 style="text-align: center; color: #343a40; font-size: 2em; margin-bottom: 30px;">Technical Skills</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
+            
+            <!-- Skill Card Template Start -->
+            <div class="skill-card" style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 25px; width: 250px; transition: transform 0.3s, box-shadow 0.3s;">
+                <h3 style="color: #007bff; display: flex; align-items: center; font-size: 1.2em;"><i class="fas fa-code" style="margin-right: 8px;"></i> Languages</h3>
+                <p style="color: #495057; margin-top: 10px;">
+                    <i class="fab fa-c"></i> C, 
+                    <i class="fab fa-cuttlefish"></i> C++, 
+                    <i class="fab fa-python"></i> Python, 
+                    <i class="fab fa-java"></i> Java, 
+                    <i class="fab fa-js-square"></i> JavaScript
+                </p>
+                <div class="skill-bar" style="background-color: #e9ecef; border-radius: 5px; overflow: hidden; margin-top: 15px;">
+                    <div style="width: 90%; background-color: #007bff; height: 8px; border-radius: 5px;"></div>
+                </div>
+            </div>
+            <!-- Skill Card Template End -->
+    
+            <div class="skill-card" style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 25px; width: 250px; transition: transform 0.3s, box-shadow 0.3s;">
+                <h3 style="color: #007bff; display: flex; align-items: center; font-size: 1.2em;"><i class="fas fa-microchip" style="margin-right: 8px;"></i> ML Libraries</h3>
+                <p style="color: #495057; margin-top: 10px;">
+                    <i class="fab fa-python"></i> PyTorch, 
+                    <i class="fab fa-python"></i> TensorFlow, 
+                    <i class="fas fa-database"></i> Scikit-learn
+                </p>
+                <div class="skill-bar" style="background-color: #e9ecef; border-radius: 5px; overflow: hidden; margin-top: 15px;">
+                    <div style="width: 85%; background-color: #007bff; height: 8px; border-radius: 5px;"></div>
+                </div>
+            </div>
+    
+            <div class="skill-card" style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 25px; width: 250px; transition: transform 0.3s, box-shadow 0.3s;">
+                <h3 style="color: #007bff; display: flex; align-items: center; font-size: 1.2em;"><i class="fas fa-database" style="margin-right: 8px;"></i> Databases</h3>
+                <p style="color: #495057; margin-top: 10px;">
+                    <i class="fas fa-database"></i> MySQL, 
+                    <i class="fas fa-database"></i> SQLite
+                </p>
+                <div class="skill-bar" style="background-color: #e9ecef; border-radius: 5px; overflow: hidden; margin-top: 15px;">
+                    <div style="width: 80%; background-color: #007bff; height: 8px; border-radius: 5px;"></div>
+                </div>
+            </div>
+    
+            <div class="skill-card" style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 25px; width: 250px; transition: transform 0.3s, box-shadow 0.3s;">
+                <h3 style="color: #007bff; display: flex; align-items: center; font-size: 1.2em;"><i class="fas fa-tools" style="margin-right: 8px;"></i> Tools</h3>
+                <p style="color: #495057; margin-top: 10px;">
+                    <i class="fab fa-github"></i> Git, 
+                    <i class="fab fa-windows"></i> Windows, 
+                    <i class="fab fa-linux"></i> Linux, 
+                    <i class="fab fa-latex"></i> LaTeX
+                </p>
+                <div class="skill-bar" style="background-color: #e9ecef; border-radius: 5px; overflow: hidden; margin-top: 15px;">
+                    <div style="width: 75%; background-color: #007bff; height: 8px; border-radius: 5px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .skill-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Smooth fade-in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+    
+        /* Keyframes for fade-in effect */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    
+    
+    
+    
+
+    <section id="certifications" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px;">
+        <h2 style="text-align: center; color: #343a40; margin-bottom: 20px;">Certifications & Achievements</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div class="cert-item" style="display: flex; align-items: center; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 15px; transition: transform 0.2s;">
+                <i class="fas fa-code" style="color: #007bff; font-size: 24px; margin-right: 10px;"></i>
+                <p style="margin: 0; color: #495057;">
+                    350+ Problems Solved on 
+                    <a href="https://www.hackerrank.com/bdgourab5184" target="_blank" style="color: #007bff; text-decoration: underline;">HackerRank</a>, 
+                    <a href="https://codeforces.com/profile/gourab_roy" target="_blank" style="color: #007bff; text-decoration: underline;">Codeforces</a>, 
+                    <a href="https://uhunt.onlinejudge.org/id/983508" target="_blank" style="color: #007bff; text-decoration: underline;">UVA</a>
+                </p>
+            </div>
+            
+            <div class="cert-item" style="display: flex; align-items: center; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 15px; transition: transform 0.2s;">
+                <i class="fas fa-medal" style="color: #FFD700; font-size: 24px; margin-right: 10px;"></i>
+                <p style="margin: 0; color: #495057;">Gold Badges in <strong>C++</strong> and <strong>Python</strong> on HackerRank</p>
+            </div>
+            
+            <div class="cert-item" style="display: flex; align-items: center; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 15px; transition: transform 0.2s;">
+                <i class="fab fa-coursera" style="color: #2A73CC; font-size: 24px; margin-right: 10px;"></i>
+                <p style="margin: 0; color: #495057;">
+                    Machine Learning Specialization on <strong>Coursera</strong> 
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/PZVVNHLFTBU3" target="_blank" style="color: #007bff; text-decoration: underline;">(Link)</a>
+                </p>
+            </div>
+            
+            <div class="cert-item" style="display: flex; align-items: center; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 15px; transition: transform 0.2s;">
+                <i class="fas fa-chart-bar" style="color: #28a745; font-size: 24px; margin-right: 10px;"></i>
+                <p style="margin: 0; color: #495057;">
+                    Data Visualization Masterclass on <strong>Udemy</strong> 
+                    <a href="https://www.udemy.com/certificate/UC-5b525d81-3ee3-4972-b4a2-48144412b558/" target="_blank" style="color: #007bff; text-decoration: underline;">(Link)</a>
+                </p>
+            </div>
+            
+            <div class="cert-item" style="display: flex; align-items: center; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 15px; transition: transform 0.2s;">
+                <i class="fas fa-user-check" style="color: #007bff; font-size: 24px; margin-right: 10px;"></i>
+                <p style="margin: 0; color: #495057;">
+                    Reviewer for <strong>Informatics in Medicine Unlocked</strong> 
+                    <a href="https://drive.google.com/file/d/1PIUiu87cR1J4G98PVqBO01C7Uz8SKl-R/view?usp=sharing" target="_blank" style="color: #007bff; text-decoration: underline;">(Link)</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .cert-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    
+    
+
+    <section id="references" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px;">
+        <h2 style="text-align: center; color: #343a40; margin-bottom: 30px;">References</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <!-- Reference 1 -->
+            <div class="reference-card" style="background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; width: 100%; max-width: 300px; text-align: left; transition: transform 0.2s;">
+                <h3 style="color: #007bff;">Enamul Hassan</h3>
+                <p><i class="fas fa-user-tie"></i> Assistant Professor</p>
+                <p>Department of Computer Science & Engineering,<br>Shahjalal University of Science and Technology</p>
+                <p><i class="fas fa-chalkboard-teacher"></i> Teaching Assistant, Stony Brook University, New York, US</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:enam-cse@sust.edu">enam-cse@sust.edu</a></p>
+                <p><i class="fas fa-phone"></i> +1-(940)-629-6731</p>
+                <p><strong>Relationship:</strong> Research Supervisor</p>
+            </div>
+            
+            <!-- Reference 2 -->
+            <div class="reference-card" style="background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; width: 100%; max-width: 300px; text-align: left; transition: transform 0.2s;">
+                <h3 style="color: #007bff;">A.K.M. Fakhrul Hossain</h3>
+                <p><i class="fas fa-user-tie"></i> Lecturer</p>
+                <p>Department of Computer Science & Engineering,<br>Shahjalal University of Science and Technology</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:fakhrul-cse@sust.edu">fakhrul-cse@sust.edu</a></p>
+                <p><i class="fas fa-phone"></i> +8801309354539</p>
+                <p><strong>Relationship:</strong> Thesis Supervisor</p>
+            </div>
+            
+            <!-- Reference 3 -->
+            <div class="reference-card" style="background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; width: 100%; max-width: 300px; text-align: left; transition: transform 0.2s;">
+                <h3 style="color: #007bff;">Md. Abu Naser Mojumder</h3>
+                <p><i class="fas fa-user-tie"></i> Assistant Professor & Head</p>
+                <p>Department of Computer Science & Engineering,<br>Sylhet Engineering College, Sylhet</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:abu.naser84@gmail.com">abu.naser84@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> +8801712291794</p>
+                <p><strong>Relationship:</strong> Research Supervisor</p>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .reference-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    
+    
+    <section id="contact" class="fade-in" style="background-color: #f8f9fa; padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+        <h2 style="text-align: center; color: #343a40; font-size: 2.5em; margin-bottom: 15px; font-weight: 600;">Contact Me</h2>
+        <p style="text-align: center; color: #6c757d; max-width: 600px; margin: 0 auto; font-size: 1.1em; line-height: 1.5;">
+            I’m available for collaborations and inquiries. Feel free to reach out via email or connect with me on social media.
+        </p>
+        <ul class="contact-list" style="list-style-type: none; padding: 0; margin-top: 25px; display: flex; flex-direction: column; align-items: center;">
+            <li style="margin: 10px 0; font-size: 1.1em; color: #495057;">
+                <i class="fas fa-envelope" style="color: #007bff; margin-right: 8px;"></i> 
+                <strong>Email:</strong> 
+                <a href="mailto:gourabroysec553@gmail.com" style="color: #007bff; text-decoration: none;">gourabroysec553@gmail.com</a>
+            </li>
+            <li style="margin: 10px 0; font-size: 1.1em; color: #495057;">
+                <i class="fab fa-linkedin" style="color: #0e76a8; margin-right: 8px;"></i> 
+                <strong>LinkedIn:</strong> 
+                <a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" style="color: #0e76a8; text-decoration: none;">linkedin.com/in/Gourab-Roy</a>
+            </li>
+            <li style="margin: 10px 0; font-size: 1.1em; color: #495057;">
+                <i class="fab fa-facebook" style="color: #3b5998; margin-right: 8px;"></i> 
+                <strong>Facebook:</strong> 
+                <a href="https://www.facebook.com/bdgourab5184/" target="_blank" style="color: #3b5998; text-decoration: none;">facebook.com/GourabRoy</a>
+            </li>
+            <li style="margin: 10px 0; font-size: 1.1em; color: #495057;">
+                <i class="fab fa-instagram" style="color: #E1306C; margin-right: 8px;"></i> 
+                <strong>Instagram:</strong> 
+                <a href="https://instagram.com/gourab6740" target="_blank" style="color: #E1306C; text-decoration: none;">instagram.com/gourab6740</a>
+            </li>
+        </ul>
+    </section>
+    
+    <style>
+        /* Smooth fade-in effect */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+    
+        /* Keyframes for fade-in animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    
+        /* Link hover effect */
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    <button id="scrollToTop" title="Go to top">↑</button>
+
+    <footer style="background-color: #343a40; color: #f8f9fa; padding: 30px 20px; text-align: center; font-size: 0.9em; position: relative;">
+        <p style="margin-bottom: 10px;">© 2024 Gourab Roy. All rights reserved.</p>
+        <nav style="margin-top: 10px; font-weight: bold;">
+            <a href="#about" style="color: #f8f9fa; margin: 0 15px; text-decoration: none; transition: color 0.3s;">About</a>
+            <span style="color: #f8f9fa;">|</span>
+            <a href="#projects" style="color: #f8f9fa; margin: 0 15px; text-decoration: none; transition: color 0.3s;">Projects</a>
+            <span style="color: #f8f9fa;">|</span>
+            <a href="#skills" style="color: #f8f9fa; margin: 0 15px; text-decoration: none; transition: color 0.3s;">Skills</a>
+            <span style="color: #f8f9fa;">|</span>
+            <a href="#publications" style="color: #f8f9fa; margin: 0 15px; text-decoration: none; transition: color 0.3s;">Publications</a>
+            <span style="color: #f8f9fa;">|</span>
+            <a href="#contact" style="color: #f8f9fa; margin: 0 15px; text-decoration: none; transition: color 0.3s;">Contact</a>
+        </nav>
+        <div style="margin-top: 15px;">
+            <a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" style="color: #f8f9fa; margin: 0 10px; font-size: 1.5em;">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/GourabRoy551" target="_blank" style="color: #f8f9fa; margin: 0 10px; font-size: 1.5em;">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.facebook.com/bdgourab5184/" target="_blank" style="color: #f8f9fa; margin: 0 10px; font-size: 1.5em;">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/gourab6740" target="_blank" style="color: #f8f9fa; margin: 0 10px; font-size: 1.5em;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.8em; color: #adb5bd;">
+            <p>Connect with me on social media for updates and insights!</p>
+        </div>
+    </footer>
+    
+    
+    
+    
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById("theme-toggle");
+            const currentTheme = body.getAttribute("data-theme");
+
+            if (currentTheme === "dark") {
+                body.removeAttribute("data-theme");
+                themeToggle.textContent = "🌙 Dark Mode";
+            } else {
+                body.setAttribute("data-theme", "dark");
+                themeToggle.textContent = "☀️ Light Mode";
+            }
+        }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Show or hide the scroll-to-top button
+    window.onscroll = function() {
+        const scrollToTopButton = document.getElementById("scrollToTop");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    };
+
+    // Scroll to the top when the button is clicked
+    document.getElementById("scrollToTop").onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    // Fade-in effect for elements
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once it becomes visible
+            }
+        });
+    });
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+    </script>
+
+</body>
+</html>
