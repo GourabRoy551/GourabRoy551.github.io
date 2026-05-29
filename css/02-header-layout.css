@@ -130,6 +130,31 @@ main,
   transform: scaleX(1);
 }
 
+.nav-links a.nav-page {
+  padding: 5px 12px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 38%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cyan) 8%, transparent);
+  color: var(--navy-ink);
+  font-weight: 820;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-links a.nav-page:hover {
+  border-color: color-mix(in srgb, var(--cyan) 62%, var(--line));
+  background: color-mix(in srgb, var(--cyan) 16%, transparent);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.nav-links a.nav-page::after {
+  display: none;
+}
+
 .theme-toggle {
   min-width: 172px;
   min-height: 48px;
