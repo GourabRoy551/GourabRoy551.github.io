@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student and AI engineer building trustworthy computer vision systems for biomedical imaging, inspection, document AI, and applied deep learning."
+    />
+    <meta
+      name="keywords"
+      content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
+    />
+    <meta name="theme-color" content="#090d0f" />
+    <meta property="og:title" content="Gourab Roy | Vision AI Researcher and Engineer" />
+    <meta
+      property="og:description"
+      content="Erasmus Mundus IPCVAI master's student building reliable and interpretable vision AI for biomedical imaging and real-world applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Photo.png" />
+    <title>Gourab Roy | Vision AI Researcher and Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-header-layout.css" />
+    <link rel="stylesheet" href="css/03-hero.css" />
+    <link rel="stylesheet" href="css/04-research-education.css" />
+    <link rel="stylesheet" href="css/05-publications-projects.css" />
+    <link rel="stylesheet" href="css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="css/08-polish-overrides.css" />
+    <script>
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      const savedTheme = requestedTheme || localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "bright") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <script src="js/publications-data.js" defer></script>
+    <script src="js/state.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/publications.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/neural-canvas.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#research">Skip to content</a>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header" data-reveal>
+      <div class="header-shell">
+        <a class="brand" href="#home" aria-label="Gourab Roy home">
+          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-copy">
+            <span class="brand-text">Gourab Roy</span>
+            <span class="brand-role">AI engineer and master's student</span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to bright theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-orb" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-copy">
+            <span class="theme-toggle-label" data-theme-label>Dark</span>
+            <span class="theme-toggle-action" data-theme-action>Switch to bright</span>
+          </span>
+        </button>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <!-- Hero -->
+      <section class="hero section-band">
+        <div class="hero-content">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">Erasmus Mundus IPCVAI &middot; Trustworthy computer vision</p>
+            <h1>Gourab Roy</h1>
+            <p class="hero-title">Vision AI researcher building interpretable models for medical imaging and inspection.</p>
+            <p class="hero-summary">
+              I work across computer vision, biomedical imaging, document AI, and safety-focused
+              inspection. My focus is practical: models that are accurate enough to help, transparent
+              enough to question, and light enough to move from notebooks into real workflows.
+            </p>
+
+            <div class="profile-strip" aria-label="Current profile">
+              <span><b>Current</b> UAM Madrid, IPCVAI master's program</span>
+              <span><b>Research fit</b> Medical CV, XAI, multimodal vision</span>
+              <span><b>Open to</b> Europe-based research and AI roles</span>
+            </div>
+
+            <div class="logo-strip" aria-label="Profile and publication logos">
+              <a
+                class="logo-card"
+                href="https://scholar.google.com/citations?hl=en&user=_9tL56YAAAAJ"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="https://cdn.simpleicons.org/googlescholar" alt="" aria-hidden="true" />
+                <span>Google Scholar</span>
+              </a>
+              <a
+                class="logo-card"
+                href="https://www.linkedin.com/in/gourab-roy-5b52921a3/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>LinkedIn</span>
+              </a>
+              <a
+                class="logo-card"
+                href="https://github.com/GourabRoy551"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img class="github-icon" src="https://cdn.simpleicons.org/github" alt="" aria-hidden="true" />
+                <span>GitHub</span>
+              </a>
+              <a class="logo-card" href="#publications">
+                <img src="https://cdn.simpleicons.org/ieee" alt="" aria-hidden="true" />
+                <span>IEEE papers</span>
+              </a>
+              <a
+                class="logo-card"
+                href="https://doi.org/10.1016/j.imu.2022.101156"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="https://cdn.simpleicons.org/elsevier" alt="" aria-hidden="true" />
+                <span>Elsevier paper</span>
+              </a>
+            </div>
+
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button-primary" href="#publications">
+                See publications
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+              <a class="button button-secondary" href="#research">
+                Research fit
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 17 10 5l4 8 2-4 4 8"></path>
+                  <path d="M3 21h18"></path>
+                </svg>
+              </a>
+              <a class="button button-ghost" href="Gourab_Roy_CV%20(2).pdf" target="_blank" rel="noreferrer">
+                Download CV
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <path d="M7 10l5 5 5-5"></path>
+                  <path d="M12 15V3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="portrait-panel" data-reveal>
+            <div class="portrait-frame">
+              <img
+                src="Photo.png"
+                alt="Portrait of Gourab Roy"
+                width="1024"
+                height="1536"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="signal-panel" aria-label="Research signal panel">
+              <div class="signal-topline">
+                <span>Modeling focus</span>
+                <span>current</span>
+              </div>
+              <div class="signal-row">
+                <span>medical CV</span>
+                <i style="--level: 92%"></i>
+              </div>
+              <div class="signal-row">
+                <span>XAI</span>
+                <i style="--level: 84%"></i>
+              </div>
+              <div class="signal-row">
+                <span>deployment</span>
+                <i style="--level: 86%"></i>
+              </div>
+            </div>
+          </div>
+
+          <dl class="hero-metrics" aria-label="Research metrics">
+            <div>
+              <dt data-count="8">8</dt>
+              <dd>Published papers</dd>
+            </div>
+            <div>
+              <dt data-count="24" data-suffix="+">24+</dt>
+              <dd>Scholar citations</dd>
+            </div>
+            <div>
+              <dt data-count="350" data-suffix="+">350+</dt>
+              <dd>Problems solved</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section class="section-band research-section" id="research">
+        <div class="section-inner research-layout">
+          <div class="section-heading research-heading" data-reveal>
+            <p class="eyebrow">Research areas</p>
+            <h2>Trustworthy vision AI for medical, document, and inspection workflows.</h2>
+            <p>
+              My research direction is centered on computer vision systems that are useful beyond
+              benchmark scores: clear data assumptions, measurable reliability, and explanations
+              that help people understand when a model should or should not be trusted.
+            </p>
+          </div>
+
+          <div class="research-overview" data-reveal>
+            <div class="research-overview-copy">
+              <span class="item-index">Current direction</span>
+              <h3>Cross-modal interpretability and trustworthy vision AI.</h3>
+              <p>
+                My active TRDP at UAM focuses on explaining CLIP's image-text alignment through a
+                Cross-Modal Attention Bridge — bridging vision and text attention rollouts with
+                statistical filtering to produce faithful, text-conditional visual explanations.
+                Alongside this, I work with biomedical imaging, visual inspection, and low-resource
+                OCR where the shared concern is interpretable, reliable model behaviour.
+              </p>
+            </div>
+            <dl class="research-facts" aria-label="Research profile">
+              <div>
+                <dt>Active TRDP</dt>
+                <dd>CLIP interpretability, cross-modal attention, statistical filtering (CMAB)</dd>
+              </div>
+              <div>
+                <dt>Core models</dt>
+                <dd>CLIP, ViT, CNNs, YOLO, Siamese networks</dd>
+              </div>
+              <div>
+                <dt>Primary data</dt>
+                <dd>Image-text pairs, CT/MRI, surface defects, document images</dd>
+              </div>
+              <div>
+                <dt>Research lens</dt>
+                <dd>XAI, cross-modal alignment, segmentation, classification</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="research-focus-grid" aria-label="Research focus areas">
+            <article class="research-focus-card research-focus-primary" data-reveal>
+              <span class="item-index">01 / Biomedical AI</span>
+              <h3>Medical image analysis under limited labeled data.</h3>
+              <p>
+                CT/MRI workflows using preprocessing, segmentation, classification, pretrained
+                feature extractors, and few-shot learning to support reliable diagnosis research.
+              </p>
+              <div class="research-chip-row" aria-label="Biomedical AI methods">
+                <span>CT/MRI</span>
+                <span>Segmentation</span>
+                <span>Few-shot</span>
+              </div>
+            </article>
+
+            <article class="research-focus-card" data-reveal>
+              <span class="item-index">02 / XAI</span>
+              <h3>Explainable and multimodal vision.</h3>
+              <p>
+                Vision-language and attention-based models with explanations that make model
+                behavior easier to inspect, compare, and communicate.
+              </p>
+              <div class="research-chip-row" aria-label="Explainability methods">
+                <span>ViT</span>
+                <span>CLIP</span>
+                <span>Attention</span>
+              </div>
+            </article>
+
+            <article class="research-focus-card" data-reveal>
+              <span class="item-index">03 / Inspection</span>
+              <h3>Detection for safety and field settings.</h3>
+              <p>
+                Applied vision for aircraft defects, structural cracks, infrastructure risk,
+                crop disease, and other inspection tasks where missed signals matter.
+              </p>
+              <div class="research-chip-row" aria-label="Inspection methods">
+                <span>YOLO</span>
+                <span>Transfer learning</span>
+                <span>Risk support</span>
+              </div>
+            </article>
+
+            <article class="research-focus-card" data-reveal>
+              <span class="item-index">04 / Document AI</span>
+              <h3>Low-resource language and document intelligence.</h3>
+              <p>
+                OCR, Bangla font detection, ancient script recognition, and multilingual corpus
+                filtering for languages and scripts with fewer ready-made resources.
+              </p>
+              <div class="research-chip-row" aria-label="Document AI methods">
+                <span>OCR</span>
+                <span>Bangla</span>
+                <span>Corpus filtering</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="research-process" data-reveal>
+            <span class="item-index">How I work</span>
+            <div class="research-process-steps" aria-label="Research process">
+              <span>Frame the problem</span>
+              <span>Audit the data</span>
+              <span>Build baselines</span>
+              <span>Evaluate honestly</span>
+              <span>Explain the result</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section-band education-section" id="education">
+        <div class="section-inner education-layout">
+          <div class="section-heading education-heading" data-reveal>
+            <p class="eyebrow">Education</p>
+            <h2>IPCVAI master's mobility across Budapest, Madrid, and Bordeaux.</h2>
+            <p>
+              My Erasmus Mundus training moves through image processing, deep learning,
+              multimodal vision, explainable AI, and medical imaging. Each semester is built
+              around a 30 ECTS workload, with research development running alongside coursework.
+            </p>
+          </div>
+
+          <div class="uni-logo-strip" data-reveal aria-label="Partner universities">
+            <span class="uni-logo-card">
+              <span class="uni-logo-wrap">
+                <img
+                  src="https://www.uam.es/uam/media/img/1606893064532/marcauam-ahorizontalcolor-imp.svg"
+                  alt="Universidad Autónoma de Madrid logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span>UAM Madrid</span>
+            </span>
+            <span class="uni-logo-card">
+              <span class="uni-logo-wrap">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Logo_univpazmany.svg"
+                  alt="Pázmány Péter Catholic University logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span>PPKE Budapest</span>
+            </span>
+            <span class="uni-logo-card">
+              <span class="uni-logo-wrap">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Universit%C3%A4t_Bordeaux_Logo.svg"
+                  alt="University of Bordeaux logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span>UBx Bordeaux</span>
+            </span>
+          </div>
+
+          <div class="education-overview" data-reveal>
+            <div>
+              <span class="item-index">Erasmus Mundus IPCVAI</span>
+              <h3>Artificial Intelligence for Image Processing and Computer Vision.</h3>
+              <p>
+                I completed the first semester at PPKE Budapest and am currently in the
+                second semester at Universidad Autónoma de Madrid, focusing on high performance
+                deep learning, visual signal processing, moving-camera vision, and research
+                development.
+              </p>
+            </div>
+            <dl class="education-facts" aria-label="Education facts">
+              <div>
+                <dt>Period</dt>
+                <dd>2025-2027</dd>
+              </div>
+              <div>
+                <dt>Current</dt>
+                <dd>UAM Madrid, second semester</dd>
+              </div>
+              <div>
+                <dt>Completed</dt>
+                <dd>PPKE Budapest, first semester</dd>
+              </div>
+              <div>
+                <dt>Credit rhythm</dt>
+                <dd>30 ECTS per semester, 60 ECTS per academic year</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="education-path" aria-label="Education path">
+            <article class="education-path-item is-current" data-reveal>
+              <div class="education-date">Feb 2026 - Present</div>
+              <div class="education-path-body">
+                <span class="item-index">Second semester / current</span>
+                <h3>Universidad Autónoma de Madrid</h3>
+                <p>
+                  Erasmus Mundus Joint Master's Degree in Artificial Intelligence for IPCV,
+                  with current coursework in deep learning systems, visual signal processing,
+                  computer vision, moving-camera geometry, and guided research.
+                </p>
+                <ul class="education-course-list" aria-label="UAM coursework">
+                  <li>High Performance Computing for Deep Learning</li>
+                  <li>Deep Learning for Visual Signal Processing I</li>
+                  <li>Deep Learning for Computer Vision II</li>
+                  <li>Vision for Multiple or Moving Cameras</li>
+                  <li>Tutored Research and Development (TRDP 1)</li>
+                  <li>Spanish Language</li>
+                  <li>Introduction to Research</li>
+                </ul>
+                <div class="education-detail-grid" aria-label="Master's details">
+                  <span>Current semester</span>
+                  <span>UAM Madrid</span>
+                  <span>30 ECTS target</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="education-path-item is-complete" data-reveal>
+              <div class="education-date">Sep 2025 - Jan 2026</div>
+              <div class="education-path-body">
+                <span class="item-index">First semester / completed</span>
+                <h3>Pázmány Péter Catholic University, Budapest</h3>
+                <p>
+                  Completed the opening IPCVAI semester at the Faculty of Information
+                  Technology and Bionics, building the foundation for image processing,
+                  machine learning, deep learning, sensor fusion, biomedical signals, and
+                  research development.
+                </p>
+                <ul class="education-course-list" aria-label="PPKE coursework">
+                  <li>Basic Image Processing Algorithms</li>
+                  <li>Data Mining and Machine Learning</li>
+                  <li>Fundamentals and Basic Tools for Deep Learning</li>
+                  <li>Introduction to Tutored Research and Development (TRDP 0)</li>
+                  <li>Multimodal Sensor Fusion and Navigation</li>
+                  <li>Biomedical Signal Processing</li>
+                  <li>Design Patterns</li>
+                </ul>
+                <div class="education-detail-grid" aria-label="PPKE details">
+                  <span>Completed</span>
+                  <span>PPKE Budapest</span>
+                  <span>30 / 30 ECTS</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="education-path-item is-planned" data-reveal>
+              <div class="education-date">Third semester</div>
+              <div class="education-path-body">
+                <span class="item-index">Planned mobility</span>
+                <h3>UBx Bordeaux</h3>
+                <p>
+                  The Bordeaux semester extends the track into explainable image AI,
+                  sustainable AI practice, advanced computer vision, and medical imaging.
+                </p>
+                <ul class="education-course-list" aria-label="Bordeaux planned coursework">
+                  <li>Explainable Artificial Intelligence for Images (XAII)</li>
+                  <li>AI and Sustainability</li>
+                  <li>Advanced Topics in Computer Vision</li>
+                  <li>Acquisition, Reconstruction and Medical Imaging</li>
+                </ul>
+                <div class="education-detail-grid" aria-label="Bordeaux details">
+                  <span>Upcoming</span>
+                  <span>UBx Bordeaux</span>
+                  <span>30 ECTS semester</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="education-path-item is-planned" data-reveal>
+              <div class="education-date">Fourth semester</div>
+              <div class="education-path-body">
+                <span class="item-index">Thesis stage</span>
+                <h3>Final IPCVAI research semester</h3>
+                <p>
+                  Course items are not published yet for this semester. The final stage remains
+                  reserved for the program's research and validation requirements.
+                </p>
+                <div class="education-detail-grid" aria-label="Fourth semester details">
+                  <span>To be published</span>
+                  <span>Research semester</span>
+                  <span>30 ECTS semester</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="education-path-item" data-reveal>
+              <div class="education-date">2018 - 2023</div>
+              <div class="education-path-body">
+                <span class="item-index">Bachelor's foundation</span>
+                <h3>Computer Science and Engineering</h3>
+                <p>
+                  Undergraduate training at Sylhet Engineering College with foundations in
+                  programming, algorithms, systems, data science, machine learning, and software
+                  development.
+                </p>
+                <div class="education-detail-grid" aria-label="Bachelor's details">
+                  <span>CGPA 3.56 / 4.00</span>
+                  <span>CSE foundation</span>
+                  <span>CerebralNet thesis</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="education-strengths" data-reveal aria-label="Education strengths">
+            <article>
+              <span>01</span>
+              <h3>European mobility</h3>
+              <p>IPCVAI study path across PPKE Budapest, UAM Madrid, and UBx Bordeaux.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Deep learning systems</h3>
+              <p>Current UAM semester covers HPC for deep learning and visual signal processing.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>XAI and medical imaging</h3>
+              <p>Bordeaux coursework adds explainable image AI, sustainability, and medical imaging.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>CS foundation</h3>
+              <p>B.Sc. training supports the graduate work with algorithms, systems, and ML basics.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section class="section-band publications publication-section" id="publications">
+        <div class="section-inner publication-layout">
+          <div class="section-heading split-heading publication-intro" data-reveal>
+            <div>
+              <p class="eyebrow">Selected publications</p>
+              <h2>A growing research record across medical AI, language technology, and applied vision.</h2>
+            </div>
+            <p>
+              These papers show the same pattern in different domains: start with a useful problem,
+              shape the data carefully, compare models honestly, and explain the result in a way
+              that other researchers can build on.
+            </p>
+          </div>
+
+          <div class="publication-showcase">
+            <article class="publication-lead" data-reveal>
+              <span class="item-index">Featured thread</span>
+              <h3>Few-shot medical imaging and trustworthy vision models.</h3>
+              <p>
+                CovidExpert remains the clearest example of my biomedical AI direction: CT image
+                analysis with pretrained CNN features and a Triplet Siamese Network, designed for
+                the kind of limited-data setting that often appears in clinical research.
+              </p>
+              <div class="paper-logo-row" aria-label="Publication platforms">
+                <span>
+                  <img src="https://cdn.simpleicons.org/elsevier" alt="" aria-hidden="true" />
+                  Elsevier
+                </span>
+                <span>
+                  <img src="https://cdn.simpleicons.org/googlescholar" alt="" aria-hidden="true" />
+                  Scholar
+                </span>
+                <span>
+                  <img src="https://cdn.simpleicons.org/ieee" alt="" aria-hidden="true" />
+                  IEEE
+                </span>
+              </div>
+              <dl class="compact-meta" aria-label="Featured publication details">
+                <div>
+                  <dt>Venue</dt>
+                  <dd>Informatics in Medicine Unlocked</dd>
+                </div>
+                <div>
+                  <dt>Signal</dt>
+                  <dd>22 Google Scholar citations</dd>
+                </div>
+                <div>
+                  <dt>Methods</dt>
+                  <dd>Few-shot learning, CNN features, Siamese networks</dd>
+                </div>
+              </dl>
+            </article>
+
+            <div class="publication-stat-stack" data-reveal aria-label="Publication status summary">
+              <article>
+                <b>8</b>
+                <span>published research works</span>
+              </article>
+              <article>
+                <b>1</b>
+                <span>biomedical imaging thesis</span>
+              </article>
+              <article>
+                <b>5</b>
+                <span>IEEE conference papers</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="filter-row" id="publication-filters" data-reveal aria-label="Publication filters"></div>
+          <div class="publication-grid" id="publication-grid" aria-live="polite"></div>
+
+          <div class="cv-subsection thesis-thread" data-reveal>
+            <p class="eyebrow">Thesis thread</p>
+            <article class="cv-card cv-card-emphasis">
+              <span class="item-index">CerebralNet</span>
+              <h3>Brain CT/MRI abnormality detection with segmentation and classification.</h3>
+              <p>
+                My undergraduate thesis sits close to my current research interests. It focused on
+                detecting major abnormalities in brain CT and MRI scans, combining medical-image
+                preprocessing, segmentation, and classification into a practical deep learning workflow.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section-band case-studies experience-section" id="experience">
+        <div class="section-inner experience-layout">
+          <div class="section-heading experience-heading" data-reveal>
+            <p class="eyebrow">Experience</p>
+            <h2>Teaching, mentoring, and research work that shaped how I build AI systems.</h2>
+            <p>
+              Before starting IPCVAI, I worked closely with undergraduate students and departmental
+              research projects. That mix of teaching and lab work made my research style more
+              practical: explain the idea clearly, build the model carefully, and help others
+              understand what the result means.
+            </p>
+          </div>
+
+          <aside class="experience-summary" data-reveal aria-label="Experience summary">
+            <span class="item-index">Academic bridge</span>
+            <h3>From classroom support to supervised AI research.</h3>
+            <p>
+              My experience connects course instruction, thesis mentoring, applied ML projects, and
+              research writing. It is one reason I am comfortable moving between technical detail
+              and plain-language explanation.
+            </p>
+          </aside>
+
+          <div class="case-grid experience-grid">
+            <article class="case-item" data-reveal>
+              <span class="case-domain">Nov 2023-Present</span>
+              <h3>Research Assistant</h3>
+              <p>
+                At Sylhet Engineering College, I supported research projects in the Department of
+                Computer Science and Engineering under Md. Abu Naser Mojumder, Head of the CSE
+                Department.
+              </p>
+              <dl>
+                <div>
+                  <dt>Role</dt>
+                  <dd>Applied ML research support</dd>
+                </div>
+                <div>
+                  <dt>Work</dt>
+                  <dd>Model development, experiments, and paper preparation</dd>
+                </div>
+                <div>
+                  <dt>Mentor</dt>
+                  <dd>Guided students and final-year thesis projects</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="case-item" data-reveal>
+              <span class="case-domain">Jan 2024-Present</span>
+              <h3>Adjunct Lecturer</h3>
+              <p>
+                I taught undergraduate CSE courses, prepared assessments, supported students in
+                consultation hours, and stayed involved with research and thesis supervision.
+              </p>
+              <dl>
+                <div>
+                  <dt>Teaching</dt>
+                  <dd>Undergraduate computer science courses</dd>
+                </div>
+                <div>
+                  <dt>Support</dt>
+                  <dd>Assessment, consultation, and academic guidance</dd>
+                </div>
+                <div>
+                  <dt>Research</dt>
+                  <dd>Final-year thesis supervision and project feedback</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="case-item" data-reveal>
+              <span class="case-domain">Courses</span>
+              <h3>Course Areas</h3>
+              <p>
+                My teaching covered both theory and lab-based work, from data science and distributed
+                computing to architecture, interfacing, and microprocessor topics.
+              </p>
+              <dl>
+                <div>
+                  <dt>Systems</dt>
+                  <dd>Distributed Computing, Computer Architecture</dd>
+                </div>
+                <div>
+                  <dt>Data</dt>
+                  <dd>Introduction to Data Science and lab-based work</dd>
+                </div>
+                <div>
+                  <dt>Hardware</dt>
+                  <dd>Peripheral and Interfacing, Microprocessor and MicroController</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+
+          <div class="teaching-strip" data-reveal aria-label="Experience strengths">
+            <article>
+              <span>01</span>
+              <h3>Mentoring</h3>
+              <p>Supported thesis students with research direction, experiments, and presentation of results.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Communication</h3>
+              <p>Turned complex computing topics into teachable steps for undergraduate learners.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Research practice</h3>
+              <p>Worked across model design, literature review, evaluation, and academic writing.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section-band project-section" id="projects">
+        <div class="section-inner bento-project-layout">
+
+          <div class="bento-project-head" data-reveal>
+            <div>
+              <p class="eyebrow">Projects</p>
+              <h2>Engineering work behind the research profile.</h2>
+            </div>
+            <p>Signal-processing pipelines, applied AI research, data notebooks, and software builds — showing the coding range behind the papers.</p>
+          </div>
+
+          <div class="bento-grid">
+
+            <!-- 01 Featured: PPG / HRV -->
+            <article class="bento-card bento-featured" data-reveal>
+              <div class="bento-num" aria-hidden="true">01</div>
+              <span class="bento-context">BMSP &middot; PPKE Budapest &middot; Dec 2025</span>
+              <h3>Cardiac Autonomic Assessment via PPG-Derived HRV During Personalized Sound Stimulation</h3>
+              <p>
+                Modular Python pipeline investigating how self-selected music modulates the Autonomic
+                Nervous System via PPG signals. Recorded 10 participants across baseline,
+                favorite-song, and least-favorite-song conditions. Applied Butterworth filtering,
+                adaptive peak detection, and FFT spectral analysis, then Friedman and Wilcoxon tests
+                plus an individual responsiveness classifier showing every subject had significant
+                autonomic shifts despite non-significant group means.
+              </p>
+              <a class="project-link" href="https://github.com/GourabRoy551/cardiac-autonomic-ppg-hrv" target="_blank" rel="noreferrer">View repository</a>
+              <div class="bento-tags">
+                <span>Python</span>
+                <span>NumPy</span>
+                <span>SciPy</span>
+                <span>Pandas</span>
+                <span>Matplotlib</span>
+                <span>PPG</span>
+                <span>HRV</span>
+              </div>
+            </article>
+
+            <!-- 02 CLIP / TRDP -->
+            <article class="bento-card bento-tall bento-violet" data-reveal>
+              <div class="bento-num" aria-hidden="true">02</div>
+              <span class="bento-context">TRDP 1 &middot; UAM Madrid &middot; Ongoing</span>
+              <h3>Statistically Filtered Cross-Modal Attention for CLIP Interpretability</h3>
+              <p>
+                Cross-Modal Attention Bridge (CMAB) explaining CLIP's image-text alignment via
+                K-sigma statistical filtering on attention rollouts. Generates fine-grained,
+                text-conditional visual explanations per token without modifying the model.
+                Supervised by Prof. Jenny Benois-Pineau (Bordeaux) and Marcos Escudero-Viñolo (UAM).
+              </p>
+              <div class="bento-tags">
+                <span>CLIP</span>
+                <span>ViT</span>
+                <span>PyTorch</span>
+                <span>XAI</span>
+                <span>Attention Rollout</span>
+                <span>Vision-Language</span>
+              </div>
+            </article>
+
+            <!-- 03 3D Reconstruction -->
+            <article class="bento-card bento-violet" data-reveal>
+              <div class="bento-num" aria-hidden="true">03</div>
+              <span class="bento-context">3DVMMC Lab &middot; UAM Madrid &middot; 2025</span>
+              <h3>Calibrated Multi-View 3D Reconstruction</h3>
+              <p>
+                Complete MATLAB pipeline for recovering 3D scene structure from multiple camera views.
+                Covers camera calibration from checkerboard and custom planar patterns, SIFT/SURF/ORB
+                feature detection and matching with RANSAC-based geometric verification, homography
+                and fundamental matrix computation, epipolar geometry visualization, and multi-view
+                sparse reconstruction with bundle adjustment. Achieved 4.47 px reprojection error
+                across 672 retained multi-view tracks.
+              </p>
+              <a class="project-link" href="https://github.com/GourabRoy551/Calibrated-Multi-View-3D-Reconstruction" target="_blank" rel="noreferrer">View repository</a>
+              <div class="bento-tags">
+                <span>MATLAB</span>
+                <span>Camera Calibration</span>
+                <span>SIFT</span>
+                <span>RANSAC</span>
+                <span>Bundle Adjustment</span>
+                <span>Epipolar Geometry</span>
+                <span>3D Reconstruction</span>
+              </div>
+            </article>
+
+            <!-- 04 Data Viz -->
+            <article class="bento-card bento-green" data-reveal>
+              <div class="bento-num" aria-hidden="true">04</div>
+              <span class="bento-context">Data analysis</span>
+              <h3>Exploratory Analysis and Visualization Portfolio</h3>
+              <p>Python notebooks exploring housing data, Covid-19 global outcomes, and Google Play app ratings using NumPy, Pandas, Matplotlib, and Jupyter.</p>
+              <a class="project-link" href="https://github.com/GourabRoy551/DataVisualization" target="_blank" rel="noreferrer">View source code</a>
+              <div class="bento-tags">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Matplotlib</span>
+                <span>Jupyter</span>
+              </div>
+            </article>
+
+            <!-- 05 Python -->
+            <article class="bento-card bento-amber" data-reveal>
+              <div class="bento-num" aria-hidden="true">05</div>
+              <span class="bento-context">Python practice</span>
+              <h3>Utilities and Game-Style Programming Exercises</h3>
+              <p>Calculator, simulator, board-game, and word-game projects built while strengthening Python fundamentals, control flow, and notebook workflows.</p>
+              <a class="project-link" href="https://github.com/GourabRoy551/Python-Projects" target="_blank" rel="noreferrer">View source code</a>
+              <div class="bento-tags">
+                <span>Python</span>
+                <span>PyCharm</span>
+                <span>Jupyter</span>
+              </div>
+            </article>
+
+            <!-- 06 Billing System -->
+            <article class="bento-card bento-coral" data-reveal>
+              <div class="bento-num" aria-hidden="true">06</div>
+              <span class="bento-context">Java application</span>
+              <h3>Billing System Application</h3>
+              <p>University software project with form-based UI, relational data, and basic application design using JFrame and MySQL.</p>
+              <a class="project-link" href="https://github.com/GourabRoy551/BillingSystem" target="_blank" rel="noreferrer">View source code</a>
+              <div class="bento-tags">
+                <span>Java</span>
+                <span>MySQL</span>
+                <span>NetBeans</span>
+              </div>
+            </article>
+
+            <!-- 07 Pioneer Bank -->
+            <article class="bento-card bento-wide bento-cyan" data-reveal>
+              <div class="bento-num" aria-hidden="true">07</div>
+              <span class="bento-context">Web project</span>
+              <h3>Pioneer Bank Website</h3>
+              <p>Frontend web project built with HTML, CSS, and JavaScript, then published on GitHub as part of early frontend and deployment practice.</p>
+              <a class="project-link" href="https://github.com/GourabRoy551/Pioneer_Bank_Complete" target="_blank" rel="noreferrer">View source code</a>
+              <div class="bento-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section-band about skills-section" id="skills">
+        <div class="section-inner skills-layout">
+          <div class="section-heading skills-heading" data-reveal>
+            <p class="eyebrow">Skills and achievements</p>
+            <h2>A research engineering stack for vision AI, biomedical signals, and reproducible experiments.</h2>
+            <p>
+              My work sits between model development and careful research communication: Python-first
+              experiments, computer vision and signal-processing pipelines, practical software tools,
+              and writing that makes results easier to inspect.
+            </p>
+          </div>
+
+          <aside class="skill-stack-panel skill-command-panel" data-reveal aria-label="Core skill stack">
+            <span class="item-index">Working stack</span>
+            <h3>Python-led research engineering with enough breadth to build, test, and explain.</h3>
+            <p>
+              I use Python as the center of gravity, then bring in ML frameworks, numerical tools,
+              databases, and writing systems depending on what the experiment needs.
+            </p>
+            <div class="skill-signal-list" aria-label="Skill focus areas">
+              <div>
+                <span>01</span>
+                <strong>Modeling</strong>
+                <small>PyTorch, TensorFlow, Scikit-learn</small>
+              </div>
+              <div>
+                <span>02</span>
+                <strong>Analysis</strong>
+                <small>NumPy, Pandas, SciPy, Matplotlib</small>
+              </div>
+              <div>
+                <span>03</span>
+                <strong>Build</strong>
+                <small>Git, SQL, Java, JavaScript</small>
+              </div>
+              <div>
+                <span>04</span>
+                <strong>Publish</strong>
+                <small>LaTeX, paper writing, review</small>
+              </div>
+            </div>
+            <div class="tool-logo-grid" aria-label="Core tool logos">
+              <span class="tool-logo-card">
+                <img
+                  class="tool-logo"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>Python</span>
+              </span>
+              <span class="tool-logo-card">
+                <img
+                  class="tool-logo"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>MATLAB</span>
+              </span>
+              <span class="tool-logo-card">
+                <img
+                  class="tool-logo"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>PyTorch</span>
+              </span>
+              <span class="tool-logo-card">
+                <img
+                  class="tool-logo"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>TensorFlow</span>
+              </span>
+              <span class="tool-logo-card">
+                <img
+                  class="tool-logo"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>Scikit-learn</span>
+              </span>
+              <span class="tool-logo-card">
+                <img
+                  class="tool-logo"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>Git</span>
+              </span>
+              <span class="tool-logo-card">
+                <img class="tool-logo" src="https://cdn.simpleicons.org/latex" alt="" aria-hidden="true" />
+                <span>LaTeX</span>
+              </span>
+            </div>
+          </aside>
+
+          <div class="skills-main skill-system" data-reveal>
+            <div class="skill-category-grid" aria-label="Skill categories">
+              <article class="skill-category skill-lane-card">
+                <div class="skill-lane-head">
+                  <span class="item-index">Vision AI</span>
+                  <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 92%"></span></span>
+                </div>
+                <h3>Computer vision and deep learning</h3>
+                <p>Classification, segmentation, transfer learning, evaluation, and applied image workflows.</p>
+                <div class="skill-chip-list" aria-label="Vision AI skills">
+                  <span>CNNs</span>
+                  <span>ViT</span>
+                  <span>YOLO</span>
+                  <span>CLIP</span>
+                </div>
+              </article>
+              <article class="skill-category skill-lane-card">
+                <div class="skill-lane-head">
+                  <span class="item-index">Data</span>
+                  <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 88%"></span></span>
+                </div>
+                <h3>Research data and signal analysis</h3>
+                <p>Notebook workflows for datasets, physiological signals, statistics, and publication figures.</p>
+                <div class="skill-chip-list" aria-label="Data skills">
+                  <span>PPG</span>
+                  <span>HRV</span>
+                  <span>Stats</span>
+                  <span>Plots</span>
+                </div>
+              </article>
+              <article class="skill-category skill-lane-card">
+                <div class="skill-lane-head">
+                  <span class="item-index">Software</span>
+                  <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 78%"></span></span>
+                </div>
+                <h3>Practical software and tooling</h3>
+                <p>Application projects, databases, version control, IDE workflows, and deployment practice.</p>
+                <div class="skill-chip-list" aria-label="Software skills">
+                  <span>Git</span>
+                  <span>SQL</span>
+                  <span>Java</span>
+                  <span>Web</span>
+                </div>
+              </article>
+              <article class="skill-category skill-lane-card">
+                <div class="skill-lane-head">
+                  <span class="item-index">Writing</span>
+                  <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 84%"></span></span>
+                </div>
+                <h3>Research writing and communication</h3>
+                <p>Paper preparation, literature review, LaTeX, result presentation, and reviewer experience.</p>
+                <div class="skill-chip-list" aria-label="Research writing skills">
+                  <span>LaTeX</span>
+                  <span>Review</span>
+                  <span>Reports</span>
+                  <span>Slides</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="achievement-panel" aria-label="Certifications and achievements">
+              <div class="achievement-panel-copy">
+                <span class="item-index">Proof points</span>
+                <h3>Achievements that connect learning, practice, and research service.</h3>
+              </div>
+              <div class="achievement-grid">
+                <article class="achievement-card">
+                  <span>01</span>
+                  <h3>Erasmus Mundus IPCVAI student</h3>
+                  <p>Graduate training in image processing, computer vision, and applied artificial intelligence.</p>
+                </article>
+                <article class="achievement-card">
+                  <span>02</span>
+                  <h3>Gold Badges in C++ and Python</h3>
+                  <p>Earned through HackerRank practice and competitive programming fundamentals.</p>
+                </article>
+                <article class="achievement-card">
+                  <span>03</span>
+                  <h3>Machine learning coursework</h3>
+                  <p>Completed machine learning, data structures, and Python visualization training.</p>
+                </article>
+                <article class="achievement-card">
+                  <span>04</span>
+                  <h3>Reviewer experience</h3>
+                  <p>Contributed as a reviewer for Informatics in Medicine Unlocked.</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="topic-cloud" aria-label="Skill tags">
+              <span>Python</span>
+              <span>MATLAB</span>
+              <span>C</span>
+              <span>C++</span>
+              <span>Java</span>
+              <span>JavaScript</span>
+              <span>PyTorch</span>
+              <span>TensorFlow</span>
+              <span>Scikit-learn</span>
+              <span>MySQL</span>
+              <span>SQLite</span>
+              <span>Git</span>
+              <span>LaTeX</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section-band contact contact-section" id="contact">
+        <div class="section-inner contact-layout" data-reveal>
+          <div>
+            <p class="eyebrow">Get in touch</p>
+            <h2>Open to research collaboration, supervision conversations, and Europe-based AI roles.</h2>
+            <p>
+              I am looking for opportunities where I can contribute to useful AI work, especially
+              in computer vision, biomedical imaging, explainable AI, OCR, NLP, and safety-focused
+              machine learning. A short message with the research idea, role, or lab direction is
+              always welcome.
+            </p>
+            <dl class="contact-details" aria-label="Contact summary">
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:gourab.roy@estudiante.uam.es">gourab.roy@estudiante.uam.es</a></dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd>+36 70 784 2482</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Madrid, Spain / Budapest, Hungary program affiliation</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="contact-actions">
+            <div class="contact-note">
+              <span class="item-index">Best fit</span>
+              <p>Medical imaging, trustworthy vision models, multimodal AI, and Europe-based research roles.</p>
+            </div>
+            <a
+              class="button button-primary"
+              href="mailto:gourab.roy@estudiante.uam.es"
+            >
+              Email
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16v16H4z"></path>
+                <path d="m22 6-10 7L2 6"></path>
+              </svg>
+            </a>
+            <button class="button button-secondary" type="button" data-copy-email data-email="gourab.roy@estudiante.uam.es">
+              <span data-copy-label>Copy email</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+            <a class="button button-secondary" href="tel:+36707842482">
+              Phone
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.6 2.6a2 2 0 0 1-.45 2.11L7.91 9.74a16 16 0 0 0 6.35 6.35l1.31-1.31a2 2 0 0 1 2.11-.45c.83.28 1.7.48 2.6.6A2 2 0 0 1 22 16.92Z"></path>
+              </svg>
+            </a>
+            <a
+              class="button button-secondary"
+              href="Gourab_Roy_CV%20(2).pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              CV
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <path d="M7 10l5 5 5-5"></path>
+                <path d="M12 15V3"></path>
+              </svg>
+            </a>
+            <a
+              class="button button-ghost"
+              href="https://scholar.google.com/citations?hl=en&user=_9tL56YAAAAJ"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Google Scholar
+              <img class="button-logo" src="https://cdn.simpleicons.org/googlescholar" alt="" aria-hidden="true" />
+            </a>
+            <a
+              class="button button-ghost"
+              href="https://www.linkedin.com/in/gourab-roy-5b52921a3/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+              <img
+                class="button-logo"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </a>
+            <a
+              class="button button-ghost"
+              href="https://github.com/GourabRoy551"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+              <img class="button-logo github-icon" src="https://cdn.simpleicons.org/github" alt="" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p><span data-current-year>2026</span> Gourab Roy - Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <a href="#home">Back to top</a>
+    </footer>
+  </body>
+</html>

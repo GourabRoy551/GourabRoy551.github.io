@@ -1,0 +1,443 @@
+/*
+  Final polish layer.
+  These rules keep long text, metadata rows, and narrow screens from clipping.
+*/
+
+:where(
+  .section-inner,
+  .hero-content,
+  .hero-copy,
+  .research-layout,
+  .research-track,
+  .research-overview,
+  .research-focus-grid,
+  .education-layout,
+  .education-overview,
+  .education-path,
+  .education-strengths,
+  .publication-layout,
+  .publication-grid,
+  .experience-layout,
+  .project-layout,
+  .project-feature-body,
+  .skills-layout,
+  .skill-signal-list,
+  .skill-category-grid,
+  .achievement-panel,
+  .achievement-grid,
+  .writing-layout,
+  .contact-layout
+) {
+  min-width: 0;
+}
+
+:where(
+  .profile-strip span,
+  .hero-metrics div,
+  .research-snapshot,
+  .research-overview,
+  .research-focus-card,
+  .research-methods,
+  .research-process,
+  .education-summary,
+  .education-overview,
+  .education-path-item,
+  .education-strengths article,
+  .education-step,
+  .education-focus-grid article,
+  .impact-item,
+  .publication-card,
+  .publication-lead,
+  .publication-stat-stack article,
+  .case-item,
+  .cv-card,
+  .experience-summary,
+  .teaching-strip article,
+  .project-summary,
+  .skill-category,
+  .achievement-card,
+  .achievement-panel,
+  .achievement-panel-copy,
+  .skill-lane-card,
+  .skill-signal-list div,
+  .skill-stack-panel,
+  .writing-about,
+  .writing-card,
+  .contact-note,
+  .contact-layout
+) {
+  min-width: 0;
+  max-width: 100%;
+}
+
+:where(
+  h1,
+  h2,
+  h3,
+  p,
+  li,
+  dt,
+  dd,
+  .item-index,
+  .case-domain,
+  .publication-meta,
+  .tag-row span,
+  .topic-cloud span,
+  .research-stack span,
+  .research-chip-row span,
+  .research-process-steps span,
+  .education-detail-grid span,
+  .education-course-list li,
+  .research-method-list span,
+  .paper-flow span,
+  .project-card-meta span,
+  .project-link,
+  .skill-chip-list span,
+  .skill-signal-list strong,
+  .skill-signal-list small,
+  .writing-status span
+) {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+:where(
+  .research-card-meta,
+  .research-facts,
+  .education-facts,
+  .education-course-list,
+  .education-step-body dl,
+  .case-item dl,
+  .contact-details,
+  .compact-meta
+) {
+  min-width: 0;
+}
+
+:where(
+  .research-card-meta div,
+  .research-facts div,
+  .education-facts div,
+  .education-step-body dl div,
+  .case-item dl div,
+  .contact-details div,
+  .compact-meta div
+) {
+  min-width: 0;
+}
+
+:where(
+  .research-card-meta dd,
+  .research-facts dd,
+  .education-facts dd,
+  .education-course-list li,
+  .education-step-body dd,
+  .case-item dd,
+  .contact-details dd,
+  .compact-meta dd
+) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.github-icon {
+  filter: brightness(0) invert(1);
+}
+
+.uni-logo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.uni-logo-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 10%, transparent), transparent),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 820;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.uni-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.uni-logo-wrap img {
+  max-height: 48px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.blog-intro {
+  padding: clamp(22px, 5vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cyan) 8%, transparent), transparent 46%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 8%, transparent), transparent),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+html[data-theme="bright"] .github-icon {
+  filter: brightness(0);
+}
+
+  .research-card,
+  .impact-item {
+  overflow: visible;
+}
+
+.publication-card,
+.cv-card,
+.case-item,
+.project-card,
+.skill-category,
+.achievement-card,
+.writing-card {
+  overflow: clip;
+}
+
+.publication-card h3,
+.cv-card h3,
+.case-item h3,
+.project-card h3,
+.skill-category h3,
+.achievement-card h3,
+.writing-card h3 {
+  line-height: 1.3;
+}
+
+.section-heading h2 {
+  text-wrap: balance;
+}
+
+.section-heading > p:not(.eyebrow),
+.split-heading > p,
+.hero-summary,
+.contact-layout p {
+  text-wrap: pretty;
+}
+
+@media (max-width: 900px) {
+  .research-track,
+  .research-focus-grid,
+  .education-focus-grid,
+  .education-strengths,
+  .education-path,
+  .publication-grid,
+  .case-grid,
+  .cv-grid,
+  .skill-category-grid,
+  .achievement-grid,
+  .writing-posts {
+    gap: 14px;
+  }
+
+  .impact-item,
+  .publication-card,
+  .publication-lead,
+  .case-item,
+  .cv-card,
+  .project-card,
+  .skill-category,
+  .achievement-card,
+  .writing-card,
+  .writing-about,
+  .skill-stack-panel,
+  .contact-layout {
+    padding: clamp(18px, 5vw, 24px);
+  }
+}
+
+@media (max-width: 640px) {
+  .section-band {
+    padding: 56px 0;
+  }
+
+  .section-heading::before {
+    left: 0;
+  }
+
+  .research-card-meta div,
+  .research-facts div,
+  .education-facts div,
+  .education-step-body dl div,
+  .case-item dl div,
+  .contact-details div,
+  .compact-meta div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .research-card-meta dt,
+  .research-facts dt,
+  .education-facts dt,
+  .education-step-body dt,
+  .case-item dt,
+  .contact-details dt,
+  .compact-meta dt {
+    line-height: 1.25;
+  }
+
+  .research-card-meta dd,
+  .research-facts dd,
+  .education-facts dd,
+  .education-step-body dd,
+  .case-item dd,
+  .contact-details dd,
+  .compact-meta dd {
+    margin-top: 0;
+    line-height: 1.45;
+  }
+
+  .paper-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-visual,
+  .project-visual {
+    margin-inline: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header,
+  .section-inner,
+  .hero-content,
+  .site-footer {
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+  }
+
+  .hero-content {
+    padding: 14px;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 12vw, 2.55rem);
+  }
+
+  h2 {
+    font-size: clamp(1.58rem, 9vw, 2.1rem);
+    line-height: 1.1;
+  }
+
+  .hero-title {
+    font-size: 0.96rem;
+    line-height: 1.35;
+  }
+
+  .hero-summary,
+  .section-heading > p:not(.eyebrow),
+  .split-heading > p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .nav-links {
+    gap: 0 14px;
+  }
+
+  .button {
+    min-width: 0;
+    padding-inline: 10px;
+    font-size: 0.92rem;
+  }
+
+  .portrait-panel {
+    width: min(204px, 66vw, 100%);
+  }
+
+  .profile-strip span,
+  .hero-metrics div,
+  .research-snapshot,
+  .research-overview,
+  .research-focus-card,
+  .research-process,
+  .research-methods,
+  .education-overview,
+  .education-path-item,
+  .education-strengths article,
+  .impact-item,
+  .publication-card,
+  .publication-lead,
+  .case-item,
+  .cv-card,
+  .project-card,
+  .skill-category,
+  .achievement-card,
+  .writing-card,
+  .writing-about,
+  .skill-stack-panel,
+  .contact-layout {
+    padding: 16px;
+  }
+
+  .research-card h3,
+  .research-focus-card h3,
+  .education-path-body h3,
+  .education-strengths h3,
+  .impact-item h3,
+  .publication-card h3,
+  .case-item h3,
+  .cv-card h3,
+  .project-card h3,
+  .skill-category h3,
+  .achievement-card h3,
+  .writing-card h3 {
+    margin-top: 24px;
+  }
+
+  .tag-row,
+  .topic-cloud,
+  .research-stack,
+  .research-chip-row,
+  .research-process-steps,
+  .education-detail-grid,
+  .writing-status,
+  .project-card-meta {
+    gap: 6px;
+  }
+
+  .tag-row span,
+  .topic-cloud span,
+  .research-stack span,
+  .research-chip-row span,
+  .research-process-steps span,
+  .education-detail-grid span,
+  .writing-status span,
+  .project-card-meta span {
+    font-size: 0.7rem;
+    padding-inline: 8px;
+  }
+}

@@ -1,0 +1,490 @@
+.hero {
+  min-height: auto;
+  padding-top: clamp(24px, 4vh, 48px);
+  padding-bottom: 30px;
+}
+
+.hero-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  grid-template-areas:
+    "copy portrait"
+    "metrics portrait";
+  gap: 18px 32px;
+  align-items: start;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cyan) 8%, transparent), transparent 46%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 8%, transparent), transparent),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.hero-copy {
+  grid-area: copy;
+  min-width: 0;
+  max-width: 660px;
+  padding-top: 2px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--green);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+dd {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 610px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 5.4vw, 4.65rem);
+  font-weight: 760;
+  line-height: 0.98;
+}
+
+h2 {
+  max-width: 900px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.25rem, 4vw, 4.4rem);
+  font-weight: 720;
+  line-height: 1;
+}
+
+h3 {
+  color: var(--ink);
+  font-size: 1.12rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+p {
+  line-height: 1.75;
+}
+
+.hero-title {
+  margin: 12px 0 0;
+  color: var(--navy-ink);
+  font-size: clamp(1.08rem, 1.45vw, 1.32rem);
+  font-weight: 860;
+  line-height: 1.28;
+}
+
+.hero-summary {
+  max-width: 620px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.profile-strip {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.profile-strip span,
+.hero-metrics div,
+.cv-index a,
+.section-stat-row article,
+.research-snapshot,
+.research-methods,
+.education-summary,
+.education-step,
+.education-focus-grid article,
+.impact-item,
+.capability-grid article,
+.publication-card,
+.publication-lead,
+.publication-stat-stack article,
+.case-item,
+.cv-card,
+.experience-summary,
+.teaching-strip article,
+.project-summary,
+.skill-category,
+.achievement-card,
+.console,
+.interest-list,
+.skill-stack-panel,
+.contact-note,
+.contact-layout {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 10%, transparent), transparent),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.profile-strip span {
+  min-height: 54px;
+  padding: 11px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.profile-strip b {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--cyan);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+}
+
+.logo-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.logo-card {
+  min-height: 50px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cyan) 7%, transparent), transparent 55%),
+    color-mix(in srgb, var(--surface-solid) 34%, transparent);
+  font-size: 0.76rem;
+  font-weight: 820;
+  line-height: 1.25;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.logo-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--cyan) 48%, var(--line));
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cyan) 12%, transparent), transparent 55%),
+    color-mix(in srgb, var(--surface-solid) 48%, transparent);
+}
+
+.logo-card > span:last-child,
+.tool-logo-card > span:last-child {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.logo-card img {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  object-fit: contain;
+  padding: 7px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 42%, var(--line));
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--cyan) 42%, transparent), transparent 58%),
+    color-mix(in srgb, var(--surface-solid) 70%, transparent);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 24px;
+}
+
+.button {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-weight: 850;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
+
+.button.is-copied {
+  border-color: color-mix(in srgb, var(--green) 56%, var(--line));
+  background: color-mix(in srgb, var(--green) 14%, var(--surface));
+  color: var(--ink);
+}
+
+.button-primary {
+  border-color: color-mix(in srgb, var(--cyan) 52%, var(--line));
+  background: linear-gradient(135deg, var(--cyan), color-mix(in srgb, var(--green) 80%, var(--cyan)));
+  color: #061114;
+}
+
+.button-secondary {
+  border-color: color-mix(in srgb, var(--cyan) 44%, var(--line));
+  background: color-mix(in srgb, var(--cyan) 10%, var(--surface));
+  color: var(--navy-ink);
+}
+
+.button-ghost {
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--surface-solid) 38%, transparent);
+  color: var(--ink);
+}
+
+.portrait-panel {
+  grid-area: portrait;
+  position: relative;
+  justify-self: end;
+  align-self: start;
+  width: min(100%, 340px);
+  min-height: auto;
+  padding-top: 6px;
+  display: grid;
+  align-items: end;
+}
+
+.portrait-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface-solid);
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 4.6;
+}
+
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.22)),
+    repeating-linear-gradient(90deg, transparent 0 14px, rgba(255, 255, 255, 0.06) 14px 15px);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 28%;
+  filter: saturate(1.02) contrast(1.04);
+}
+
+.signal-panel {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: min(248px, calc(100% - 28px));
+  padding: 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface-solid) 82%, transparent);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.signal-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: var(--soft);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.signal-topline span:last-child {
+  color: var(--green);
+}
+
+.signal-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: center;
+  gap: 9px;
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 820;
+}
+
+.signal-row i {
+  position: relative;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line) 78%, transparent);
+}
+
+.signal-row i::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--level);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber));
+  animation: signalPulse 2.6s ease-in-out infinite;
+}
+
+.hero-metrics {
+  grid-area: metrics;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.hero-metrics div {
+  min-height: 84px;
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-metrics div::after {
+  content: "";
+  position: absolute;
+  inset: auto 14px 12px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber));
+}
+
+.hero-metrics dt {
+  color: var(--navy-ink);
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.hero-metrics dd {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.cv-index {
+  display: none;
+  grid-area: index;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 4px;
+}
+
+.cv-index a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-align: center;
+  transition:
+    transform 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.cv-index a:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--cyan) 52%, var(--line));
+  color: var(--ink);
+  background: color-mix(in srgb, var(--cyan) 10%, var(--surface));
+}
+
+.section-heading {
+  max-width: 920px;
+  position: relative;
+}
+
+.section-heading::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 4px;
+  width: 4px;
+  height: 94px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--cyan), var(--green), var(--amber));
+}
+
+.section-heading > p:not(.eyebrow),
+.split-heading > p,
+.about-copy p,
+.contact-layout p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.section-heading > p:not(.eyebrow) {
+  margin: 22px 0 0;
+}
+
+.impact,
+.case-studies {

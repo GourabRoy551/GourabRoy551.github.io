@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Blog by Gourab Roy — research notes, learning logs, and personal updates from an Erasmus Mundus IPCVAI student."
+    />
+    <meta name="theme-color" content="#090d0f" />
+    <meta property="og:title" content="Blog | Gourab Roy" />
+    <meta
+      property="og:description"
+      content="Research reflections, learning logs, and life updates from Gourab Roy, Erasmus Mundus IPCVAI student and vision AI researcher."
+    />
+    <meta property="og:type" content="website" />
+    <title>Blog | Gourab Roy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-header-layout.css" />
+    <link rel="stylesheet" href="css/03-hero.css" />
+    <link rel="stylesheet" href="css/04-research-education.css" />
+    <link rel="stylesheet" href="css/05-publications-projects.css" />
+    <link rel="stylesheet" href="css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="css/08-polish-overrides.css" />
+    <script>
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      const savedTheme = requestedTheme || localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "bright") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <script src="js/state.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/neural-canvas.js" defer></script>
+    <script src="js/blog-main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#posts">Skip to posts</a>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header" data-reveal>
+      <div class="header-shell">
+        <a class="brand" href="index.html" aria-label="Gourab Roy portfolio">
+          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-copy">
+            <span class="brand-text">Gourab Roy</span>
+            <span class="brand-role">AI engineer and master's student</span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to bright theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-orb" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-copy">
+            <span class="theme-toggle-label" data-theme-label>Dark</span>
+            <span class="theme-toggle-action" data-theme-action>Switch to bright</span>
+          </span>
+        </button>
+      </div>
+
+      <nav class="nav-links" aria-label="Blog navigation">
+        <a href="index.html">&larr; Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#posts">Posts</a>
+      </nav>
+    </header>
+
+    <main id="blog-home">
+      <!-- Blog intro -->
+      <section class="section-band writing-section" id="about">
+        <div class="section-inner writing-layout">
+          <div class="section-heading writing-heading" data-reveal>
+            <p class="eyebrow">Blog</p>
+            <h2>Notes on research, learning, and life.</h2>
+            <p>
+              Longer-form reflections on what I am reading, building, and figuring out — research
+              notes, learning logs, and updates about life as an Erasmus Mundus student.
+            </p>
+          </div>
+
+          <aside class="blog-intro writing-about" data-reveal aria-label="About this blog">
+            <span class="item-index">About</span>
+            <h3>Why I write here.</h3>
+            <p>
+              This is a space for things that do not fit neatly on a CV: how I think about problems,
+              what I am currently learning, what surprised me in a paper, and what it is like to
+              study and do research across multiple countries and programs. I write mainly for
+              myself but publish it in case it is useful to someone else.
+            </p>
+            <p>
+              Posts span research (vision AI, XAI, biomedical imaging), tooling and workflow,
+              and personal updates from the Erasmus Mundus IPCVAI program.
+            </p>
+            <div class="writing-status" aria-label="Current status">
+              <span>Madrid</span>
+              <span>IPCVAI</span>
+              <span>Open to research roles</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Posts -->
+      <section class="section-band writing-section" id="posts">
+        <div class="section-inner writing-layout">
+          <div class="section-heading writing-heading" data-reveal>
+            <p class="eyebrow">Latest posts</p>
+            <h2>Recent writing.</h2>
+          </div>
+
+          <div class="writing-posts" data-reveal aria-label="Blog posts">
+            <article class="writing-card">
+              <div class="writing-card-meta">
+                <span>Research note</span>
+                <time datetime="2026-05-27">May 2026</time>
+              </div>
+              <h3>What I look for in a trustworthy vision model</h3>
+              <p>
+                Accuracy matters, but I am more interested in models that can be inspected:
+                clear failure cases, meaningful explanations, and evaluation that reflects the
+                real setting where the model will be used.
+              </p>
+              <div class="tag-row" aria-label="Post tags">
+                <span>XAI</span>
+                <span>Computer Vision</span>
+                <span>Evaluation</span>
+              </div>
+            </article>
+
+            <article class="writing-card">
+              <div class="writing-card-meta">
+                <span>Learning log</span>
+                <time datetime="2026-05-27">May 2026</time>
+              </div>
+              <h3>Moving from experiments to repeatable research workflows</h3>
+              <p>
+                My current goal is to make each project easier to revisit: cleaner dataset notes,
+                stronger baselines, reproducible training scripts, and figures that explain the
+                result without hiding uncertainty.
+              </p>
+              <div class="tag-row" aria-label="Post tags">
+                <span>Research workflow</span>
+                <span>Deep Learning</span>
+                <span>Writing</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p><span data-current-year>2026</span> Gourab Roy - Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <a href="index.html">Back to portfolio</a>
+    </footer>
+  </body>
+</html>
