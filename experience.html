@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student and AI engineer building trustworthy computer vision systems for biomedical imaging, inspection, document AI, and applied deep learning."
+    />
+    <meta
+      name="keywords"
+      content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
+    />
+    <meta name="theme-color" content="#090d0f" />
+    <meta property="og:title" content="Gourab Roy | Vision AI Researcher and Engineer" />
+    <meta
+      property="og:description"
+      content="Erasmus Mundus IPCVAI master's student building reliable and interpretable vision AI for biomedical imaging and real-world applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Photo.png" />
+    <title>Experience | Gourab Roy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-header-layout.css" />
+    <link rel="stylesheet" href="css/03-hero.css" />
+    <link rel="stylesheet" href="css/04-research-education.css" />
+    <link rel="stylesheet" href="css/05-publications-projects.css" />
+    <link rel="stylesheet" href="css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="css/08-polish-overrides.css" />
+    <script>
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      const savedTheme = requestedTheme || localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "bright") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <script src="js/publications-data.js" defer></script>
+    <script src="js/state.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/publications.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/neural-canvas.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#experience">Skip to content</a>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header" data-reveal>
+      <div class="header-shell">
+        <a class="brand" href="index.html" aria-label="Gourab Roy home">
+          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-copy">
+            <span class="brand-text">Gourab Roy</span>
+            <span class="brand-role">AI engineer and master's student</span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to bright theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-orb" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-copy">
+            <span class="theme-toggle-label" data-theme-label>Dark</span>
+            <span class="theme-toggle-action" data-theme-action>Switch to bright</span>
+          </span>
+        </button>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="research.html">Research</a>
+        <a href="education.html">Education</a>
+        <a href="publications.html">Publications</a>
+        <a href="experience.html" class="is-active">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="experience-page">
+      <!-- Experience -->
+            <section class="section-band case-studies experience-section" id="experience">
+              <div class="section-inner experience-layout">
+                <div class="section-heading experience-heading" data-reveal>
+                  <p class="eyebrow">Experience</p>
+                  <h2>Teaching, mentoring, and research work that shaped how I build AI systems.</h2>
+                  <p>
+                    Before starting IPCVAI, I worked closely with undergraduate students and departmental
+                    research projects. That mix of teaching and lab work made my research style more
+                    practical: explain the idea clearly, build the model carefully, and help others
+                    understand what the result means.
+                  </p>
+                </div>
+      
+                <aside class="experience-summary" data-reveal aria-label="Experience summary">
+                  <span class="item-index">Academic bridge</span>
+                  <h3>From classroom support to supervised AI research.</h3>
+                  <p>
+                    My experience connects course instruction, thesis mentoring, applied ML projects, and
+                    research writing. It is one reason I am comfortable moving between technical detail
+                    and plain-language explanation.
+                  </p>
+                </aside>
+      
+                <div class="case-grid experience-grid">
+                  <article class="case-item" data-reveal>
+                    <span class="case-domain">Nov 2023-Present</span>
+                    <h3>Research Assistant</h3>
+                    <p>
+                      At Sylhet Engineering College, I supported research projects in the Department of
+                      Computer Science and Engineering under Md. Abu Naser Mojumder, Head of the CSE
+                      Department.
+                    </p>
+                    <dl>
+                      <div>
+                        <dt>Role</dt>
+                        <dd>Applied ML research support</dd>
+                      </div>
+                      <div>
+                        <dt>Work</dt>
+                        <dd>Model development, experiments, and paper preparation</dd>
+                      </div>
+                      <div>
+                        <dt>Mentor</dt>
+                        <dd>Guided students and final-year thesis projects</dd>
+                      </div>
+                    </dl>
+                  </article>
+                  <article class="case-item" data-reveal>
+                    <span class="case-domain">Jan 2024-Present</span>
+                    <h3>Adjunct Lecturer</h3>
+                    <p>
+                      I taught undergraduate CSE courses, prepared assessments, supported students in
+                      consultation hours, and stayed involved with research and thesis supervision.
+                    </p>
+                    <dl>
+                      <div>
+                        <dt>Teaching</dt>
+                        <dd>Undergraduate computer science courses</dd>
+                      </div>
+                      <div>
+                        <dt>Support</dt>
+                        <dd>Assessment, consultation, and academic guidance</dd>
+                      </div>
+                      <div>
+                        <dt>Research</dt>
+                        <dd>Final-year thesis supervision and project feedback</dd>
+                      </div>
+                    </dl>
+                  </article>
+                  <article class="case-item" data-reveal>
+                    <span class="case-domain">Courses</span>
+                    <h3>Course Areas</h3>
+                    <p>
+                      My teaching covered both theory and lab-based work, from data science and distributed
+                      computing to architecture, interfacing, and microprocessor topics.
+                    </p>
+                    <dl>
+                      <div>
+                        <dt>Systems</dt>
+                        <dd>Distributed Computing, Computer Architecture</dd>
+                      </div>
+                      <div>
+                        <dt>Data</dt>
+                        <dd>Introduction to Data Science and lab-based work</dd>
+                      </div>
+                      <div>
+                        <dt>Hardware</dt>
+                        <dd>Peripheral and Interfacing, Microprocessor and MicroController</dd>
+                      </div>
+                    </dl>
+                  </article>
+                </div>
+      
+                <div class="teaching-strip" data-reveal aria-label="Experience strengths">
+                  <article>
+                    <span>01</span>
+                    <h3>Mentoring</h3>
+                    <p>Supported thesis students with research direction, experiments, and presentation of results.</p>
+                  </article>
+                  <article>
+                    <span>02</span>
+                    <h3>Communication</h3>
+                    <p>Turned complex computing topics into teachable steps for undergraduate learners.</p>
+                  </article>
+                  <article>
+                    <span>03</span>
+                    <h3>Research practice</h3>
+                    <p>Worked across model design, literature review, evaluation, and academic writing.</p>
+                  </article>
+                </div>
+              </div>
+            </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p><span data-current-year>2026</span> Gourab Roy - Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>

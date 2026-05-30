@@ -163,7 +163,7 @@ class NeuralCanvas {
     ctx.lineTo(sweep - 240, height);
     ctx.stroke();
 
-    // Secondary sweep line — slower, opposite diagonal
+    // Secondary sweep line - slower, opposite diagonal
     const sweep2 = width - ((this.time * 0.46 + width * 0.6) % (width + 400)) + 200;
     const sweepGradient2 = ctx.createLinearGradient(sweep2 - 60, 0, sweep2 + 60, height);
     sweepGradient2.addColorStop(0, "transparent");

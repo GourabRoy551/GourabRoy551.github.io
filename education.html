@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student and AI engineer building trustworthy computer vision systems for biomedical imaging, inspection, document AI, and applied deep learning."
+    />
+    <meta
+      name="keywords"
+      content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
+    />
+    <meta name="theme-color" content="#090d0f" />
+    <meta property="og:title" content="Gourab Roy | Vision AI Researcher and Engineer" />
+    <meta
+      property="og:description"
+      content="Erasmus Mundus IPCVAI master's student building reliable and interpretable vision AI for biomedical imaging and real-world applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Photo.png" />
+    <title>Education | Gourab Roy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-header-layout.css" />
+    <link rel="stylesheet" href="css/03-hero.css" />
+    <link rel="stylesheet" href="css/04-research-education.css" />
+    <link rel="stylesheet" href="css/05-publications-projects.css" />
+    <link rel="stylesheet" href="css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="css/08-polish-overrides.css" />
+    <script>
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      const savedTheme = requestedTheme || localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "bright") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <script src="js/publications-data.js" defer></script>
+    <script src="js/state.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/publications.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/neural-canvas.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#education">Skip to content</a>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header" data-reveal>
+      <div class="header-shell">
+        <a class="brand" href="index.html" aria-label="Gourab Roy home">
+          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-copy">
+            <span class="brand-text">Gourab Roy</span>
+            <span class="brand-role">AI engineer and master's student</span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to bright theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-orb" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-copy">
+            <span class="theme-toggle-label" data-theme-label>Dark</span>
+            <span class="theme-toggle-action" data-theme-action>Switch to bright</span>
+          </span>
+        </button>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="research.html">Research</a>
+        <a href="education.html" class="is-active">Education</a>
+        <a href="publications.html">Publications</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="education-page">
+      <!-- Education -->
+            <section class="section-band education-section" id="education">
+              <div class="section-inner education-layout">
+                <div class="section-heading education-heading" data-reveal>
+                  <p class="eyebrow">Education</p>
+                  <h2>IPCVAI master's mobility across Budapest, Madrid, and Bordeaux.</h2>
+                  <p>
+                    My Erasmus Mundus training moves through image processing, deep learning,
+                    multimodal vision, explainable AI, and medical imaging. Each semester is built
+                    around a 30 ECTS workload, with research development running alongside coursework.
+                  </p>
+                </div>
+      
+                <div class="uni-logo-strip" data-reveal aria-label="Partner universities">
+                  <span class="uni-logo-card">
+                    <span class="uni-logo-wrap">
+                      <img
+                        src="https://www.uam.es/uam/media/img/1606893064532/marcauam-ahorizontalcolor-imp.svg"
+                        alt="Universidad Aut-noma de Madrid logo"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                    <span>UAM Madrid</span>
+                  </span>
+                  <span class="uni-logo-card">
+                    <span class="uni-logo-wrap">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Logo_univpazmany.svg"
+                        alt="P-zm-ny P-ter Catholic University logo"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                    <span>PPKE Budapest</span>
+                  </span>
+                  <span class="uni-logo-card">
+                    <span class="uni-logo-wrap">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Universit%C3%A4t_Bordeaux_Logo.svg"
+                        alt="University of Bordeaux logo"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                    <span>UBx Bordeaux</span>
+                  </span>
+                </div>
+      
+                <div class="education-overview" data-reveal>
+                  <div>
+                    <span class="item-index">Erasmus Mundus IPCVAI</span>
+                    <h3>Artificial Intelligence for Image Processing and Computer Vision.</h3>
+                    <p>
+                      I completed the first semester at PPKE Budapest and am currently in the
+                      second semester at Universidad Aut-noma de Madrid, focusing on high performance
+                      deep learning, visual signal processing, moving-camera vision, and research
+                      development.
+                    </p>
+                  </div>
+                  <dl class="education-facts" aria-label="Education facts">
+                    <div>
+                      <dt>Period</dt>
+                      <dd>2025-2027</dd>
+                    </div>
+                    <div>
+                      <dt>Current</dt>
+                      <dd>UAM Madrid, second semester</dd>
+                    </div>
+                    <div>
+                      <dt>Completed</dt>
+                      <dd>PPKE Budapest, first semester</dd>
+                    </div>
+                    <div>
+                      <dt>Credit rhythm</dt>
+                      <dd>30 ECTS per semester, 60 ECTS per academic year</dd>
+                    </div>
+                  </dl>
+                </div>
+      
+                <div class="education-path" aria-label="Education path">
+                  <article class="education-path-item is-current" data-reveal>
+                    <div class="education-date">Feb 2026 - Present</div>
+                    <div class="education-path-body">
+                      <span class="item-index">Second semester / current</span>
+                      <h3>Universidad Aut-noma de Madrid</h3>
+                      <p>
+                        Erasmus Mundus Joint Master's Degree in Artificial Intelligence for IPCV,
+                        with current coursework in deep learning systems, visual signal processing,
+                        computer vision, moving-camera geometry, and guided research.
+                      </p>
+                      <ul class="education-course-list" aria-label="UAM coursework">
+                        <li>High Performance Computing for Deep Learning</li>
+                        <li>Deep Learning for Visual Signal Processing I</li>
+                        <li>Deep Learning for Computer Vision II</li>
+                        <li>Vision for Multiple or Moving Cameras</li>
+                        <li>Tutored Research and Development (TRDP 1)</li>
+                        <li>Spanish Language</li>
+                        <li>Introduction to Research</li>
+                      </ul>
+                      <div class="education-detail-grid" aria-label="Master's details">
+                        <span>Current semester</span>
+                        <span>UAM Madrid</span>
+                        <span>30 ECTS target</span>
+                      </div>
+                    </div>
+                  </article>
+      
+                  <article class="education-path-item is-complete" data-reveal>
+                    <div class="education-date">Sep 2025 - Jan 2026</div>
+                    <div class="education-path-body">
+                      <span class="item-index">First semester / completed</span>
+                      <h3>P-zm-ny P-ter Catholic University, Budapest</h3>
+                      <p>
+                        Completed the opening IPCVAI semester at the Faculty of Information
+                        Technology and Bionics, building the foundation for image processing,
+                        machine learning, deep learning, sensor fusion, biomedical signals, and
+                        research development.
+                      </p>
+                      <ul class="education-course-list" aria-label="PPKE coursework">
+                        <li>Basic Image Processing Algorithms</li>
+                        <li>Data Mining and Machine Learning</li>
+                        <li>Fundamentals and Basic Tools for Deep Learning</li>
+                        <li>Introduction to Tutored Research and Development (TRDP 0)</li>
+                        <li>Multimodal Sensor Fusion and Navigation</li>
+                        <li>Biomedical Signal Processing</li>
+                        <li>Design Patterns</li>
+                      </ul>
+                      <div class="education-detail-grid" aria-label="PPKE details">
+                        <span>Completed</span>
+                        <span>PPKE Budapest</span>
+                        <span>30 / 30 ECTS</span>
+                      </div>
+                    </div>
+                  </article>
+      
+                  <article class="education-path-item is-planned" data-reveal>
+                    <div class="education-date">Third semester</div>
+                    <div class="education-path-body">
+                      <span class="item-index">Planned mobility</span>
+                      <h3>UBx Bordeaux</h3>
+                      <p>
+                        The Bordeaux semester extends the track into explainable image AI,
+                        sustainable AI practice, advanced computer vision, and medical imaging.
+                      </p>
+                      <ul class="education-course-list" aria-label="Bordeaux planned coursework">
+                        <li>Explainable Artificial Intelligence for Images (XAII)</li>
+                        <li>AI and Sustainability</li>
+                        <li>Advanced Topics in Computer Vision</li>
+                        <li>Acquisition, Reconstruction and Medical Imaging</li>
+                      </ul>
+                      <div class="education-detail-grid" aria-label="Bordeaux details">
+                        <span>Upcoming</span>
+                        <span>UBx Bordeaux</span>
+                        <span>30 ECTS semester</span>
+                      </div>
+                    </div>
+                  </article>
+      
+                  <article class="education-path-item is-planned" data-reveal>
+                    <div class="education-date">Fourth semester</div>
+                    <div class="education-path-body">
+                      <span class="item-index">Thesis stage</span>
+                      <h3>Final IPCVAI research semester</h3>
+                      <p>
+                        Course items are not published yet for this semester. The final stage remains
+                        reserved for the program's research and validation requirements.
+                      </p>
+                      <div class="education-detail-grid" aria-label="Fourth semester details">
+                        <span>To be published</span>
+                        <span>Research semester</span>
+                        <span>30 ECTS semester</span>
+                      </div>
+                    </div>
+                  </article>
+      
+                  <article class="education-path-item" data-reveal>
+                    <div class="education-date">2018 - 2023</div>
+                    <div class="education-path-body">
+                      <span class="item-index">Bachelor's foundation</span>
+                      <h3>Computer Science and Engineering</h3>
+                      <p>
+                        Undergraduate training at Sylhet Engineering College with foundations in
+                        programming, algorithms, systems, data science, machine learning, and software
+                        development.
+                      </p>
+                      <div class="education-detail-grid" aria-label="Bachelor's details">
+                        <span>CGPA 3.56 / 4.00</span>
+                        <span>CSE foundation</span>
+                        <span>CerebralNet thesis</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+      
+                <div class="education-strengths" data-reveal aria-label="Education strengths">
+                  <article>
+                    <span>01</span>
+                    <h3>European mobility</h3>
+                    <p>IPCVAI study path across PPKE Budapest, UAM Madrid, and UBx Bordeaux.</p>
+                  </article>
+                  <article>
+                    <span>02</span>
+                    <h3>Deep learning systems</h3>
+                    <p>Current UAM semester covers HPC for deep learning and visual signal processing.</p>
+                  </article>
+                  <article>
+                    <span>03</span>
+                    <h3>XAI and medical imaging</h3>
+                    <p>Bordeaux coursework adds explainable image AI, sustainability, and medical imaging.</p>
+                  </article>
+                  <article>
+                    <span>04</span>
+                    <h3>CS foundation</h3>
+                    <p>B.Sc. training supports the graduate work with algorithms, systems, and ML basics.</p>
+                  </article>
+                </div>
+              </div>
+            </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p><span data-current-year>2026</span> Gourab Roy - Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>

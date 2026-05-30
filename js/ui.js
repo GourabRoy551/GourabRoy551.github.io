@@ -64,7 +64,19 @@ function animateCounters() {
 
 function setupActiveNavigation() {
   const links = Array.from(document.querySelectorAll(".nav-links a"));
-  const sections = links
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  links.forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    if (!href || href.startsWith("#")) return;
+
+    const linkUrl = new URL(href, window.location.href);
+    const linkPage = linkUrl.pathname.split("/").pop() || "index.html";
+    link.classList.toggle("is-active", linkPage === currentPage);
+  });
+
+  const sectionLinks = links.filter((link) => (link.getAttribute("href") || "").startsWith("#"));
+  const sections = sectionLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
 
@@ -75,7 +87,7 @@ function setupActiveNavigation() {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
 
-        links.forEach((link) => {
+        sectionLinks.forEach((link) => {
           const isActive = link.getAttribute("href") === `#${entry.target.id}`;
           link.classList.toggle("is-active", isActive);
         });
