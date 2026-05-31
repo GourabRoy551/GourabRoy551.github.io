@@ -20,6 +20,7 @@ The site is built as a multi-page HTML/CSS/JavaScript portfolio with no build st
 - [Accessibility](#accessibility)
 - [Performance Notes](#performance-notes)
 - [Deployment](#deployment)
+- [License](#license)
 - [Maintenance Checklist](#maintenance-checklist)
 - [Troubleshooting](#troubleshooting)
 - [Contact Links](#contact-links)
@@ -678,6 +679,12 @@ Upload the full folder contents to the server root:
 - `favicon.svg`
 - CV PDF.
 
+## License
+
+This portfolio is a personal website for Gourab Roy. Unless a separate `LICENSE` file states otherwise, all source code, written content, images, CV files, branding, and other assets in this repository are copyright © Gourab Roy. All rights reserved.
+
+You may view the site and use the repository structure as a learning reference, but you may not reuse, republish, or present the personal content, portrait, CV, research summaries, or profile materials as your own. For reuse, adaptation, or collaboration requests, contact Gourab Roy directly.
+
 ## Maintenance Checklist
 
 Before publishing a new version:
@@ -764,4 +771,3 @@ Useful next improvements:
 - Add `sitemap.xml` and `robots.txt`.
 - Consolidate the repeated header into a template if the project later adopts a static site generator.
 - Consider local copies of external icons for fully offline rendering.
-
