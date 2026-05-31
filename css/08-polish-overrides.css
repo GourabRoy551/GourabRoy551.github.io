@@ -772,6 +772,26 @@ html[data-theme="bright"] .theme-toggle {
     grid-template-columns: 1fr;
   }
 
+  .skills-heading h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 8.4vw, 2.65rem);
+    line-height: 1.06;
+  }
+
+  .skills-focus-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skills-focus-row span {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .skill-stack-panel .tool-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .publication-visual,
   .project-visual {
     margin-inline: 0;
@@ -855,6 +875,24 @@ html[data-theme="bright"] .theme-toggle {
     justify-self: end;
     padding: 5px;
     overflow: hidden;
+  }
+
+  .skills-focus-row,
+  .skill-proof-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-stack-panel .tool-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skill-lane-card {
+    min-height: auto;
+  }
+
+  .skill-lane-card h3,
+  .skill-lane-card p {
+    max-width: 100%;
   }
 
   .button {

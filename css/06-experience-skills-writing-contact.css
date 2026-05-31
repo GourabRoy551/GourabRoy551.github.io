@@ -109,7 +109,7 @@
   grid-template-areas:
     "heading stack"
     "main stack";
-  gap: 28px;
+  gap: 24px 28px;
   align-items: start;
 }
 
@@ -118,29 +118,75 @@
   max-width: 860px;
 }
 
+.skills-heading h2 {
+  max-width: 15.5ch;
+  font-size: clamp(2.7rem, 5vw, 4.35rem);
+  line-height: 1.02;
+}
+
+.skills-heading > p:not(.eyebrow) {
+  max-width: 760px;
+}
+
+.skills-focus-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.skills-focus-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 11px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 24%, var(--line));
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--muted) 82%, var(--ink));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cyan) 10%, transparent), transparent 70%),
+    color-mix(in srgb, var(--surface-solid) 28%, transparent);
+  font-size: 0.75rem;
+  font-weight: 840;
+}
+
 .skill-stack-panel {
   grid-area: stack;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   display: grid;
   align-content: start;
-  gap: 20px;
+  gap: 18px;
   padding: 26px;
   background:
     linear-gradient(145deg, color-mix(in srgb, var(--cyan) 10%, transparent), transparent 48%),
     var(--surface);
 }
 
+.skill-stack-panel::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 16%, transparent);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
 .skill-stack-panel::after {
   content: "";
   position: absolute;
-  right: 16px;
-  bottom: 16px;
-  width: 118px;
-  height: 118px;
+  right: -46px;
+  top: -44px;
+  width: 180px;
+  height: 180px;
   border: 1px solid color-mix(in srgb, var(--cyan) 28%, transparent);
   border-radius: 999px;
-  opacity: 0.24;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--cyan) 14%, transparent) 0 2px, transparent 3px 100%),
+    radial-gradient(circle, transparent 58%, color-mix(in srgb, var(--green) 12%, transparent) 59% 60%, transparent 61%);
+  background-size: 18px 18px, 100% 100%;
+  opacity: 0.55;
   pointer-events: none;
 }
 
@@ -174,6 +220,7 @@
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--cyan) 10%, transparent), transparent 70%),
     color-mix(in srgb, var(--surface-solid) 42%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 8%, transparent);
 }
 
 .skill-proof-strip strong,
@@ -211,6 +258,16 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   background: color-mix(in srgb, var(--surface-solid) 34%, transparent);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.skill-signal-list div:hover {
+  border-color: color-mix(in srgb, var(--green) 38%, var(--line));
+  background: color-mix(in srgb, var(--surface-solid) 52%, transparent);
+  transform: translateY(-1px);
 }
 
 .skill-signal-list span {
@@ -246,28 +303,41 @@
 
 .skill-stack-panel .tool-logo-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .tool-logo-card {
   min-width: 0;
-  display: flex;
+  display: grid;
+  justify-items: center;
   align-items: center;
-  gap: 9px;
-  padding: 9px;
+  gap: 7px;
+  min-height: 82px;
+  padding: 10px 7px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: color-mix(in srgb, var(--surface-solid) 36%, transparent);
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: 0.69rem;
   font-weight: 830;
+  text-align: center;
+  line-height: 1.15;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.tool-logo-card:hover {
+  border-color: color-mix(in srgb, var(--cyan) 42%, var(--line));
+  background: color-mix(in srgb, var(--surface-solid) 56%, transparent);
+  transform: translateY(-2px);
 }
 
 .tool-logo {
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
+  width: 36px;
+  height: 36px;
   display: block;
   object-fit: contain;
   padding: 5px;
@@ -282,7 +352,7 @@
 .skills-main {
   grid-area: main;
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
 .skill-category-grid,
@@ -303,13 +373,39 @@
 .skill-lane-card {
   position: relative;
   overflow: hidden;
-  min-height: 250px;
+  min-height: 286px;
   display: flex;
   flex-direction: column;
   padding: 24px;
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--surface-solid) 16%, transparent), transparent),
     var(--surface);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.skill-lane-card.is-vision {
+  --skill-accent: var(--cyan);
+}
+
+.skill-lane-card.is-modeling {
+  --skill-accent: var(--amber);
+}
+
+.skill-lane-card.is-data {
+  --skill-accent: var(--green);
+}
+
+.skill-lane-card.is-software {
+  --skill-accent: var(--coral);
+}
+
+.skill-lane-card:hover {
+  border-color: color-mix(in srgb, var(--skill-accent, var(--cyan)) 44%, var(--line));
+  box-shadow: 0 22px 52px color-mix(in srgb, var(--skill-accent, var(--cyan)) 13%, transparent);
+  transform: translateY(-3px);
 }
 
 .skill-lane-card::before {
@@ -317,8 +413,21 @@
   position: absolute;
   inset: 0 0 auto;
   height: 3px;
-  background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber));
-  opacity: 0.78;
+  background: linear-gradient(90deg, var(--skill-accent, var(--cyan)), color-mix(in srgb, var(--skill-accent, var(--cyan)) 26%, transparent));
+  opacity: 0.95;
+}
+
+.skill-lane-card::after {
+  content: "";
+  position: absolute;
+  right: -46px;
+  bottom: -52px;
+  width: 148px;
+  height: 148px;
+  border: 1px solid color-mix(in srgb, var(--skill-accent, var(--cyan)) 20%, transparent);
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--skill-accent, var(--cyan)) 10%, transparent), transparent 64%);
+  pointer-events: none;
 }
 
 .skill-lane-card > * {
@@ -334,12 +443,14 @@
 }
 
 .skill-lane-card h3 {
-  margin-top: 26px;
-  font-size: clamp(1.22rem, 1.7vw, 1.48rem);
+  max-width: 14ch;
+  margin-top: 24px;
+  font-size: clamp(1.18rem, 1.55vw, 1.42rem);
   line-height: 1.18;
 }
 
 .skill-lane-card p {
+  max-width: 34ch;
   margin-top: 12px;
 }
 
@@ -351,9 +462,9 @@
 }
 
 .skill-card-logo-row img {
-  width: 31px;
-  height: 31px;
-  flex: 0 0 31px;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
   object-fit: contain;
   padding: 5px;
   border: 1px solid var(--line);
@@ -363,7 +474,7 @@
 }
 
 .skill-signal-meter {
-  width: min(140px, 38%);
+  width: min(136px, 36%);
   height: 9px;
   display: block;
   overflow: hidden;
@@ -377,7 +488,7 @@
   height: 100%;
   display: block;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber));
+  background: linear-gradient(90deg, var(--skill-accent, var(--cyan)), var(--green), var(--amber));
 }
 
 .skill-chip-list {
@@ -399,13 +510,14 @@
   background: color-mix(in srgb, var(--surface-solid) 42%, transparent);
   font-size: 0.74rem;
   font-weight: 780;
+  line-height: 1.2;
 }
 
 .achievement-panel {
   display: grid;
   grid-template-columns: minmax(220px, 0.32fr) minmax(0, 1fr);
   gap: 18px;
-  padding: 18px;
+  padding: 20px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
@@ -431,11 +543,22 @@
 }
 
 .achievement-card {
+  position: relative;
+  overflow: hidden;
   min-height: 190px;
   padding: 18px;
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 12%, transparent), transparent),
     var(--surface);
+}
+
+.achievement-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--amber), var(--green), var(--cyan));
+  opacity: 0.58;
 }
 
 .achievement-card > span {
@@ -449,6 +572,19 @@
   background: color-mix(in srgb, var(--amber) 10%, transparent);
   font-size: 0.72rem;
   font-weight: 900;
+}
+
+.achievement-logo {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface-solid) 68%, transparent);
 }
 
 .achievement-card h3 {
