@@ -557,6 +557,17 @@ html[data-theme="bright"] .theme-toggle {
       "stack"
       "main";
   }
+
+  .blog-theme-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #posts .writing-layout {
+    grid-template-areas:
+      "heading"
+      "queue"
+      "posts";
+  }
 }
 
 @media (max-width: 1180px) {
@@ -637,8 +648,14 @@ html[data-theme="bright"] .theme-toggle {
   }
 
   .skill-category-grid,
-  .achievement-panel {
+  .achievement-panel,
+  .blog-current-grid,
+  .blog-theme-grid {
     grid-template-columns: 1fr;
+  }
+
+  .writing-card.is-featured-post {
+    grid-column: auto;
   }
 }
 

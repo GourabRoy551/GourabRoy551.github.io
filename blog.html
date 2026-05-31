@@ -112,6 +112,24 @@
               Longer-form reflections on what I am reading, building, and figuring out - research
               notes, learning logs, and updates about life as an Erasmus Mundus student.
             </p>
+            <div class="blog-current-grid" aria-label="Current blog notes">
+              <article>
+                <span>Reading</span>
+                <strong>Vision transformers, CLIP, and medical AI evaluation</strong>
+              </article>
+              <article>
+                <span>Building</span>
+                <strong>Cleaner experiment notes for computer vision projects</strong>
+              </article>
+              <article>
+                <span>Learning</span>
+                <strong>How to connect coursework with research-ready workflows</strong>
+              </article>
+              <article>
+                <span>Writing</span>
+                <strong>Short notes on interpretability, datasets, and graduate study</strong>
+              </article>
+            </div>
           </div>
 
           <aside class="blog-intro writing-about" data-reveal aria-label="About this blog">
@@ -127,6 +145,20 @@
               Posts span research (vision AI, XAI, biomedical imaging), tooling and workflow,
               and personal updates from the Erasmus Mundus IPCVAI program.
             </p>
+            <div class="blog-note-list" aria-label="Blog focus areas">
+              <div>
+                <strong>Research notes</strong>
+                <span>Short, readable reflections on papers, models, datasets, and evaluation.</span>
+              </div>
+              <div>
+                <strong>Learning logs</strong>
+                <span>What I am practicing while moving through computer vision and biomedical AI coursework.</span>
+              </div>
+              <div>
+                <strong>Student life</strong>
+                <span>Small updates from the IPCVAI journey across universities, labs, and cities.</span>
+              </div>
+            </div>
             <div class="writing-status" aria-label="Current status">
               <span>Madrid</span>
               <span>IPCVAI</span>
@@ -142,10 +174,25 @@
           <div class="section-heading writing-heading" data-reveal>
             <p class="eyebrow">Latest posts</p>
             <h2>Recent writing.</h2>
+            <p>
+              A growing notebook of ideas I want to return to: model reliability, biomedical vision,
+              explainable AI, low-resource data, and the habits that make research easier to reproduce.
+            </p>
           </div>
 
+          <aside class="writing-about blog-queue" data-reveal aria-label="Writing queue">
+            <span class="item-index">Writing queue</span>
+            <h3>What I am collecting notes on now.</h3>
+            <ul>
+              <li>How to evaluate medical image models beyond a single accuracy number.</li>
+              <li>Where CLIP-style explanations help, and where they can become misleading.</li>
+              <li>How to turn messy experiment notebooks into repeatable research artifacts.</li>
+              <li>What low-resource OCR projects teach about data quality and annotation.</li>
+            </ul>
+          </aside>
+
           <div class="writing-posts" data-reveal aria-label="Blog posts">
-            <article class="writing-card">
+            <article class="writing-card is-featured-post">
               <div class="writing-card-meta">
                 <span>Research note</span>
                 <time datetime="2026-05-27">May 2026</time>
@@ -179,6 +226,115 @@
                 <span>Deep Learning</span>
                 <span>Writing</span>
               </div>
+            </article>
+
+            <article class="writing-card">
+              <div class="writing-card-meta">
+                <span>Biomedical AI</span>
+                <time datetime="2026-05-31">May 2026</time>
+              </div>
+              <h3>Small-data medical imaging still needs careful assumptions</h3>
+              <p>
+                CT and MRI projects often begin with limited labels, domain shift, and noisy metadata.
+                I want to write more about what I learned from few-shot thinking, similarity learning,
+                and evaluation choices in medical image analysis.
+              </p>
+              <div class="tag-row" aria-label="Post tags">
+                <span>CT/MRI</span>
+                <span>Few-shot learning</span>
+                <span>Medical AI</span>
+              </div>
+            </article>
+
+            <article class="writing-card">
+              <div class="writing-card-meta">
+                <span>Interpretability</span>
+                <time datetime="2026-05-31">May 2026</time>
+              </div>
+              <h3>Questions I ask before trusting a vision-language explanation</h3>
+              <p>
+                Explanations can be persuasive even when they are fragile. My notes here will focus on
+                sanity checks, counterexamples, prompt sensitivity, and how to make CLIP-style analysis
+                useful without overclaiming.
+              </p>
+              <div class="tag-row" aria-label="Post tags">
+                <span>CLIP</span>
+                <span>VLMs</span>
+                <span>Interpretability</span>
+              </div>
+            </article>
+
+            <article class="writing-card">
+              <div class="writing-card-meta">
+                <span>Dataset note</span>
+                <time datetime="2026-05-31">May 2026</time>
+              </div>
+              <h3>Why low-resource OCR is more than a classification problem</h3>
+              <p>
+                Ancient and underrepresented scripts make the data pipeline visible: scanning quality,
+                segmentation, character ambiguity, annotation consistency, and the cultural reason the
+                work matters in the first place.
+              </p>
+              <div class="tag-row" aria-label="Post tags">
+                <span>OCR</span>
+                <span>Syloti Nagri</span>
+                <span>Low-resource AI</span>
+              </div>
+            </article>
+
+            <article class="writing-card">
+              <div class="writing-card-meta">
+                <span>Erasmus note</span>
+                <time datetime="2026-05-31">May 2026</time>
+              </div>
+              <h3>Learning computer vision while moving between academic cultures</h3>
+              <p>
+                The Erasmus Mundus path is not only coursework. It is also learning how different
+                universities frame research, how classmates approach problems, and how to stay steady
+                while moving across countries.
+              </p>
+              <div class="tag-row" aria-label="Post tags">
+                <span>IPCVAI</span>
+                <span>Madrid</span>
+                <span>Graduate life</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Themes -->
+      <section class="section-band writing-section blog-themes-section" id="themes">
+        <div class="section-inner blog-themes-layout">
+          <div class="section-heading writing-heading" data-reveal>
+            <p class="eyebrow">Themes</p>
+            <h2>Topics I return to often.</h2>
+            <p>
+              The blog is meant to connect technical work with the reasoning behind it: why a model
+              choice matters, what makes a dataset difficult, and how research habits shape the final result.
+            </p>
+          </div>
+
+          <div class="blog-theme-grid" data-reveal aria-label="Blog themes">
+            <article>
+              <span>01</span>
+              <h3>Reliable vision AI</h3>
+              <p>Evaluation, failure cases, uncertainty, and model behavior in real-world settings.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Biomedical imaging</h3>
+              <p>CT/MRI segmentation, classification, small datasets, and clinically meaningful validation.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Explainability</h3>
+              <p>Interpretable vision models, CLIP-style analysis, and how explanations should be checked.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Research craft</h3>
+              <p>Reproducible experiments, paper reading, figure design, and notes from graduate study.</p>
             </article>
           </div>
         </div>
