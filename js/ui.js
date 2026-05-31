@@ -115,6 +115,87 @@ function setupScrollProgress() {
   window.addEventListener("resize", updateProgress);
 }
 
+function setupPageTransitions() {
+  if (prefersReducedMotion) return;
+
+  const transition = document.createElement("div");
+  transition.className = "page-transition";
+  transition.setAttribute("aria-hidden", "true");
+  transition.innerHTML = `
+    <div class="page-transition-content">
+      <span class="page-transition-kicker">Opening</span>
+      <span class="page-transition-title">Gourab Roy</span>
+      <span class="page-transition-line" aria-hidden="true"></span>
+    </div>
+  `;
+  document.body.appendChild(transition);
+
+  const transitionTitle = transition.querySelector(".page-transition-title");
+  let storedTitle = "";
+  try {
+    storedTitle = sessionStorage.getItem("portfolio-transition-title");
+    sessionStorage.removeItem("portfolio-transition-title");
+  } catch (error) {
+    storedTitle = "";
+  }
+
+  if (storedTitle && transitionTitle) {
+    transitionTitle.textContent = storedTitle;
+  }
+
+  document.body.classList.add("is-page-entering");
+  window.setTimeout(() => {
+    document.body.classList.remove("is-page-entering");
+  }, 820);
+
+  window.addEventListener("pageshow", () => {
+    document.body.classList.remove("is-page-entering", "is-page-exiting");
+  });
+
+  let isTransitioning = false;
+
+  document.addEventListener("click", (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const link = target ? target.closest("a") : null;
+    if (!link || isTransitioning) return;
+    if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (link.target && link.target !== "_self") return;
+    if (link.hasAttribute("download")) return;
+
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#")) return;
+
+    const url = new URL(href, window.location.href);
+    if (!["http:", "https:", "file:"].includes(url.protocol)) return;
+    if (url.origin !== window.location.origin) return;
+
+    const currentPath = window.location.pathname.replace(/\/$/, "/index.html");
+    const nextPath = url.pathname.replace(/\/$/, "/index.html");
+    if (currentPath === nextPath) return;
+
+    const isPageLink = nextPath.endsWith(".html") || nextPath.endsWith("/index.html");
+    if (!isPageLink) return;
+
+    event.preventDefault();
+    isTransitioning = true;
+
+    const label = link.dataset.transitionTitle || link.textContent.trim() || "Next page";
+    if (transitionTitle) transitionTitle.textContent = label;
+    try {
+      sessionStorage.setItem("portfolio-transition-title", label);
+    } catch (error) {
+      // Page transitions should still work if storage is blocked.
+    }
+
+    document.body.classList.remove("is-page-entering");
+    document.body.classList.add("is-page-exiting");
+
+    window.setTimeout(() => {
+      window.location.href = url.href;
+    }, 760);
+  });
+}
+
 async function copyTextToClipboard(text) {
   if (navigator.clipboard && window.isSecureContext) {
     await navigator.clipboard.writeText(text);

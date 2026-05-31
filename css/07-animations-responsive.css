@@ -11,6 +11,129 @@
   transform: translateY(0);
 }
 
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-105%);
+  background:
+    radial-gradient(circle at 28% 24%, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 34%),
+    radial-gradient(circle at 72% 72%, color-mix(in srgb, var(--amber) 16%, transparent), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--bg-panel) 92%, var(--bg)), var(--bg));
+}
+
+.page-transition::before,
+.page-transition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.page-transition::before {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--cyan) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--green) 10%, transparent) 1px, transparent 1px);
+  background-size: 74px 74px;
+  opacity: 0.38;
+  transform: rotate(-8deg) scale(1.12);
+}
+
+.page-transition::after {
+  width: 38vw;
+  max-width: 520px;
+  margin-left: auto;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--cyan) 22%, transparent), transparent);
+  opacity: 0.85;
+  transform: skewX(-18deg) translateX(-140%);
+}
+
+.page-transition-content {
+  position: relative;
+  z-index: 1;
+  width: min(460px, calc(100% - 44px));
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 38%, var(--line));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface-solid) 30%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px);
+  text-align: center;
+}
+
+.page-transition-kicker {
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-transition-title {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.15rem, 5vw, 4rem);
+  font-weight: 760;
+  line-height: 0.98;
+}
+
+.page-transition-line {
+  width: min(230px, 64%);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 13%, transparent);
+}
+
+.page-transition-line::before {
+  content: "";
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber));
+  animation: pageTransitionLoader 1100ms cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+body.is-page-entering .page-transition {
+  animation: pageEnterSweep 980ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+body.is-page-exiting .page-transition {
+  animation: pageExitSweep 760ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+body.is-page-entering .page-transition::after,
+body.is-page-exiting .page-transition::after {
+  animation: pageDiagonalSweep 860ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.is-page-entering main,
+body.is-page-entering .site-header,
+body.is-page-entering .site-footer {
+  animation: pageContentIn 980ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.is-page-exiting main,
+body.is-page-exiting .site-header,
+body.is-page-exiting .site-footer {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(14px) scale(0.985);
+  transition:
+    opacity 520ms ease,
+    filter 520ms ease,
+    transform 520ms ease;
+}
+
 .impact-grid [data-reveal]:nth-child(2),
 .capability-grid [data-reveal]:nth-child(2),
 .case-grid [data-reveal]:nth-child(2),
@@ -48,6 +171,75 @@
 
   to {
     background-position: 360px 180px, 0 0;
+  }
+}
+
+@keyframes pageEnterSweep {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  56% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(105%);
+  }
+}
+
+@keyframes pageExitSweep {
+  0% {
+    opacity: 1;
+    transform: translateY(-105%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageDiagonalSweep {
+  from {
+    transform: skewX(-18deg) translateX(-140%);
+  }
+
+  to {
+    transform: skewX(-18deg) translateX(160%);
+  }
+}
+
+@keyframes pageContentIn {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(16px) scale(0.985);
+  }
+
+  58% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(16px) scale(0.985);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pageTransitionLoader {
+  from {
+    transform: translateX(-105%);
+  }
+
+  to {
+    transform: translateX(245%);
   }
 }
 

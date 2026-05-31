@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFooterYear();
   renderPublicationFilters();
   renderPublications();
+  setupPageTransitions();
   observeRevealElements();
   animateCounters();
   setupActiveNavigation();
