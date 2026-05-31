@@ -549,13 +549,30 @@ html[data-theme="bright"] .theme-toggle {
   text-wrap: pretty;
 }
 
+@media (max-width: 1120px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "stack"
+      "main";
+  }
+}
+
 @media (max-width: 1180px) {
   .site-header {
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 8px;
   }
 
+  .brand,
+  .theme-toggle,
+  .nav-links {
+    min-width: 0;
+  }
+
   .brand {
+    max-width: 100%;
     padding-right: 8px;
   }
 
@@ -572,18 +589,56 @@ html[data-theme="bright"] .theme-toggle {
     grid-column: 2;
     justify-self: center;
     justify-content: flex-start;
+    align-content: center;
     width: 100%;
     margin-top: 0;
     padding: 5px;
     gap: 2px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-wrap: wrap;
+    overflow: visible;
   }
 
   .nav-links a {
     padding: 9px 10px;
     font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .brand-copy {
+    display: none;
+  }
+
+  .theme-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 18px;
+  }
+
+  .nav-links a {
+    padding: 8px 10px;
+  }
+
+  .skill-category-grid,
+  .achievement-panel {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -688,9 +743,8 @@ html[data-theme="bright"] .theme-toggle {
   }
 
   .nav-links {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-wrap: wrap;
+    overflow: visible;
   }
 
   .research-card-meta dt,
@@ -729,8 +783,13 @@ html[data-theme="bright"] .theme-toggle {
   .section-inner,
   .hero-content,
   .site-footer {
-    width: calc(100% - 40px);
-    max-width: calc(100% - 40px);
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+  }
+
+  .site-header {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
   }
 
   .hero-content {
@@ -765,15 +824,21 @@ html[data-theme="bright"] .theme-toggle {
   }
 
   .nav-links {
-    flex-wrap: nowrap;
-    gap: 18px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    gap: 5px;
+    padding: 6px;
+    overflow: visible;
   }
 
   .nav-links a {
-    padding-inline: 0;
-    font-size: 0.78rem;
+    flex: 1 1 calc((100% - 10px) / 3);
+    min-width: 0;
+    padding: 7px 4px;
+    text-align: center;
+    font-size: 0.72rem;
   }
 
   .brand {
@@ -783,8 +848,13 @@ html[data-theme="bright"] .theme-toggle {
   }
 
   .theme-toggle {
+    width: 44px;
+    min-width: 44px;
+    max-width: 44px;
     min-height: 48px;
+    justify-self: end;
     padding: 5px;
+    overflow: hidden;
   }
 
   .button {
