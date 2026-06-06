@@ -15,32 +15,30 @@
     />
     <meta property="og:type" content="website" />
     <title>Blog - Gourab Roy</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <meta name="application-name" content="Gourab Roy" />
     <meta name="apple-mobile-web-app-title" content="Gourab Roy" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/01-base.css" />
-    <link rel="stylesheet" href="css/02-header-layout.css" />
-    <link rel="stylesheet" href="css/03-hero.css" />
-    <link rel="stylesheet" href="css/04-research-education.css" />
-    <link rel="stylesheet" href="css/05-publications-projects.css" />
-    <link rel="stylesheet" href="css/06-experience-skills-writing-contact.css" />
-    <link rel="stylesheet" href="css/07-animations-responsive.css" />
-    <link rel="stylesheet" href="css/08-polish-overrides.css" />
+    <link rel="stylesheet" href="../css/01-base.css" />
+    <link rel="stylesheet" href="../css/02-header-layout.css" />
+    <link rel="stylesheet" href="../css/03-hero.css" />
+    <link rel="stylesheet" href="../css/04-research-education.css" />
+    <link rel="stylesheet" href="../css/05-publications-projects.css" />
+    <link rel="stylesheet" href="../css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="../css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="../css/08-polish-overrides.css" />
 
     <style>
       /* ── Blog page overrides ── */
 
-      /* Tighten the gap between intro and posts inside the same section */
       .blog-posts-sep {
         margin-top: 52px;
         padding-top: 44px;
         border-top: 1px solid var(--line);
       }
 
-      /* Description line under the posts subheading */
       .blog-posts-sep > p:not(.eyebrow) {
         margin: 16px 0 0;
         color: var(--muted);
@@ -50,20 +48,18 @@
         line-height: 1.7;
       }
 
-      /* Override writing-posts to 3-col when it sits directly in section-inner */
+      /* 3-col posts grid */
       .writing-posts.blog-posts-3col {
         grid-area: unset;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         margin-top: 20px;
       }
 
-      /* Featured post spans all 3 columns */
       .writing-posts.blog-posts-3col .writing-card.is-featured-post {
         grid-column: 1 / -1;
         min-height: auto;
       }
 
-      /* Let regular cards in this grid size naturally */
       .writing-posts.blog-posts-3col .writing-card:not(.is-featured-post) {
         min-height: 0;
       }
@@ -99,11 +95,11 @@
         document.documentElement.dataset.theme = savedTheme;
       }
     </script>
-    <script src="js/state.js" defer></script>
-    <script src="js/theme.js" defer></script>
-    <script src="js/ui.js" defer></script>
-    <script src="js/neural-canvas.js" defer></script>
-    <script src="js/blog-main.js" defer></script>
+    <script src="../js/state.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/neural-canvas.js" defer></script>
+    <script src="../js/blog-main.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#posts">Skip to posts</a>
@@ -113,7 +109,7 @@
     <!-- Header / Navigation -->
     <header class="site-header" data-reveal>
       <div class="header-shell">
-        <a class="brand" href="index.html" aria-label="Gourab Roy portfolio">
+        <a class="brand" href="../index.html" aria-label="Gourab Roy portfolio">
           <span class="brand-mark" aria-hidden="true">GR</span>
           <span class="brand-copy">
             <span class="brand-text">Gourab Roy</span>
@@ -161,15 +157,15 @@
       </div>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="education.html">Education</a>
-        <a href="publications.html">Publications</a>
-        <a href="experience.html">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="blog.html" class="is-active">Blog</a>
-        <a href="contact.html">Contact</a>
+        <a href="../about.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../education.html">Education</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../experience.html">Experience</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../skills.html">Skills</a>
+        <a href="index.html" class="is-active">Blog</a>
+        <a href="../contact.html">Contact</a>
       </nav>
     </header>
 
@@ -179,12 +175,6 @@
       <section class="section-band writing-section" id="posts">
         <div class="section-inner">
 
-          <!--
-            Intro row: uses proven writing-layout (has min-width:0 in polish overrides).
-            .writing-heading gets grid-area:heading (col1 row1).
-            .writing-about auto-places into col2 row1 (the "queue" cell).
-            Row 2 ("posts") is empty, collapses to 0px.
-          -->
           <div class="writing-layout">
             <div class="section-heading writing-heading" data-reveal>
               <p class="eyebrow">Blog</p>
@@ -247,7 +237,7 @@
             </aside>
           </div>
 
-          <!-- Posts sub-section: sibling to writing-layout, no sidebar -->
+          <!-- Posts sub-section -->
           <div class="section-heading blog-posts-sep" data-reveal>
             <p class="eyebrow">Latest posts</p>
             <h2>Recent writing.</h2>
@@ -257,7 +247,7 @@
             </p>
           </div>
 
-          <!-- 3-column posts grid (featured spans full width) -->
+          <!-- 3-column posts grid -->
           <div class="writing-posts blog-posts-3col" data-reveal aria-label="Blog posts">
 
             <article class="writing-card is-featured-post">
@@ -276,7 +266,7 @@
                 <span>Bordeaux</span>
                 <span>Community</span>
               </div>
-              <a class="project-link" href="blog-ipcv-days-france-2026.html">Read post &rarr;</a>
+              <a class="project-link" href="ipcv-days-france-2026.html">Read post &rarr;</a>
             </article>
 
             <article class="writing-card">
@@ -433,7 +423,7 @@
     <!-- Footer -->
     <footer class="site-footer">
       <p><span data-current-year>2026</span> Gourab Roy &mdash; Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
-      <a href="index.html">Back to portfolio</a>
+      <a href="../index.html">Back to portfolio</a>
     </footer>
   </body>
 </html>
