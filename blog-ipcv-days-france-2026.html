@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gourab Roy writes about attending the first-ever IPCVAI Days 2026 in Bordeaux, France — two days of poster sessions, alumni talks, and a community he did not expect to feel so much a part of."
+    />
+    <meta name="theme-color" content="#090d0f" />
+    <meta property="og:title" content="Two Days in Bordeaux | Gourab Roy Blog" />
+    <meta
+      property="og:description"
+      content="My experience at the first IPCVAI Days 2026 in Bordeaux — poster sessions, alumni stories, and what it felt like to finally meet the people behind the names."
+    />
+    <meta property="og:type" content="article" />
+    <title>Two Days in Bordeaux - Gourab Roy</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="application-name" content="Gourab Roy" />
+    <meta name="apple-mobile-web-app-title" content="Gourab Roy" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-header-layout.css" />
+    <link rel="stylesheet" href="css/03-hero.css" />
+    <link rel="stylesheet" href="css/04-research-education.css" />
+    <link rel="stylesheet" href="css/05-publications-projects.css" />
+    <link rel="stylesheet" href="css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="css/08-polish-overrides.css" />
+    <script>
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      const savedTheme = requestedTheme || localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "bright") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <script src="js/state.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/neural-canvas.js" defer></script>
+    <script src="js/blog-main.js" defer></script>
+
+    <style>
+      /* ── Blog post page styles ── */
+      .post-hero {
+        padding: clamp(5rem, 12vw, 9rem) var(--page-pad) clamp(3rem, 6vw, 5rem);
+        max-width: 780px;
+        margin: 0 auto;
+      }
+      .post-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .post-eyebrow a {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+      }
+      .post-eyebrow a:hover { opacity: 1; }
+      .post-eyebrow span {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        opacity: 0.5;
+      }
+      .post-eyebrow time {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        opacity: 0.65;
+        letter-spacing: 0.04em;
+      }
+      .post-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.25rem;
+        color: var(--text-primary);
+      }
+      .post-hero .post-subtitle {
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        color: var(--text-muted);
+        line-height: 1.7;
+        max-width: 640px;
+        margin-bottom: 2rem;
+      }
+      .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .post-tags span {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        color: var(--text-muted);
+      }
+
+      /* ── Article body ── */
+      .post-body {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 0 var(--page-pad) clamp(4rem, 10vw, 7rem);
+      }
+      .post-body p {
+        font-size: clamp(1rem, 1.5vw, 1.08rem);
+        line-height: 1.85;
+        color: var(--text-muted);
+        margin-bottom: 1.6rem;
+      }
+      .post-body h2 {
+        font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text-primary);
+        margin: 3rem 0 1rem;
+      }
+      .post-body strong {
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+      .post-body em {
+        color: var(--accent);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      /* ── Image blocks ── */
+      .post-img {
+        margin: 2.5rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .post-img img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+      .post-img figcaption {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        opacity: 0.6;
+        line-height: 1.5;
+        background: var(--card-bg);
+      }
+      .post-img-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 2.5rem 0;
+      }
+      @media (max-width: 600px) {
+        .post-img-pair { grid-template-columns: 1fr; }
+      }
+      .post-img-pair figure {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        margin: 0;
+      }
+      .post-img-pair figure img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        max-height: 320px;
+      }
+      .post-img-pair figure figcaption {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        opacity: 0.55;
+        background: var(--card-bg);
+      }
+
+      /* ── Video block ── */
+      .post-video {
+        margin: 2.5rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: var(--card-bg);
+      }
+      .post-video video {
+        width: 100%;
+        display: block;
+        max-height: 480px;
+        object-fit: cover;
+      }
+      .post-video figcaption {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        opacity: 0.6;
+      }
+
+      /* ── Pull quote ── */
+      .post-quote {
+        margin: 2.5rem 0;
+        padding: 1.5rem 2rem;
+        border-left: 3px solid var(--accent);
+        background: var(--card-bg);
+        border-radius: 0 10px 10px 0;
+      }
+      .post-quote p {
+        margin: 0;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--text-primary);
+        line-height: 1.7;
+      }
+
+      /* ── Schedule callout ── */
+      .post-schedule {
+        margin: 2.5rem 0;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--card-bg);
+      }
+      .post-schedule-header {
+        padding: 0.9rem 1.25rem;
+        background: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .post-schedule-row {
+        display: flex;
+        gap: 1.25rem;
+        padding: 0.75rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.88rem;
+      }
+      .post-schedule-row:last-child { border-bottom: none; }
+      .post-schedule-time {
+        min-width: 110px;
+        color: var(--accent);
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        font-size: 0.82rem;
+      }
+      .post-schedule-label {
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+      .post-schedule-label strong {
+        display: block;
+        color: var(--text-primary);
+        font-weight: 600;
+        margin-bottom: 0.1rem;
+      }
+
+      /* ── Post footer ── */
+      .post-footer {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 0 var(--page-pad) clamp(3rem, 8vw, 5rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-top: 1px solid var(--border);
+        padding-top: 2rem;
+      }
+      .post-footer a {
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: gap 0.2s;
+      }
+      .post-footer a:hover { gap: 0.65rem; }
+      .post-footer-meta {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        opacity: 0.55;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#post-content">Skip to post</a>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header" data-reveal>
+      <div class="header-shell">
+        <a class="brand" href="index.html" aria-label="Gourab Roy portfolio">
+          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-copy">
+            <span class="brand-text">Gourab Roy</span>
+            <span class="brand-role">AI engineer and master's student</span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to bright theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-orb" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-copy">
+            <span class="theme-toggle-label" data-theme-label>Dark</span>
+            <span class="theme-toggle-action" data-theme-action>Switch to bright</span>
+          </span>
+        </button>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="education.html">Education</a>
+        <a href="publications.html">Publications</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html" class="is-active">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="post-content">
+
+      <!-- Post hero -->
+      <div class="post-hero" data-reveal>
+        <div class="post-eyebrow">
+          <a href="blog.html">&#8592; Blog</a>
+          <span>/</span>
+          <span>Student life</span>
+          <span>&#183;</span>
+          <time datetime="2026-06-06">June 2026</time>
+        </div>
+        <h1>Two Days in Bordeaux</h1>
+        <p class="post-subtitle">
+          I went to the first-ever IPCVAI Days in Bordeaux not fully knowing what to expect. I came back with a clearer picture of where this program leads, and a much stronger feeling of actually belonging to something.
+        </p>
+        <div class="post-tags">
+          <span>IPCVAI</span>
+          <span>Bordeaux</span>
+          <span>Community</span>
+          <span>Computer Vision</span>
+          <span>Erasmus Mundus</span>
+        </div>
+      </div>
+
+      <!-- Post body -->
+      <article class="post-body" data-reveal>
+
+        <p>
+          Getting to Bordeaux was already a small adventure. I had only been in Europe for less than a year at that point, and traveling to a French city I had never visited, for an event I could not fully picture in my head, felt like one of those things you just say yes to before your brain talks you out of it.
+        </p>
+
+        <p>
+          The IPCVAI Days 2026 was the first edition of what the consortium hopes will become a regular gathering — a place for current students, alumni, professors, and industry people who have passed through this program to actually sit in the same room together. Two days at <strong>LaBRI, Université de Bordeaux</strong>, June 3rd and 4th. I registered my name badge, held it in my hand, and felt something shift a little. <em>Gourab Roy. Bangladesh. 2025–2027.</em> That is who I am in this program.
+        </p>
+
+        <figure class="post-img">
+          <img src="Blog/IPCV Days France/2.jpeg" alt="Gourab Roy's IPCVAI Days 2026 name badge, reading Bangladesh, 2025–2027" loading="lazy" />
+          <figcaption>My badge on day one. Bangladesh, 2025–2027. Something about seeing it printed like that made the program feel more real than any course portal ever has.</figcaption>
+        </figure>
+
+        <h2>Day One — Finding Your Footing</h2>
+
+        <p>
+          The first morning started with coffee and the quiet buzz of people who mostly did not know each other yet. There were students from all the current cohorts, professors who had built the program, and alumni who had flown in from across Europe. It was one of those situations where everyone is slightly unsure where to stand, so everyone just migrates toward the coffee table.
+        </p>
+
+        <p>
+          The opening was given by <strong>Fabien Baldacci</strong> from LaBRI's Image and Sound Department. He talked about the first edition of these days — what the event was meant to be, why the community needed something like this, and how both the program and its people had grown since the beginning. Watching the room fill up, listening to him describe the history of IPCVAI, it was easy to forget that most of us had only been students here for a short time. The screen behind him just said <em>IPCV Days 2026: 1st edition</em> — simple and honest about what it was.
+        </p>
+
+        <figure class="post-img">
+          <img src="Blog/IPCV Days France/1.jpeg" alt="Opening keynote at IPCVAI Days 2026, Fabien Baldacci presenting at LaBRI" loading="lazy" />
+          <figcaption>Fabien Baldacci opening the first-ever IPCVAI Days on June 3rd at LaBRI. The room was full. That alone felt significant.</figcaption>
+        </figure>
+
+        <p>
+          After the opening talk, the floor opened up for poster presentations — and this is where the day became genuinely interesting. There were students from multiple cohorts presenting work across all sorts of directions: detection, segmentation, generative models, video understanding, medical imaging. Walking from poster to poster, having five-minute conversations that sometimes stretched into twenty, asking questions you might feel awkward asking in a lecture — it is a completely different register of learning. You realize that the person standing next to a confusing diagram is usually as uncertain about parts of it as you are. That is weirdly reassuring.
+        </p>
+
+        <p>
+          The afternoon brought a talk from <strong>Kristof Káracs</strong> on computer vision research at PPKE, which gave a useful window into how a partner lab approaches these problems. Then more posters. Then a coffee break that turned into a conversation that ran well past the scheduled end time. The day closed with an aperitif — drinks on the terrace, the city of Bordeaux somewhere in the background, people finally getting comfortable enough to stop being professional at each other.
+        </p>
+
+        <div class="post-schedule" aria-label="Day 1 schedule">
+          <div class="post-schedule-header">Day 1 — June 3</div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">8:30 – 9:00</span>
+            <span class="post-schedule-label"><strong>Welcome Coffee</strong>That slow, necessary start where everyone sizes up the room.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">9:00 – 10:00</span>
+            <span class="post-schedule-label"><strong>Opening &amp; LaBRI Talk</strong>Fabien Baldacci on the first edition and the lab's research direction.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">10:00 – 13:00</span>
+            <span class="post-schedule-label"><strong>Poster Sessions</strong>Two rounds of student research presentations with a coffee break in between.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">14:30 – 15:15</span>
+            <span class="post-schedule-label"><strong>PPKE CV Research</strong>Kristof Káracs on computer vision at Pázmány Péter Catholic University.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">15:15 – 18:00</span>
+            <span class="post-schedule-label"><strong>More Poster Sessions</strong>Afternoon round — honestly where some of the best conversations happened.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">18:00</span>
+            <span class="post-schedule-label"><strong>Aperitif</strong>The moment the day finally exhaled.</span>
+          </div>
+        </div>
+
+        <h2>Between Days — A Rainy Bordeaux Evening</h2>
+
+        <p>
+          That evening I walked around Bordeaux a little. It started raining — the kind of light, steady French rain that does not care whether you have an umbrella or not. The streets near the waterfront were quiet and wet and genuinely beautiful in a way that felt unplanned. I passed through the old medieval gate, the Porte Cailhau, and stood there for a minute just looking at it. There is something strange and good about being in a city with a thousand years of history and knowing you are there because of a master's program in computer vision.
+        </p>
+
+        <div class="post-img-pair">
+          <figure>
+            <img src="Blog/IPCV Days France/5.jpeg" alt="Porte Cailhau, a medieval gate in Bordeaux city centre" loading="lazy" />
+            <figcaption>Porte Cailhau — the old city gate. Worth every wet minute.</figcaption>
+          </figure>
+          <figure>
+            <img src="Blog/IPCV Days France/6.jpeg" alt="Wet cobblestone street in Bordeaux on a rainy evening" loading="lazy" />
+            <figcaption>Bordeaux in the rain. The city did not seem to mind.</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          I shot a short clip at one of the spots I wandered through — not sure I can name exactly where, but it had that quality old French cities sometimes have where even a thirty-second video makes the place look like it belongs in a film.
+        </p>
+
+        <figure class="post-video">
+          <video controls preload="none" poster="Blog/IPCV Days France/5.jpeg" aria-label="Short video clip from a tourist spot in Bordeaux">
+            <source src="Blog/IPCV Days France/4.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Somewhere in Bordeaux between the conference and dinner. The city earns its reputation.</figcaption>
+        </figure>
+
+        <h2>Day Two — The Alumni Who Changed Everything</h2>
+
+        <p>
+          If Day 1 was about meeting the current community, Day 2 was about seeing where it goes.
+        </p>
+
+        <p>
+          The morning opened with a talk on the <strong>VPU Lab</strong> by Jesús Cano and José María Martínez — the Video Processing and Understanding Lab in Madrid, which is one of the partner institutions I know well. Hearing them present in this setting, to an audience of students from across the whole program, was different from a regular lecture. It felt more like a report back: here is what we have been building, here is why it matters.
+        </p>
+
+        <p>
+          Then the alumni presentations started, and this is the part of the two days I keep thinking about.
+        </p>
+
+        <p>
+          <strong>Sebastián Cajas</strong>, now at MIT Critical Data and Workday, presented on shortcut learning and human blind spots in model behavior — a genuinely unsettling talk about how models learn to be confident in the wrong places. <strong>Tamas Bukits</strong> from Vicomtech talked about bringing real-world entities into immersive environments. <strong>Nour Mohamed Abdelhamed</strong>, now a machine learning engineer at TRATON AB, talked about what the gap between academia and industry actually looks like when you are standing in the middle of it — not from a textbook perspective, but from experience.
+        </p>
+
+        <div class="post-quote">
+          <p>"From Computer Vision Student to Machine Learning Engineer: Bridging Academia and Industry." That title hit differently when you are in the middle of the student part and can suddenly see people who made it to the other side — and they look like people, not a different species.</p>
+        </div>
+
+        <p>
+          In the afternoon, <strong>Syed Talal Wasim</strong> from the University of Bonn talked about his PhD in video AI — understanding temporal patterns, anticipating what happens next in a sequence. <strong>Bolutife Atoki</strong> from LIRIS presented work on AI-based detectors for physical security. And <strong>Julia Alekseenko</strong> from IHU Strasbourg asked what might be the best question in the field right now: can AI actually understand surgery?
+        </p>
+
+        <p>
+          These are people who came through the same program. Who sat in similar poster sessions, had the same anxious early months in a new country, and figured it out. Watching them present, answering questions with confidence, talking about their research problems like people who have learned to live with the uncertainty rather than fight it — it was motivating in a way that a career brochure never manages to be.
+        </p>
+
+        <div class="post-schedule" aria-label="Day 2 schedule">
+          <div class="post-schedule-header">Day 2 — June 4</div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">9:00 – 9:45</span>
+            <span class="post-schedule-label"><strong>VPU Lab</strong>Jesús Cano &amp; José María Martínez on video processing and understanding research.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">9:45 – 11:15</span>
+            <span class="post-schedule-label"><strong>Alumni Presentations I</strong>Sebastián Cajas, Tamas Bukits, Nour Mohamed Abdelhamed.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">11:45 – 12:30</span>
+            <span class="post-schedule-label"><strong>Industrial Panel</strong>Alumni from Vicomtech, industry, and research discussing the transition from program to practice.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">14:00 – 15:30</span>
+            <span class="post-schedule-label"><strong>Alumni Presentations II</strong>Syed Talal Wasim, Bolutife Atoki, Julia Alekseenko.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">16:00 – 17:00</span>
+            <span class="post-schedule-label"><strong>Research Panel</strong>Subham Shome, Bolutife Atoki, Julia Alekseenko, Anna Gelencsér-Horváth on life after graduation.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">20:00</span>
+            <span class="post-schedule-label"><strong>Dinner — La Boca Nova</strong>On the quays of Bordeaux. A proper ending.</span>
+          </div>
+        </div>
+
+        <h2>The Group Photo</h2>
+
+        <p>
+          At some point someone asked everyone to gather for a group photo. I am not usually someone who particularly enjoys these — there is always the choreography of getting that many people to stand in the right direction while someone adjusts a camera — but this one felt worth it. When I looked at the room, I could see people from probably a dozen different countries, from at least three different cohorts, with professors who have spent careers building the field and students who are still building their first models. The photo does not capture the noise or the warmth or the fact that five different conversations were still happening while we were supposed to be smiling. But it captures that we were all there.
+        </p>
+
+        <figure class="post-img">
+          <img src="Blog/IPCV Days France/3.jpeg" alt="Group photo of all IPCVAI Days 2026 participants at LaBRI, Bordeaux" loading="lazy" />
+          <figcaption>The full IPCVAI Days 2026 group at LaBRI. Students, alumni, professors, industry people — the whole community in one room for the first time.</figcaption>
+        </figure>
+
+
+        <h2>What I Am Taking Back</h2>
+
+        <p>
+          I came to Bordeaux mostly curious and a little nervous. I left with something harder to name. It is not just the talks, although those were genuinely good. It is not just the networking, which is a word that makes every real conversation sound like a transaction.
+        </p>
+
+        <p>
+          It is more that I now have a much more concrete picture of what this program looks like end-to-end. I have seen the people who came before me — where they went, what they are working on, how they talk about problems, what they seem to have kept from the program and what they have learned to let go of. That is genuinely rare. Most of the time in a master's program you are looking at a two-year window and have no real visibility beyond it.
+        </p>
+
+        <p>
+          I also just feel more settled in the community. Before this, the IPCVAI program was, for me, largely defined by the specific university I was attending and the specific courses I was taking. After Bordeaux, it feels bigger than that. It is a network of people who studied similar things in similar circumstances across different cities and cohorts, and who are now spread out doing genuinely interesting work. I am early in that timeline. But at least now I can see the shape of it.
+        </p>
+
+        <p>
+          Bordeaux was good. The rain was fine. The medieval gate was beautiful. The coffee was French and therefore strong. And the conversations — the real ones, not the scheduled ones — were the part I did not expect to value as much as I did.
+        </p>
+
+
+      </article>
+
+      <!-- Post footer -->
+      <div class="post-footer" data-reveal>
+        <a href="blog.html">&#8592; Back to all posts</a>
+        <span class="post-footer-meta">Bordeaux, France — June 2026</span>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p><span data-current-year>2026</span> Gourab Roy - Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <a href="index.html">Back to portfolio</a>
+    </footer>
+  </body>
+</html>
