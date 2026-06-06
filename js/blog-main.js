@@ -5,5 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   observeRevealElements();
   setupActiveNavigation();
   setupScrollProgress();
+  setupMobileNav();
   setupNeuralCanvas();
 });

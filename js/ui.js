@@ -256,3 +256,56 @@ function setupFooterYear() {
     year.textContent = String(new Date().getFullYear());
   }
 }
+
+function setupMobileNav() {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const header = document.querySelector(".site-header");
+  if (!toggle || !header) return;
+
+  function openNav() {
+    header.classList.add("is-nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close navigation");
+    document.addEventListener("click", handleOutsideClick, { once: false, capture: false });
+  }
+
+  function closeNav() {
+    header.classList.remove("is-nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    document.removeEventListener("click", handleOutsideClick, false);
+  }
+
+  function handleOutsideClick(event) {
+    if (!header.contains(event.target)) {
+      closeNav();
+    }
+  }
+
+  toggle.addEventListener("click", () => {
+    if (header.classList.contains("is-nav-open")) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
+
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeNav();
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeNav();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && header.classList.contains("is-nav-open")) {
+      closeNav();
+      toggle.focus();
+    }
+  });
+}

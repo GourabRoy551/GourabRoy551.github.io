@@ -498,7 +498,7 @@ body.is-page-exiting .site-footer {
   .portrait-panel {
     display: grid;
     justify-self: center;
-    width: min(230px, 72vw, 100%);
+    width: min(280px, 80vw, 100%);
     padding-top: 0;
   }
 
