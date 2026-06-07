@@ -309,3 +309,20 @@ function setupMobileNav() {
     }
   });
 }
+
+function setupBackToTop() {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "back-to-top";
+  btn.setAttribute("aria-label", "Back to top");
+  btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>`;
+  document.body.appendChild(btn);
+
+  window.addEventListener("scroll", () => {
+    btn.classList.toggle("is-visible", window.scrollY > 300);
+  }, { passive: true });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}

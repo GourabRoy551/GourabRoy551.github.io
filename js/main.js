@@ -10,5 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollProgress();
   setupCopyEmail();
   setupMobileNav();
+  setupBackToTop();
   setupNeuralCanvas();
 });
