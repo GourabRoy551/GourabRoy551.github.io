@@ -1,250 +1,118 @@
 # Gourab Roy Portfolio
 
-A polished, static personal portfolio for **Gourab Roy**, an Erasmus Mundus IPCVAI master's student and AI engineer focused on trustworthy computer vision, biomedical imaging, explainable AI, multimodal learning, inspection systems, and applied deep learning.
+This is my personal portfolio website. I use it to present my academic background, research interests, publications, projects, skills, blog posts, and contact information in one place.
 
-The site is built as a multi-page HTML/CSS/JavaScript portfolio with no build step. It can be opened directly in a browser or served from any static hosting platform such as GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a simple web server.
+I am an Erasmus Mundus IPCVAI master's student and AI engineer working around computer vision, biomedical imaging, explainable AI, multimodal learning, document AI, inspection systems, and applied deep learning.
 
-## Table of Contents
+The site is fully static. There is no build step, no framework, and no package installation needed. It can be opened directly in a browser or deployed to any static hosting platform.
 
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Pages](#pages)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Running Locally](#running-locally)
-- [Content Editing Guide](#content-editing-guide)
-- [Styling Architecture](#styling-architecture)
-- [JavaScript Architecture](#javascript-architecture)
-- [Assets](#assets)
-- [SEO and Metadata](#seo-and-metadata)
-- [Accessibility](#accessibility)
-- [Performance Notes](#performance-notes)
-- [Deployment](#deployment)
-- [License](#license)
-- [Maintenance Checklist](#maintenance-checklist)
-- [Troubleshooting](#troubleshooting)
-- [Contact Links](#contact-links)
+## What This Site Includes
 
-## Overview
+- Homepage with my profile, research focus, CV link, and main profile links.
+- About page with my background, research direction, and current academic status.
+- Research page focused on trustworthy vision AI, medical imaging, CLIP/XAI, document AI, and inspection workflows.
+- Education page for my IPCVAI mobility path across Budapest, Madrid, and Bordeaux.
+- Publications page with dynamic filtering by research domain.
+- Experience page for my teaching, mentoring, and research assistant work.
+- Projects page with selected research and software projects.
+- Skills page with my programming, ML, data, and research-writing stack.
+- Blog section for research notes, learning logs, and personal updates.
+- Contact page with email, phone, CV, and social links.
+- Dark and bright theme support.
+- Language selector for English, Bangla, Spanish, and French.
 
-This portfolio presents Gourab Roy's profile for academic reviewers, research collaborators, AI/ML recruiters, and applied AI teams. The content emphasizes:
+## Languages
 
-- Erasmus Mundus IPCVAI graduate study across image processing, computer vision, deep learning, multimodal AI, and medical imaging.
-- Research interests in trustworthy vision AI, explainable AI, CLIP/ViT interpretability, biomedical imaging, document AI, OCR, NLP, and inspection workflows.
-- Publications across medical AI, low-resource OCR, document AI, structural safety, multilingual summarization, agriculture, and aviation inspection.
-- Projects that demonstrate Python research engineering, MATLAB 3D reconstruction, data visualization, Java/MySQL software work, and frontend practice.
-- Teaching, mentoring, and research assistant experience.
-- Contact paths for collaboration, supervision conversations, internships, and Europe-based AI roles.
+The portfolio supports:
 
-The site is intentionally static and lightweight: each page is a standalone `.html` file that loads shared CSS and JavaScript modules.
+- English
+- Bangla
+- Spanish
+- French
 
-## Key Features
+The custom language selector is added by:
 
-- **Multi-page portfolio navigation** with dedicated pages for About, Research, Education, Publications, Experience, Projects, Skills, Blog, and Contact.
-- **Dark and bright themes** with persistence through `localStorage`.
-- **Animated neural background canvas** with reduced-motion support.
-- **Scroll progress indicator** across pages.
-- **Reveal-on-scroll animations** using `IntersectionObserver`.
-- **Animated counters** for hero metrics.
-- **Publication filtering** by research domain.
-- **Page transition overlay** for internal page navigation.
-- **Responsive layouts** for desktop, tablet, and mobile screens.
-- **Accessible skip links**, focus states, semantic section structure, and reduced-motion handling.
-- **Copy-email button** on the contact page with Clipboard API fallback.
-- **External research and profile links** for Google Scholar, LinkedIn, GitHub, IEEE, Elsevier, Facebook, and Instagram.
+```text
+js/i18n.js
+```
 
-## Pages
+It uses Google Translate behind the scenes, but keeps the selector styled like the rest of the portfolio. The selected language is saved in `localStorage` as:
 
-### `index.html`
+```text
+portfolio-language
+```
 
-The homepage and primary entry point. It contains:
+Google Translate also uses the `googtrans` cookie.
 
-- Hero introduction for Gourab Roy.
-- Current profile summary: UAM Madrid, IPCVAI master's program, medical computer vision, XAI, and multimodal vision.
-- Profile links to Google Scholar, LinkedIn, GitHub, IEEE papers, and Elsevier paper.
-- Primary actions for About, Research Fit, and CV download.
-- Portrait panel using `Photo.png`.
-- Research metrics for publications, Scholar citations, and coding practice.
+You can open a page directly in a language with:
 
-### `about.html`
+```text
+index.html?lang=bn
+index.html?lang=es
+index.html?lang=fr
+```
 
-A narrative profile page covering:
-
-- Current IPCVAI status at UAM Madrid.
-- Background as an Adjunct Lecturer and Research Assistant.
-- Mentoring and thesis supervision experience.
-- Reviewer experience for Informatics in Medicine Unlocked.
-- Research focus areas: Vision Transformers, CLIP-style interpretability, and healthcare AI.
-- Availability for research collaboration and summer internship opportunities in Europe.
-
-### `research.html`
-
-Research positioning page focused on:
-
-- Trustworthy vision AI for medical, document, and inspection workflows.
-- Current TRDP work on CLIP interpretability using a Cross-Modal Attention Bridge.
-- Biomedical AI with CT/MRI, segmentation, classification, and few-shot learning.
-- Explainable and multimodal vision using ViT, CLIP, and attention mechanisms.
-- Applied inspection tasks using YOLO and transfer learning.
-- Low-resource document intelligence, Bangla OCR/font detection, and script recognition.
-
-### `education.html`
-
-Education timeline page covering:
-
-- Erasmus Mundus IPCVAI master's mobility path.
-- PPKE Budapest first semester.
-- UAM Madrid current second semester.
-- Planned University of Bordeaux semester.
-- Final thesis/research semester.
-- B.Sc. foundation in Computer Science and Engineering.
-- Coursework in deep learning, visual signal processing, moving-camera vision, biomedical signal processing, sensor fusion, and research development.
-
-### `publications.html`
-
-Publication showcase page with:
-
-- Featured biomedical AI research thread.
-- Summary metrics for published papers and IEEE conference papers.
-- Dynamic publication filters rendered from `js/publications-data.js`.
-- Dynamic publication cards rendered by `js/publications.js`.
-- Thesis thread for CerebralNet and CT/MRI abnormality detection.
-
-Publication data currently includes eight research works:
-
-- CovidExpert: Triplet Siamese Neural Network for COVID-19 CT detection.
-- Syloti Nagri OCR using deep learning.
-- Bang-laFont45 Bangla font detection and classification.
-- Concrete tensile strength prediction and classification.
-- CrackClassification4 for structural surface cracks.
-- Multilingual summarization corpus creation and filtering.
-- DateFNet for date fruit classification.
-- Aircraft crack and dent detection using YOLOv11 and YOLOv12.
-
-### `experience.html`
-
-Experience page covering:
-
-- Research Assistant work at Sylhet Engineering College.
-- Adjunct Lecturer role.
-- Undergraduate teaching and consultation.
-- Thesis mentoring and research support.
-- Course areas including data science, distributed computing, computer architecture, peripheral interfacing, and microprocessor/microcontroller topics.
-
-### `projects.html`
-
-Project portfolio page using a bento-style grid. Current project cards include:
-
-- Cardiac Autonomic Assessment via PPG-Derived HRV.
-- Statistically Filtered Cross-Modal Attention for CLIP Interpretability.
-- Calibrated Multi-View 3D Reconstruction.
-- Exploratory Analysis and Visualization Portfolio.
-- Python utilities and programming exercises.
-- Billing System Application.
-- Pioneer Bank Website.
-
-### `skills.html`
-
-Skills and achievements page covering:
-
-- Programming languages: C, C++, Python, Java, JavaScript.
-- ML frameworks: PyTorch, TensorFlow, Scikit-learn.
-- Scientific Python: NumPy, Pandas, Matplotlib, Jupyter.
-- Developer workflow: Git, MySQL, SQLite, Linux, LaTeX.
-- Vision AI concepts: CNNs, ViT, YOLO, CLIP, segmentation, evaluation metrics.
-- Proof points including 350+ coding problems solved, HackerRank badges, research courses, and reviewer experience.
-
-### `blog.html`
-
-Static blog-style page with:
-
-- Research notes.
-- Learning logs.
-- Biomedical AI reflections.
-- Interpretability questions.
-- Dataset notes.
-- Erasmus Mundus study reflections.
-
-The blog content is currently embedded directly in `blog.html`; there is no CMS or Markdown-to-HTML build system.
-
-### `contact.html`
-
-Contact page with:
-
-- Email, phone, and location information.
-- Mail, phone, CV, Google Scholar, LinkedIn, GitHub, Facebook, and Instagram actions.
-- Copy-email button using `data-copy-email`.
-- Positioning for research collaboration, supervision conversations, internships, and AI roles.
+For best testing, run the site with a local server instead of opening it through `file://`, because the translation script loads from Google.
 
 ## Tech Stack
 
-This project uses standard frontend technologies:
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Canvas 2D API for the neural background animation
+- Google Fonts: Inter and Noto Sans Bengali
+- Google Translate Element for multilingual support
+- Simple Icons and Devicon for external logos
 
-- **HTML5** for page structure.
-- **CSS3** with custom properties, responsive grids, media queries, and theme variables.
-- **Vanilla JavaScript** for interactivity.
-- **Canvas 2D API** for the animated neural background.
-- **Google Fonts** for the Inter typeface.
-- **External icon CDNs**:
-  - Simple Icons through `cdn.simpleicons.org`.
-  - Devicon through `cdn.jsdelivr.net`.
-  - University and publication platform logos from their public sources.
-
-There are no local package dependencies, no bundler, and no required Node.js workflow.
+There is no Node.js build process required for this project.
 
 ## Project Structure
 
 ```text
 Portfolio/
-├── index.html
-├── about.html
-├── research.html
-├── education.html
-├── publications.html
-├── experience.html
-├── projects.html
-├── skills.html
-├── blog.html
-├── contact.html
-├── README.md
-├── favicon.svg
-├── Photo.png
-├── Gourab_Roy_CV (2).pdf
-├── css/
-│   ├── 01-base.css
-│   ├── 02-header-layout.css
-│   ├── 03-hero.css
-│   ├── 04-research-education.css
-│   ├── 05-publications-projects.css
-│   ├── 06-experience-skills-writing-contact.css
-│   ├── 07-animations-responsive.css
-│   └── 08-polish-overrides.css
-└── js/
-    ├── state.js
-    ├── theme.js
-    ├── publications-data.js
-    ├── publications.js
-    ├── ui.js
-    ├── neural-canvas.js
-    ├── main.js
-    └── blog-main.js
+|-- index.html
+|-- about.html
+|-- research.html
+|-- education.html
+|-- publications.html
+|-- experience.html
+|-- projects.html
+|-- skills.html
+|-- contact.html
+|-- README.md
+|-- favicon.svg
+|-- Photo.png
+|-- Gourab_Roy_CV (2).pdf
+|-- Blog/
+|   |-- index.html
+|   |-- ipcv-days-france-2026.html
+|   `-- IPCV Days France/
+|-- css/
+|   |-- 01-base.css
+|   |-- 02-header-layout.css
+|   |-- 03-hero.css
+|   |-- 04-research-education.css
+|   |-- 05-publications-projects.css
+|   |-- 06-experience-skills-writing-contact.css
+|   |-- 07-animations-responsive.css
+|   `-- 08-polish-overrides.css
+`-- js/
+    |-- state.js
+    |-- theme.js
+    |-- publications-data.js
+    |-- publications.js
+    |-- ui.js
+    |-- neural-canvas.js
+    |-- main.js
+    |-- blog-main.js
+    `-- i18n.js
 ```
-
-Additional local planning/reference files may exist in the working folder:
-
-- `papers.md`
-- `portfolio-brief-and-plan.md`
-- `script.js`
-- `styles.css`
-- `.claude/`
-
-These are listed in `.gitignore` and are not part of the active shipped site. The current pages load the modular files from `/css` and `/js` directly.
 
 ## Running Locally
 
-Because this is a static website, the simplest option is to open `index.html` directly in a browser.
+The simple way is to open `index.html` in a browser.
 
-Recommended local server option:
+For better testing, especially for the language selector, run a local server:
 
 ```powershell
 python -m http.server 8000
@@ -256,7 +124,7 @@ Then open:
 http://localhost:8000
 ```
 
-You can also use any static server:
+Other static servers also work:
 
 ```powershell
 npx serve .
@@ -268,86 +136,45 @@ or:
 npx http-server .
 ```
 
-The site does not require a build command.
+## Editing Notes
 
-## Content Editing Guide
+### Main Profile Content
 
-### Update Name, Role, or Hero Text
-
-Edit `index.html`.
-
-Important sections:
-
-- `<title>` and meta tags in the `<head>`.
-- `.brand-text` and `.brand-role` in the header.
-- `.hero-copy` for the homepage introduction.
-- `.profile-strip` for current profile details.
-- `.hero-actions` for main call-to-action links.
-- `.hero-metrics` for homepage counters.
-
-### Update Navigation
-
-Each HTML file contains its own header navigation. If you add, rename, or remove a page, update the `<nav class="nav-links">` block in every page.
-
-The active page state is handled in two ways:
-
-- Many pages include `class="is-active"` on the matching link.
-- `setupActiveNavigation()` in `js/ui.js` also checks the current pathname and applies the active state.
-
-### Update the CV
-
-The current CV file is:
+Most homepage content is in:
 
 ```text
-Gourab_Roy_CV (2).pdf
+index.html
 ```
 
-If the file name changes, update all CV links in:
+This includes the hero text, profile strip, main buttons, portrait section, and homepage metrics.
 
-- `index.html`
-- `contact.html`
-- Any other page where a CV button is added.
+### Navigation
 
-For cleaner URLs, consider renaming the file to:
+Each page has its own header navigation. If I add, rename, or remove a page, I need to update the `<nav class="nav-links">` block in all HTML pages.
+
+The active nav state is handled by:
 
 ```text
-Gourab_Roy_CV.pdf
+js/ui.js
 ```
 
-Then update the links accordingly.
+### Publications
 
-### Update Publications
-
-Publication data lives in:
+Publication data is stored in:
 
 ```text
 js/publications-data.js
 ```
 
-Each publication object supports:
-
-- `year`
-- `type`
-- `domain`
-- `title`
-- `venue`
-- `citations`
-- `summary`
-- `tags`
-- `logo`
-- `visualClass`
-- `visualSteps`
-- `link`
-
-The filter buttons are generated automatically from the unique `domain` values. To add a new filter category, set a new `domain` value in a publication object.
-
-The rendering logic lives in:
+The cards and filters are rendered by:
 
 ```text
 js/publications.js
 ```
 
-### Update Projects
+To add a new publication, I add a new object to the `publications` array. The domain filter is generated automatically from the `domain` field.
+
+### Projects
 
 Project cards are written directly in:
 
@@ -355,368 +182,150 @@ Project cards are written directly in:
 projects.html
 ```
 
-Each card usually includes:
+### Blog
 
-- Project number.
-- Context or institution/date label.
-- Title.
-- Description.
-- Optional repository link.
-- Tags.
-
-Use existing `bento-card` classes for consistent layout and color treatment.
-
-### Update Blog Posts
-
-Blog posts are static HTML cards inside:
+The blog index is:
 
 ```text
-blog.html
+Blog/index.html
 ```
 
-To add a new post, duplicate an existing `.writing-card`, update the metadata, title, summary, date, and tags.
+The longer Bordeaux post is:
 
-There is currently no separate post page system. If longer posts are needed later, create a `/blog/` folder or individual `post-name.html` pages and add links from `blog.html`.
+```text
+Blog/ipcv-days-france-2026.html
+```
 
-### Update Contact Information
+There is no CMS or Markdown system here. Blog posts are written as normal HTML.
 
-Edit:
+### Contact Info
+
+Contact links are in:
 
 ```text
 contact.html
 ```
 
-Update:
+If my email, phone number, CV, or social links change, this is the main file to update.
 
-- `mailto:` links.
-- Displayed email.
-- `data-email` on the copy button.
-- Phone number text.
-- `tel:` link.
-- Social profile URLs.
-- Location text.
+### CV
 
-### Update Photo
-
-The main portrait asset is:
+The current CV file is:
 
 ```text
-Photo.png
+Gourab_Roy_CV (2).pdf
 ```
 
-It is used by `index.html` and `about.html`. If replacing it, keep the same file name or update all references.
+If I rename it, I need to update all CV links across the site.
 
-Recommended future optimization:
+## CSS Notes
 
-- Create compressed WebP versions for faster loading.
-- Add a separate Open Graph preview image at `1200x630`.
-- Keep meaningful `alt` text for profile images.
+The CSS is split into ordered files:
 
-## Styling Architecture
+1. `css/01-base.css` - theme variables, base styles, fonts, background, skip link, canvas layer.
+2. `css/02-header-layout.css` - header, brand, navigation, theme toggle, shared layout.
+3. `css/03-hero.css` - homepage hero and portrait section.
+4. `css/04-research-education.css` - research and education layouts.
+5. `css/05-publications-projects.css` - publication cards, filters, and project grid.
+6. `css/06-experience-skills-writing-contact.css` - experience, skills, blog, and contact sections.
+7. `css/07-animations-responsive.css` - animations, page transitions, responsive rules.
+8. `css/08-polish-overrides.css` - final polish, mobile fixes, language selector, and Google Translate hiding.
 
-CSS is split into ordered files. Every page loads them in cascade order:
+Theme colors are controlled mainly in:
 
-1. `css/01-base.css`
-   - Theme variables.
-   - Global resets.
-   - Body background.
-   - Skip link.
-   - Neural canvas layer.
-   - Scroll progress bar.
-   - Shared base styles.
+```text
+css/01-base.css
+```
 
-2. `css/02-header-layout.css`
-   - Header.
-   - Brand lockup.
-   - Navigation.
-   - Theme toggle.
-   - Shared section width and layout primitives.
+The dark theme is defined in `:root`, and the bright theme is defined in:
 
-3. `css/03-hero.css`
-   - Homepage hero.
-   - Portrait panel.
-   - Hero actions.
-   - Hero metrics.
-   - Shared card treatments.
+```css
+html[data-theme="bright"]
+```
 
-4. `css/04-research-education.css`
-   - Research page sections.
-   - Education timeline and university logos.
-   - Related academic layouts.
+## JavaScript Notes
 
-5. `css/05-publications-projects.css`
-   - Publication cards.
-   - Publication filters.
-   - Publication visual flows.
-   - Bento project grid.
-   - Project cards and tags.
-
-6. `css/06-experience-skills-writing-contact.css`
-   - Experience cards.
-   - Skills panels.
-   - Blog/writing layouts.
-   - Contact page.
-
-7. `css/07-animations-responsive.css`
-   - Reveal animations.
-   - Page transitions.
-   - Responsive breakpoints.
-   - Reduced-motion rules.
-
-8. `css/08-polish-overrides.css`
-   - Final responsive refinements.
-   - Visual polish.
-   - Cross-page corrections.
-   - Bright theme refinements.
-
-Theme colors are defined with CSS custom properties in `01-base.css`:
-
-- Default dark theme: `:root`.
-- Bright theme: `html[data-theme="bright"]`.
-
-To adjust the visual identity, begin with the variables in `01-base.css` before editing individual component styles.
-
-## JavaScript Architecture
-
-Scripts are split by responsibility and loaded with `defer`.
-
-### `js/state.js`
-
-Defines shared state:
-
-- `activePublicationFilter`
-- `prefersReducedMotion`
-
-This file must load before modules that use these variables.
-
-### `js/theme.js`
-
-Handles:
-
-- Applying dark or bright theme.
-- Saving selected theme to `localStorage`.
-- Updating theme toggle labels and ARIA attributes.
-- Updating the browser theme color meta tag.
-
-The initial inline script in each HTML `<head>` applies a saved theme before CSS rendering completes, helping avoid a theme flash.
-
-### `js/publications-data.js`
-
-Stores the publication array used by the publications page.
-
-This file must load before `js/publications.js`.
-
-### `js/publications.js`
-
-Handles:
-
-- Building publication filter buttons.
-- Rendering publication cards.
-- Filtering cards by domain.
-- Adding reveal behavior to dynamically inserted cards.
-
-### `js/ui.js`
-
-Handles shared UI behavior:
-
-- Reveal-on-scroll elements.
-- Animated counters.
-- Active navigation.
-- Scroll progress.
-- Page transition overlay.
-- Copy-email behavior.
-- Footer year.
-
-### `js/neural-canvas.js`
-
-Creates the animated neural-network-style background using the Canvas 2D API.
-
-Features:
-
-- Responsive point density.
-- Pointer interaction.
-- Theme-aware colors through CSS variables.
-- Reduced-motion fallback.
-- Visibility pause/resume handling.
-
-### `js/main.js`
-
-Main initializer for most pages. On `DOMContentLoaded`, it calls:
-
-- `setupThemeControls()`
-- `setupFooterYear()`
-- `renderPublicationFilters()`
-- `renderPublications()`
-- `setupPageTransitions()`
-- `observeRevealElements()`
-- `animateCounters()`
-- `setupActiveNavigation()`
-- `setupScrollProgress()`
-- `setupCopyEmail()`
-- `setupNeuralCanvas()`
-
-### `js/blog-main.js`
-
-Blog-specific initializer. It excludes publication rendering because `blog.html` does not load publication data.
-
-## Assets
-
-### Local Assets
-
-- `Photo.png` - main profile portrait.
-- `favicon.svg` - browser tab icon.
-- `Gourab_Roy_CV (2).pdf` - downloadable CV.
-
-### Remote Assets
-
-The site loads several remote assets:
-
-- Google Font: Inter.
-- Simple Icons for Google Scholar, GitHub, IEEE, Elsevier, LaTeX, Facebook, Instagram, and other logos.
-- Devicon icons for programming tools and platforms.
-- University logos from public URLs.
-
-Because some icons are remote, an internet connection is needed for the full visual presentation. The core content still loads without these icons.
-
-## SEO and Metadata
-
-Each page includes:
-
-- `meta name="description"`
-- `meta name="keywords"` on most portfolio pages.
-- `meta name="theme-color"`
-- Open Graph title and description.
-- Open Graph type.
-- Open Graph image on most pages.
-- Page-specific `<title>`.
-- Favicon link.
-- Application name metadata.
-
-Recommended future improvements:
-
-- Add a canonical URL after the deployment URL is known.
-- Add a dedicated `og-image.png` or `og-image.webp` at `1200x630`.
-- Add `robots.txt`.
-- Add `sitemap.xml`.
-- Use page-specific Open Graph images for major pages if desired.
-- Recheck citation counts before publishing important updates.
+- `js/state.js` stores shared state like publication filter and reduced-motion preference.
+- `js/theme.js` handles dark/bright theme switching and persistence.
+- `js/publications-data.js` stores publication data.
+- `js/publications.js` renders publication filters and cards.
+- `js/ui.js` handles shared UI behavior like reveal animations, counters, active nav, scroll progress, page transitions, copy email, and footer year.
+- `js/neural-canvas.js` creates the animated neural background.
+- `js/main.js` initializes normal portfolio pages.
+- `js/blog-main.js` initializes blog pages.
+- `js/i18n.js` adds the language selector and connects it to Google Translate.
 
 ## Accessibility
 
-The site includes several accessibility-oriented details:
+The site includes:
 
-- Skip links at the top of pages.
-- Semantic landmark structure with `header`, `nav`, `main`, `section`, `article`, `aside`, and `footer`.
-- Meaningful image `alt` text for the portrait.
-- Decorative icons marked with `alt=""` or `aria-hidden="true"`.
-- Buttons with ARIA labels and pressed states where relevant.
-- `aria-live="polite"` for the publication grid.
-- `prefers-reduced-motion` support for animations and the canvas background.
-- Visible focus styles through `:focus-visible`.
+- Skip links.
+- Semantic HTML structure.
+- Keyboard focus styles.
+- ARIA labels for important controls.
+- Reduced-motion support.
+- Decorative icons hidden from screen readers.
+- Accessible language selector label.
 
-Recommended checks before production:
-
-- Test keyboard navigation across all pages.
-- Confirm color contrast in both dark and bright themes.
-- Confirm that external logo images do not carry redundant screen-reader text.
-- Test the copy-email button in secure and non-secure contexts.
+Before publishing major updates, I should test keyboard navigation and both themes.
 
 ## Performance Notes
 
-The site is lightweight because it uses static files and no JavaScript framework.
+The site is lightweight because it uses static files and no framework.
 
-Potential performance improvements:
+Future improvements I may do:
 
 - Convert `Photo.png` to WebP or AVIF.
-- Keep the original PNG only as a fallback if needed.
-- Add responsive image variants with `srcset`.
-- Host critical external icons locally if CDN dependency becomes a concern.
-- Minify CSS and JS only when the site is stable.
-- Consider preloading the hero portrait after image optimization.
-
-The canvas animation already respects reduced-motion preferences and pauses when the page is hidden.
+- Add responsive image sizes.
+- Add a dedicated Open Graph preview image.
+- Host important remote icons locally.
+- Add `sitemap.xml` and `robots.txt`.
 
 ## Deployment
 
-The site can be deployed anywhere that serves static files.
+This site can be deployed anywhere that serves static files.
 
-### GitHub Pages
+Good options:
 
-1. Push the repository to GitHub.
-2. Open the repository settings.
-3. Go to **Pages**.
-4. Choose the branch and root folder.
-5. Save.
-6. Visit the generated GitHub Pages URL.
+- GitHub Pages
+- Netlify
+- Vercel
+- Cloudflare Pages
+- Any normal static web server
 
-Make sure `index.html` remains in the repository root.
-
-### Netlify
-
-1. Create a new site from the repository.
-2. Use no build command.
-3. Set publish directory to:
-
-```text
-.
-```
-
-### Vercel
-
-1. Import the repository.
-2. Use the default static project settings.
-3. Leave the build command empty.
-4. Use the project root as the output directory.
-
-### Any Static Server
-
-Upload the full folder contents to the server root:
-
-- HTML pages.
-- `css/`
-- `js/`
-- `Photo.png`
-- `favicon.svg`
-- CV PDF.
-
-## License
-
-This portfolio is a personal website for Gourab Roy. Unless a separate `LICENSE` file states otherwise, all source code, written content, images, CV files, branding, and other assets in this repository are copyright © Gourab Roy. All rights reserved.
-
-You may view the site and use the repository structure as a learning reference, but you may not reuse, republish, or present the personal content, portrait, CV, research summaries, or profile materials as your own. For reuse, adaptation, or collaboration requests, contact Gourab Roy directly.
+There is no build command. The publish directory is the project root.
 
 ## Maintenance Checklist
 
-Before publishing a new version:
+Before publishing a new version, I should check:
 
-- Confirm all navigation links work.
-- Confirm the CV opens correctly.
-- Confirm the email and phone links are current.
-- Check Google Scholar citation numbers.
-- Check publication links and DOI links.
-- Confirm social links point to the intended profiles.
-- Test dark and bright themes.
-- Test the site on mobile width.
-- Test reduced-motion mode if possible.
-- Check browser console for missing assets or JavaScript errors.
-- Compress large image assets when possible.
-- Update the footer year if JavaScript is disabled support is important. JavaScript currently updates it automatically.
+- All navigation links.
+- CV download link.
+- Email and phone links.
+- Publication links and DOI links.
+- Google Scholar citation numbers.
+- Social profile links.
+- Dark and bright themes.
+- English, Bangla, Spanish, and French language selector.
+- Mobile layout.
+- Browser console for JavaScript or missing asset errors.
+- Large image size, especially `Photo.png`.
 
 ## Troubleshooting
 
-### The theme does not persist
+### Theme Does Not Persist
 
-Theme preference is stored in `localStorage` under:
+Theme preference is stored in:
 
 ```text
 portfolio-theme
 ```
 
-If it behaves unexpectedly, clear site data in the browser and reload.
+Clear browser site data if the theme behaves unexpectedly.
 
-### Publication cards do not appear
+### Publications Do Not Show
 
-Check that these files are loaded in this order on `publications.html`:
+On `publications.html`, these scripts need to load in the right order:
 
 ```html
 <script src="js/publications-data.js" defer></script>
@@ -726,32 +335,35 @@ Check that these files are loaded in this order on `publications.html`:
 <script src="js/ui.js" defer></script>
 <script src="js/neural-canvas.js" defer></script>
 <script src="js/main.js" defer></script>
+<script src="js/i18n.js" defer></script>
 ```
 
-`publications-data.js` must define `publications` before `publications.js` renders the cards.
+### Language Selector Does Not Translate
 
-### Some logos do not load
+Check that the page loads:
 
-Many icons are loaded from external CDNs. Check internet access and browser console network errors.
-
-### Copy email fails
-
-The Clipboard API requires a secure context in many browsers. The code falls back to a temporary text area and `document.execCommand("copy")`, but some browsers may still block clipboard access depending on permissions.
-
-### Page transitions feel too slow
-
-Transition timing is controlled in:
-
-```text
-js/ui.js
-css/07-animations-responsive.css
+```html
+<script src="js/i18n.js" defer></script>
 ```
 
-Users with reduced-motion enabled skip the transition.
+Blog pages use:
+
+```html
+<script src="../js/i18n.js" defer></script>
+```
+
+Also check that:
+
+- The browser can load `https://translate.google.com/`.
+- The site is served from `localhost` or a static host.
+- Browser extensions are not blocking Google Translate.
+- Old site data or the `googtrans` cookie is cleared.
+
+### Copy Email Does Not Work
+
+Clipboard access can be blocked by browser permissions or insecure contexts. The code has a fallback, but some browsers may still block it.
 
 ## Contact Links
-
-Current contact and profile links used by the site:
 
 - Email: `gourab.roy@estudiante.uam.es`
 - Google Scholar: `https://scholar.google.com/citations?hl=en&user=_9tL56YAAAAJ`
@@ -760,14 +372,8 @@ Current contact and profile links used by the site:
 - Facebook: `https://www.facebook.com/bdgourab5184`
 - Instagram: `https://www.instagram.com/gourab.roy__/`
 
-## Notes for Future Development
+## License
 
-Useful next improvements:
+This is my personal portfolio website. Unless a separate license file says otherwise, the source code, written content, portrait, CV, research summaries, and other personal materials are mine.
 
-- Rename the CV file to a cleaner URL-safe name.
-- Optimize `Photo.png` into WebP/AVIF variants.
-- Add a dedicated social preview image.
-- Add a real blog post system if long-form writing grows.
-- Add `sitemap.xml` and `robots.txt`.
-- Consolidate the repeated header into a template if the project later adopts a static site generator.
-- Consider local copies of external icons for fully offline rendering.
+Please do not reuse or present my personal content as your own.
