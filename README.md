@@ -62,6 +62,7 @@ For best testing, run the site with a local server instead of opening it through
 - Canvas 2D API for the neural background animation
 - Google Fonts: Inter and Noto Sans Bengali
 - Google Translate Element for multilingual support
+- Plausible Analytics for private visitor statistics
 - Simple Icons and Devicon for external logos
 
 There is no Node.js build process required for this project.
@@ -103,6 +104,7 @@ Portfolio/
     |-- publications.js
     |-- ui.js
     |-- neural-canvas.js
+    |-- analytics.js
     |-- main.js
     |-- blog-main.js
     `-- i18n.js
@@ -208,6 +210,24 @@ contact.html
 
 If my email, phone number, CV, or social links change, this is the main file to update.
 
+### Plausible Analytics
+
+Private analytics are loaded through:
+
+```text
+js/analytics.js
+```
+
+The file uses the Plausible script ID from the installation snippet:
+
+```text
+https://plausible.io/js/pa-a-5FpKEsjdwzckellU5PQ.js
+```
+
+The script is included on all root pages and on the `Blog/` pages. It does not count local `file://`, `localhost`, or `127.0.0.1` testing visits. To verify the installation, deploy the site, open the live URL once, then click the verify button in Plausible.
+
+In Plausible, I can see private stats like total visitors in the last 24 hours, page views, referrers, countries, devices, and top pages.
+
 ### CV
 
 The current CV file is:
@@ -251,6 +271,7 @@ html[data-theme="bright"]
 - `js/publications.js` renders publication filters and cards.
 - `js/ui.js` handles shared UI behavior like reveal animations, counters, active nav, scroll progress, page transitions, copy email, and footer year.
 - `js/neural-canvas.js` creates the animated neural background.
+- `js/analytics.js` loads the Plausible Analytics snippet on the live site.
 - `js/main.js` initializes normal portfolio pages.
 - `js/blog-main.js` initializes blog pages.
 - `js/i18n.js` adds the language selector and connects it to Google Translate.
@@ -304,6 +325,7 @@ Before publishing a new version, I should check:
 - Email and phone links.
 - Publication links and DOI links.
 - Google Scholar citation numbers.
+- Plausible verification after deployment.
 - Social profile links.
 - Dark and bright themes.
 - English, Bangla, Spanish, and French language selector.
@@ -328,6 +350,7 @@ Clear browser site data if the theme behaves unexpectedly.
 On `publications.html`, these scripts need to load in the right order:
 
 ```html
+<script src="js/analytics.js" defer></script>
 <script src="js/publications-data.js" defer></script>
 <script src="js/state.js" defer></script>
 <script src="js/theme.js" defer></script>
@@ -358,6 +381,14 @@ Also check that:
 - The site is served from `localhost` or a static host.
 - Browser extensions are not blocking Google Translate.
 - Old site data or the `googtrans` cookie is cleared.
+
+### Plausible Does Not Show Visits
+
+Check that:
+
+- The live site is not being opened through `file://` or `localhost`.
+- The browser can load `https://plausible.io/js/pa-a-5FpKEsjdwzckellU5PQ.js`.
+- Plausible has verified the site installation.
 
 ### Copy Email Does Not Work
 
