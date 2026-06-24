@@ -83,7 +83,9 @@ Portfolio/
 |-- README.md
 |-- favicon.svg
 |-- Photo.png
-|-- Gourab_Roy_CV (2).pdf
+|-- CV/
+|   |-- Gourab_Roy_CV_2026.pdf
+|   `-- Gourab_Roy_CV_2026.tex
 |-- Blog/
 |   |-- index.html
 |   |-- ipcv-days-france-2026.html
@@ -233,7 +235,7 @@ In Plausible, I can see private stats like total visitors in the last 24 hours, 
 The current CV file is:
 
 ```text
-Gourab_Roy_CV (2).pdf
+CV/Gourab_Roy_CV_2026.pdf
 ```
 
 If I rename it, I need to update all CV links across the site.

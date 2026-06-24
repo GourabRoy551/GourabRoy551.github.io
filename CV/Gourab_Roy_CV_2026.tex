@@ -1,0 +1,285 @@
+%% ============================================================
+%%  Gourab Roy — Academic CV
+%%  Compiled with pdflatex
+%% ============================================================
+\documentclass[a4paper,10pt]{article}
+
+%% --- Packages ---
+\usepackage[top=1.4cm, bottom=1.4cm, left=1.6cm, right=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage[colorlinks=true, urlcolor=blue!60!black, linkcolor=blue!60!black, pdftitle={Gourab Roy CV}]{hyperref}
+
+%% --- Colours ---
+\definecolor{accent}{RGB}{20, 65, 145}
+
+%% --- Section heading style ---
+\titleformat{\section}
+  {\bfseries\normalsize\color{accent}}
+  {}
+  {0em}
+  {}
+  [\vspace{-0.45em}\color{accent}\rule{\linewidth}{0.5pt}]
+\titlespacing{\section}{0pt}{0.85em}{0.4em}
+
+%% --- Entry commands ---
+\newcommand{\cventry}[4]{%
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textit{\small #2}\\
+    \textit{\small #3} & \textit{\small #4}\\
+  \end{tabular*}\vspace{0.15em}%
+}
+
+\newcommand{\cventryshort}[2]{%
+  \noindent\textbf{#1}\hfill\textit{\small #2}\par
+  \vspace{0.1em}%
+}
+
+%% --- List spacing ---
+\setlist[itemize]{topsep=2pt, itemsep=2pt, parsep=0pt, partopsep=0pt, leftmargin=*}
+\setlist[enumerate]{topsep=2pt, itemsep=3pt, parsep=0pt, partopsep=0pt}
+
+\linespread{1.16}
+\pagestyle{empty}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+
+%% ============================================================
+\begin{document}
+
+%% ---- HEADER ------------------------------------------------
+\begin{center}
+  {\LARGE\bfseries Gourab Roy}\\[0.25em]
+  {\normalsize AI Researcher \&\ Erasmus Mundus IPCVAI Student}\\[0.35em]
+  \small
+  \faEnvelope\;%
+  \href{mailto:gourab.roy@estudiante.uam.es}{gourab.roy@estudiante.uam.es}
+  \quad$|$\quad
+  \faPhone\;%
+  +36\,70\,784\,2482
+  \quad$|$\quad
+  \faMapMarker*\;%
+  Madrid, Spain
+  \\[0.2em]
+  \faGithub\;%
+  \href{https://github.com/GourabRoy551}{github.com/GourabRoy551}
+  \quad$|$\quad
+  \faLinkedin\;%
+  \href{https://www.linkedin.com/in/gourab-roy-5b52921a3/}{linkedin/gourab-roy}
+  \quad$|$\quad
+  \faGraduationCap\;%
+  \href{https://scholar.google.com/citations?user=_9tL56YAAAAJ}{Google Scholar}
+\end{center}
+
+\vspace{0.15em}
+
+%% ---- RESEARCH INTERESTS ------------------------------------
+\section{Research Interests}
+
+Computer vision, deep learning, explainable AI (XAI), vision transformers, CLIP-style
+vision-language models, biomedical imaging (CT/MRI), few-shot learning, and trustworthy AI
+for real-world deployment.
+
+%% ---- EDUCATION ---------------------------------------------
+\section{Education}
+
+\cventry{Erasmus Mundus Joint Master's Degree --- IPCVAI}{2025--2027 (ongoing)}%
+        {Artificial Intelligence for Image Processing and Computer Vision}{}
+
+\begin{itemize}
+  \item \textbf{Semester 2 (current):}
+        Universidad Aut\'onoma de Madrid (UAM), Spain
+        \hfill\textit{Feb~2026 -- Present}\\
+        Courses: HPC for Deep Learning, DL for Visual Signal Processing~I,
+        DL for Computer Vision~II, Vision for Multiple/Moving Cameras,
+        Tutored Research \& Development (TRDP~1)
+
+  \item \textbf{Semester 1 (completed):}
+        P\'azm\'any P\'eter Catholic University (PPKE), Budapest, Hungary
+        \hfill\textit{Sep~2025 -- Jan~2026}\\
+        Courses: Basic Image Processing, Data Mining \& ML,
+        Fundamentals of Deep Learning, Multimodal Sensor Fusion \& Navigation,
+        Biomedical Signal Processing, Design Patterns
+
+  \item \textbf{Semester 3 (planned):}
+        Universit\'e de Bordeaux (UBx), France\\
+        Courses: Explainable AI for Images (XAII), AI \& Sustainability,
+        Advanced Computer Vision, Acquisition, Reconstruction \& Medical Imaging
+\end{itemize}
+
+\vspace{0.3em}
+
+\cventry{B.Sc.\ Computer Science and Engineering}{2018--2023}%
+        {Sylhet Engineering College, Bangladesh}{CGPA: 3.56\,/\,4.00}
+
+\begin{itemize}
+  \item Undergraduate thesis: \textit{CerebralNet}
+        (deep learning applied to brain signal/image analysis)
+\end{itemize}
+
+%% ---- EXPERIENCE --------------------------------------------
+\section{Experience}
+
+\cventry{Research Assistant}{Nov 2023 -- Present}%
+        {Sylhet Engineering College, Department of CSE}%
+        {Supervisor: Prof.\ Md.\ Abu Naser Mojumder, Head of CSE}
+
+\begin{itemize}
+  \item Led applied ML research: model design, experimental evaluation, and paper preparation
+        across medical AI, document AI, NLP, and structural CV --- contributing to 8 published studies
+  \item Mentored undergraduate students on final-year thesis and research projects
+\end{itemize}
+
+\vspace{0.3em}
+
+\cventry{Adjunct Lecturer}{Jan 2024 -- Present}%
+        {Sylhet Engineering College, Department of CSE}{}
+
+\begin{itemize}
+  \item Taught undergraduate courses: Distributed Computing, Computer Architecture,
+        Introduction to Data Science, Peripheral \& Interfacing,
+        Microprocessors \& Microcontrollers
+  \item Designed assessments, held consultation sessions, and co-supervised
+        final-year thesis projects
+\end{itemize}
+
+%% ---- PUBLICATIONS ------------------------------------------
+\section{Publications \textnormal{\small --- \href{https://scholar.google.com/citations?user=_9tL56YAAAAJ}{Google Scholar} $\cdot$ 24+ citations}}
+
+\textbf{Journal Articles}
+
+\begin{enumerate}[label={[J\arabic*]}, leftmargin=3.0em, itemsep=3pt]
+  \item ``CovidExpert: A Triplet Siamese Neural Network framework for the detection of
+        COVID-19,'' \textit{Informatics in Medicine Unlocked}, Elsevier, 2023.
+        \href{https://doi.org/10.1016/j.imu.2022.101156}{doi:10.1016/j.imu.2022.101156}
+        \textbf{[22 citations]}
+
+  \item ``Optical character recognition for ancient scripts: a case study on Syloti Nagri
+        using deep learning models,'' \textit{Journal of Computer Sciences Institute}, 2025.
+        \href{https://ph.pollub.pl/index.php/jcsi/article/view/6785}{[link]}
+
+  \item ``Advancing Bangla typography: machine learning and transfer learning based font
+        detection and classification using the BanglaFont45 dataset,''
+        \textit{Journal of Computer Sciences Institute}, 2025.
+        \href{https://ph.pollub.pl/index.php/jcsi/article/view/7120}{[link]}
+\end{enumerate}
+
+\vspace{0.25em}
+\textbf{Conference Papers}
+
+\begin{enumerate}[label={[C\arabic*]}, leftmargin=3.0em, itemsep=3pt]
+  \item ``CrackClassification4: Classifying Four Types of Cracks in Structural Surfaces
+        Using CNNs,'' \textit{ICCIT 2024}, IEEE.
+        \href{https://ieeexplore.ieee.org/document/11022574/}{[IEEE Xplore]}
+
+  \item ``Optimizing Multilingual Summarization: Advanced Corpus Creation and Filtering
+        Approach,'' \textit{ICCIT 2024}, IEEE. \textbf{[1 citation]}
+
+  \item ``Enhancing Concrete Performance: Machine Learning Models for Predicting and
+        Classifying Tensile Strength,'' \textit{ECCE 2025}, IEEE.
+        \href{https://ieeexplore.ieee.org/document/11013991/}{[IEEE Xplore]}
+
+  \item ``DateFNet: From Pixels to Plates --- Attention Based Multi-Stream CNN for Date
+        Fruit Classification,'' \textit{ICCIT 2025}, IEEE.
+
+  \item ``Deep Learning-Based Detection of Aircraft Cracks and Dents Using YOLOv11 and
+        YOLOv12 for Aviation Safety in Bangladesh,'' \textit{ICCIT 2025}, IEEE.
+\end{enumerate}
+
+%% ---- PROJECTS ----------------------------------------------
+\section{Selected Projects}
+
+\cventryshort{Cross-Modal Attention Bridge (CMAB) for CLIP Interpretability}%
+             {UAM Madrid, Feb 2026 -- Ongoing}
+\begin{itemize}
+  \item Developing a statistically filtered cross-modal attention method explaining
+        CLIP's image--text alignment; K-sigma filtering on attention rollouts generates
+        fine-grained, text-conditional visual explanations per token without altering
+        the model weights
+  \item Supervised by Prof.\ Jenny Benois-Pineau (UBx Bordeaux) and
+        Prof.\ Marcos Escudero-Vi\~nolo (UAM Madrid) --- \textit{TRDP~1 research project}
+  \item \textit{Tools:} PyTorch $\cdot$ ViT $\cdot$ CLIP $\cdot$ Attention Rollout $\cdot$ XAI
+\end{itemize}
+
+\vspace{0.25em}
+
+\cventryshort{Cardiac Autonomic Assessment via PPG-Derived HRV During Sound Stimulation}%
+             {PPKE Budapest, Dec 2025}
+\begin{itemize}
+  \item Modular Python pipeline: 10 participants across baseline and music conditions;
+        Butterworth filtering, adaptive peak detection, FFT spectral analysis,
+        Friedman/Wilcoxon tests and individual responsiveness classifier ---
+        every subject showed significant ANS shifts despite non-significant group means
+  \item \href{https://github.com/GourabRoy551/cardiac-autonomic-ppg-hrv}{github.com/GourabRoy551/cardiac-autonomic-ppg-hrv}
+  \item \textit{Tools:} Python $\cdot$ NumPy $\cdot$ SciPy $\cdot$ Pandas $\cdot$ Matplotlib
+\end{itemize}
+
+\vspace{0.25em}
+
+\cventryshort{Calibrated Multi-View 3D Reconstruction}{UAM Madrid, 2025}
+\begin{itemize}
+  \item Full MATLAB pipeline: camera calibration, SIFT/SURF/ORB feature matching with
+        RANSAC, fundamental matrix, epipolar geometry, multi-view sparse reconstruction,
+        and bundle adjustment --- 4.47\,px reprojection error over 672 multi-view tracks
+  \item \href{https://github.com/GourabRoy551/Calibrated-Multi-View-3D-Reconstruction}{github.com/GourabRoy551/Calibrated-Multi-View-3D-Reconstruction}
+  \item \textit{Tools:} MATLAB $\cdot$ SIFT $\cdot$ RANSAC $\cdot$ Bundle Adjustment $\cdot$ Epipolar Geometry
+\end{itemize}
+
+%% ---- SKILLS ------------------------------------------------
+\section{Technical Skills}
+
+\begin{description}[
+  leftmargin=3.5cm,
+  labelwidth=3.2cm,
+  labelsep=0.3cm,
+  style=sameline,
+  font=\bfseries,
+  itemsep=4pt,
+  topsep=2pt
+]
+  \item[Languages]
+    Python $\cdot$ C $\cdot$ C++ $\cdot$ Java $\cdot$ JavaScript
+
+  \item[Deep Learning]
+    PyTorch $\cdot$ TensorFlow $\cdot$ Scikit-learn $\cdot$ CNNs
+    $\cdot$ Vision Transformers (ViT) $\cdot$ YOLO (v11/v12) $\cdot$ CLIP
+    $\cdot$ Attention Rollout $\cdot$ Transfer learning $\cdot$ Few-shot learning
+
+  \item[Computer Vision]
+    Image classification $\cdot$ Segmentation $\cdot$ Object detection
+    $\cdot$ Multi-view geometry $\cdot$ Explainable AI (XAI)
+
+  \item[Data Analysis]
+    NumPy $\cdot$ Pandas $\cdot$ Matplotlib $\cdot$ SciPy $\cdot$ Jupyter Notebook
+
+  \item[Dev Tools]
+    Git $\cdot$ MATLAB $\cdot$ MySQL $\cdot$ SQLite
+
+  \item[Platforms]
+    Linux $\cdot$ Windows
+
+  \item[Research]
+    \LaTeX{} $\cdot$ Academic writing $\cdot$ Peer review
+    \textit{(Informatics in Medicine Unlocked, Elsevier)}
+\end{description}
+
+%% ---- ACADEMIC SERVICE & ACHIEVEMENTS -----------------------
+\section{Academic Service \& Achievements}
+
+\begin{itemize}
+  \item \textbf{Peer Reviewer,} \textit{Informatics in Medicine Unlocked} (Elsevier)
+  \item \textbf{HackerRank Gold Badges} in C++ and Python
+  \item \textbf{350+} competitive programming problems solved (HackerRank, Codeforces, UVA)
+  \item Completed Machine Learning Specialization and data science courses (Coursera)
+\end{itemize}
+
+\end{document}
