@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gourab Roy writes about returning to Sylhet Engineering College for a seminar on the road to Erasmus Mundus, sharing his IPCVAI journey, application advice, life in Europe, and practical guidance for SEC students."
+    />
+    <meta name="theme-color" content="#090d0f" />
+    <meta property="og:title" content="Back to SEC: Talking About the Road to Erasmus Mundus | Gourab Roy Blog" />
+    <meta
+      property="og:description"
+      content="A detailed, personal recap of my seminar at Sylhet Engineering College on Erasmus Mundus, IPCVAI, applications, scholarships, motivation letters, recommendation letters, and life abroad."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="Seminar_SEC/6.jpeg" />
+    <title>Back to SEC: Talking About the Road to Erasmus Mundus - Gourab Roy</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="application-name" content="Gourab Roy" />
+    <meta name="apple-mobile-web-app-title" content="Gourab Roy" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/01-base.css" />
+    <link rel="stylesheet" href="../css/02-header-layout.css" />
+    <link rel="stylesheet" href="../css/03-hero.css" />
+    <link rel="stylesheet" href="../css/04-research-education.css" />
+    <link rel="stylesheet" href="../css/05-publications-projects.css" />
+    <link rel="stylesheet" href="../css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="../css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="../css/08-polish-overrides.css" />
+    <script>
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      const savedTheme = requestedTheme || localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "bright") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <script src="../js/analytics.js" defer></script>
+    <script src="../js/state.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/neural-canvas.js" defer></script>
+    <script src="../js/blog-main.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+
+    <style>
+      .post-hero {
+        width: min(780px, calc(100vw - 44px));
+        max-width: calc(100vw - 44px);
+        padding: clamp(5rem, 12vw, 9rem) 0 clamp(3rem, 6vw, 5rem);
+        margin: 0 auto;
+        min-width: 0;
+      }
+      .post-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .post-eyebrow a {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+      }
+      .post-eyebrow a:hover { opacity: 1; }
+      .post-eyebrow span {
+        font-size: 0.78rem;
+        color: var(--muted);
+        opacity: 0.5;
+      }
+      .post-eyebrow time {
+        font-size: 0.78rem;
+        color: var(--muted);
+        opacity: 0.65;
+        letter-spacing: 0.04em;
+      }
+      .post-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.25rem;
+        color: var(--ink);
+        overflow-wrap: break-word;
+      }
+      .post-hero .post-subtitle {
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 660px;
+        margin-bottom: 2rem;
+      }
+      .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .post-tags span {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        background: var(--surface-solid);
+        border: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .post-body {
+        width: min(780px, calc(100vw - 44px));
+        max-width: calc(100vw - 44px);
+        margin: 0 auto;
+        padding: 0 0 clamp(4rem, 10vw, 7rem);
+        min-width: 0;
+      }
+      .post-body p {
+        font-size: clamp(1rem, 1.5vw, 1.08rem);
+        line-height: 1.85;
+        color: var(--muted);
+        margin-bottom: 1.6rem;
+      }
+      .post-body h2 {
+        font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin: 3rem 0 1rem;
+      }
+      .post-body h3 {
+        font-size: 1rem;
+        color: var(--ink);
+        margin: 1.6rem 0 0.65rem;
+        font-weight: 700;
+      }
+      .post-body strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .post-body em {
+        color: var(--cyan);
+        font-style: normal;
+        font-weight: 500;
+      }
+      .post-body a {
+        color: var(--cyan);
+        text-decoration: none;
+      }
+      .post-body a:hover {
+        text-decoration: underline;
+      }
+
+      .post-download {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+        margin: 2.25rem 0;
+        padding: 1.25rem 1.4rem;
+        border: 1px solid color-mix(in srgb, var(--cyan) 42%, var(--line));
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--cyan) 9%, var(--surface-solid));
+        box-shadow: var(--shadow-soft);
+      }
+      .post-download strong {
+        display: block;
+        color: var(--ink);
+        margin-bottom: 0.25rem;
+      }
+      .post-download span {
+        display: block;
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 0.9rem;
+      }
+      .post-download a {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 1rem;
+        border-radius: 999px;
+        background: var(--cyan);
+        color: var(--bg);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+        box-shadow: 0 10px 28px color-mix(in srgb, var(--cyan) 30%, transparent);
+      }
+      @media (max-width: 640px) {
+        .post-download {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .post-download a {
+          width: 100%;
+        }
+      }
+
+      .post-img {
+        margin: 2.5rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+      }
+      .post-img img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+      .post-img.is-poster {
+        background: var(--surface-solid);
+      }
+      .post-img.is-poster img {
+        width: auto;
+        max-width: 100%;
+        max-height: min(72vh, 720px);
+        margin: 0 auto;
+        object-fit: contain;
+      }
+      .post-img figcaption {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        opacity: 0.65;
+        line-height: 1.5;
+        background: var(--surface-solid);
+      }
+      .post-img-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 2.5rem 0;
+      }
+      @media (max-width: 600px) {
+        .post-img-pair { grid-template-columns: 1fr; }
+      }
+      .post-img-pair figure {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        margin: 0;
+      }
+      .post-img-pair figure img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        max-height: 340px;
+      }
+      .post-img-pair figure figcaption {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.78rem;
+        color: var(--muted);
+        opacity: 0.6;
+        background: var(--surface-solid);
+      }
+
+      .post-quote {
+        margin: 2.5rem 0;
+        padding: 1.5rem 2rem;
+        border-left: 3px solid var(--cyan);
+        background: var(--surface-solid);
+        border-radius: 0 10px 10px 0;
+      }
+      .post-quote p {
+        margin: 0;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--ink);
+        line-height: 1.7;
+      }
+
+      .post-fact-grid,
+      .post-resource-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+        margin: 2.25rem 0;
+      }
+      @media (max-width: 640px) {
+        .post-fact-grid,
+        .post-resource-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .post-fact-grid article,
+      .post-resource-grid article {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--surface-solid);
+        padding: 1rem;
+      }
+      .post-fact-grid span,
+      .post-resource-grid span {
+        display: block;
+        color: var(--cyan);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 0.45rem;
+      }
+      .post-fact-grid strong,
+      .post-resource-grid strong {
+        display: block;
+        color: var(--ink);
+        font-size: 0.98rem;
+        line-height: 1.45;
+      }
+      .post-fact-grid p,
+      .post-resource-grid p {
+        margin: 0.35rem 0 0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+      .post-resource-grid a {
+        color: var(--cyan);
+        text-decoration: none;
+      }
+
+      .post-list {
+        margin: 1rem 0 2rem;
+        padding: 0;
+        list-style: none;
+      }
+      .post-list li {
+        position: relative;
+        padding-left: 1.35rem;
+        margin-bottom: 0.8rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .post-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: var(--cyan);
+      }
+      .post-list strong {
+        color: var(--ink);
+      }
+
+      .post-schedule {
+        margin: 2.5rem 0;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--surface-solid);
+      }
+      .post-schedule-header {
+        padding: 0.9rem 1.25rem;
+        background: var(--cyan);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--bg);
+      }
+      .post-schedule-row {
+        display: flex;
+        gap: 1.25rem;
+        padding: 0.75rem 1.25rem;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.88rem;
+      }
+      .post-schedule-row:last-child { border-bottom: none; }
+      .post-schedule-time {
+        min-width: 110px;
+        color: var(--cyan);
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        font-size: 0.82rem;
+      }
+      .post-schedule-label {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .post-schedule-label strong {
+        display: block;
+        color: var(--ink);
+        font-weight: 600;
+        margin-bottom: 0.1rem;
+      }
+
+      .post-footer {
+        width: min(780px, calc(100vw - 44px));
+        max-width: calc(100vw - 44px);
+        margin: 0 auto;
+        padding: 0 0 clamp(3rem, 8vw, 5rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-top: 1px solid var(--line);
+        padding-top: 2rem;
+        min-width: 0;
+      }
+      .post-footer a {
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--cyan);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: gap 0.2s;
+      }
+      .post-footer a:hover { gap: 0.65rem; }
+      .post-footer-meta {
+        font-size: 0.8rem;
+        color: var(--muted);
+        opacity: 0.55;
+      }
+
+      @media (max-width: 640px) {
+        .post-hero,
+        .post-body,
+        .post-footer {
+          width: calc(100vw - 28px);
+          max-width: calc(100vw - 28px);
+        }
+        .post-hero {
+          padding-top: clamp(3.75rem, 14vw, 5rem);
+        }
+        .post-hero h1 {
+          font-size: clamp(2rem, 11vw, 2.85rem);
+          line-height: 1.08;
+        }
+        .post-hero .post-subtitle {
+          max-width: 100%;
+        }
+        .post-tags span {
+          font-size: 0.68rem;
+          padding: 0.28rem 0.6rem;
+        }
+        .post-img,
+        .post-download,
+        .post-schedule,
+        .post-quote {
+          max-width: 100%;
+        }
+        .post-schedule-row {
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+        .post-schedule-time {
+          min-width: 0;
+        }
+        .post-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#post-content">Skip to post</a>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header" data-reveal>
+      <div class="header-shell">
+        <a class="brand" href="../index.html" aria-label="Gourab Roy portfolio">
+          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-copy">
+            <span class="brand-text">Gourab Roy</span>
+            <span class="brand-role">AI engineer and master's student</span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to bright theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-orb" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-copy">
+            <span class="theme-toggle-label" data-theme-label>Dark</span>
+            <span class="theme-toggle-action" data-theme-action>Switch to bright</span>
+          </span>
+        </button>
+
+        <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+          <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../about.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../education.html">Education</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../experience.html">Experience</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../skills.html">Skills</a>
+        <a href="index.html" class="is-active">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="post-content">
+      <div class="post-hero" data-reveal>
+        <div class="post-eyebrow">
+          <a href="index.html">&#8592; Blog</a>
+          <span>/</span>
+          <span>Seminar</span>
+          <span>&#183;</span>
+          <time datetime="2026-07-19">July 19, 2026</time>
+        </div>
+        <h1>Back to SEC: Talking About the Road to Erasmus Mundus</h1>
+        <p class="post-subtitle">
+          I went back to Sylhet Engineering College for a seminar on the Erasmus Mundus journey. I talked about how I moved from SEC to the IPCVAI program in Europe, what helped my application, what I would do better, and what students should know before they start.
+        </p>
+        <div class="post-tags">
+          <span>Erasmus Mundus</span>
+          <span>SEC</span>
+          <span>IPCVAI</span>
+          <span>Study Abroad</span>
+          <span>Application Tips</span>
+        </div>
+      </div>
+
+      <article class="post-body">
+        <figure class="post-img is-poster">
+          <img src="Seminar_SEC/6.jpeg" alt="Seminar poster for Navigating the Erasmus Mundus Journey at Sylhet Engineering College" loading="eager" />
+          <figcaption>The seminar poster outside the room. The title was "Navigating the Erasmus Mundus Journey," and it was organized by CSE Society at SEC.</figcaption>
+        </figure>
+
+        <div class="post-download">
+          <div>
+            <strong>Download the seminar slides</strong>
+            <span>The full slide deck is available here as a PDF: Road to Erasmus Mundus.</span>
+          </div>
+          <a href="Seminar_SEC/Road_to_Erasmus_Mundus.pdf" download>Download PDF</a>
+        </div>
+
+        <p>
+          On <strong>July 19, 2026</strong>, I had the chance to return to <strong>Sylhet Engineering College</strong>, this time not as a regular student sitting quietly in the audience, but as the person standing in front of the room with a microphone in hand. The seminar was organized by the <strong>CSE Society</strong>, and the topic was something very close to my own life now: <strong>the road to Erasmus Mundus</strong>.
+        </p>
+
+        <p>
+          The official title was <em>Navigating the Erasmus Mundus Journey</em>, but honestly, I wanted it to feel less like a formal lecture and more like a real conversation with juniors, teachers, and friends. I was once in that same place, trying to understand what opportunities existed outside Bangladesh, what a strong application looked like, and whether someone from SEC could actually make it into a competitive European master's program. So the main message was simple: yes, it is possible, but you need a clear story, preparation, and consistency.
+        </p>
+
+        <div class="post-fact-grid" aria-label="Seminar details">
+          <article>
+            <span>Topic</span>
+            <strong>Road to Erasmus Mundus</strong>
+            <p>From Sylhet Engineering College to Europe, with a focus on the IPCVAI Erasmus Mundus Joint Master.</p>
+          </article>
+          <article>
+            <span>Speaker</span>
+            <strong>Gourab Roy</strong>
+            <p>IPCVAI scholar, CSE 11th batch SEC, and former adjunct lecturer at SEC.</p>
+          </article>
+          <article>
+            <span>Time</span>
+            <strong>July 19, 2026 at 11:30 AM</strong>
+            <p>A campus seminar hosted in the CSE Conference Room.</p>
+          </article>
+          <article>
+            <span>Organizer</span>
+            <strong>CSE Society, SEC</strong>
+            <p>A student-organized session for sharing practical guidance with CSE students.</p>
+          </article>
+        </div>
+
+        <h2>Why This Seminar Mattered To Me</h2>
+
+        <p>
+          Coming back to SEC felt personal. This is where my undergraduate journey started. I completed my <strong>B.Sc. in Computer Science and Engineering</strong> here, worked on my thesis, learned the basics of research, taught as an adjunct lecturer, and slowly built the profile that later helped me get selected for <strong>IPCVAI: AI for Image Processing and Computer Vision</strong>.
+        </p>
+
+        <p>
+          I did not want to stand there and make Erasmus Mundus sound like some magical thing that only perfect students can get. That would not be honest. It is competitive, yes. It has global applicants and limited seats. But the important point I kept repeating was this: <strong>you do not need a perfect profile, you need a connected profile</strong>. Your grades, thesis, projects, research, CV, recommendation letters, and motivation letter should all tell one clear story.
+        </p>
+
+        <figure class="post-img">
+          <img src="Seminar_SEC/3.jpeg" alt="A full classroom audience attending the Erasmus Mundus seminar at SEC" loading="lazy" />
+          <figcaption>The room was full, which made the session feel even more meaningful. I kept thinking, maybe someone here is going to apply next season and do even better.</figcaption>
+        </figure>
+
+        <h2>What We Covered</h2>
+
+        <p>
+          I divided the seminar into four main parts so that the students could follow the full path, not just hear the success story at the end. First, I explained what Erasmus Mundus is and why someone should apply. Then I shared my own journey and profile before applying. After that, we moved into the practical side: documents, motivation letters, recommendation letters, timelines, mistakes, and how to choose the right program. Finally, I talked about life in Europe after selection, because getting selected is not the final boss. It is just the beginning of a much bigger adjustment.
+        </p>
+
+        <div class="post-schedule" aria-label="Seminar outline">
+          <div class="post-schedule-header">Seminar Outline</div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">01</span>
+            <span class="post-schedule-label"><strong>The Program</strong>What Erasmus Mundus Joint Masters are, why they matter, eligibility, competition, and why program fit is so important.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">02</span>
+            <span class="post-schedule-label"><strong>My Journey</strong>My profile from SEC, my thesis and research direction, teaching experience, application strategy, and IPCVAI selection.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">03</span>
+            <span class="post-schedule-label"><strong>Practical Advice</strong>Documents, CV, motivation letter, recommendation letters, application tracking, common mistakes, and a 6-month action plan.</span>
+          </div>
+          <div class="post-schedule-row">
+            <span class="post-schedule-time">04</span>
+            <span class="post-schedule-label"><strong>Life in Europe</strong>Budapest, Madrid, Bordeaux, coursework, research pressure, housing, food, transport, budgeting, mobility, and mental adjustment.</span>
+          </div>
+        </div>
+
+        <h2>So, What Is Erasmus Mundus?</h2>
+
+        <p>
+          I started with the basic question because many students hear the name "Erasmus Mundus" but are not always sure what it actually means. In simple words, <strong>Erasmus Mundus Joint Masters</strong> are international master's programs jointly offered by multiple European universities. Students usually study in two or more countries, and the program combines academic training, research exposure, cultural experience, and often scholarship support.
+        </p>
+
+        <p>
+          I explained that this is different from applying to one normal master's program at one university. In a general application, you usually apply to one university, and funding may be handled separately. In Erasmus Mundus, you apply to a joint master's program, and for many programs the scholarship consideration is part of the same application. Also, the study path is different because you move between partner universities and countries.
+        </p>
+
+        <p>
+          The reasons to apply are clear: you get multi-country study, exposure to different teaching systems, a global cohort, strong academic and research opportunities, and in many cases support for tuition, allowance, travel, and insurance. For students from Bangladesh, this can be a life-changing academic opportunity, especially if they are serious about research, industry growth, or a future PhD.
+        </p>
+
+        <h2>Is It Competitive?</h2>
+
+        <p>
+          Yes, it is competitive. I did not want to hide that part. Applicants come from many countries, seats are limited, and committees see strong profiles every year. But competition does not mean students should be scared away. It means they need to be more intentional.
+        </p>
+
+        <p>
+          A strong profile matters, but <strong>program fit</strong> matters just as much. Grades, research, projects, CV structure, motivation letter, and recommendation letters all count. But the committee also wants to understand why this specific program makes sense for you. If your background, interests, and future goals connect naturally with the program, your application becomes easier to believe.
+        </p>
+
+        <p>
+          I also talked about different types of candidates. Some students are strong academically, with a good CGPA and clean transcript. Some are more research-focused, with thesis work, publications, or a clear research direction. Some are engineering-focused, with projects, coding skills, and GitHub work. And then there are balanced candidates who combine grades, projects, motivation, and fit. Any of these can work, but the story has to be clear.
+        </p>
+
+        <figure class="post-img">
+          <img src="Seminar_SEC/2.jpeg" alt="Gourab Roy explaining the competitiveness of Erasmus Mundus applications during the seminar" loading="lazy" />
+          <figcaption>When I talked about competition, I tried to make it practical. The point was not to scare anyone, but to explain how selection really works.</figcaption>
+        </figure>
+
+        <h2>Who Should Apply?</h2>
+
+        <p>
+          My answer was: apply if you have academic consistency, real interest in your field, and enough patience to prepare properly. A good applicant should have strong basics, clear motivation, and some relevant experience through projects, thesis, research, internship, teaching, or technical work. Adaptability also matters because Erasmus Mundus is not only study. It means new countries, new cultures, new grading systems, new weather, new food, and sometimes new loneliness too.
+        </p>
+
+        <p>
+          I told the students that pressure handling is important. Deadlines, exams, documents, visa work, housing, and uncertainty can all arrive together. A student who can stay calm, ask for help, and keep moving has a real advantage. Again, the goal is not perfection. The goal is consistency.
+        </p>
+
+        <h2>My Own Profile Before Applying</h2>
+
+        <p>
+          Then I shared my own profile, because I think students understand things better when they see a real example. Before applying, I had my academic background from <strong>SEC with a CGPA of 3.56 out of 4.00</strong>. My thesis was connected to <strong>CerebralNet</strong>, where I worked around brain imaging, classification, and detection. My research and publication direction included medical imaging, computer vision, OCR, and machine learning.
+        </p>
+
+        <p>
+          I also had teaching experience as an <strong>Adjunct Lecturer in the CSE Department</strong>, plus projects and skills in deep learning, computer vision, NLP, and PyTorch. For English proficiency, I used IELTS. None of these things alone selected me. What helped was that they pointed in a similar direction: image processing, computer vision, AI, medical imaging, and research.
+        </p>
+
+        <p>
+          I made this point very clearly during the seminar: <strong>my profile was not perfect</strong>. But it was connected. My thesis connected with my research interests. My projects supported the direction I wanted. My teaching experience showed communication and academic maturity. My motivation letter tied my past work, present interest, and future goal together. That connected story helped a lot.
+        </p>
+
+        <h2>What Helped Me Most</h2>
+
+        <ul class="post-list">
+          <li><strong>Program fit:</strong> my background matched image processing, computer vision, and AI.</li>
+          <li><strong>Research direction:</strong> my thesis and projects were connected to medical imaging and deep learning.</li>
+          <li><strong>Publications and projects:</strong> they showed that my interest was not only written in the motivation letter, but also visible in my work.</li>
+          <li><strong>Teaching experience:</strong> it helped show communication skills and academic maturity.</li>
+          <li><strong>Motivation letter:</strong> I connected my past work, the program structure, and my future goals into one clear narrative.</li>
+        </ul>
+
+        <p>
+          If I had to reduce it to one sentence, I would say this: <em>a good application should feel like one story, not six random documents uploaded together</em>.
+        </p>
+
+        <h2>What I Would Improve If I Applied Again</h2>
+
+        <p>
+          I also shared what I would improve, because this is the part juniors usually need most. If I could go back, I would start earlier. I would prepare the CV, documents, and English test before the application season became stressful. I would target programs more carefully instead of just looking at famous names. I would polish the CV more and keep it short, academic, and focused on relevant work only.
+        </p>
+
+        <p>
+          I would also customize each motivation letter properly. Sending the same generic letter everywhere is one of the easiest ways to weaken an application. Every program has different courses, mobility paths, labs, and goals, so the letter should reflect that. And finally, I would track everything in a spreadsheet: program name, field, deadline, eligibility, document status, recommendation letters, motivation letter status, scholarship status, result, and notes. Being organized is not a small thing. Selection is partly about qualification, but it is also about preparation.
+        </p>
+
+        <h2>The Documents Students Need</h2>
+
+        <p>
+          One practical part of the seminar was about documents. A typical Erasmus Mundus application usually needs an academic CV, a motivation letter, recommendation letters, transcript, degree certificate, English proficiency proof, passport, and the online application form from the program website.
+        </p>
+
+        <p>
+          For the CV, I suggested using <strong>Europass or a clean academic CV</strong>. The slide said max two pages, because the committee should be able to understand your profile quickly. The CV should highlight education, thesis, projects, research, publications, technical skills, teaching or work experience, and achievements. For language skills, using CEFR levels makes the CV easier to read in a European context.
+        </p>
+
+        <p>
+          For recommendation letters, my advice was very simple: choose someone who actually knows your work. A teacher, thesis supervisor, project mentor, or research supervisor is better than a famous person who cannot write anything specific. Ask early, share your CV, transcript, motivation letter draft, and program details, and make it easy for them to write a strong, honest letter. A good letter should mention real examples of your skills, projects, academic performance, research potential, and fit for the field.
+        </p>
+
+        <h2>The Motivation Letter</h2>
+
+        <figure class="post-img">
+          <img src="Seminar_SEC/1.jpeg" alt="Gourab Roy speaking beside the Motivation Letter slide during the SEC seminar" loading="lazy" />
+          <figcaption>This was one of the most important parts of the talk. A motivation letter is not just an emotional story. It has to show fit.</figcaption>
+        </figure>
+
+        <p>
+          The motivation letter got a lot of attention, and for good reason. Many students think the letter is only about writing something emotional or impressive. But in an Erasmus Mundus application, the letter has to do a more practical job. It needs to explain your background, why you care about the field, why the specific program is right for you, and what you want to do after the program.
+        </p>
+
+        <p>
+          I told them to structure it around four things: <strong>my background, why this field, why this program, and future goal</strong>. The background should include academic history, thesis, projects, research, and skills. The field section should explain why you are interested in that subject area. The program section should be specific: courses, mobility, universities, labs, research directions, thesis options, or any part of the program that genuinely matches you. The future goal should show where this degree fits in your academic, research, or professional direction.
+        </p>
+
+        <p>
+          The two biggest mistakes are generic letters and pure emotion. A generic letter sounds like it could be sent to any program. A purely emotional letter may be meaningful, but if it does not show program fit, it is not enough. The strongest letters are personal, but also specific and realistic.
+        </p>
+
+        <h2>Choosing The Right Program</h2>
+
+        <p>
+          This is where many applicants lose focus. They see a famous program name and apply without checking whether their background actually matches. I told the students to check six things before applying: field match, course structure, mobility path, scholarship status, eligibility, and future goal.
+        </p>
+
+        <p>
+          Field match means the program should connect with your background and interests. Course structure means the subjects, specializations, and thesis options should make sense for you. Mobility path means you should understand which countries and universities you will move through. Scholarship status matters because some intakes may have different funding availability. Eligibility means degree requirements, English score, documents, and deadlines. Future goal means you should know whether the program supports your plan for research, PhD, industry, or another direction.
+        </p>
+
+        <p>
+          The selection steps are also not complicated if you take them seriously. First, identify your field and academic background. Then shortlist programs that match. After that, check fit carefully: field, courses, mobility, scholarship, eligibility, and goals. Then apply with a clear, well-explained fit narrative. That last phrase matters a lot. A clear fit narrative is what makes the application feel intentional.
+        </p>
+
+        <h2>Good Fields And Programs For CSE Students</h2>
+
+        <p>
+          Since the audience was mostly from CSE, I also shared fields that can be a good match for computer science students. Artificial intelligence is the obvious one, especially machine learning, deep learning, computer vision, and NLP. Data science and analytics can also fit well, including big data, statistics, decision support, and visualization. Cybersecurity and cloud are strong directions too, covering network security, cryptography, cloud computing, and IoT.
+        </p>
+
+        <p>
+          Software engineering, robotics, embedded systems, autonomous systems, edge AI, and medical imaging are also worth checking depending on your profile. For students who have worked with healthcare data, image processing, or biomedical AI, medical imaging can be a very strong direction.
+        </p>
+
+        <p>
+          Some programs I mentioned were <strong>IPCVAI</strong> for AI, image processing, and computer vision; <strong>EMAI</strong> for artificial intelligence; <strong>CoDaS</strong> and <strong>BDMA</strong> for data science, communication, big data management, and analytics; <strong>EDISS</strong> for data-intensive intelligent software systems; <strong>SECCLO</strong> and <strong>CyberMACS</strong> for security, cloud computing, and applied cybersecurity; and <strong>IFROS</strong> for intelligent field robotic systems.
+        </p>
+
+        <h2>My Program: IPCVAI</h2>
+
+        <p>
+          I spent some time explaining my own program, <strong>IPCVAI</strong>, because it matched my background very naturally. The field is AI, image processing, and computer vision. The mobility path is <strong>Hungary, Spain, and France</strong>. The academic focus connects strongly with deep learning, medical imaging, and explainable AI.
+        </p>
+
+        <p>
+          The first semester at <strong>PPKE in Budapest</strong> gave us foundation courses and ML/DL basics. The second semester at <strong>UAM in Madrid</strong> moved deeper into computer vision, deep learning, 3D vision, and project-based technical work. The next stage in <strong>Bordeaux, France</strong> connects with explainable AI, advanced IPCV topics, and then internship or thesis placement. For me, this made sense because my CSE background, medical imaging work, AI interest, and computer vision projects were already pointing in that direction.
+        </p>
+
+        <figure class="post-img">
+          <img src="Seminar_SEC/5.jpeg" alt="Wide classroom view during the seminar at Sylhet Engineering College" loading="lazy" />
+          <figcaption>One thing I kept saying was that the program should fit your story. IPCVAI fit mine because my thesis, projects, and research direction were already close to computer vision and medical imaging.</figcaption>
+        </figure>
+
+        <h2>Life Abroad: Budapest First</h2>
+
+        <p>
+          After the application part, I moved into life abroad. This part was important because many students imagine the scholarship and the Europe part, but not the daily life part. My first semester was at <strong>PPKE Budapest</strong>, and it taught me very quickly that getting selected is only the beginning.
+        </p>
+
+        <p>
+          The academic system was different. The teaching style, grading, assignments, exams, and expectations did not feel exactly like what I was used to. The courses included image processing, machine learning, deep learning, and multimodal systems. The classroom was international, so classmates came from different countries and academic backgrounds. That was exciting, but it also meant I had to learn how to communicate, collaborate, and ask questions in a new environment.
+        </p>
+
+        <p>
+          Living in Budapest also meant adjusting to culture, transport, weather, food, housing, and daily routines. The first semester challenges were real: academic pressure, time pressure, living alone, cooking, cleaning, budgeting, winter, language, administrative work, residence permit, insurance, housing, and missing home. None of these are dramatic in isolation, but together they can feel heavy in the first month.
+        </p>
+
+        <p>
+          What I learned from Budapest was academic independence. No one reminds you every day. You have to take responsibility for your own learning. Time management becomes survival. Asking seniors, classmates, teachers, and coordinators for help makes life easier. Working with international classmates builds confidence. And slowly, you adjust. My honest summary was: survival comes first, then improvement comes naturally.
+        </p>
+
+        <h2>Then Madrid Made It More Intense</h2>
+
+        <p>
+          The second semester at <strong>UAM Madrid</strong> was more intense academically. We had advanced technical courses in deep learning, computer vision, 3D vision, and visual signal processing. There were assignments, experiments, coding tasks, presentations, reports, exams, and multiple submissions close to each other. Erasmus Mundus gives opportunity, but it also gives real pressure.
+        </p>
+
+        <p>
+          I also talked about my <strong>TRDP research</strong>, which focused on explainable AI for multimodal models. The technical work involved CLIP, BERT, attention maps, statistical filtering, reproducing methods, testing variants, and analyzing outputs. There were weekly supervisor meetings, feedback, corrections, reports, slides, and presentations. This is where research starts to feel like a real workflow: idea, literature, experiments, results, and then communication.
+        </p>
+
+        <p>
+          Madrid taught me that technical depth matters, but communication matters too. You need math and coding basics, but you also need to explain your ideas clearly. Continuous deadlines can be tiring, so small weekly progress is better than trying to fix everything at the last moment. Talent helps, but consistency saves you. I said that in the seminar because I really believe it now.
+        </p>
+
+        <h2>The Everyday Side Of Europe</h2>
+
+        <p>
+          I did not want to make life in Europe sound like only classrooms and travel photos. There is also cooking, grocery shopping, finding halal or deshi food, paying rent, deposits, shared housing, metro cards, buses, trains, mobile SIMs, and figuring out small things in a language you may not fully understand yet.
+        </p>
+
+        <p>
+          Friends and community matter a lot. International classmates can make a new city feel less lonely. Local communities help too. But loneliness can still happen, especially when you miss family, food, language, and the easy comfort of home. I think it is important to say this openly because students should not feel weak if they struggle after moving abroad. Almost everyone struggles in some way; they just do not always post about it.
+        </p>
+
+        <h2>Money And Funding Reality</h2>
+
+        <p>
+          The funding discussion was also practical. Scholarships can be full, partial, fee-waiver based, or sometimes students may be self-funded. Living costs vary a lot between cities. Budapest, Madrid, and Bordeaux do not cost the same. The first month can be especially expensive because of housing deposit, travel, SIM card, transport pass, groceries, basic setup, and emergency costs.
+        </p>
+
+        <p>
+          Monthly budgeting should include rent, food, transport, mobile, study materials, and emergency money. Mobility expenses are easy to underestimate because moving between countries is not the same as normal travel. You may need flights or trains, luggage planning, temporary housing, new deposits, and new documents. My advice was to calculate scholarship plus savings minus expected expenses before accepting an offer, so the dream does not become financially confusing after arrival.
+        </p>
+
+        <h2>Travel, Mobility, And Admin Work</h2>
+
+        <p>
+          Erasmus Mundus mobility sounds beautiful from the outside, and it is beautiful, but it also requires planning. You have to manage flights, trains, luggage, arrival dates, university letters, visa or residence permit steps, insurance, registration, and housing contracts. You also need to set up every new city: SIM card, transport pass, grocery shops, bank or card setup, and a daily routine.
+        </p>
+
+        <p>
+          Emotionally, every move means leaving one comfort zone and building another. That is not easy, but it makes you stronger in a quiet way. By the time you have handled a few moves, you stop panicking at every new administrative email. You still may not enjoy it, but you know you can handle it.
+        </p>
+
+        <h2>What Nobody Tells You</h2>
+
+        <p>
+          I had one section called "What Nobody Tells You," and I think this was one of the most honest parts of the seminar. The first month is hard. Admin takes time. No one reminds you of everything, so you must track your own tasks. Academic pressure can overlap with exams, labs, reports, and moving stress. Loneliness can happen. Housing, travel, and schedules may change. The good news is that you slowly grow stronger.
+        </p>
+
+        <p>
+          The things that made life easier for me were staying organized, asking seniors, building friendships, keeping a routine, communicating early, and accepting imperfection. Not everything will go perfectly. Sometimes you will cook badly, miss a deadline warning, misunderstand a form, or feel tired for no clear reason. The goal is not to have a perfect abroad life. The goal is to adjust, learn, and continue.
+        </p>
+
+        <div class="post-img-pair">
+          <figure>
+            <img src="Seminar_SEC/4.jpeg" alt="Students and faculty listening during the seminar at SEC" loading="lazy" />
+            <figcaption>The audience stayed engaged throughout the practical parts, especially documents, motivation letters, and life abroad.</figcaption>
+          </figure>
+          <figure>
+            <img src="Seminar_SEC/1.jpeg" alt="Gourab Roy taking questions during the seminar" loading="lazy" />
+            <figcaption>I wanted the session to feel open, because students usually have very specific questions that slides alone cannot answer.</figcaption>
+          </figure>
+        </div>
+
+        <h2>The Application Timeline I Suggested</h2>
+
+        <p>
+          For students who want a simple timeline, I suggested starting around August. In August, get the passport ready, understand what Erasmus Mundus Joint Masters are, and begin English preparation. In September and October, sit for IELTS or TOEFL if needed, search programs, and start shortlisting. In November, prepare the CV, draft letters, and contact recommenders.
+        </p>
+
+        <p>
+          December should be for reviewing documents, customizing motivation letters, and submitting early where possible. January and February are usually heavy application months, so students should submit applications, track deadlines, and prepare for interviews if the program has them. Around March, results, interviews, reserve lists, and next steps usually start coming. Exact dates vary by program, but this kind of structure helps students avoid last-minute panic.
+        </p>
+
+        <h2>A Simple 6-Month Action Plan</h2>
+
+        <ul class="post-list">
+          <li><strong>Month 1:</strong> explore Erasmus Mundus, understand fields, and learn the different program types.</li>
+          <li><strong>Month 2:</strong> prepare the basics: passport, transcript, certificate, and first CV draft.</li>
+          <li><strong>Month 3:</strong> strengthen the profile through projects, thesis direction, research, GitHub, or papers.</li>
+          <li><strong>Month 4:</strong> focus on IELTS or TOEFL preparation and exam planning.</li>
+          <li><strong>Month 5:</strong> build the program list by checking eligibility, courses, mobility, scholarships, and deadlines.</li>
+          <li><strong>Month 6:</strong> finalize motivation letter drafts, recommendation letters, CV, document review, and submissions.</li>
+        </ul>
+
+        <h2>Common Mistakes I Warned About</h2>
+
+        <p>
+          The first mistake is sending a generic motivation letter. The second is choosing programs randomly because the name sounds famous. The third is having a weak CV structure: too long, messy, or not focused on relevant work. Another common mistake is asking for recommendation letters too late, which puts pressure on teachers and usually leads to weaker letters.
+        </p>
+
+        <p>
+          Students also ignore eligibility more often than they should. If a program requires a certain degree background, English score, or document format, do not assume it will be fine. Read the website carefully. And finally, last-minute submission is dangerous. Websites can slow down, documents can have errors, recommenders can miss emails, and you may notice something wrong when there is no time left to fix it.
+        </p>
+
+        <h2>My Advice For SEC Students</h2>
+
+        <p>
+          I ended the main part with advice for the students at SEC. Start early. Do not wait until final year or the application deadline. Choose projects connected to your target field. Value your thesis, because a good thesis can become a strong part of your application story. Improve your English, not only for IELTS or TOEFL, but also for academic writing and interviews.
+        </p>
+
+        <p>
+          Keep your CV clean and focused. Highlight education, thesis, projects, research, publications, skills, teaching, and achievements. Ask for guidance from teachers, seniors, selected scholars, and current students. Most importantly, do not underestimate yourself just because you are not from a famous university. Your work, consistency, and clarity matter.
+        </p>
+
+        <div class="post-quote">
+          <p>"I was once in your place, so I want to make the path clearer for you."</p>
+        </div>
+
+        <h2>Useful Links And Resources</h2>
+
+        <p>
+          I also shared a few resources that students can use while preparing. These are not magic shortcuts, but they help you organize the process and avoid unnecessary confusion.
+        </p>
+
+        <div class="post-resource-grid" aria-label="Useful Erasmus Mundus resources">
+          <article>
+            <span>Catalogue</span>
+            <strong>Erasmus Mundus Catalogue</strong>
+            <p>Official program search portal: <a href="https://eacea.ec.europa.eu/" target="_blank" rel="noreferrer">eacea.ec.europa.eu</a></p>
+          </article>
+          <article>
+            <span>Program Sites</span>
+            <strong>Eligibility and Deadlines</strong>
+            <p>Always check each program website for documents, scholarships, courses, and deadlines.</p>
+          </article>
+          <article>
+            <span>CV</span>
+            <strong>Europass</strong>
+            <p>CV format and profile building: <a href="https://europass.europa.eu/" target="_blank" rel="noreferrer">europass.europa.eu</a></p>
+          </article>
+          <article>
+            <span>English Test</span>
+            <strong>IELTS / TOEFL</strong>
+            <p>English preparation through <a href="https://ielts.org/" target="_blank" rel="noreferrer">ielts.org</a> and <a href="https://www.ets.org/toefl.html" target="_blank" rel="noreferrer">ets.org/toefl</a></p>
+          </article>
+          <article>
+            <span>Tracking</span>
+            <strong>Sheets or Notion</strong>
+            <p>Use a spreadsheet or workspace to track programs, documents, deadlines, and results.</p>
+          </article>
+          <article>
+            <span>People</span>
+            <strong>Seniors and Scholars</strong>
+            <p>Real experience, guidance, and review support can save you from many small mistakes.</p>
+          </article>
+        </div>
+
+        <p>
+          The slide deck also closes with my contact details for students who want to follow up: <a href="mailto:gourabroysec553@gmail.com">gourabroysec553@gmail.com</a>, <a href="https://gourabroy551.github.io" target="_blank" rel="noreferrer">gourabroy551.github.io</a>, and <a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">github.com/GourabRoy551</a>. The presentation template credits go to Slidesgo, with icons by Flaticon and infographics/images by Freepik.
+        </p>
+
+        <h2>The Q&amp;A Part</h2>
+
+        <p>
+          The session ended with a Q&amp;A, and I wanted that part to stay open and practical. For this kind of topic, students usually carry very specific worries: how early to start, whether CGPA is enough, how much research matters, what to do about IELTS, how to ask for recommendation letters, and whether projects can help if publications are not there yet. These are normal questions, and they deserve direct answers.
+        </p>
+
+        <p>
+          My answer to most of them came back to the same idea: do not wait for the perfect moment. Start preparing with what you have. Build relevant projects. Talk to teachers. Read program pages carefully. Improve your English. Write your story honestly. Ask for feedback. Track the process. And if one application does not work, that does not mean the journey is finished.
+        </p>
+
+        <h2>What I Took Away</h2>
+
+        <p>
+          For me, this seminar was more than a talk about applications. It was a full-circle moment. I came from SEC, learned here, taught here, and then got the chance to stand in the same environment and share what I learned from Budapest, Madrid, and the IPCVAI journey. That felt special.
+        </p>
+
+        <p>
+          I hope the students left with a clearer picture of Erasmus Mundus, but also with a little more confidence. The path is not easy, but it is not invisible either. If you know what to prepare, how to tell your story, and how to stay consistent, the road becomes much clearer.
+        </p>
+
+        <p>
+          And that was really the whole point of the seminar: to make the path clearer for the next person from SEC who wants to try.
+        </p>
+      </article>
+
+      <div class="post-footer" data-reveal>
+        <a href="index.html">&#8592; Back to all posts</a>
+        <span class="post-footer-meta">Sylhet Engineering College &mdash; July 2026</span>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p><span data-current-year>2026</span> Gourab Roy &mdash; Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <div class="footer-links">
+        <a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Scholar</a>
+        <a href="../index.html">Home</a>
+      </div>
+    </footer>
+  </body>
+</html>
