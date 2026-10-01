@@ -404,7 +404,7 @@ Clipboard access can be blocked by browser permissions or insecure contexts. The
 
 ## Contact Links
 
-- Email: `gourab.roy@estudiante.uam.es`
+- Email: `gourabroysec553@gmail.com`
 - Google Scholar: `https://scholar.google.com/citations?hl=en&user=_9tL56YAAAAJ`
 - LinkedIn: `https://www.linkedin.com/in/gourab-roy-5b52921a3/`
 - GitHub: `https://github.com/GourabRoy551`
