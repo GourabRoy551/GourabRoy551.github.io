@@ -2,7 +2,7 @@
 
 This is my personal portfolio website. I use it to present my academic background, research interests, publications, projects, skills, blog posts, and contact information in one place.
 
-I am an Erasmus Mundus IPCVAI master's student and AI engineer working around computer vision, biomedical imaging, explainable AI, multimodal learning, document AI, inspection systems, and applied deep learning.
+I am an Erasmus Mundus IPCVAI master's student at the University of Bordeaux, working on explainable AI, multimodal models, biomedical imaging, and safety-focused computer vision. The current portfolio reflects my 2026 BERT/CLIP Partition SHAP research, SiteGuard PPE detection work, 12 peer-reviewed publications, and February 2027 internship availability.
 
 The site is fully static. There is no build step, no framework, and no package installation needed. It can be opened directly in a browser or deployed to any static hosting platform.
 
@@ -10,14 +10,14 @@ The site is fully static. There is no build step, no framework, and no package i
 
 - Homepage with my profile, research focus, CV link, and main profile links.
 - About page with my background, research direction, and current academic status.
-- Research page focused on trustworthy vision AI, medical imaging, CLIP/XAI, document AI, and inspection workflows.
+- Research page focused on BERT/CLIP explainability, medical imaging, document AI, and inspection workflows.
 - Education page for my IPCVAI mobility path across Budapest, Madrid, and Bordeaux.
 - Publications page with dynamic filtering by research domain.
 - Experience page for my teaching, mentoring, and research assistant work.
 - Projects page with selected research and software projects.
 - Skills page with my programming, ML, data, and research-writing stack.
 - Blog section for research notes, learning logs, and personal updates.
-- Contact page with email, phone, CV, and social links.
+- Contact page with email, phone, CV, and professional profile links.
 - Dark and bright theme support.
 - Language selector for English, Bangla, Spanish, and French.
 
@@ -238,6 +238,12 @@ The current CV file is:
 CV/Gourab_Roy_CV_2026.pdf
 ```
 
+Its editable LaTeX source is:
+
+```text
+CV/Gourab_Roy_CV_2026.tex
+```
+
 If I rename it, I need to update all CV links across the site.
 
 ## CSS Notes
@@ -402,8 +408,6 @@ Clipboard access can be blocked by browser permissions or insecure contexts. The
 - Google Scholar: `https://scholar.google.com/citations?hl=en&user=_9tL56YAAAAJ`
 - LinkedIn: `https://www.linkedin.com/in/gourab-roy-5b52921a3/`
 - GitHub: `https://github.com/GourabRoy551`
-- Facebook: `https://www.facebook.com/bdgourab5184`
-- Instagram: `https://www.instagram.com/gourab.roy__/`
 
 ## License
 

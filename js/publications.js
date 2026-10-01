@@ -36,14 +36,10 @@ function renderPublications() {
   visiblePublications.forEach((publication) => {
     const article = document.createElement("article");
     article.className = "publication-card";
-    if (publication.citations >= 20) {
+    if (publication.featured) {
       article.classList.add("is-featured");
     }
     article.setAttribute("data-reveal", "");
-
-    const citationText = publication.citations
-      ? ` / ${publication.citations} Scholar citations`
-      : "";
 
     article.innerHTML = `
       <div class="publication-visual ${publication.visualClass}" aria-hidden="true">
@@ -55,7 +51,7 @@ function renderPublications() {
           ${publication.visualSteps.map((step) => `<span>${step}</span>`).join("")}
         </div>
       </div>
-      <span class="publication-meta">${publication.year} / ${publication.type} / ${publication.domain}${citationText}</span>
+      <span class="publication-meta">${publication.year} / ${publication.type} / ${publication.domain}</span>
       <h3>${publication.title}</h3>
       <div class="publication-venue">${publication.venue}</div>
       <p>${publication.summary}</p>

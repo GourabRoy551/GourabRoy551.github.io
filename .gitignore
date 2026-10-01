@@ -3,3 +3,8 @@ papers.md
 portfolio-brief-and-plan.md
 script.js
 styles.css
+tmp/
+CV/*.aux
+CV/*.log
+CV/*.out
+CV/*.synctex.gz

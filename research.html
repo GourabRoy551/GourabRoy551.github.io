@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student and AI engineer building trustworthy computer vision systems for biomedical imaging, inspection, document AI, and applied deep learning."
+      content="Gourab Roy is an Erasmus Mundus IPCVAI researcher in Bordeaux working on explainable AI, multimodal models, medical imaging, and safety-focused computer vision."
     />
     <meta
       name="keywords"
       content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
     />
     <meta name="theme-color" content="#090d0f" />
-    <meta property="og:title" content="Gourab Roy | Vision AI Researcher and Engineer" />
+    <meta property="og:title" content="Gourab Roy | Vision AI and Explainable AI Researcher" />
     <meta
       property="og:description"
-      content="Erasmus Mundus IPCVAI master's student building reliable and interpretable vision AI for biomedical imaging and real-world applications."
+      content="Erasmus Mundus IPCVAI researcher in Bordeaux building and evaluating explainable vision and language models for real-world applications."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="Photo.png" />
@@ -63,7 +63,7 @@
           <span class="brand-mark" aria-hidden="true">GR</span>
           <span class="brand-copy">
             <span class="brand-text">Gourab Roy</span>
-            <span class="brand-role">AI engineer and master's student</span>
+            <span class="brand-role">Vision AI and XAI researcher</span>
           </span>
         </a>
 
@@ -125,7 +125,7 @@
               <div class="section-inner research-layout">
                 <div class="section-heading research-heading" data-reveal>
                   <p class="eyebrow">Research areas</p>
-                  <h2>Trustworthy vision AI for medical, document, and inspection workflows.</h2>
+                  <h2>Explainable vision and language models for medical and safety-critical workflows.</h2>
                   <p>
                     My research direction is centered on computer vision systems that are useful beyond
                     benchmark scores: clear data assumptions, measurable reliability, and explanations
@@ -136,31 +136,30 @@
                 <div class="research-overview" data-reveal>
                   <div class="research-overview-copy">
                     <span class="item-index">Current direction</span>
-                    <h3>Cross-modal interpretability and trustworthy vision AI.</h3>
+                    <h3>Testing how BERT and CLIP explain the same language decisions.</h3>
                     <p>
-                      My active TRDP at UAM focuses on explaining CLIP's image-text alignment through a
-                      Cross-Modal Attention Bridge - bridging vision and text attention rollouts with
-                      statistical filtering to produce faithful, text-conditional visual explanations.
-                      Alongside this, I work with biomedical imaging, visual inspection, and low-resource
-                      OCR where the shared concern is interpretable, reliable model behaviour.
+                      My current TRDP 2 work compares a fine-tuned BERT classifier with a frozen CLIP
+                      text encoder on the same 500 balanced SST-2 sentences. Whole-word Partition SHAP,
+                      deletion tests, rationale proxies, and cross-model agreement turn explanation
+                      quality into something measurable rather than purely visual.
                     </p>
                   </div>
                   <dl class="research-facts" aria-label="Research profile">
                     <div>
-                      <dt>Active TRDP</dt>
-                      <dd>CLIP interpretability, cross-modal attention, statistical filtering (CMAB)</dd>
+                      <dt>Active TRDP 2</dt>
+                      <dd>BERT vs CLIP with whole-word Partition SHAP</dd>
                     </div>
                     <div>
                       <dt>Core models</dt>
-                      <dd>CLIP, ViT, CNNs, YOLO, Siamese networks</dd>
+                      <dd>BERT, CLIP, ViT, CNNs, YOLO, Siamese networks</dd>
                     </div>
                     <div>
                       <dt>Primary data</dt>
-                      <dd>Image-text pairs, CT/MRI, surface defects, document images</dd>
+                      <dd>Text, image-text pairs, CT/MRI, and safety video</dd>
                     </div>
                     <div>
                       <dt>Research lens</dt>
-                      <dd>XAI, cross-modal alignment, segmentation, classification</dd>
+                      <dd>SHAP, faithfulness, model agreement, segmentation, detection</dd>
                     </div>
                   </dl>
                 </div>
@@ -181,16 +180,16 @@
                   </article>
       
                   <article class="research-focus-card" data-reveal>
-                    <span class="item-index">02 / XAI</span>
-                    <h3>Explainable and multimodal vision.</h3>
+                    <span class="item-index">02 / XAI evaluation</span>
+                    <h3>Explanations evaluated with perturbation and agreement tests.</h3>
                     <p>
-                      Vision-language and attention-based models with explanations that make model
-                      behavior easier to inspect, compare, and communicate.
+                      Partition SHAP, additivity checks, deletion-based faithfulness, rationale proxies,
+                      and cross-model comparisons for language and vision-language encoders.
                     </p>
                     <div class="research-chip-row" aria-label="Explainability methods">
-                      <span>ViT</span>
+                      <span>SHAP</span>
                       <span>CLIP</span>
-                      <span>Attention</span>
+                      <span>BERT</span>
                     </div>
                   </article>
       
@@ -198,13 +197,13 @@
                     <span class="item-index">03 / Inspection</span>
                     <h3>Detection for safety and field settings.</h3>
                     <p>
-                      Applied vision for aircraft defects, structural cracks, infrastructure risk,
-                      crop disease, and other inspection tasks where missed signals matter.
+                      Applied vision for PPE compliance, aircraft defects, structural cracks,
+                      infrastructure risk, and other inspection tasks where missed signals matter.
                     </p>
                     <div class="research-chip-row" aria-label="Inspection methods">
                       <span>YOLO</span>
                       <span>Transfer learning</span>
-                      <span>Risk support</span>
+                      <span>PPE detection</span>
                     </div>
                   </article>
       
@@ -239,7 +238,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <p><span data-current-year>2026</span> Gourab Roy - Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <p><span data-current-year>2026</span> Gourab Roy - Vision AI and explainable AI researcher.</p>
       <div class="footer-links"><a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Scholar</a><a href="#top">Top ↑</a></div>
     </footer>
   </body>

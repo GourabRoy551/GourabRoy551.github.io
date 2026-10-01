@@ -1,0 +1,151 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.35cm,top=1.15cm,bottom=1.15cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+
+\definecolor{navy}{HTML}{123B5D}
+\definecolor{ink}{HTML}{18222B}
+\definecolor{muted}{HTML}{52616D}
+\definecolor{rule}{HTML}{B8C5CF}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=navy,
+  linkcolor=navy,
+  pdfauthor={Gourab Roy},
+  pdftitle={Gourab Roy CV},
+  pdfsubject={Vision AI and Explainable AI Researcher}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\color{muted}\scriptsize Gourab Roy \textbar{} Updated October 2026}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=1.5pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\large\bfseries\color{navy}}{}{0pt}{}[\color{rule}\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{#2} \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}\vspace{-2pt}
+}
+
+\newcommand{\project}[2]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textit{#2}
+  \end{tabularx}\vspace{-2pt}
+}
+
+\begin{document}
+\color{ink}
+
+\begin{center}
+  {\Huge\bfseries Gourab Roy}\\[2pt]
+  {\large\color{navy}Vision AI and Explainable AI Researcher \textbar{} Erasmus Mundus IPCVAI}\\[4pt]
+  \small
+  Bordeaux, France \textbar{} +36 70 784 2482 \textbar{}
+  \href{mailto:gourab.roy@estudiante.uam.es}{gourab.roy@estudiante.uam.es}\\[2pt]
+  \href{https://gourabroy551.github.io/}{Portfolio} \textbar{}
+  \href{https://github.com/GourabRoy551}{GitHub} \textbar{}
+  \href{https://www.linkedin.com/in/gourab-roy-5b52921a3/}{LinkedIn} \textbar{}
+  \href{https://scholar.google.com/citations?hl=en\&user=_9tL56YAAAAJ}{Google Scholar}
+\end{center}
+
+\section{Profile}
+Erasmus Mundus IPCVAI master's student working on computer vision, model explainability, biomedical imaging, and safety-focused detection. Experienced in reproducible PyTorch experiments, SHAP faithfulness evaluation, YOLO inference, research writing, and student mentoring. Seeking a 5-6 month computer vision internship from February 2027, preferably in France and open to opportunities across Europe.
+
+\section{Education}
+\entry{Erasmus Mundus Joint Master's Degree - IPCVAI}{Europe}{Artificial Intelligence for Image Processing and Computer Vision}{2025-2027, ongoing}
+\begin{itemize}
+  \item \textbf{University of Bordeaux, France - Semester 3, Sep 2026-Present:} Explainable AI for Images, AI and Sustainability, Advanced Computer Vision, Acquisition, Reconstruction and Medical Imaging, and TRDP 2.
+  \item \textbf{Universidad Autonoma de Madrid, Spain - Semester 2, completed Jun 2026:} HPC for Deep Learning, Visual Signal Processing, Deep Learning for Computer Vision, Multi-view and Moving-camera Vision, and TRDP 1.
+  \item \textbf{Pazmany Peter Catholic University, Hungary - Semester 1, completed Jan 2026:} Image Processing, Data Mining and ML, Deep Learning, Sensor Fusion, Biomedical Signal Processing, and Design Patterns.
+\end{itemize}
+\entry{Sylhet Engineering College}{Sylhet, Bangladesh}{B.Sc. in Computer Science and Engineering; CGPA: 3.56/4.00}{2018-2023}
+\begin{itemize}
+  \item Thesis: \textit{CerebralNet}, a deep learning workflow for detecting major abnormalities in brain CT and MRI using segmentation and classification.
+\end{itemize}
+
+\section{Research and Teaching Experience}
+\entry{Sylhet Engineering College, Department of CSE}{Sylhet, Bangladesh}{Research Assistant}{Nov 2023-Oct 2025}
+\begin{itemize}
+  \item Led and supported model design, evaluation, and paper preparation across medical AI, document AI, NLP, agricultural vision, and structural inspection, contributing to 12 peer-reviewed works.
+  \item Mentored undergraduate students on final-year theses and research projects under Prof. Md. Abu Naser Mojumder.
+\end{itemize}
+\entry{Sylhet Engineering College, Department of CSE}{Sylhet, Bangladesh}{Adjunct Lecturer}{Jan 2024-Aug 2025}
+\begin{itemize}
+  \item Taught Distributed Computing, Computer Architecture, Introduction to Data Science, Peripheral Interfacing, and Microprocessors and Microcontrollers.
+  \item Designed assessments, held consultation sessions, and co-supervised final-year thesis projects.
+\end{itemize}
+
+\section{Current Research}
+\project{BERT vs CLIP with Whole-Word Partition SHAP}{TRDP 2, Bordeaux, 2026}
+\begin{itemize}
+  \item Built a gated, resumable experiment comparing a fine-tuned BERT classifier with a frozen zero-shot CLIP text encoder on the same 500 balanced SST-2 sentences, producing 1,000 model-sentence explanation records.
+  \item Evaluated classification, SHAP additivity, deletion faithfulness, lexical rationale proxies, bootstrap confidence intervals, and cross-model agreement. BERT achieved 0.936 macro-F1 versus 0.702 for CLIP; all 1,000 explanations passed additivity checks.
+  \item Found limited explanation agreement between models (mean Spearman $\rho=0.237$) and stronger SHAP-ranked deletion evidence than random deletion, especially for BERT.
+\end{itemize}
+
+\newpage
+
+\section{Selected Projects}
+\project{SiteGuard AI - Real-Time PPE Detection}{Team software project, 2026}
+\begin{itemize}
+  \item Trained and packaged a YOLO26n detector for person, helmet, vest, no-helmet, and no-vest classes using transfer learning; held-out test results: precision 0.906, recall 0.835, mAP50 0.878, and mAP50-95 0.592.
+  \item Developed image/video inference, worker-to-PPE association, structured JSON outputs, visualization, checksums, a model card, and 27 automated tests; documented domain-gap and temporal-smoothing limitations.
+\end{itemize}
+
+\project{Cardiac Autonomic Assessment via PPG-Derived HRV}{PPKE, 2025}
+\begin{itemize}
+  \item Built a modular Python pipeline for 10 participants using Butterworth filtering, adaptive peak detection, FFT analysis, Friedman/Wilcoxon tests, and an individual responsiveness classifier.
+\end{itemize}
+
+\project{Calibrated Multi-View 3D Reconstruction}{UAM, 2026}
+\begin{itemize}
+  \item Implemented camera calibration, SIFT/SURF/ORB matching, RANSAC verification, epipolar geometry, sparse reconstruction, and bundle adjustment in MATLAB; retained 672 tracks at 4.47 px reprojection error.
+\end{itemize}
+
+\section{Selected Publications}
+\small
+\begin{enumerate}[leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+  \item ``CovidExpert: A Triplet Siamese Neural Network framework for the detection of COVID-19,'' \textit{Informatics in Medicine Unlocked}, Elsevier, 2023. \href{https://doi.org/10.1016/j.imu.2022.101156}{DOI}
+  \item ``Image-based classification of Bangladeshi rice varieties using deep convolutional neural networks,'' \textit{Agricultural Products Processing and Storage}, Springer Nature, 2026. \href{https://doi.org/10.1007/s44462-026-00061-9}{DOI}
+  \item ``PlantXNet: A CNN-Based Explainable AI Framework for Multi-Plant Leaf Disease Classification Using LIME,'' \textit{IEEE QPAIN}, 2026. \href{https://doi.org/10.1109/QPAIN69676.2026.11545914}{DOI}
+  \item ``MaizeXNet: A CNN-Based Explainable AI Framework for Maize Pest and Disease Classification,'' \textit{IEEE QPAIN}, 2026. \href{https://doi.org/10.1109/QPAIN69676.2026.11546210}{DOI}
+  \item ``PoultryXNet: An Explainable Deep Learning Framework for Poultry Disease Classification From Fecal Images,'' \textit{IEEE QPAIN}, 2026. \href{https://doi.org/10.1109/QPAIN69676.2026.11545990}{DOI}
+  \item ``Deep Learning-Based Detection of Aircraft Cracks and Dents Using YOLOv11 and YOLOv12 for Aviation Safety in Bangladesh,'' \textit{IEEE ICCCNT}, 2025.
+\end{enumerate}
+\normalsize
+Full publication list: \href{https://gourabroy551.github.io/publications.html}{portfolio publications page} and \href{https://scholar.google.com/citations?hl=en\&user=_9tL56YAAAAJ}{Google Scholar}.
+
+\section{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+Programming & Python, MATLAB, C, C++, Java, JavaScript \\
+ML and Vision & PyTorch, TensorFlow, Scikit-learn, CNNs, Vision Transformers, YOLO, CLIP, BERT, transfer learning, segmentation, object detection, multi-view geometry \\
+Explainability & Partition SHAP, attention rollout, deletion-based faithfulness, rationale proxies, additivity checks, model-agreement analysis \\
+Scientific Stack & NumPy, Pandas, SciPy, Matplotlib, Jupyter, OpenCV, Hugging Face Transformers \\
+Research Workflow & Git, pytest, LaTeX, model cards, experiment manifests, academic writing, peer review \\
+\end{tabularx}
+
+\section{Additional Information}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+Languages & Bangla (native), English (professional working proficiency) \\
+Recognition & Reviewer for \textit{Informatics in Medicine Unlocked}; HackerRank gold badges in C++ and Python; 350+ programming problems solved \\
+Availability & 5-6 month computer vision internship from February 2027; France preferred, open to Europe \\
+\end{tabularx}
+
+\end{document}

@@ -40,7 +40,8 @@ function animateCounters() {
 
   if (prefersReducedMotion) {
     counters.forEach((counter) => {
-      counter.textContent = `${counter.dataset.count}${counter.dataset.suffix || ""}`;
+      const value = parseInt(counter.dataset.count, 10);
+      counter.textContent = `${value.toLocaleString("en-US")}${counter.dataset.suffix || ""}`;
     });
     return;
   }
@@ -54,7 +55,7 @@ function animateCounters() {
     function tick(now) {
       const t = Math.min((now - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - t, 3);
-      counter.textContent = `${Math.round(eased * target)}${suffix}`;
+      counter.textContent = `${Math.round(eased * target).toLocaleString("en-US")}${suffix}`;
       if (t < 1) requestAnimationFrame(tick);
     }
 

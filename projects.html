@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student and AI engineer building trustworthy computer vision systems for biomedical imaging, inspection, document AI, and applied deep learning."
+      content="Gourab Roy is an Erasmus Mundus IPCVAI researcher in Bordeaux working on explainable AI, multimodal models, medical imaging, and safety-focused computer vision."
     />
     <meta
       name="keywords"
       content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
     />
     <meta name="theme-color" content="#090d0f" />
-    <meta property="og:title" content="Gourab Roy | Vision AI Researcher and Engineer" />
+    <meta property="og:title" content="Gourab Roy | Vision AI and Explainable AI Researcher" />
     <meta
       property="og:description"
-      content="Erasmus Mundus IPCVAI master's student building reliable and interpretable vision AI for biomedical imaging and real-world applications."
+      content="Erasmus Mundus IPCVAI researcher in Bordeaux building and evaluating explainable vision and language models for real-world applications."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="Photo.png" />
@@ -63,7 +63,7 @@
           <span class="brand-mark" aria-hidden="true">GR</span>
           <span class="brand-copy">
             <span class="brand-text">Gourab Roy</span>
-            <span class="brand-role">AI engineer and master's student</span>
+            <span class="brand-role">Vision AI and XAI researcher</span>
           </span>
         </a>
 
@@ -129,136 +129,106 @@
                     <p class="eyebrow">Projects</p>
                     <h2>Engineering work behind the research profile.</h2>
                   </div>
-                  <p>Signal-processing pipelines, applied AI research, data notebooks, and software builds - showing the coding range behind the papers.</p>
+                  <p>Reproducible XAI experiments, real-time detection, biomedical signal processing, and multi-view geometry - the engineering evidence behind the research profile.</p>
                 </div>
       
                 <div class="bento-grid">
       
-                  <!-- 01 Featured: PPG / HRV -->
+                  <!-- 01 Featured: BERT / CLIP SHAP -->
                   <article class="bento-card bento-featured" data-reveal>
                     <div class="bento-num" aria-hidden="true">01</div>
-                    <span class="bento-context">BMSP &middot; PPKE Budapest &middot; Dec 2025</span>
-                    <h3>Cardiac Autonomic Assessment via PPG-Derived HRV During Personalized Sound Stimulation</h3>
+                    <span class="bento-context">TRDP 2 &middot; University of Bordeaux &middot; 2026</span>
+                    <h3>BERT vs CLIP with Whole-Word Partition SHAP</h3>
                     <p>
-                      Modular Python pipeline investigating how self-selected music modulates the Autonomic
-                      Nervous System via PPG signals. Recorded 10 participants across baseline,
-                      favorite-song, and least-favorite-song conditions. Applied Butterworth filtering,
-                      adaptive peak detection, and FFT spectral analysis, then Friedman and Wilcoxon tests
-                      plus an individual responsiveness classifier showing every subject had significant
-                      autonomic shifts despite non-significant group means.
+                      Reproducible comparison of a fine-tuned BERT classifier and frozen zero-shot CLIP
+                      text encoder on the same 500 balanced SST-2 sentences. Generated 1,000 explanation
+                      records for NEG, POS, and decision-margin outputs, with additivity, deletion,
+                      rationale-proxy, agreement, bootstrap, and runtime checks. BERT reached 0.936
+                      macro-F1 versus 0.702 for CLIP; both models passed every additivity check.
+                    </p>
+                    <a class="project-link" href="https://github.com/GourabRoy551/bert_shap" target="_blank" rel="noreferrer">View related BERT SHAP repository</a>
+                    <div class="bento-tags">
+                      <span>Python</span>
+                      <span>PyTorch</span>
+                      <span>BERT</span>
+                      <span>CLIP</span>
+                      <span>SHAP</span>
+                      <span>Faithfulness</span>
+                      <span>Bootstrap CI</span>
+                    </div>
+                  </article>
+      
+                  <!-- 02 SiteGuard -->
+                  <article class="bento-card bento-tall bento-violet" data-reveal>
+                    <div class="bento-num" aria-hidden="true">02</div>
+                    <span class="bento-context">Team software project &middot; Bordeaux &middot; Sep 2026</span>
+                    <h3>SiteGuard AI - Real-Time PPE Detection</h3>
+                    <p>
+                      Trained and packaged a five-class YOLO26n detector for person, helmet, vest,
+                      no-helmet, and no-vest events. The held-out test set produced 0.906 precision,
+                      0.835 recall, and 0.878 mAP50. The local inference package adds worker-to-PPE
+                      association, image and video runners, structured JSON outputs, model checksums,
+                      a model card, and 27 automated tests.
+                    </p>
+                    <a class="project-link" href="https://github.com/zunaaaaayed/SiteGuard-AI/tree/AI-Model/AI" target="_blank" rel="noreferrer">View AI package</a>
+                    <div class="bento-tags">
+                      <span>YOLO26n</span>
+                      <span>PyTorch</span>
+                      <span>OpenCV</span>
+                      <span>Video inference</span>
+                      <span>Pytest</span>
+                      <span>Model card</span>
+                    </div>
+                  </article>
+      
+                  <!-- 03 PPG / HRV -->
+                  <article class="bento-card bento-violet" data-reveal>
+                    <div class="bento-num" aria-hidden="true">03</div>
+                    <span class="bento-context">BMSP &middot; PPKE Budapest &middot; Dec 2025</span>
+                    <h3>Cardiac Autonomic Assessment via PPG-Derived HRV</h3>
+                    <p>
+                      Modular Python pipeline for PPG-derived heart-rate variability across baseline and
+                      personalized music conditions for 10 participants. Combined Butterworth filtering,
+                      adaptive peak detection, FFT spectral analysis, Friedman and Wilcoxon tests, and an
+                      individual responsiveness classifier.
                     </p>
                     <a class="project-link" href="https://github.com/GourabRoy551/cardiac-autonomic-ppg-hrv" target="_blank" rel="noreferrer">View repository</a>
                     <div class="bento-tags">
                       <span>Python</span>
                       <span>NumPy</span>
                       <span>SciPy</span>
-                      <span>Pandas</span>
-                      <span>Matplotlib</span>
-                      <span>PPG</span>
-                      <span>HRV</span>
+                      <span>Signal processing</span>
+                      <span>Statistical testing</span>
                     </div>
                   </article>
       
-                  <!-- 02 CLIP / TRDP -->
-                  <article class="bento-card bento-tall bento-violet" data-reveal>
-                    <div class="bento-num" aria-hidden="true">02</div>
-                    <span class="bento-context">TRDP 1 &middot; UAM Madrid &middot; Ongoing</span>
-                    <h3>Statistically Filtered Cross-Modal Attention for CLIP Interpretability</h3>
-                    <p>
-                      Cross-Modal Attention Bridge (CMAB) explaining CLIP's image-text alignment via
-                      K-sigma statistical filtering on attention rollouts. Generates fine-grained,
-                      text-conditional visual explanations per token without modifying the model.
-                      Supervised by Prof. Jenny Benois-Pineau (Bordeaux) and Marcos Escudero-Vinolo (UAM).
-                    </p>
-                    <div class="bento-tags">
-                      <span>CLIP</span>
-                      <span>ViT</span>
-                      <span>PyTorch</span>
-                      <span>XAI</span>
-                      <span>Attention Rollout</span>
-                      <span>Vision-Language</span>
-                    </div>
-                  </article>
-      
-                  <!-- 03 3D Reconstruction -->
-                  <article class="bento-card bento-violet" data-reveal>
-                    <div class="bento-num" aria-hidden="true">03</div>
-                    <span class="bento-context">3DVMMC Lab &middot; UAM Madrid &middot; 2025</span>
+                  <!-- 04 3D Reconstruction -->
+                  <article class="bento-card bento-green" data-reveal>
+                    <div class="bento-num" aria-hidden="true">04</div>
+                    <span class="bento-context">3DVMMC Lab &middot; UAM Madrid &middot; 2026</span>
                     <h3>Calibrated Multi-View 3D Reconstruction</h3>
-                    <p>
-                      Complete MATLAB pipeline for recovering 3D scene structure from multiple camera views.
-                      Covers camera calibration from checkerboard and custom planar patterns, SIFT/SURF/ORB
-                      feature detection and matching with RANSAC-based geometric verification, homography
-                      and fundamental matrix computation, epipolar geometry visualization, and multi-view
-                      sparse reconstruction with bundle adjustment. Achieved 4.47 px reprojection error
-                      across 672 retained multi-view tracks.
-                    </p>
+                    <p>A MATLAB pipeline spanning camera calibration, SIFT/SURF/ORB matching, RANSAC verification, fundamental-matrix estimation, epipolar geometry, sparse reconstruction, and bundle adjustment. The final reconstruction retained 672 tracks with 4.47 px reprojection error.</p>
                     <a class="project-link" href="https://github.com/GourabRoy551/Calibrated-Multi-View-3D-Reconstruction" target="_blank" rel="noreferrer">View repository</a>
                     <div class="bento-tags">
                       <span>MATLAB</span>
-                      <span>Camera Calibration</span>
-                      <span>SIFT</span>
                       <span>RANSAC</span>
-                      <span>Bundle Adjustment</span>
-                      <span>Epipolar Geometry</span>
-                      <span>3D Reconstruction</span>
+                      <span>Bundle adjustment</span>
+                      <span>Epipolar geometry</span>
                     </div>
                   </article>
       
-                  <!-- 04 Data Viz -->
-                  <article class="bento-card bento-green" data-reveal>
-                    <div class="bento-num" aria-hidden="true">04</div>
-                    <span class="bento-context">Data analysis</span>
-                    <h3>Exploratory Analysis and Visualization Portfolio</h3>
-                    <p>Python notebooks exploring housing data, Covid-19 global outcomes, and Google Play app ratings using NumPy, Pandas, Matplotlib, and Jupyter.</p>
-                    <a class="project-link" href="https://github.com/GourabRoy551/DataVisualization" target="_blank" rel="noreferrer">View source code</a>
+                  <!-- 05 Data Viz -->
+                  <article class="bento-card bento-wide bento-cyan" data-reveal>
+                    <div class="bento-num" aria-hidden="true">05</div>
+                    <span class="bento-context">Data analysis portfolio</span>
+                    <h3>Exploratory Analysis and Visualization</h3>
+                    <p>Eight notebook-based studies covering housing, global COVID-19 outcomes, and mobile-app ratings, with repeatable cleaning, exploratory analysis, visualization, and written interpretation.</p>
+                    <a class="project-link" href="https://github.com/GourabRoy551/DataVisualization" target="_blank" rel="noreferrer">View repository</a>
                     <div class="bento-tags">
                       <span>Python</span>
                       <span>Pandas</span>
                       <span>Matplotlib</span>
                       <span>Jupyter</span>
-                    </div>
-                  </article>
-      
-                  <!-- 05 Python -->
-                  <article class="bento-card bento-amber" data-reveal>
-                    <div class="bento-num" aria-hidden="true">05</div>
-                    <span class="bento-context">Python practice</span>
-                    <h3>Utilities and Game-Style Programming Exercises</h3>
-                    <p>Calculator, simulator, board-game, and word-game projects built while strengthening Python fundamentals, control flow, and notebook workflows.</p>
-                    <a class="project-link" href="https://github.com/GourabRoy551/Python-Projects" target="_blank" rel="noreferrer">View source code</a>
-                    <div class="bento-tags">
-                      <span>Python</span>
-                      <span>PyCharm</span>
-                      <span>Jupyter</span>
-                    </div>
-                  </article>
-      
-                  <!-- 06 Billing System -->
-                  <article class="bento-card bento-coral" data-reveal>
-                    <div class="bento-num" aria-hidden="true">06</div>
-                    <span class="bento-context">Java application</span>
-                    <h3>Billing System Application</h3>
-                    <p>University software project with form-based UI, relational data, and basic application design using JFrame and MySQL.</p>
-                    <a class="project-link" href="https://github.com/GourabRoy551/BillingSystem" target="_blank" rel="noreferrer">View source code</a>
-                    <div class="bento-tags">
-                      <span>Java</span>
-                      <span>MySQL</span>
-                      <span>NetBeans</span>
-                    </div>
-                  </article>
-      
-                  <!-- 07 Pioneer Bank -->
-                  <article class="bento-card bento-wide bento-cyan" data-reveal>
-                    <div class="bento-num" aria-hidden="true">07</div>
-                    <span class="bento-context">Web project</span>
-                    <h3>Pioneer Bank Website</h3>
-                    <p>Frontend web project built with HTML, CSS, and JavaScript, then published on GitHub as part of early frontend and deployment practice.</p>
-                    <a class="project-link" href="https://github.com/GourabRoy551/Pioneer_Bank_Complete" target="_blank" rel="noreferrer">View source code</a>
-                    <div class="bento-tags">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
                     </div>
                   </article>
       
@@ -269,7 +239,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <p><span data-current-year>2026</span> Gourab Roy - Vision AI researcher and Erasmus Mundus IPCVAI master's student.</p>
+      <p><span data-current-year>2026</span> Gourab Roy - Vision AI and explainable AI researcher.</p>
       <div class="footer-links"><a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Scholar</a><a href="#top">Top ↑</a></div>
     </footer>
   </body>
