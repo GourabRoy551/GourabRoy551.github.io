@@ -1,31 +1,34 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="bright">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Gourab Roy is an Erasmus Mundus IPCVAI researcher in Bordeaux working on explainable AI, multimodal models, medical imaging, and safety-focused computer vision."
+      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student in Bordeaux working on computer vision, explainable AI, medical imaging, and multimodal models."
     />
     <meta
       name="keywords"
       content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
     />
-    <meta name="theme-color" content="#090d0f" />
+    <meta name="theme-color" content="#fafaf8" />
     <meta property="og:title" content="Gourab Roy | Vision AI and Explainable AI Researcher" />
     <meta
       property="og:description"
-      content="Erasmus Mundus IPCVAI researcher in Bordeaux building and evaluating explainable vision and language models for real-world applications."
+      content="Erasmus Mundus IPCVAI master's student in Bordeaux building and evaluating explainable vision and language models for real-world applications."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="Photo.png" />
+    <meta property="og:image" content="https://gourabroy551.github.io/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Publications - Gourab Roy" />
+    <meta name="twitter:image" content="https://gourabroy551.github.io/og-image.png" />
     <title>Publications - Gourab Roy</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="application-name" content="Gourab Roy" />
     <meta name="apple-mobile-web-app-title" content="Gourab Roy" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/01-base.css" />
     <link rel="stylesheet" href="css/02-header-layout.css" />
     <link rel="stylesheet" href="css/03-hero.css" />
@@ -60,10 +63,10 @@
     <header class="site-header" data-reveal>
       <div class="header-shell">
         <a class="brand" href="index.html" aria-label="Gourab Roy home">
-          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><defs><linearGradient id="brand-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color: var(--cyan)"/><stop offset="1" style="stop-color: var(--violet)"/></linearGradient></defs><path class="brand-mark-frame" stroke="url(#brand-grad)" d="M4 11V6a2 2 0 0 1 2-2h5M29 4h5a2 2 0 0 1 2 2v5M36 29v5a2 2 0 0 1-2 2h-5M11 36H6a2 2 0 0 1-2-2v-5"/><path class="brand-mark-letters" d="M18.2 15.2A6.8 6.8 0 1 0 20 20.6h-4.6M24 27V13.4h4.4a3.6 3.6 0 0 1 0 7.2H24M27.6 20.6l4 6.4"/></svg></span>
           <span class="brand-copy">
             <span class="brand-text">Gourab Roy</span>
-            <span class="brand-role">Vision AI and XAI researcher</span>
+            <span class="brand-role">IPCVAI Master's Student</span>
           </span>
         </a>
 
@@ -107,15 +110,15 @@
       </div>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="about.html">About</a>
         <a href="research.html">Research</a>
-        <a href="education.html">Education</a>
-        <a href="publications.html" class="is-active">Publications</a>
-        <a href="experience.html">Experience</a>
+        <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
+        <a href="education.html">Education</a>
         <a href="skills.html">Skills</a>
+        <a href="background.html">About</a>
         <a href="Blog/index.html">Blog</a>
-        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+        <a class="nav-cv" href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">CV</a>
       </nav>
     </header>
 
@@ -123,22 +126,32 @@
       <!-- Publications -->
             <section class="section-band publications publication-section" id="publications">
               <div class="section-inner publication-layout">
-                <div class="section-heading split-heading publication-intro" data-reveal>
-                  <div>
-                    <p class="eyebrow">Publications</p>
-                    <h2>Peer-reviewed work across medical AI, language technology, agriculture, and inspection.</h2>
+                <div class="section-heading page-header publication-intro" data-reveal>
+                  <p class="eyebrow page-crumb">Portfolio / Publications</p>
+                  <h1 class="page-title">Publications</h1>
+                  <p class="page-subtitle">Peer-reviewed work across medical AI, document AI, agriculture, NLP, and inspection.</p>
+                  <div class="page-chips" aria-label="Quick facts">
+                    <span>12 peer-reviewed</span>
+                    <span>Elsevier &middot; Springer &middot; IEEE</span>
+                    <span>2023&ndash;2026</span>
                   </div>
-                  <p>
-                    These papers show the same pattern in different domains: start with a useful problem,
-                    shape the data carefully, compare models honestly, and explain the result in a way
-                    that other researchers can build on.
-                  </p>
                 </div>
       
+                <nav class="page-subnav" aria-label="On this page">
+                  <a href="#featured-paper">Featured paper</a>
+                  <a href="#all-papers">All papers</a>
+                  <a href="#thesis">Thesis</a>
+                </nav>
+                <div class="highlights" data-reveal aria-label="Highlights">
+                  <div><strong>12</strong><span>peer-reviewed works</span></div>
+                  <div><strong>4</strong><span>journal articles</span></div>
+                  <div><strong>8</strong><span>conference papers</span></div>
+                  <div><strong>6</strong><span>research domains</span></div>
+                </div>
+                <h2 class="section-label" id="featured-paper"><span class="section-label-num">01</span>Featured paper</h2>
                 <div class="publication-showcase">
                   <article class="publication-lead" data-reveal>
-                    <span class="item-index">Featured thread</span>
-                    <h3>Few-shot medical imaging and trustworthy vision models.</h3>
+                    <h3>Few-shot medical imaging and trustworthy vision models</h3>
                     <p>
                       CovidExpert remains the clearest example of my biomedical AI direction: CT image
                       analysis with pretrained CNN features and a Triplet Siamese Network, designed for
@@ -173,31 +186,20 @@
                       </div>
                     </dl>
                   </article>
-      
-                  <div class="publication-stat-stack" data-reveal aria-label="Publication status summary">
-                    <article>
-                      <b>12</b>
-                      <span>published research works</span>
-                    </article>
-                    <article>
-                      <b>4</b>
-                      <span>journal articles</span>
-                    </article>
-                    <article>
-                      <b>8</b>
-                      <span>conference papers</span>
-                    </article>
-                  </div>
                 </div>
       
-                <div class="filter-row" id="publication-filters" data-reveal aria-label="Publication filters"></div>
+                <h2 class="section-label" id="all-papers"><span class="section-label-num">02</span>All papers</h2>
+                <div class="publication-toolbar" data-reveal>
+                  <div class="filter-row" id="publication-filters" aria-label="Publication filters"></div>
+                  <div class="view-toggle" id="publication-view" role="group" aria-label="Publication view"></div>
+                </div>
                 <div class="publication-grid" id="publication-grid" aria-live="polite"></div>
       
                 <div class="cv-subsection thesis-thread" data-reveal>
-                  <p class="eyebrow">Thesis thread</p>
+                  <h2 class="section-label" id="thesis"><span class="section-label-num">03</span>Thesis</h2>
                   <article class="cv-card cv-card-emphasis">
                     <span class="item-index">CerebralNet</span>
-                    <h3>Brain CT/MRI abnormality detection with segmentation and classification.</h3>
+                    <h3>Brain CT/MRI abnormality detection with segmentation and classification</h3>
                     <p>
                       My undergraduate thesis sits close to my current research interests. It focused on
                       detecting major abnormalities in brain CT and MRI scans, combining medical-image
@@ -206,14 +208,60 @@
                   </article>
                 </div>
       
+
+                <aside class="page-cta" data-reveal aria-label="Next page">
+                  <div class="page-cta-copy">
+                    <span class="item-index">Next</span>
+                    <strong>Education</strong>
+                    <p>Erasmus Mundus IPCVAI across Budapest, Madrid, and Bordeaux.</p>
+                  </div>
+                  <div class="page-cta-actions">
+                    <a class="button button-primary" href="education.html">Education <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+                    <a class="button button-ghost" href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">Download CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg></a>
+                  </div>
+                </aside>
               </div>
             </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-      <p><span data-current-year>2026</span> Gourab Roy - Vision AI and explainable AI researcher.</p>
-      <div class="footer-links"><a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Scholar</a><a href="#top">Top ↑</a></div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Gourab Roy home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><defs><linearGradient id="brand-grad-footer" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color: var(--cyan)"/><stop offset="1" style="stop-color: var(--violet)"/></linearGradient></defs><path class="brand-mark-frame" stroke="url(#brand-grad-footer)" d="M4 11V6a2 2 0 0 1 2-2h5M29 4h5a2 2 0 0 1 2 2v5M36 29v5a2 2 0 0 1-2 2h-5M11 36H6a2 2 0 0 1-2-2v-5"/><path class="brand-mark-letters" d="M18.2 15.2A6.8 6.8 0 1 0 20 20.6h-4.6M24 27V13.4h4.4a3.6 3.6 0 0 1 0 7.2H24M27.6 20.6l4 6.4"/></svg></span>
+            <span class="brand-copy">
+              <span class="brand-text">Gourab Roy</span>
+              <span class="brand-role">IPCVAI Master's Student</span>
+            </span>
+          </a>
+          <p>AI master's student in image processing and computer vision, building vision models that can be explained and trusted.</p>
+          <span class="footer-status"><i aria-hidden="true"></i>Open to internships from Feb 2027</span>
+        </div>
+        <nav class="footer-col" aria-label="Footer navigation">
+          <span class="footer-heading">Explore</span>
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="projects.html">Projects</a>
+          <a href="education.html">Education</a>
+          <a href="skills.html">Skills</a>
+          <a href="background.html">About</a>
+          <a href="Blog/index.html">Blog</a>
+        </nav>
+        <div class="footer-col">
+          <span class="footer-heading">Connect</span>
+          <a href="mailto:gourabroysec553@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> Gourab Roy &middot; Last updated October 2026</p>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
     </footer>
   </body>
 </html>

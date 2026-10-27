@@ -1,12 +1,20 @@
+// Saliency-map background: a lattice of pixel tiles whose size and colour follow
+// a slowly drifting "attention" field, like an XAI heatmap laid over an image.
+// The pointer adds its own attention spot, and a bracket box tracks the most
+// salient region. Calmer on inner pages and as the reader scrolls.
 class NeuralCanvas {
   constructor(canvas) {
     this.canvas = canvas;
     this.context = canvas.getContext("2d");
-    this.points = [];
+    this.blobs = [];
     this.mouse = { x: null, y: null };
+    this.attention = { x: 0, y: 0, strength: 0 };
+    this.focus = { x: null, y: null, heat: 0 };
     this.frame = null;
     this.isRunning = false;
-    this.time = 0;
+    this.tick = 0;
+    this.palette = null;
+    this.isHome = !!document.querySelector("main#home");
     this.resize = this.resize.bind(this);
     this.draw = this.draw.bind(this);
     this.handlePointerMove = this.handlePointerMove.bind(this);
@@ -26,6 +34,12 @@ class NeuralCanvas {
     window.addEventListener("touchend", this.clearPointer);
     document.addEventListener("visibilitychange", this.handleVisibilityChange);
 
+    // Rebuild the colour map when the theme changes.
+    new MutationObserver(() => {
+      this.palette = null;
+      if (prefersReducedMotion) this.drawStatic();
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
     if (prefersReducedMotion) {
       this.drawStatic();
     } else {
@@ -33,13 +47,51 @@ class NeuralCanvas {
     }
   }
 
+  parseColor(value, fallback) {
+    const probe = this.probe || (this.probe = document.createElement("canvas").getContext("2d"));
+    probe.fillStyle = fallback;
+    probe.fillStyle = value || fallback;
+    const normalized = probe.fillStyle;
+    if (normalized.startsWith("#")) {
+      const hex = normalized.slice(1);
+      return [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16));
+    }
+    const parts = normalized.match(/[\d.]+/g) || [0, 0, 0];
+    return parts.slice(0, 3).map(Number);
+  }
+
   colors() {
+    if (this.palette) return this.palette;
+
     const styles = getComputedStyle(document.documentElement);
-    return {
-      dot: styles.getPropertyValue("--effect-dot").trim(),
-      line: styles.getPropertyValue("--effect-line").trim(),
-      active: styles.getPropertyValue("--effect-active").trim(),
+    const read = (name, fallback) => this.parseColor(styles.getPropertyValue(name).trim(), fallback);
+    const stops = [
+      [0, read("--heat-cold", "#5a6b8c")],
+      [0.38, read("--heat-low", "#67e0f5")],
+      [0.7, read("--heat-mid", "#a594ff")],
+      [1, read("--heat-high", "#f6c870")],
+    ];
+
+    // 33-step lookup table so per-tile colour is a cheap index.
+    const lut = [];
+    for (let i = 0; i <= 32; i += 1) {
+      const h = i / 32;
+      let k = 0;
+      while (k < stops.length - 2 && h > stops[k + 1][0]) k += 1;
+      const [h0, c0] = stops[k];
+      const [h1, c1] = stops[k + 1];
+      const f = Math.min(Math.max((h - h0) / (h1 - h0), 0), 1);
+      const rgb = c0.map((v, j) => Math.round(v + (c1[j] - v) * f));
+      lut.push(`rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
+    }
+
+    const isBright = document.documentElement.dataset.theme === "bright";
+    this.palette = {
+      lut,
+      accent: lut[32],
+      alphaScale: isBright ? 0.75 : 1,
     };
+    return this.palette;
   }
 
   resize() {
@@ -53,30 +105,27 @@ class NeuralCanvas {
     this.canvas.style.height = `${height}px`;
     this.context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-    const isCompact = width < 760;
-    const pointDensity = isCompact ? 22000 : 16000;
-    const minPoints = isCompact ? 34 : 48;
-    const maxPoints = isCompact ? 72 : 118;
-    const pointCount = Math.round(Math.min(maxPoints, Math.max(minPoints, (width * height) / pointDensity)));
-    this.points = Array.from({ length: pointCount }, () => this.createPoint(width, height));
+    this.isCompact = width < 760;
+    this.cell = this.isCompact ? 30 : 26;
+    this.cols = Math.ceil(width / this.cell) + 1;
+    this.rows = Math.ceil(height / this.cell) + 1;
+    this.blobs = this.createBlobs();
+    this.focus = { x: null, y: null, heat: 0 };
 
     if (prefersReducedMotion) {
       this.drawStatic();
     }
   }
 
-  createPoint(width, height) {
-    const depth = Math.random() * 0.65 + 0.35;
-    return {
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.22 * depth,
-      vy: (Math.random() - 0.5) * 0.22 * depth,
-      size: (Math.random() * 1.4 + 0.9) * depth,
-      phase: Math.random() * Math.PI * 2,
-      pulse: Math.random() * 0.8 + 0.5,
-      depth,
-    };
+  createBlobs() {
+    // Positions and radii are relative to the viewport; motion is slow Lissajous drift.
+    const seed = () => Math.random() * Math.PI * 2;
+    return [
+      { cx: 0.72, cy: 0.3, ax: 0.14, ay: 0.1, fx: 0.00011, fy: 0.00009, r: 0.2, s: 0.85, px: seed(), py: seed() },
+      { cx: 0.88, cy: 0.7, ax: 0.08, ay: 0.12, fx: 0.00008, fy: 0.00012, r: 0.17, s: 0.7, px: seed(), py: seed() },
+      { cx: 0.42, cy: 0.82, ax: 0.16, ay: 0.08, fx: 0.0001, fy: 0.00007, r: 0.19, s: 0.65, px: seed(), py: seed() },
+      { cx: 0.12, cy: 0.5, ax: 0.08, ay: 0.2, fx: 0.00013, fy: 0.0001, r: 0.14, s: 0.5, px: seed(), py: seed() },
+    ];
   }
 
   handlePointerMove(event) {
@@ -114,153 +163,159 @@ class NeuralCanvas {
     this.draw();
   }
 
-  updatePoint(point, width, height) {
-    if (this.mouse.x !== null && this.mouse.y !== null) {
-      const dx = this.mouse.x - point.x;
-      const dy = this.mouse.y - point.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < 200 && distance > 0) {
-        const force = (200 - distance) / 2200 * point.depth;
-        point.vx += (dx / distance) * force;
-        point.vy += (dy / distance) * force;
-      }
-    }
-
-    point.vx += Math.cos(this.time * 0.007 + point.phase) * 0.002 * point.depth;
-    point.vy += Math.sin(this.time * 0.006 + point.phase) * 0.002 * point.depth;
-    point.vx *= 0.993;
-    point.vy *= 0.993;
-    point.x += point.vx;
-    point.y += point.vy;
-
-    if (point.x < -20) point.x = width + 20;
-    if (point.x > width + 20) point.x = -20;
-    if (point.y < -20) point.y = height + 20;
-    if (point.y > height + 20) point.y = -20;
+  intensity() {
+    // Strongest behind the home hero; fades as the reader scrolls into text.
+    const base = this.isHome ? 0.85 : 0.55;
+    const scroll = window.scrollY || 0;
+    const fade = Math.max(0.5, 1 - scroll / (window.innerHeight * 1.6));
+    return base * fade;
   }
 
-  paint({ staticFrame = false } = {}) {
+  updateAttention(width, height) {
+    const target = this.mouse.x !== null;
+    if (target) {
+      if (this.attention.strength < 0.02) {
+        this.attention.x = this.mouse.x;
+        this.attention.y = this.mouse.y;
+      }
+      this.attention.x += (this.mouse.x - this.attention.x) * 0.08;
+      this.attention.y += (this.mouse.y - this.attention.y) * 0.08;
+      this.attention.strength += (0.9 - this.attention.strength) * 0.05;
+    } else {
+      this.attention.strength *= 0.95;
+    }
+  }
+
+  paint(time, { staticFrame = false } = {}) {
     const ctx = this.context;
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const colors = this.colors();
-    const maxDistance = width < 700 ? 112 : 165;
+    const { lut, accent, alphaScale } = this.colors();
+    const cell = this.cell;
+    const base = Math.min(width, height);
+    const intensity = this.intensity() * alphaScale;
 
     ctx.clearRect(0, 0, width, height);
 
-    // Primary sweep line
-    const sweep = ((this.time * 0.82) % (width + 360)) - 180;
-    const sweepGradient = ctx.createLinearGradient(sweep - 80, 0, sweep + 80, height);
-    sweepGradient.addColorStop(0, "transparent");
-    sweepGradient.addColorStop(0.48, colors.active);
-    sweepGradient.addColorStop(1, "transparent");
-    ctx.globalAlpha = staticFrame ? 0.045 : 0.09;
-    ctx.strokeStyle = sweepGradient;
-    ctx.lineWidth = 1.4;
-    ctx.beginPath();
-    ctx.moveTo(sweep, 0);
-    ctx.lineTo(sweep - 240, height);
-    ctx.stroke();
-
-    // Secondary sweep line - slower, opposite diagonal
-    const sweep2 = width - ((this.time * 0.46 + width * 0.6) % (width + 400)) + 200;
-    const sweepGradient2 = ctx.createLinearGradient(sweep2 - 60, 0, sweep2 + 60, height);
-    sweepGradient2.addColorStop(0, "transparent");
-    sweepGradient2.addColorStop(0.5, colors.line);
-    sweepGradient2.addColorStop(1, "transparent");
-    ctx.globalAlpha = staticFrame ? 0.025 : 0.055;
-    ctx.strokeStyle = sweepGradient2;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(sweep2, 0);
-    ctx.lineTo(sweep2 + 180, height);
-    ctx.stroke();
-
-    this.points.forEach((point) => {
-      if (!staticFrame) {
-        this.updatePoint(point, width, height);
-      }
+    const blobs = this.blobs.map((b) => {
+      const radius = b.r * base * (this.isCompact ? 1.3 : 1);
+      return {
+        x: (b.cx + Math.sin(time * b.fx + b.px) * b.ax) * width,
+        y: (b.cy + Math.cos(time * b.fy + b.py) * b.ay) * height,
+        inv: 1 / (2 * radius * radius),
+        s: b.s,
+      };
     });
 
-    // Draw connection lines with variable thickness
-    for (let i = 0; i < this.points.length; i += 1) {
-      for (let j = i + 1; j < this.points.length; j += 1) {
-        const first = this.points[i];
-        const second = this.points[j];
-        const dx = first.x - second.x;
-        const dy = first.y - second.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+    if (!staticFrame) this.updateAttention(width, height);
+    const attn = this.attention;
+    const attnInv = 1 / (2 * 120 * 120);
 
-        if (distance < maxDistance) {
-          const proximity = 1 - distance / maxDistance;
-          ctx.globalAlpha = proximity * 0.62;
-          ctx.strokeStyle = colors.line;
-          ctx.lineWidth = 0.6 + proximity * 0.8;
-          ctx.beginPath();
-          ctx.moveTo(first.x, first.y);
-          ctx.lineTo(second.x, second.y);
-          ctx.stroke();
+    let maxHeat = 0;
+    let maxX = 0;
+    let maxY = 0;
+
+    for (let row = 0; row < this.rows; row += 1) {
+      const y = row * cell + cell / 2;
+      for (let col = 0; col < this.cols; col += 1) {
+        const x = col * cell + cell / 2;
+
+        // Soft union of the attention blobs: 1 - prod(1 - g_i).
+        let keep = 1;
+        for (let i = 0; i < blobs.length; i += 1) {
+          const b = blobs[i];
+          const dx = x - b.x;
+          const dy = y - b.y;
+          keep *= 1 - b.s * Math.exp(-(dx * dx + dy * dy) * b.inv);
         }
+        if (attn.strength > 0.01) {
+          const dx = x - attn.x;
+          const dy = y - attn.y;
+          keep *= 1 - attn.strength * 0.8 * Math.exp(-(dx * dx + dy * dy) * attnInv);
+        }
+
+        // A faint per-tile shimmer keeps the map feeling computed, not painted.
+        const shimmer = staticFrame ? 1 : 0.94 + 0.06 * Math.sin(time * 0.0014 + col * 0.9 + row * 1.7);
+        const heat = Math.min(1, (1 - keep) * shimmer);
+
+        if (heat > maxHeat) {
+          maxHeat = heat;
+          maxX = x;
+          maxY = y;
+        }
+
+        const size = Math.max(1.3, cell * (0.06 + heat * heat * 0.4));
+        ctx.globalAlpha = (0.12 + heat * heat * 0.5) * intensity;
+        // sqrt lifts mid-heat tiles into colour sooner, so warm regions read as a heatmap.
+        ctx.fillStyle = lut[Math.round(Math.sqrt(heat) * 32)];
+        ctx.fillRect(x - size / 2, y - size / 2, size, size);
       }
     }
 
-    // Mouse ring halo
-    if (!staticFrame && this.mouse.x !== null) {
-      const ringRadius = 48 + Math.sin(this.time * 0.04) * 6;
-      const ringGradient = ctx.createRadialGradient(
-        this.mouse.x, this.mouse.y, ringRadius * 0.6,
-        this.mouse.x, this.mouse.y, ringRadius
-      );
-      ringGradient.addColorStop(0, "transparent");
-      ringGradient.addColorStop(0.7, colors.active);
-      ringGradient.addColorStop(1, "transparent");
-      ctx.globalAlpha = 0.12;
-      ctx.strokeStyle = ringGradient;
-      ctx.lineWidth = 1.2;
-      ctx.beginPath();
-      ctx.arc(this.mouse.x, this.mouse.y, ringRadius, 0, Math.PI * 2);
-      ctx.stroke();
-    }
-
-    // Draw nodes
-    this.points.forEach((point) => {
-      const dx = this.mouse.x === null ? 9999 : this.mouse.x - point.x;
-      const dy = this.mouse.y === null ? 9999 : this.mouse.y - point.y;
-      const pointerDistance = Math.sqrt(dx * dx + dy * dy);
-      const nearPointer = pointerDistance < 150;
-      const pulse = 1 + Math.sin(this.time * 0.032 + point.phase) * 0.22 * point.pulse;
-      const radius = point.size * pulse;
-
-      if (nearPointer) {
-        ctx.globalAlpha = (1 - pointerDistance / 150) * 0.38;
-        ctx.strokeStyle = colors.active;
-        ctx.lineWidth = 0.8;
-        ctx.beginPath();
-        ctx.moveTo(point.x, point.y);
-        ctx.lineTo(this.mouse.x, this.mouse.y);
-        ctx.stroke();
-      }
-
-      ctx.globalAlpha = nearPointer ? 0.95 : 0.55 + point.depth * 0.2;
-      ctx.fillStyle = nearPointer ? colors.active : colors.dot;
-      ctx.beginPath();
-      ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
+    this.paintFocus(ctx, maxX, maxY, maxHeat, accent, intensity, staticFrame);
     ctx.globalAlpha = 1;
   }
 
+  paintFocus(ctx, x, y, heat, color, intensity, staticFrame) {
+    if (this.isCompact || heat < 0.5) return;
+
+    // Ease the box toward the hottest tile so it glides instead of jumping.
+    if (this.focus.x === null || staticFrame) {
+      this.focus.x = x;
+      this.focus.y = y;
+    } else {
+      this.focus.x += (x - this.focus.x) * 0.04;
+      this.focus.y += (y - this.focus.y) * 0.04;
+    }
+    this.focus.heat += (heat - this.focus.heat) * 0.08;
+
+    const span = this.cell * 3.4;
+    const left = this.focus.x - span / 2;
+    const top = this.focus.y - span / 2;
+    const arm = 10;
+    const alpha = 0.6 * intensity;
+
+    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    ctx.moveTo(left, top + arm);
+    ctx.lineTo(left, top);
+    ctx.lineTo(left + arm, top);
+    ctx.moveTo(left + span - arm, top);
+    ctx.lineTo(left + span, top);
+    ctx.lineTo(left + span, top + arm);
+    ctx.moveTo(left + span, top + span - arm);
+    ctx.lineTo(left + span, top + span);
+    ctx.lineTo(left + span - arm, top + span);
+    ctx.moveTo(left + arm, top + span);
+    ctx.lineTo(left, top + span);
+    ctx.lineTo(left, top + span - arm);
+    ctx.stroke();
+
+    ctx.font = '600 10px "JetBrains Mono", ui-monospace, monospace';
+    ctx.textBaseline = "middle";
+    const label = `salient ${this.focus.heat.toFixed(2)}`;
+    const labelWidth = ctx.measureText(label).width + 12;
+    ctx.globalAlpha = alpha * 0.22;
+    ctx.fillStyle = color;
+    ctx.fillRect(left, top - 19, labelWidth, 16);
+    ctx.globalAlpha = alpha;
+    ctx.fillText(label, left + 6, top - 11);
+  }
+
   drawStatic() {
-    this.paint({ staticFrame: true });
+    this.paint(24000, { staticFrame: true });
   }
 
   draw() {
     if (!this.isRunning && !prefersReducedMotion) return;
 
-    this.time += 1;
-    this.paint();
+    // 30fps is plenty for slow drift and halves the work.
+    this.tick += 1;
+    if (this.tick % 2 === 0) {
+      this.paint(performance.now());
+    }
 
     if (!prefersReducedMotion && this.isRunning) {
       this.frame = requestAnimationFrame(this.draw);

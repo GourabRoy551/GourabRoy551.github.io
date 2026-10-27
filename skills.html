@@ -1,31 +1,34 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="bright">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Gourab Roy is an Erasmus Mundus IPCVAI researcher in Bordeaux working on explainable AI, multimodal models, medical imaging, and safety-focused computer vision."
+      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student in Bordeaux working on computer vision, explainable AI, medical imaging, and multimodal models."
     />
     <meta
       name="keywords"
       content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
     />
-    <meta name="theme-color" content="#090d0f" />
-    <meta property="og:title" content="Gourab Roy | Vision AI and Explainable AI Researcher" />
+    <meta name="theme-color" content="#fafaf8" />
+    <meta property="og:title" content="Skills - Gourab Roy" />
     <meta
       property="og:description"
-      content="Erasmus Mundus IPCVAI researcher in Bordeaux building and evaluating explainable vision and language models for real-world applications."
+      content="Erasmus Mundus IPCVAI master's student in Bordeaux building and evaluating explainable vision and language models for real-world applications."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="Photo.png" />
+    <meta property="og:image" content="https://gourabroy551.github.io/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Skills - Gourab Roy" />
+    <meta name="twitter:image" content="https://gourabroy551.github.io/og-image.png" />
     <title>Skills - Gourab Roy</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="application-name" content="Gourab Roy" />
     <meta name="apple-mobile-web-app-title" content="Gourab Roy" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/01-base.css" />
     <link rel="stylesheet" href="css/02-header-layout.css" />
     <link rel="stylesheet" href="css/03-hero.css" />
@@ -52,7 +55,7 @@
     <script src="js/i18n.js" defer></script>
   </head>
   <body id="top">
-    <a class="skip-link" href="#skills">Skip to content</a>
+    <a class="skip-link" href="#skills-page">Skip to content</a>
     <canvas id="neural-canvas" aria-hidden="true"></canvas>
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -60,10 +63,10 @@
     <header class="site-header" data-reveal>
       <div class="header-shell">
         <a class="brand" href="index.html" aria-label="Gourab Roy home">
-          <span class="brand-mark" aria-hidden="true">GR</span>
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><defs><linearGradient id="brand-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color: var(--cyan)"/><stop offset="1" style="stop-color: var(--violet)"/></linearGradient></defs><path class="brand-mark-frame" stroke="url(#brand-grad)" d="M4 11V6a2 2 0 0 1 2-2h5M29 4h5a2 2 0 0 1 2 2v5M36 29v5a2 2 0 0 1-2 2h-5M11 36H6a2 2 0 0 1-2-2v-5"/><path class="brand-mark-letters" d="M18.2 15.2A6.8 6.8 0 1 0 20 20.6h-4.6M24 27V13.4h4.4a3.6 3.6 0 0 1 0 7.2H24M27.6 20.6l4 6.4"/></svg></span>
           <span class="brand-copy">
             <span class="brand-text">Gourab Roy</span>
-            <span class="brand-role">Vision AI and XAI researcher</span>
+            <span class="brand-role">IPCVAI Master's Student</span>
           </span>
         </a>
 
@@ -107,357 +110,234 @@
       </div>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="about.html">About</a>
         <a href="research.html">Research</a>
-        <a href="education.html">Education</a>
         <a href="publications.html">Publications</a>
-        <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
-        <a href="skills.html" class="is-active">Skills</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="background.html">About</a>
         <a href="Blog/index.html">Blog</a>
-        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+        <a class="nav-cv" href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">CV</a>
       </nav>
     </header>
 
     <main id="skills-page">
       <!-- Skills -->
-            <section class="section-band about skills-section" id="skills">
-              <div class="section-inner skills-layout">
-                <div class="section-heading skills-heading" data-reveal>
-                  <p class="eyebrow">Skills and achievements</p>
-                  <h2>A research engineering stack for computer vision, explainability, and reproducible evaluation.</h2>
-                  <p>
-                    I work mostly in Python, with enough software, database, and research-writing practice to move
-                    from raw data to experiments, figures, papers, and working project demos.
-                  </p>
-                  <div class="skills-focus-row" aria-label="Core skill tracks">
-                    <span>Vision and language models</span>
-                    <span>Scientific Python</span>
-                    <span>XAI evaluation</span>
-                    <span>Reproducible research</span>
-                  </div>
-                </div>
-      
-                <aside class="skill-stack-panel skill-command-panel" data-reveal aria-label="Core skill stack">
-                  <span class="item-index">Working stack</span>
-                  <h3>Python-led experimentation from dataset checks to model cards and research reports.</h3>
-                  <p>
-                    The stack is built around machine learning experiments, scientific notebooks, clean
-                    version control, and the ability to explain results clearly.
-                  </p>
-                  <div class="skill-proof-strip" aria-label="Skill proof points">
-                    <div>
-                      <strong>12</strong>
-                      <small>peer-reviewed works</small>
-                    </div>
-                    <div>
-                      <strong>1,000</strong>
-                      <small>SHAP explanations evaluated</small>
-                    </div>
-                    <div>
-                      <strong>27</strong>
-                      <small>SiteGuard AI tests</small>
-                    </div>
-                  </div>
-                  <div class="skill-signal-list" aria-label="Skill focus areas">
-                    <div>
-                      <span>01</span>
-                      <strong>Languages</strong>
-                      <small>C, C++, Python, Java, JavaScript</small>
-                    </div>
-                    <div>
-                      <span>02</span>
-                      <strong>Models and XAI</strong>
-                      <small>PyTorch, Transformers, SHAP, CLIP</small>
-                    </div>
-                    <div>
-                      <span>03</span>
-                      <strong>Vision systems</strong>
-                      <small>OpenCV, YOLO, image and video inference</small>
-                    </div>
-                    <div>
-                      <span>04</span>
-                      <strong>Research workflow</strong>
-                      <small>Git, pytest, statistical evaluation, LaTeX</small>
-                    </div>
-                  </div>
-                  <div class="tool-logo-grid" aria-label="Core tool logos">
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>Python</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>C++</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>PyTorch</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>TensorFlow</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>Scikit-learn</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>NumPy</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>Pandas</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>Jupyter</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>Java</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>JavaScript</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>MySQL</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img
-                        class="tool-logo"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <span>Git</span>
-                    </span>
-                    <span class="tool-logo-card">
-                      <img class="tool-logo" src="https://cdn.simpleicons.org/latex" alt="" aria-hidden="true" />
-                      <span>LaTeX</span>
-                    </span>
-                  </div>
-                </aside>
-      
-                <div class="skills-main skill-system" data-reveal>
-                  <div class="skill-category-grid" aria-label="Skill categories">
-                    <article class="skill-category skill-lane-card is-vision">
-                      <div class="skill-lane-head">
-                        <span class="item-index">Vision AI</span>
-                        <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 92%"></span></span>
-                      </div>
-                      <h3>Computer vision and multimodal modeling</h3>
-                      <p>Classification, segmentation, detection, image-text modeling, and calibrated evaluation for applied vision work.</p>
-                      <div class="skill-card-logo-row" aria-hidden="true">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="" />
-                      </div>
-                      <div class="skill-chip-list" aria-label="Vision AI skills">
-                        <span>CNNs</span>
-                        <span>ViT</span>
-                        <span>YOLO</span>
-                        <span>CLIP</span>
-                        <span>BERT</span>
-                        <span>Segmentation</span>
-                        <span>OpenCV</span>
-                      </div>
-                    </article>
-                    <article class="skill-category skill-lane-card is-modeling">
-                      <div class="skill-lane-head">
-                        <span class="item-index">ML Stack</span>
-                        <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 88%"></span></span>
-                      </div>
-                      <h3>Explainability and model evaluation</h3>
-                      <p>Partition SHAP, attention analysis, deletion tests, bootstrap confidence intervals, and cross-model comparisons.</p>
-                      <div class="skill-card-logo-row" aria-hidden="true">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" />
-                      </div>
-                      <div class="skill-chip-list" aria-label="Data skills">
-                        <span>PyTorch</span>
-                        <span>TensorFlow</span>
-                        <span>Scikit-learn</span>
-                        <span>SHAP</span>
-                        <span>Transformers</span>
-                        <span>Faithfulness</span>
-                      </div>
-                    </article>
-                    <article class="skill-category skill-lane-card is-data">
-                      <div class="skill-lane-head">
-                        <span class="item-index">Data</span>
-                        <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 78%"></span></span>
-                      </div>
-                      <h3>Scientific Python and visualization</h3>
-                      <p>Exploratory analysis, dataset cleaning, notebook workflows, visual summaries, and publication-ready figures.</p>
-                      <div class="skill-card-logo-row" aria-hidden="true">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="" />
-                      </div>
-                      <div class="skill-chip-list" aria-label="Software skills">
-                        <span>NumPy</span>
-                        <span>Pandas</span>
-                        <span>Matplotlib</span>
-                        <span>Jupyter</span>
-                        <span>EDA</span>
-                        <span>Reports</span>
-                      </div>
-                    </article>
-                    <article class="skill-category skill-lane-card is-software">
-                      <div class="skill-lane-head">
-                        <span class="item-index">Software</span>
-                        <span class="skill-signal-meter" aria-hidden="true"><span style="--level: 84%"></span></span>
-                      </div>
-                      <h3>Software, testing, and research communication</h3>
-                      <p>Git-based collaboration, tested Python packages, structured model outputs, LaTeX writing, and peer review.</p>
-                      <div class="skill-card-logo-row" aria-hidden="true">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" />
-                      </div>
-                      <div class="skill-chip-list" aria-label="Research writing skills">
-                        <span>C/C++</span>
-                        <span>Java</span>
-                        <span>JavaScript</span>
-                        <span>MySQL</span>
-                        <span>SQLite</span>
-                        <span>Git</span>
-                        <span>pytest</span>
-                        <span>LaTeX</span>
-                        <span>Review</span>
-                      </div>
-                    </article>
-                  </div>
-      
-                  <div class="achievement-panel" aria-label="Certifications and achievements">
-                    <div class="achievement-panel-copy">
-                      <span class="item-index">Proof points</span>
-                      <h3>Learning and practice that support the research stack.</h3>
-                    </div>
-                    <div class="achievement-grid">
-                      <article class="achievement-card">
-                        <span>01</span>
-                        <img class="achievement-logo" src="https://cdn.simpleicons.org/hackerrank/00EA64" alt="" aria-hidden="true" />
-                        <h3>350+ programming problems solved</h3>
-                        <p>Practice across HackerRank, Codeforces, and UVA, with a focus on problem solving fundamentals.</p>
-                      </article>
-                      <article class="achievement-card">
-                        <span>02</span>
-                        <img class="achievement-logo" src="https://cdn.simpleicons.org/hackerrank/00EA64" alt="" aria-hidden="true" />
-                        <h3>Gold Badges in C++ and Python</h3>
-                        <p>Earned through HackerRank practice and competitive programming fundamentals.</p>
-                      </article>
-                      <article class="achievement-card">
-                        <span>03</span>
-                        <img class="achievement-logo" src="https://cdn.simpleicons.org/coursera/0056D2" alt="" aria-hidden="true" />
-                        <h3>Machine learning and data courses</h3>
-                        <p>Completed machine learning specialization, data structures, and Python visualization training.</p>
-                      </article>
-                      <article class="achievement-card">
-                        <span>04</span>
-                        <img class="achievement-logo" src="https://cdn.simpleicons.org/elsevier/FF6C00" alt="" aria-hidden="true" />
-                        <h3>Reviewer experience</h3>
-                        <p>Contributed as a reviewer for Informatics in Medicine Unlocked.</p>
-                      </article>
-                    </div>
-                  </div>
-      
-                  <div class="topic-cloud" aria-label="Skill tags">
-                    <span>Python</span>
-                    <span>C</span>
-                    <span>C++</span>
-                    <span>Java</span>
-                    <span>MATLAB</span>
-                    <span>PyTorch</span>
-                    <span>TensorFlow</span>
-                    <span>Scikit-learn</span>
-                    <span>Transformers</span>
-                    <span>SHAP</span>
-                    <span>CLIP</span>
-                    <span>BERT</span>
-                    <span>YOLO</span>
-                    <span>OpenCV</span>
-                    <span>NumPy</span>
-                    <span>Pandas</span>
-                    <span>Matplotlib</span>
-                    <span>Jupyter Notebook</span>
-                    <span>MySQL</span>
-                    <span>SQLite</span>
-                    <span>pytest</span>
-                    <span>Linux</span>
-                    <span>Windows</span>
-                    <span>Git</span>
-                    <span>LaTeX</span>
-                  </div>
-                </div>
+      <section class="section-band skills-section" id="skills">
+        <div class="section-inner skills-page-layout">
+          <div class="section-heading page-header" data-reveal>
+            <p class="eyebrow page-crumb">Portfolio / Skills</p>
+            <h1 class="page-title">Skills</h1>
+            <p class="page-subtitle">A research engineering stack for computer vision, explainability, and reproducible evaluation.</p>
+            <div class="page-chips" aria-label="Core skill tracks">
+              <span>Vision and language models</span>
+              <span>Scientific Python</span>
+              <span>XAI evaluation</span>
+              <span>Reproducible research</span>
+            </div>
+          </div>
+          <nav class="page-subnav" aria-label="On this page">
+            <a href="#competencies">Competencies</a>
+            <a href="#tech-stack">Tech stack</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#keywords">Keywords</a>
+          </nav>
+          <div class="highlights" data-reveal aria-label="Skill proof points">
+            <div><strong>12</strong><span>peer-reviewed works</span></div>
+            <div><strong>1,000</strong><span>SHAP explanations evaluated</span></div>
+            <div><strong>27</strong><span>SiteGuard AI tests</span></div>
+            <div><strong>18</strong><span>tools and languages below</span></div>
+          </div>
+
+          <h2 class="section-label" id="competencies"><span class="section-label-num">01</span>Core competencies</h2>
+          <p class="home-intro" data-reveal>Python-led experimentation from dataset checks to model cards and research reports.</p>
+          <div class="competency-list" data-reveal>
+            <article class="competency-row skill-category is-vision">
+              <span class="competency-rank">01</span>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+              <div class="competency-body">
+                <span class="item-index">Vision AI</span>
+                <h3>Computer vision and multimodal modeling</h3>
+                <p>Classification, segmentation, detection, 3D vision, image-text retrieval, and calibrated evaluation for applied vision work.</p>
+                <div class="skill-chip-list" aria-label="Vision AI skills"><span>CNNs</span><span>ViT</span><span>YOLO</span><span>CLIP</span><span>BERT</span><span>Segmentation</span><span>3D vision</span><span>OpenCV</span></div>
               </div>
-            </section>
+              <span class="skill-signal-meter competency-meter" aria-hidden="true"><span style="--level: 92%"></span></span>
+            </article>
+            <article class="competency-row skill-category is-modeling">
+              <span class="competency-rank">02</span>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/><rect x="9" y="9" width="6" height="6" fill="currentColor" stroke="none" opacity="0.45"/></svg></span>
+              <div class="competency-body">
+                <span class="item-index">ML Stack</span>
+                <h3>Explainability and model evaluation</h3>
+                <p>Attention rollout and RFEM, Partition SHAP, LIME, deletion tests, bootstrap confidence intervals, and cross-model comparisons.</p>
+                <div class="skill-chip-list" aria-label="ML Stack skills"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>SHAP</span><span>LIME</span><span>Attention rollout</span><span>Transformers</span><span>Faithfulness</span></div>
+              </div>
+              <span class="skill-signal-meter competency-meter" aria-hidden="true"><span style="--level: 88%"></span></span>
+            </article>
+            <article class="competency-row skill-category is-software">
+              <span class="competency-rank">03</span>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/></svg></span>
+              <div class="competency-body">
+                <span class="item-index">Software</span>
+                <h3>Software, testing, and research communication</h3>
+                <p>Git-based collaboration, tested Python packages, FastAPI and Docker serving, LaTeX writing, and peer review.</p>
+                <div class="skill-chip-list" aria-label="Software skills"><span>C/C++</span><span>Java</span><span>JavaScript/TypeScript</span><span>SQL</span><span>MySQL</span><span>SQLite</span><span>Git</span><span>pytest</span><span>Docker</span><span>FastAPI</span><span>LaTeX</span><span>Review</span></div>
+              </div>
+              <span class="skill-signal-meter competency-meter" aria-hidden="true"><span style="--level: 84%"></span></span>
+            </article>
+            <article class="competency-row skill-category is-data">
+              <span class="competency-rank">04</span>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
+              <div class="competency-body">
+                <span class="item-index">Data</span>
+                <h3>Scientific Python and visualization</h3>
+                <p>Exploratory analysis, dataset cleaning, notebook workflows, visual summaries, and publication-ready figures.</p>
+                <div class="skill-chip-list" aria-label="Data skills"><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Jupyter</span><span>EDA</span><span>Reports</span></div>
+              </div>
+              <span class="skill-signal-meter competency-meter" aria-hidden="true"><span style="--level: 78%"></span></span>
+            </article>
+          </div>
+
+          <h2 class="section-label" id="tech-stack"><span class="section-label-num">02</span>Tech stack by layer</h2>
+          <div class="stack-layers" data-reveal>
+            <div class="stack-row">
+              <div class="stack-row-head"><span>01</span><strong>Languages</strong></div>
+              <div class="stack-row-tools"><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Python</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>C++</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>MATLAB</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Java</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>JavaScript</span></span></div>
+              <p class="stack-row-detail">Python, C, C++, MATLAB, Java, JavaScript/TypeScript, SQL</p>
+            </div>
+            <div class="stack-row">
+              <div class="stack-row-head"><span>02</span><strong>Models and XAI</strong></div>
+              <div class="stack-row-tools"><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>PyTorch</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>TensorFlow</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Scikit-learn</span></span></div>
+              <p class="stack-row-detail">PyTorch, TensorFlow, CLIP, BERT, ViT; SHAP, LIME, attention rollout</p>
+            </div>
+            <div class="stack-row">
+              <div class="stack-row-head"><span>03</span><strong>Vision systems</strong></div>
+              <div class="stack-row-tools"><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>OpenCV</span></span></div>
+              <p class="stack-row-detail">OpenCV, YOLO; classification, segmentation, detection, 3D vision</p>
+            </div>
+            <div class="stack-row">
+              <div class="stack-row-head"><span>04</span><strong>Scientific computing</strong></div>
+              <div class="stack-row-tools"><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>NumPy</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Pandas</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Jupyter</span></span></div>
+              <p class="stack-row-detail">NumPy, SciPy, Pandas, Matplotlib, Jupyter; exploratory analysis and publication-ready figures</p>
+            </div>
+            <div class="stack-row">
+              <div class="stack-row-head"><span>05</span><strong>Research workflow</strong></div>
+              <div class="stack-row-tools"><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Git</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Docker</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>FastAPI</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>Linux</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.simpleicons.org/latex" alt="" aria-hidden="true" loading="lazy" /><span>LaTeX</span></span><span class="tool-logo-card"><img class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" aria-hidden="true" loading="lazy" /><span>MySQL</span></span></div>
+              <p class="stack-row-detail">Git, Linux, Docker, FastAPI, pytest, LaTeX</p>
+            </div>
+          </div>
+
+          <h2 class="section-label" id="achievements"><span class="section-label-num">03</span>Achievements and certifications</h2>
+          <p class="home-intro" data-reveal>Learning and practice that support the research stack.</p>
+          <div class="achievement-grid achievement-list" data-reveal>
+            <article class="achievement-card">
+              <span>01</span>
+              <img class="achievement-logo" src="https://cdn.simpleicons.org/hackerrank/00EA64" alt="" aria-hidden="true" />
+              <h3>350+ programming problems solved</h3>
+              <p>Practice across HackerRank, Codeforces, and UVA, with a focus on problem solving fundamentals.</p>
+            </article>
+            <article class="achievement-card">
+              <span>02</span>
+              <img class="achievement-logo" src="https://cdn.simpleicons.org/hackerrank/00EA64" alt="" aria-hidden="true" />
+              <h3>Gold Badges in C++ and Python</h3>
+              <p>Earned through HackerRank practice and competitive programming fundamentals.</p>
+            </article>
+            <article class="achievement-card">
+              <span>03</span>
+              <img class="achievement-logo" src="https://cdn.simpleicons.org/coursera/0056D2" alt="" aria-hidden="true" />
+              <h3>Machine learning and data courses</h3>
+              <p>Completed machine learning specialization, data structures, and Python visualization training.</p>
+            </article>
+            <article class="achievement-card">
+              <span>04</span>
+              <img class="achievement-logo" src="https://cdn.simpleicons.org/elsevier/FF6C00" alt="" aria-hidden="true" />
+              <h3>Reviewer experience</h3>
+              <p>Contributed as a reviewer for Informatics in Medicine Unlocked.</p>
+            </article>
+          </div>
+
+          <h2 class="section-label" id="keywords"><span class="section-label-num">04</span>Keyword index</h2>
+          <div class="keyword-groups" data-reveal>
+            <div class="keyword-group">
+              <span class="keyword-group-title">Languages</span>
+              <div class="tag-row"><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>MATLAB</span><span>TypeScript</span></div>
+            </div>
+            <div class="keyword-group">
+              <span class="keyword-group-title">Frameworks and libraries</span>
+              <div class="tag-row"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>Transformers</span><span>OpenCV</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>SciPy</span></div>
+            </div>
+            <div class="keyword-group">
+              <span class="keyword-group-title">Models</span>
+              <div class="tag-row"><span>CLIP</span><span>BERT</span><span>ViT</span><span>YOLO</span></div>
+            </div>
+            <div class="keyword-group">
+              <span class="keyword-group-title">Explainability</span>
+              <div class="tag-row"><span>SHAP</span><span>LIME</span><span>Attention rollout</span></div>
+            </div>
+            <div class="keyword-group">
+              <span class="keyword-group-title">Data and tooling</span>
+              <div class="tag-row"><span>MySQL</span><span>SQLite</span><span>pytest</span><span>Docker</span><span>FastAPI</span><span>Git</span><span>LaTeX</span><span>Jupyter Notebook</span></div>
+            </div>
+            <div class="keyword-group">
+              <span class="keyword-group-title">Platforms</span>
+              <div class="tag-row"><span>Linux</span><span>Windows</span></div>
+            </div>
+          </div>
+
+          <aside class="page-cta" data-reveal aria-label="Next page">
+            <div class="page-cta-copy">
+              <span class="item-index">Next</span>
+              <strong>About</strong>
+              <p>Profile and experience: research, teaching, and mentoring.</p>
+            </div>
+            <div class="page-cta-actions">
+              <a class="button button-primary" href="background.html">About <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+              <a class="button button-ghost" href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">Download CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg></a>
+            </div>
+          </aside>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-      <p><span data-current-year>2026</span> Gourab Roy - Vision AI and explainable AI researcher.</p>
-      <div class="footer-links"><a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Scholar</a><a href="#top">Top ↑</a></div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Gourab Roy home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><defs><linearGradient id="brand-grad-footer" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color: var(--cyan)"/><stop offset="1" style="stop-color: var(--violet)"/></linearGradient></defs><path class="brand-mark-frame" stroke="url(#brand-grad-footer)" d="M4 11V6a2 2 0 0 1 2-2h5M29 4h5a2 2 0 0 1 2 2v5M36 29v5a2 2 0 0 1-2 2h-5M11 36H6a2 2 0 0 1-2-2v-5"/><path class="brand-mark-letters" d="M18.2 15.2A6.8 6.8 0 1 0 20 20.6h-4.6M24 27V13.4h4.4a3.6 3.6 0 0 1 0 7.2H24M27.6 20.6l4 6.4"/></svg></span>
+            <span class="brand-copy">
+              <span class="brand-text">Gourab Roy</span>
+              <span class="brand-role">IPCVAI Master's Student</span>
+            </span>
+          </a>
+          <p>AI master's student in image processing and computer vision, building vision models that can be explained and trusted.</p>
+          <span class="footer-status"><i aria-hidden="true"></i>Open to internships from Feb 2027</span>
+        </div>
+        <nav class="footer-col" aria-label="Footer navigation">
+          <span class="footer-heading">Explore</span>
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="projects.html">Projects</a>
+          <a href="education.html">Education</a>
+          <a href="skills.html">Skills</a>
+          <a href="background.html">About</a>
+          <a href="Blog/index.html">Blog</a>
+        </nav>
+        <div class="footer-col">
+          <span class="footer-heading">Connect</span>
+          <a href="mailto:gourabroysec553@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> Gourab Roy &middot; Last updated October 2026</p>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
     </footer>
   </body>
 </html>

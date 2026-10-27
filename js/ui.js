@@ -3,7 +3,9 @@ function observeRevealElements(elements = document.querySelectorAll("[data-revea
 
   if (!revealItems.length) return;
 
-  if (!("IntersectionObserver" in window) || prefersReducedMotion) {
+  // Pages opened at an anchor (e.g. redirects to background.html#education)
+  // show everything at once so content below the jump is never left hidden.
+  if (!("IntersectionObserver" in window) || prefersReducedMotion || window.location.hash) {
     revealItems.forEach((item) => item.classList.add("is-visible"));
     return;
   }
@@ -65,15 +67,18 @@ function animateCounters() {
 
 function setupActiveNavigation() {
   const links = Array.from(document.querySelectorAll(".nav-links a"));
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const normalizePath = (path) => path.replace(/\/$/, "/index.html");
+  const currentPage = normalizePath(window.location.pathname);
+  // Child pages (case studies, blog posts) name their parent section on <body>.
+  const parentSection = document.body.dataset.navSection;
 
   links.forEach((link) => {
     const href = link.getAttribute("href") || "";
     if (!href || href.startsWith("#")) return;
 
-    const linkUrl = new URL(href, window.location.href);
-    const linkPage = linkUrl.pathname.split("/").pop() || "index.html";
-    link.classList.toggle("is-active", linkPage === currentPage);
+    const linkPath = normalizePath(new URL(href, window.location.href).pathname);
+    const isParent = parentSection && linkPath.endsWith(`/${parentSection}`);
+    link.classList.toggle("is-active", linkPath === currentPage || Boolean(isParent));
   });
 
   const sectionLinks = links.filter((link) => (link.getAttribute("href") || "").startsWith("#"));
@@ -98,6 +103,28 @@ function setupActiveNavigation() {
   );
 
   sections.forEach((section) => observer.observe(section));
+}
+
+function setupSubnav() {
+  const links = Array.from(document.querySelectorAll(".page-subnav a"));
+  if (!links.length || !("IntersectionObserver" in window)) return;
+
+  const targets = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+  const setActive = (id) => {
+    links.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`));
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
+  );
+
+  targets.forEach((target) => observer.observe(target));
+  if (targets[0]) setActive(targets[0].id);
 }
 
 function setupScrollProgress() {

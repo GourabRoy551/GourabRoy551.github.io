@@ -1,10 +1,23 @@
+# Local tooling and notes (not part of the site)
 .claude/
+.vscode/
 papers.md
 portfolio-brief-and-plan.md
 script.js
 styles.css
 tmp/
+
+# LaTeX build artefacts
 CV/*.aux
 CV/*.log
 CV/*.out
+CV/*.fls
+CV/*.fdb_latexmk
 CV/*.synctex.gz
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+__pycache__/

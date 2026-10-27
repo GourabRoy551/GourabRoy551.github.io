@@ -16,12 +16,12 @@ function setTheme(theme) {
 
   const metaTheme = document.querySelector('meta[name="theme-color"]');
   if (metaTheme) {
-    metaTheme.setAttribute("content", theme === "dark" ? "#090d0f" : "#f4f7f3");
+    metaTheme.setAttribute("content", theme === "dark" ? "#0f1216" : "#fafaf8");
   }
 }
 
 function setupThemeControls() {
-  const currentTheme = document.documentElement.dataset.theme || "dark";
+  const currentTheme = document.documentElement.dataset.theme || "bright";
   setTheme(currentTheme);
 
   const toggle = document.querySelector("[data-theme-toggle]");

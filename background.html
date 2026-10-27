@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en" data-theme="bright">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gourab Roy is an Erasmus Mundus IPCVAI master's student in Bordeaux working on computer vision, explainable AI, medical imaging, and multimodal models."
+    />
+    <meta
+      name="keywords"
+      content="Gourab Roy, Erasmus Mundus, IPCVAI, AI engineer, computer vision, biomedical imaging, explainable AI, Vision Transformers, CLIP, medical AI"
+    />
+    <meta name="theme-color" content="#fafaf8" />
+    <meta property="og:title" content="About - Gourab Roy" />
+    <meta
+      property="og:description"
+      content="Erasmus Mundus IPCVAI master's student in Bordeaux building and evaluating explainable vision and language models for real-world applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://gourabroy551.github.io/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About - Gourab Roy" />
+    <meta name="twitter:image" content="https://gourabroy551.github.io/og-image.png" />
+    <title>About - Gourab Roy</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="application-name" content="Gourab Roy" />
+    <meta name="apple-mobile-web-app-title" content="Gourab Roy" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-header-layout.css" />
+    <link rel="stylesheet" href="css/03-hero.css" />
+    <link rel="stylesheet" href="css/04-research-education.css" />
+    <link rel="stylesheet" href="css/05-publications-projects.css" />
+    <link rel="stylesheet" href="css/06-experience-skills-writing-contact.css" />
+    <link rel="stylesheet" href="css/07-animations-responsive.css" />
+    <link rel="stylesheet" href="css/08-polish-overrides.css" />
+    <script>
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      const savedTheme = requestedTheme || localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "bright") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <script src="js/analytics.js" defer></script>
+    <script src="js/publications-data.js" defer></script>
+    <script src="js/state.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/publications.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/neural-canvas.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#background-page">Skip to content</a>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header" data-reveal>
+      <div class="header-shell">
+        <a class="brand" href="index.html" aria-label="Gourab Roy home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><defs><linearGradient id="brand-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color: var(--cyan)"/><stop offset="1" style="stop-color: var(--violet)"/></linearGradient></defs><path class="brand-mark-frame" stroke="url(#brand-grad)" d="M4 11V6a2 2 0 0 1 2-2h5M29 4h5a2 2 0 0 1 2 2v5M36 29v5a2 2 0 0 1-2 2h-5M11 36H6a2 2 0 0 1-2-2v-5"/><path class="brand-mark-letters" d="M18.2 15.2A6.8 6.8 0 1 0 20 20.6h-4.6M24 27V13.4h4.4a3.6 3.6 0 0 1 0 7.2H24M27.6 20.6l4 6.4"/></svg></span>
+          <span class="brand-copy">
+            <span class="brand-text">Gourab Roy</span>
+            <span class="brand-role">IPCVAI Master's Student</span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to bright theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-orb" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-copy">
+            <span class="theme-toggle-label" data-theme-label>Dark</span>
+            <span class="theme-toggle-action" data-theme-action>Switch to bright</span>
+          </span>
+        </button>
+
+        <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+          <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="background.html">About</a>
+        <a href="Blog/index.html">Blog</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+        <a class="nav-cv" href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">CV</a>
+      </nav>
+    </header>
+
+    <main id="background-page">
+      <section class="section-band background-section" id="background-top">
+        <div class="section-inner background-layout">
+          <div class="section-heading page-header" data-reveal>
+            <p class="eyebrow page-crumb">Portfolio / About</p>
+            <h1 class="page-title">About</h1>
+            <p class="page-subtitle">Profile and experience: from research and teaching in Bangladesh to an Erasmus Mundus master's across Europe.</p>
+            <div class="page-chips" aria-label="Quick facts">
+              <span>Erasmus Mundus IPCVAI</span>
+              <span>2 years research assistant</span>
+              <span>Bordeaux, France</span>
+            </div>
+          </div>
+          <nav class="page-subnav" aria-label="On this page">
+            <a href="#profile">Profile</a>
+            <a href="#experience">Experience</a>
+          </nav>
+          <div class="highlights" data-reveal aria-label="Highlights">
+            <div><span class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/></svg></span><strong>2</strong><span>years as research assistant</span></div>
+            <div><span class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><strong>12</strong><span>peer-reviewed papers</span></div>
+            <div><span class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><strong>3</strong><span>countries, one master's</span></div>
+            <div><span class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span><strong>3.56</strong><span>B.Sc. CGPA out of 4.00</span></div>
+          </div>
+          <h2 class="section-label background-part-label" id="profile"><span class="section-label-num">01</span>Profile</h2>
+          <div class="profile-grid">
+            <article class="about-story-card about-story-main" data-reveal>
+              <span class="item-index">Background</span>
+              <h2>From teaching and research to graduate AI</h2>
+              <ol class="journey" aria-label="Academic journey">
+                <li class="is-done">
+                  <span class="journey-when">2018&ndash;2023</span>
+                  <strong>B.Sc. CSE, Sylhet Engineering College</strong>
+                  <span>CGPA 3.56 / 4.00 &middot; CerebralNet thesis on brain CT/MRI</span>
+                </li>
+                <li class="is-done">
+                  <span class="journey-when">2023&ndash;2025</span>
+                  <strong>Research Assistant and Adjunct Lecturer</strong>
+                  <span>12 peer-reviewed papers, new image datasets, thesis mentoring</span>
+                </li>
+                <li class="is-done">
+                  <span class="journey-when">2025&ndash;2026</span>
+                  <strong>IPCVAI &middot; Budapest, then Madrid</strong>
+                  <span>Image processing, deep learning, multi-view vision</span>
+                </li>
+                <li class="is-current">
+                  <span class="journey-when">Now</span>
+                  <strong>IPCVAI &middot; Universit&eacute; de Bordeaux</strong>
+                  <span>XAI for images, medical imaging, TRDP on BERT and CLIP explanations</span>
+                </li>
+                <li class="is-next">
+                  <span class="journey-when">Feb 2027</span>
+                  <strong>5&ndash;6 month computer vision internship</strong>
+                  <span>Research lab or industrial R&amp;D, France first, open across the EU</span>
+                </li>
+              </ol>
+              <details class="read-more">
+                <summary><span class="read-more-closed">The longer story</span><span class="read-more-open">Show less</span></summary>
+                <div class="read-more-body">
+                  <p>
+                Before joining IPCVAI, I spent two years as a Research Assistant and Adjunct Lecturer in
+                Computer Science and Engineering at Sylhet Engineering College. I designed models, ran
+                experiments, and prepared manuscripts across medical AI, document AI, agricultural
+                vision, NLP, and structural computer vision, work that led to 12 peer-reviewed
+                publications. I also mentored thesis students and helped build new image datasets
+                such as BanglaFont45 and Bangladeshi rice varieties.
+                  </p>
+                  <p>
+                I have also served as a reviewer for Informatics in Medicine Unlocked, which helped
+                sharpen how I read research: not only looking for strong results, but also asking how
+                carefully the problem is framed, how honestly the model is evaluated, and whether the
+                method can be trusted outside a clean benchmark.
+                  </p>
+                </div>
+              </details>
+            </article>
+            <aside class="about-photo-card" data-reveal aria-label="Gourab Roy profile photo and summary">
+              <div class="about-photo-frame">
+                <img
+                  src="Photo.webp"
+                  alt="Portrait of Gourab Roy"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+              </div>
+              <div class="about-photo-meta">
+                <span class="item-index">Current base</span>
+                <h2>University of Bordeaux, IPCVAI 2025-2027</h2>
+                <p>Explainable AI, advanced computer vision, and medical imaging.</p>
+              </div>
+            </aside>
+          </div>
+          <div class="about-focus-grid" aria-label="Research interests">
+            <article class="about-story-card" data-reveal>
+              <span class="item-index">01 / Vision models</span>
+              <h2>Vision Transformers and multimodal learning</h2>
+              <p class="card-lede">How vision and vision-language models learn representations for image-text alignment and retrieval.</p>
+              <div class="tag-row">
+                <span>ViT</span>
+                <span>CLIP</span>
+                <span>Retrieval</span>
+                <span>Low-resource data</span>
+              </div>
+              <details class="read-more">
+                <summary><span class="read-more-closed">Read more</span><span class="read-more-open">Show less</span></summary>
+                <div class="read-more-body">
+                  <p>
+                I am interested in how modern vision and vision-language models learn useful
+                representations, especially for image-text alignment and retrieval with limited or
+                low-resource data, as in my BanglaCaption40K benchmark.
+                  </p>
+                </div>
+              </details>
+            </article>
+
+            <article class="about-story-card" data-reveal>
+              <span class="item-index">02 / Explainability</span>
+              <h2>Attention vs perturbation explanations</h2>
+              <p class="card-lede">Do attention maps show what BERT and CLIP really use? Attention-sink tokens say: not always.</p>
+              <div class="tag-row">
+                <span>RFEM</span>
+                <span>Partition SHAP</span>
+                <span>BERT</span>
+                <span>CLIP</span>
+              </div>
+              <details class="read-more">
+                <summary><span class="read-more-closed">Read more</span><span class="read-more-open">Show less</span></summary>
+                <div class="read-more-body">
+                  <p>
+                My TRDP studies how attention-based explanations such as RFEM behave beyond Vision
+                Transformers. I found that attention-sink tokens can hide the words that drive BERT
+                and CLIP predictions, and I compare them with perturbation-based Partition SHAP
+                instead of treating a heatmap as proof by itself.
+                  </p>
+                </div>
+              </details>
+            </article>
+
+            <article class="about-story-card" data-reveal>
+              <span class="item-index">03 / Healthcare AI</span>
+              <h2>Medical image segmentation and classification</h2>
+              <p class="card-lede">CT and MRI workflows where reliability and interpretability matter as much as accuracy.</p>
+              <div class="tag-row">
+                <span>CT/MRI</span>
+                <span>Segmentation</span>
+                <span>Few-shot</span>
+              </div>
+              <details class="read-more">
+                <summary><span class="read-more-closed">Read more</span><span class="read-more-open">Show less</span></summary>
+                <div class="read-more-body">
+                  <p>
+                I care about AI that can support real healthcare research, especially CT and MRI
+                workflows where reliability, data quality, and interpretability matter as much as
+                raw accuracy.
+                  </p>
+                </div>
+              </details>
+            </article>
+          </div>
+          <div class="about-availability" data-reveal>
+            <div>
+              <span class="item-index">Open to</span>
+              <h2>A 5&ndash;6 month computer vision internship from February 2027</h2>
+              <ul class="point-list">
+                <li>On-site, in a company or research lab</li>
+                <li>France first, flexible across the EU</li>
+                <li>Computer vision, XAI, medical imaging, multimodal AI, or industrial inspection</li>
+              </ul>
+            </div>
+            <div class="about-actions" aria-label="About page actions">
+              <a class="button button-primary" href="research.html">
+                Research areas
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 17 10 5l4 8 2-4 4 8"></path>
+                  <path d="M3 21h18"></path>
+                </svg>
+              </a>
+              <a class="button button-secondary" href="publications.html">
+                Publications
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+              <a class="button button-ghost" href="contact.html">
+                Contact
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16v16H4z"></path>
+                  <path d="m22 6-10 7L2 6"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h2 class="section-label background-part-label" id="experience"><span class="section-label-num">02</span>Experience</h2>
+          <aside class="experience-summary" data-reveal aria-label="Experience summary">
+            <span class="item-index">Academic bridge</span>
+            <h3>From classroom support to supervised AI research</h3>
+            <p>
+              My experience connects course instruction, thesis mentoring, applied ML projects, and
+              research writing. It is one reason I am comfortable moving between technical detail
+              and plain-language explanation.
+            </p>
+          </aside>
+          <div class="case-grid experience-grid">
+            <article class="case-item" data-reveal>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11h6M11 8v6"/></svg></span>
+              <span class="case-domain">Sep 2025-Present</span>
+              <h3>Tutored Research and Development Project</h3>
+              <p class="card-lede">Master's research on explaining text and vision-language transformers, across Hungary, Spain, and France.</p>
+              <dl>
+                <div>
+                  <dt>Supervisors</dt>
+                  <dd>Prof. Jenny Benois-Pineau (Univ. Bordeaux) and Prof. Marcos Escudero-Vi&ntilde;olo (UAM)</dd>
+                </div>
+                <div>
+                  <dt>Finding</dt>
+                  <dd>Attention-sink tokens can hide the words that drive BERT and CLIP predictions</dd>
+                </div>
+                <div>
+                  <dt>Method</dt>
+                  <dd>Attention-based RFEM explanations compared with perturbation-based Partition SHAP</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="case-item" data-reveal>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/></svg></span>
+              <span class="case-domain">Nov 2023-Oct 2025</span>
+              <h3>Research Assistant</h3>
+              <p class="card-lede">Designed models, ran experiments, and prepared manuscripts at Sylhet Engineering College under Prof. Md. Abu Naser Mojumder, Head of CSE.</p>
+              <dl>
+                <div>
+                  <dt>Domains</dt>
+                  <dd>Medical AI, document AI, agricultural vision, NLP, and structural computer vision</dd>
+                </div>
+                <div>
+                  <dt>Output</dt>
+                  <dd>12 peer-reviewed publications, new image datasets (BanglaFont45, Bangladeshi rice varieties), and LIME-based explainability analyses</dd>
+                </div>
+                <div>
+                  <dt>Mentor</dt>
+                  <dd>Guided students and final-year thesis projects</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="case-item" data-reveal>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8M7 9h6M7 12h4"/></svg></span>
+              <span class="case-domain">Jan 2024-Aug 2025</span>
+              <h3>Adjunct Lecturer</h3>
+              <p class="card-lede">Taught undergraduate CSE courses, prepared assessments, and supported students in consultation hours.</p>
+              <dl>
+                <div>
+                  <dt>Teaching</dt>
+                  <dd>Undergraduate computer science courses</dd>
+                </div>
+                <div>
+                  <dt>Support</dt>
+                  <dd>Assessment, consultation, and academic guidance</dd>
+                </div>
+                <div>
+                  <dt>Research</dt>
+                  <dd>Co-supervised final-year theses</dd>
+                </div>
+                <div>
+                  <dt>Service</dt>
+                  <dd>Peer reviewer for Informatics in Medicine Unlocked (Elsevier)</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="case-item" data-reveal>
+              <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M8 7h8M8 11h6"/></svg></span>
+              <span class="case-domain">Courses</span>
+              <h3>Course Areas</h3>
+              <p class="card-lede">Theory and lab teaching, from data science and distributed computing to architecture and microprocessors.</p>
+              <dl>
+                <div>
+                  <dt>Systems</dt>
+                  <dd>Distributed Computing, Computer Architecture</dd>
+                </div>
+                <div>
+                  <dt>Data</dt>
+                  <dd>Introduction to Data Science and lab-based work</dd>
+                </div>
+                <div>
+                  <dt>Hardware</dt>
+                  <dd>Peripheral and Interfacing, Microprocessor and MicroController</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+          <div class="teaching-strip" data-reveal aria-label="Experience strengths">
+            <article>
+              <span>01</span>
+              <h3>Mentoring</h3>
+              <p>Supported thesis students with research direction, experiments, and presentation of results.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Communication</h3>
+              <p>Turned complex computing topics into teachable steps for undergraduate learners.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Research practice</h3>
+              <p>Worked across model design, literature review, evaluation, and academic writing.</p>
+            </article>
+          </div>
+          <aside class="page-cta" data-reveal aria-label="Next page">
+            <div class="page-cta-copy">
+              <span class="item-index">Next</span>
+              <strong>Contact</strong>
+              <p>Open to a 5&ndash;6 month computer vision internship from February 2027.</p>
+            </div>
+            <div class="page-cta-actions">
+              <a class="button button-primary" href="contact.html">Contact <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+              <a class="button button-ghost" href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">Download CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg></a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Gourab Roy home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><defs><linearGradient id="brand-grad-footer" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color: var(--cyan)"/><stop offset="1" style="stop-color: var(--violet)"/></linearGradient></defs><path class="brand-mark-frame" stroke="url(#brand-grad-footer)" d="M4 11V6a2 2 0 0 1 2-2h5M29 4h5a2 2 0 0 1 2 2v5M36 29v5a2 2 0 0 1-2 2h-5M11 36H6a2 2 0 0 1-2-2v-5"/><path class="brand-mark-letters" d="M18.2 15.2A6.8 6.8 0 1 0 20 20.6h-4.6M24 27V13.4h4.4a3.6 3.6 0 0 1 0 7.2H24M27.6 20.6l4 6.4"/></svg></span>
+            <span class="brand-copy">
+              <span class="brand-text">Gourab Roy</span>
+              <span class="brand-role">IPCVAI Master's Student</span>
+            </span>
+          </a>
+          <p>AI master's student in image processing and computer vision, building vision models that can be explained and trusted.</p>
+          <span class="footer-status"><i aria-hidden="true"></i>Open to internships from Feb 2027</span>
+        </div>
+        <nav class="footer-col" aria-label="Footer navigation">
+          <span class="footer-heading">Explore</span>
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="projects.html">Projects</a>
+          <a href="education.html">Education</a>
+          <a href="skills.html">Skills</a>
+          <a href="background.html">About</a>
+          <a href="Blog/index.html">Blog</a>
+        </nav>
+        <div class="footer-col">
+          <span class="footer-heading">Connect</span>
+          <a href="mailto:gourabroysec553@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=_9tL56YAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/gourab-roy-5b52921a3/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/GourabRoy551" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="CV/Roy_Gourab_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> Gourab Roy &middot; Last updated October 2026</p>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </footer>
+  </body>
+</html>

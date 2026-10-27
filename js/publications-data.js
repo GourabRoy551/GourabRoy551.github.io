@@ -4,6 +4,8 @@ var publications = [
     type: "Journal",
     domain: "Medical AI",
     title: "CovidExpert: A Triplet Siamese Neural Network framework for the detection of COVID-19",
+    authors: "T. R. Ornob, G. Roy, and E. Hassan",
+    selected: true,
     venue: "Informatics in Medicine Unlocked, 101156. DOI: 10.1016/j.imu.2022.101156",
     featured: true,
     citations: 22,
@@ -21,6 +23,7 @@ var publications = [
     domain: "OCR",
     title:
       "Optical character recognition for ancient scripts: a case study on Syloti Nagri using deep learning models",
+    authors: "T. Islam, S. K. H. Omur, N. Nahid, L. Chowdhury, G. Roy, M. A. N. Mojumder, M. J. A. Soeb, and M. F. Jubayer",
     venue: "Journal of Computer Sciences Institute",
     citations: 1,
     summary:
@@ -37,6 +40,8 @@ var publications = [
     domain: "Document AI",
     title:
       "Advancing Bangla typography: machine learning and transfer learning based font detection and classification approach using the Bang-laFont45 dataset",
+    authors: "K. S. Islam, G. Roy, N. Nahid, S. Y. Ripti, M. A. N. Mojumder, M. J. A. Soeb, and M. F. Jubayer",
+    selected: true,
     venue: "Journal of Computer Sciences Institute",
     citations: 0,
     summary:
@@ -53,6 +58,7 @@ var publications = [
     domain: "Safety",
     title:
       "Enhancing Concrete Performance: Machine Learning Models for Predicting and Classifying Tensile Strength",
+    authors: "M. U. Gazi, N. I. Rupom, G. B. Durjoy, G. Roy, N. Nahid, M. M. Hossain, and M. T. Hasan",
     venue: "ECCE 2025, IEEE",
     citations: 0,
     summary:
@@ -68,6 +74,7 @@ var publications = [
     type: "Conference",
     domain: "Safety",
     title: "CrackClassification4: Classifying Four Types of Cracks in Structural Surfaces Using CNNs",
+    authors: "M. U. Gazi, G. B. Durjoy, G. Roy, N. Nahid, M. M. Hossain, and G. Saha",
     venue: "ICCIT 2024, IEEE",
     citations: 0,
     summary:
@@ -83,6 +90,7 @@ var publications = [
     type: "Conference",
     domain: "NLP",
     title: "Optimizing Multilingual Summarization: Advanced Corpus Creation and Filtering Approach",
+    authors: "M. M. Hossain, N. Nahid, G. Roy, M. A. N. Mojumder, and M. S. Rahman",
     venue: "ICCIT 2024, IEEE",
     citations: 1,
     summary:
@@ -99,6 +107,7 @@ var publications = [
     domain: "Agriculture",
     title:
       "DateFNet: From Pixels to Plates - Attention Based Multi-Stream CNN for Date Fruit Classification",
+    authors: "A. R. Samad, M. R. Mahin, M. R. Hasan, J. R. Joy, Fahmiduzzaman, G. Roy, and M. A. N. Mojumder",
     venue: "ICCIT 2025, IEEE",
     citations: 0,
     summary:
@@ -130,6 +139,8 @@ var publications = [
     type: "Journal",
     domain: "Agriculture",
     title: "Image-based classification of Bangladeshi rice varieties using deep convolutional neural networks",
+    authors: "S. A.-A. Shuvo, K. Rahman, A. A. N. Chowdhury, G. Roy, N. Nahid, M. Hasan, M. A. N. Mojumder, M. J. A. Soeb, and M. F. Jubayer",
+    selected: true,
     venue: "Agricultural Products Processing and Storage, Springer Nature. DOI: 10.1007/s44462-026-00061-9",
     summary:
       "A 15,000-image benchmark across five Bangladeshi rice varieties, comparing transfer-learning models with a custom lightweight CNN. VGG19 achieved 99.73% test accuracy under controlled imaging conditions.",
@@ -144,6 +155,8 @@ var publications = [
     type: "Conference",
     domain: "Agriculture",
     title: "PlantXNet: A CNN-Based Explainable AI Framework for Multi-Plant Leaf Disease Classification Using LIME",
+    authors: "A. R. Samad, N. Rahman, M. Z. Islam, M. R. Mahin, G. Roy, and M. A. N. Mojumder",
+    selected: true,
     venue: "IEEE QPAIN 2026. DOI: 10.1109/QPAIN69676.2026.11545914",
     summary:
       "An interpretable multi-plant disease classifier spanning 50 healthy and diseased leaf classes across 12 plant species, with LIME used to inspect disease-relevant regions.",
@@ -158,6 +171,7 @@ var publications = [
     type: "Conference",
     domain: "Agriculture",
     title: "MaizeXNet: A CNN-Based Explainable AI Framework for Maize Pest and Disease Classification",
+    authors: "A. R. Samad, S. Mahmud, M. U. Sayem, M. R. Mahin, S. Hussen, and G. Roy",
     venue: "IEEE QPAIN 2026. DOI: 10.1109/QPAIN69676.2026.11546210",
     summary:
       "A lightweight maize pest and disease classifier combining EfficientNet-B0 and depthwise separable convolutions, with Grad-CAM++ and LIME for model inspection.",
@@ -172,6 +186,7 @@ var publications = [
     type: "Conference",
     domain: "Agriculture",
     title: "PoultryXNet: An Explainable Deep Learning Framework for Poultry Disease Classification From Fecal Images",
+    authors: "A. R. Samad, M. R. Mahin, P. Routh, S. Hussen, A. K. M. A. Musa, and G. Roy",
     venue: "IEEE QPAIN 2026. DOI: 10.1109/QPAIN69676.2026.11545990",
     summary:
       "An explainable poultry-disease classification framework using fecal images and fused lightweight CNN features, with visual analysis of the regions driving predictions.",

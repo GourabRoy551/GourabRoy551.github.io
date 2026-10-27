@@ -1,102 +1,165 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&display=swap");
 
+/* ------------------------------------------------------------------
+   Design tokens
+   Dark is the default theme; bright overrides the same token names.
+   ------------------------------------------------------------------ */
 :root {
   color-scheme: dark;
-  --bg: #090d0f;
-  --bg-panel: #101719;
-  --surface: rgba(17, 25, 27, 0.84);
-  --surface-solid: #121b1e;
-  --surface-lift: #182327;
-  --ink: #f5f1e8;
-  --muted: #cdd6d8;
-  --soft: #94a2a5;
-  --line: rgba(219, 232, 229, 0.16);
-  --line-strong: rgba(219, 232, 229, 0.28);
-  --cyan: #74d8e6;
-  --green: #8bd3ad;
-  --amber: #f0c36d;
-  --coral: #ef8e73;
-  --violet: #aab0ff;
-  --navy: #74d8e6;
-  --navy-ink: #d6f8ff;
-  --rust: #ef8e73;
-  --code: #9be4ef;
-  --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
-  --shadow-soft: 0 16px 38px rgba(0, 0, 0, 0.26);
-  --effect-dot: rgba(116, 216, 230, 0.7);
-  --effect-line: rgba(139, 211, 173, 0.2);
-  --effect-active: rgba(240, 195, 109, 0.9);
-  --ambient-grid: rgba(245, 241, 232, 0.04);
-  --ambient-thread: rgba(116, 216, 230, 0.14);
-  --header-bg: rgba(9, 13, 15, 0.76);
-  --glass: rgba(17, 25, 27, 0.78);
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Chakra Petch", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --bg: #05060a;
+  --bg-panel: #090b12;
+  --surface: rgba(11, 14, 23, 0.76);
+  --surface-solid: #0b0e16;
+  --surface-lift: #121624;
+  --surface-sunk: rgba(5, 7, 13, 0.62);
+  --ink: #e8f1ff;
+  --muted: #a3b2c9;
+  --soft: #8494b0;
+  --line: rgba(0, 229, 255, 0.12);
+  --line-strong: rgba(0, 229, 255, 0.24);
+
+  --cyan: #00e5ff;
+  --green: #39ff9f;
+  --amber: #ffd23f;
+  --coral: #ff5f7e;
+  --violet: #ff4ecd;
+  --navy: #00e5ff;
+  --navy-ink: #d8f8ff;
+  --rust: #f59a8a;
+  --code: #7ff3ff;
+  --accent: var(--cyan);
+  --accent-2: var(--violet);
+  --accent-gradient: linear-gradient(120deg, var(--cyan) 0%, #7a7bff 50%, var(--violet) 100%);
+
+  /* Type scale: one size per role, used on every page. */
+  --fs-title: clamp(2.5rem, 5.4vw, 4rem);
+  --fs-h2: clamp(1.4rem, 2.2vw, 1.8rem);
+  --fs-h3: clamp(1.1rem, 1.35vw, 1.24rem);
+  --fs-lead: clamp(1.06rem, 1.45vw, 1.2rem);
+  --fs-body: 1rem;
+  --fs-small: 0.9rem;
+  --lh-body: 1.7;
+  --measure: 62ch;
+
+  /* Spacing rhythm */
+  --space-gap: clamp(16px, 2vw, 22px);
+  --space-block: clamp(22px, 3vw, 32px);
+  --space-section: clamp(14px, 2.6vw, 30px);
+
+  --radius-sm: 3px;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --page-pad: clamp(16px, 4vw, 32px);
+  --page-max: 1200px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shadow: 0 30px 80px -24px rgba(0, 0, 0, 0.65);
+  --shadow-soft: 0 18px 44px -20px rgba(0, 0, 0, 0.55);
+  --glow: 0 0 0 1px color-mix(in srgb, var(--cyan) 30%, transparent), 0 0 28px -8px color-mix(in srgb, var(--cyan) 55%, transparent);
+
+  --effect-dot: rgba(103, 224, 245, 0.85);
+  --effect-line: rgba(143, 184, 255, 0.16);
+  --effect-active: rgba(246, 200, 112, 0.95);
+  --effect-grid: rgba(165, 190, 230, 0.34);
+  /* Saliency background colour map: cold -> low -> mid -> high */
+  --heat-cold: #26324d;
+  --heat-low: #00d4f0;
+  --heat-mid: #ff4ecd;
+  --heat-high: #ffd23f;
+  --ambient-glow-a: rgba(0, 229, 255, 0.11);
+  --ambient-glow-b: rgba(255, 78, 205, 0.1);
+  --header-bg: rgba(6, 8, 14, 0.78);
+  --glass: rgba(11, 14, 23, 0.7);
+  --scanline: rgba(232, 241, 255, 0.028);
+
+  /* Aliases used by standalone blog post styles. */
+  --text-primary: var(--ink);
+  --text-muted: var(--muted);
+  --card-bg: var(--surface-solid);
+  --border: var(--line);
 }
 
 html[data-theme="bright"] {
   color-scheme: light;
-  --bg: #f4f7f3;
-  --bg-panel: #eaf0eb;
-  --surface: rgba(255, 255, 255, 0.86);
+  --bg: #f4f6fb;
+  --bg-panel: #ecf0f8;
+  --surface: rgba(255, 255, 255, 0.78);
   --surface-solid: #ffffff;
-  --surface-lift: #f8faf7;
-  --ink: #142025;
-  --muted: #607078;
-  --soft: #77868b;
-  --line: rgba(31, 54, 59, 0.14);
-  --line-strong: rgba(31, 54, 59, 0.26);
-  --cyan: #176d84;
-  --green: #2f7d60;
-  --amber: #a97728;
-  --coral: #b45b46;
-  --violet: #6164b2;
-  --navy: #176d84;
-  --navy-ink: #103f4e;
-  --rust: #b45b46;
-  --code: #135466;
-  --shadow: 0 24px 62px rgba(27, 40, 42, 0.16);
-  --shadow-soft: 0 12px 30px rgba(27, 40, 42, 0.1);
-  --effect-dot: rgba(23, 109, 132, 0.5);
-  --effect-line: rgba(47, 125, 96, 0.18);
-  --effect-active: rgba(169, 119, 40, 0.78);
-  --ambient-grid: rgba(20, 32, 37, 0.045);
-  --ambient-thread: rgba(23, 109, 132, 0.12);
-  --header-bg: rgba(255, 255, 255, 0.76);
-  --glass: rgba(255, 255, 255, 0.78);
+  --surface-lift: #f8fafd;
+  --surface-sunk: rgba(234, 239, 247, 0.7);
+  --ink: #0d1424;
+  --muted: #445069;
+  --soft: #5d6981;
+  --line: rgba(0, 110, 140, 0.14);
+  --line-strong: rgba(0, 110, 140, 0.26);
+
+  --cyan: #007f99;
+  --green: #08875a;
+  --amber: #9a6400;
+  --coral: #c63a55;
+  --violet: #c2188f;
+  --navy: #007f99;
+  --navy-ink: #083a4a;
+  --rust: #c2503e;
+  --code: #0b6178;
+  --accent-gradient: linear-gradient(120deg, #007f99 0%, #5b4ad6 50%, #c2188f 100%);
+  --scanline: rgba(13, 20, 36, 0.03);
+
+  --shadow: 0 30px 70px -28px rgba(22, 38, 72, 0.28);
+  --shadow-soft: 0 16px 38px -20px rgba(22, 38, 72, 0.22);
+  --glow: 0 0 0 1px color-mix(in srgb, var(--cyan) 26%, transparent), 0 18px 44px -20px color-mix(in srgb, var(--cyan) 40%, transparent);
+
+  --effect-dot: rgba(10, 124, 152, 0.7);
+  --effect-line: rgba(47, 111, 214, 0.14);
+  --effect-active: rgba(168, 109, 18, 0.85);
+  --effect-grid: rgba(22, 38, 72, 0.3);
+  --heat-cold: #9aa6bd;
+  --heat-low: #0096b4;
+  --heat-mid: #c2188f;
+  --heat-high: #c98a00;
+  --ambient-glow-a: rgba(0, 127, 153, 0.1);
+  --ambient-glow-b: rgba(194, 24, 143, 0.07);
+  --header-bg: rgba(255, 255, 255, 0.74);
+  --glass: rgba(255, 255, 255, 0.7);
 }
 
+/* ------------------------------------------------------------------
+   Reset and base
+   ------------------------------------------------------------------ */
 * {
   box-sizing: border-box;
 }
 
 html {
   max-width: 100%;
-  overflow-x: hidden;
+  /* clip, not hidden: hidden makes body a scroll container and breaks sticky + anchors */
+  overflow-x: clip;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
+  position: relative;
   margin: 0;
   min-width: 0;
-  overflow-x: hidden;
+  min-height: 100vh;
+  overflow-x: clip;
   color: var(--ink);
-  background:
-    linear-gradient(90deg, transparent 0 19px, rgba(255, 255, 255, 0.035) 19px 20px),
-    linear-gradient(180deg, color-mix(in srgb, var(--bg-panel) 74%, transparent), var(--bg) 520px),
-    var(--bg);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.65;
   letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-html[data-theme="bright"] body {
-  background:
-    linear-gradient(90deg, transparent 0 19px, rgba(20, 32, 37, 0.032) 19px 20px),
-    linear-gradient(180deg, #eef5f1, var(--bg) 520px),
-    var(--bg);
-}
-
+/* Ambient light: two soft lens glows and a vignette behind the canvas. */
 body::before,
 body::after {
   content: "";
@@ -107,33 +170,39 @@ body::after {
 }
 
 body::before {
-  background-image:
-    linear-gradient(to right, var(--ambient-grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--ambient-grid) 1px, transparent 1px);
-  background-position: center top;
-  background-size: 76px 76px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.68), transparent 82%);
-}
-
-html[data-theme="bright"] body::before {
-  background-image:
-    linear-gradient(to right, var(--ambient-grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--ambient-grid) 1px, transparent 1px);
+  background:
+    radial-gradient(60vw 50vh at 8% -6%, var(--ambient-glow-a), transparent 70%),
+    radial-gradient(55vw 55vh at 100% 4%, var(--ambient-glow-b), transparent 70%),
+    radial-gradient(70vw 60vh at 50% 110%, color-mix(in srgb, var(--ambient-glow-a) 60%, transparent), transparent 70%);
+  animation: ambientDrift 26s ease-in-out infinite alternate;
 }
 
 body::after {
-  opacity: 0.28;
-  background:
-    repeating-linear-gradient(116deg, transparent 0 82px, var(--ambient-thread) 82px 83px),
-    linear-gradient(180deg, transparent 0 34%, color-mix(in srgb, var(--green) 7%, transparent) 34% 35%, transparent 35% 100%);
-  background-size: 360px 360px, 100% 100%;
-  mix-blend-mode: screen;
-  animation: ambientDrift 24s linear infinite;
+  background: radial-gradient(120% 90% at 50% 30%, transparent 55%, color-mix(in srgb, var(--bg) 85%, transparent) 100%);
 }
 
-html[data-theme="bright"] body::after {
-  opacity: 0.22;
-  mix-blend-mode: multiply;
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
 }
 
 a {
@@ -146,7 +215,8 @@ img {
   max-width: 100%;
 }
 
-button {
+button,
+select {
   font: inherit;
 }
 
@@ -155,24 +225,30 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+::selection {
+  color: var(--bg);
+  background: var(--cyan);
+}
+
 :focus-visible {
-  outline: 3px solid var(--amber);
+  outline: 2px solid var(--cyan);
   outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .skip-link {
   position: fixed;
   left: 18px;
   top: 14px;
-  z-index: 60;
-  transform: translateY(-140%);
+  z-index: 100;
+  transform: translateY(-160%);
   padding: 10px 14px;
   border: 1px solid var(--line-strong);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   color: var(--ink);
   background: var(--surface-solid);
   box-shadow: var(--shadow-soft);
-  font-weight: 850;
+  font-weight: 700;
   transition: transform 180ms ease;
 }
 
@@ -187,22 +263,22 @@ a {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.66;
+  opacity: 0.8;
 }
 
 html[data-theme="bright"] #neural-canvas {
-  opacity: 0.42;
+  opacity: 0.7;
 }
 
 .scroll-progress {
   position: fixed;
   inset: 0 auto auto 0;
-  z-index: 30;
+  z-index: 80;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber), var(--coral));
+  height: 2px;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cyan) 60%, transparent);
   transform: scaleX(0);
   transform-origin: left;
   pointer-events: none;
 }
-
