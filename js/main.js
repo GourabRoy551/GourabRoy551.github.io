@@ -1,18 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   setupThemeControls();
+  setupHeader();
+  setupMobileNav();
+  setupModals();
   setupFooterYear();
+  setupLocalTime();
+  setupCopyButtons();
+  setupCvModal();
   renderPublicationFilters();
-  renderPublicationViewToggle();
   renderPublications();
-  renderSelectedPublications();
-  setupPageTransitions();
+  setupCitations();
+  renderProjects();
+  setupProjectModal();
   observeRevealElements();
   animateCounters();
-  setupActiveNavigation();
-  setupSubnav();
-  setupScrollProgress();
-  setupCopyEmail();
-  setupMobileNav();
-  setupBackToTop();
+  setupScrollSpy();
   setupNeuralCanvas();
 });

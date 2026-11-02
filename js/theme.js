@@ -16,7 +16,7 @@ function setTheme(theme) {
 
   const metaTheme = document.querySelector('meta[name="theme-color"]');
   if (metaTheme) {
-    metaTheme.setAttribute("content", theme === "dark" ? "#0f1216" : "#fafaf8");
+    metaTheme.setAttribute("content", theme === "dark" ? "#0f1514" : "#f4efe4");
   }
 }
 

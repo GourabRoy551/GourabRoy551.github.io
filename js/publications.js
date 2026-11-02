@@ -1,158 +1,208 @@
+// Publication list (grouped like the CV), domain filters, and the citation modal.
+
 function formatAuthors(authors) {
   if (!authors) return "";
   return authors.replace(/G\. Roy/g, "<strong>G. Roy</strong>");
 }
 
-function publicationFilters() {
-  return ["All", ...Array.from(new Set(publications.map((publication) => publication.domain)))];
+function splitAuthors(authors) {
+  if (!authors) return [];
+  return authors
+    .split(/,\s*(?:and\s+)?|\s+and\s+/)
+    .map((name) => name.trim())
+    .filter(Boolean);
+}
+
+function splitVenue(publication) {
+  const [venue, doiPart] = publication.venue.split(/\.?\s*DOI:\s*/);
+  let doi = doiPart ? doiPart.trim() : "";
+  if (!doi && publication.link && publication.link.includes("doi.org/")) {
+    doi = publication.link.split("doi.org/")[1];
+  }
+  return { venue: venue.trim(), doi };
+}
+
+function citationKey(publication) {
+  const first = splitAuthors(publication.authors)[0] || "roy";
+  const surname = first.split(/\s+/).pop().replace(/[^A-Za-z]/g, "").toLowerCase();
+  const word = publication.title.split(/\s+/)[0].replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+  return `${surname}${publication.year}${word}`;
+}
+
+function toBibTeX(publication) {
+  const { venue, doi } = splitVenue(publication);
+  const isJournal = publication.type === "Journal";
+  const fields = [
+    ["title", `{${publication.title}}`],
+    publication.authors ? ["author", splitAuthors(publication.authors).join(" and ")] : null,
+    [isJournal ? "journal" : "booktitle", venue],
+    ["year", publication.year],
+    doi ? ["doi", doi] : null,
+    ["url", publication.link],
+  ].filter(Boolean);
+
+  const body = fields.map(([key, value]) => `  ${key.padEnd(9)} = {${value}}`).join(",\n");
+  return `@${isJournal ? "article" : "inproceedings"}{${citationKey(publication)},\n${body}\n}`;
+}
+
+function toPlainCitation(publication) {
+  const { venue, doi } = splitVenue(publication);
+  const authors = splitAuthors(publication.authors);
+  const authorText =
+    authors.length > 1 ? `${authors.slice(0, -1).join(", ")}, and ${authors[authors.length - 1]}, ` : authors[0] ? `${authors[0]}, ` : "";
+  return `${authorText}"${publication.title}," ${venue}, ${publication.year}.${doi ? ` doi: ${doi}.` : ""}`;
+}
+
+function downloadBibTeX(publication) {
+  const blob = new Blob([toBibTeX(publication) + "\n"], { type: "application/x-bibtex" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${citationKey(publication)}.bib`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 function renderPublicationFilters() {
-  const filterContainer = document.querySelector("#publication-filters");
-  if (!filterContainer) return;
+  const container = document.querySelector("#publication-filters");
+  if (!container) return;
 
-  filterContainer.innerHTML = "";
+  const counts = publications.reduce((map, publication) => {
+    map[publication.domain] = (map[publication.domain] || 0) + 1;
+    return map;
+  }, {});
+  const filters = ["All", ...Object.keys(counts)];
 
-  publicationFilters().forEach((filter) => {
+  container.innerHTML = "";
+  filters.forEach((filter) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.textContent = filter;
+    button.innerHTML = `${filter}<span class="count">${filter === "All" ? publications.length : counts[filter]}</span>`;
     button.setAttribute("aria-pressed", String(filter === activePublicationFilter));
     button.addEventListener("click", () => {
       activePublicationFilter = filter;
       renderPublicationFilters();
       renderPublications();
     });
-    filterContainer.appendChild(button);
-  });
-}
-
-function renderPublicationViewToggle() {
-  const container = document.querySelector("#publication-view");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  [
-    ["list", "List"],
-    ["cards", "Cards"],
-  ].forEach(([view, label]) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.textContent = label;
-    button.setAttribute("aria-pressed", String(view === publicationView));
-    button.addEventListener("click", () => {
-      publicationView = view;
-      renderPublicationViewToggle();
-      renderPublications();
-    });
     container.appendChild(button);
   });
 }
 
-function renderPublicationRow(publication) {
-  const row = document.createElement("article");
-  row.className = `publication-row ${publication.visualClass}`;
-  row.setAttribute("data-reveal", "");
-
-  const title = publication.link
-    ? `<a href="${publication.link}" target="_blank" rel="noreferrer">${publication.title}</a>`
-    : publication.title;
-
-  row.innerHTML = `
-    <span class="publication-row-year">${publication.year}</span>
-    <div class="publication-row-main">
-      <h3>${title}</h3>
-      ${publication.authors ? `<div class="publication-authors">${formatAuthors(publication.authors)}</div>` : ""}
-      <div class="publication-venue">${publication.venue}</div>
+function renderPublication(publication) {
+  const index = publications.indexOf(publication);
+  const { venue, doi } = splitVenue(publication);
+  const article = document.createElement("article");
+  article.className = "pub";
+  article.setAttribute("data-reveal", "");
+  article.innerHTML = `
+    <span class="pub-year">${publication.year}</span>
+    <div class="pub-main">
+      <h4 class="pub-title">
+        <a href="${publication.link}" target="_blank" rel="noreferrer">${publication.title}</a>${
+          publication.selected ? '<span class="pub-star" title="Selected publication">★</span>' : ""
+        }
+      </h4>
+      ${publication.authors ? `<div class="pub-authors">${formatAuthors(publication.authors)}</div>` : ""}
+      <div class="pub-venue">${venue}</div>
+      <div class="pub-actions">
+        <a href="${publication.link}" target="_blank" rel="noreferrer">${doi ? "DOI ↗" : "Paper ↗"}</a>
+        <button type="button" data-cite="${index}">Cite</button>
+        <button type="button" data-bib="${index}">BibTeX ↓</button>
+      </div>
     </div>
-    <span class="publication-row-type">${publication.type} &middot; ${publication.domain}</span>
+    <div class="pub-side">
+      <span class="chip">${publication.domain}</span>
+      ${publication.citations ? `<span class="pub-cites">${publication.citations} citation${publication.citations > 1 ? "s" : ""}</span>` : ""}
+    </div>
   `;
-  return row;
+  return article;
 }
 
 function renderPublications() {
-  const grid = document.querySelector("#publication-grid");
-  if (!grid) return;
+  const container = document.querySelector("#publication-list");
+  if (!container) return;
 
-  const visiblePublications =
+  const visible =
     activePublicationFilter === "All"
       ? publications
       : publications.filter((publication) => publication.domain === activePublicationFilter);
 
-  grid.innerHTML = "";
-  grid.classList.toggle("is-list", publicationView === "list");
-
-  if (publicationView === "list") {
-    // Grouped like the CV: journal articles first, then conference papers, newest first.
-    ["Journal", "Conference"].forEach((type) => {
-      const group = visiblePublications
-        .filter((publication) => publication.type === type)
-        .sort((a, b) => Number(b.year) - Number(a.year));
-      if (!group.length) return;
-
-      const heading = document.createElement("h3");
-      heading.className = "pub-group-title";
-      heading.textContent = type === "Journal" ? "Journal articles" : "Conference papers";
-      grid.appendChild(heading);
-      group.forEach((publication) => grid.appendChild(renderPublicationRow(publication)));
-    });
-    observeRevealElements(grid.querySelectorAll("[data-reveal]"));
-    return;
+  const summary = document.querySelector("#publication-summary");
+  if (summary) {
+    const journals = visible.filter((publication) => publication.type === "Journal").length;
+    summary.textContent = `${visible.length} shown · ${journals} journal · ${visible.length - journals} conference`;
   }
 
-  visiblePublications.forEach((publication) => {
-    const article = document.createElement("article");
-    article.className = "publication-card";
-    if (publication.featured) {
-      article.classList.add("is-featured");
-    }
-    article.setAttribute("data-reveal", "");
+  container.innerHTML = "";
 
-    article.innerHTML = `
-      <div class="publication-visual ${publication.visualClass}" aria-hidden="true">
-        <div class="publication-logo-lockup">
-          <img src="${publication.logo}" alt="" loading="lazy" decoding="async">
-          <span>${publication.domain}</span>
-        </div>
-        <div class="paper-flow">
-          ${publication.visualSteps.map((step) => `<span>${step}</span>`).join("")}
-        </div>
-      </div>
-      <span class="publication-meta">${publication.year} / ${publication.type} / ${publication.domain}</span>
-      <h3>${publication.title}</h3>
-      ${publication.authors ? `<div class="publication-authors">${formatAuthors(publication.authors)}</div>` : ""}
-      <div class="publication-venue">${publication.venue}</div>
-      <p>${publication.summary}</p>
-      ${publication.link ? `<a class="project-link" href="${publication.link}" target="_blank" rel="noreferrer">View paper</a>` : ""}
-      <div class="tag-row" aria-label="Publication tags">
-        ${publication.tags.map((tag) => `<span>${tag}</span>`).join("")}
-      </div>
-    `;
+  [
+    ["Journal", "Journal articles"],
+    ["Conference", "Conference papers"],
+  ].forEach(([type, label]) => {
+    const group = visible
+      .filter((publication) => publication.type === type)
+      .sort((a, b) => Number(b.year) - Number(a.year));
+    if (!group.length) return;
 
-    grid.appendChild(article);
+    const section = document.createElement("div");
+    section.className = "pub-group";
+    section.innerHTML = `<h3 class="pub-group-title">${label} <span>${group.length}</span></h3>`;
+    group.forEach((publication) => section.appendChild(renderPublication(publication)));
+    container.appendChild(section);
   });
 
-  observeRevealElements(grid.querySelectorAll("[data-reveal]"));
+  if (!visible.length) container.innerHTML = '<p class="pub-empty">No publications in this area yet.</p>';
+  observeRevealElements(container.querySelectorAll("[data-reveal]"));
 }
 
-function renderSelectedPublications() {
-  const list = document.querySelector("#selected-publications-list");
-  if (!list) return;
+function setupCitations() {
+  const list = document.querySelector("#publication-list");
+  const modal = document.querySelector("#cite-modal");
+  if (!list || !modal) return;
 
-  list.innerHTML = publications
-    .filter((publication) => publication.selected)
-    .sort((a, b) => Number(b.year) - Number(a.year))
-    .map(
-      (publication) => `
-        <li class="pub-entry">
-          <span class="pub-entry-year">${publication.year}</span>
-          <div class="pub-entry-body">
-            <a class="pub-entry-title" href="${publication.link}" target="_blank" rel="noreferrer">${publication.title}</a>
-            <div class="publication-authors">${formatAuthors(publication.authors)}</div>
-            <div class="publication-venue">${publication.venue}</div>
-          </div>
-        </li>`
-    )
-    .join("");
+  const title = modal.querySelector("[data-cite-title]");
+  const text = modal.querySelector("[data-cite-text]");
+  const tabs = modal.querySelectorAll("[data-cite-format]");
+  const copy = modal.querySelector("[data-cite-copy]");
+  const download = modal.querySelector("[data-cite-download]");
+  let current = null;
+  let format = "plain";
+
+  function render() {
+    if (!current) return;
+    text.textContent = format === "bibtex" ? toBibTeX(current) : toPlainCitation(current);
+    tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.citeFormat === format)));
+  }
+
+  tabs.forEach((tab) =>
+    tab.addEventListener("click", () => {
+      format = tab.dataset.citeFormat;
+      render();
+    })
+  );
+
+  copy.addEventListener("click", async () => {
+    const copied = await copyTextToClipboard(text.textContent);
+    showToast(copied ? "Citation copied" : "Copy failed: please copy it manually");
+  });
+
+  download.addEventListener("click", () => current && downloadBibTeX(current));
+
+  list.addEventListener("click", (event) => {
+    const citeButton = event.target.closest("[data-cite]");
+    const bibButton = event.target.closest("[data-bib]");
+
+    if (bibButton) {
+      downloadBibTeX(publications[Number(bibButton.dataset.bib)]);
+      return;
+    }
+    if (!citeButton) return;
+
+    current = publications[Number(citeButton.dataset.cite)];
+    title.textContent = current.title;
+    render();
+    openModal(modal, citeButton);
+  });
 }

@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════════════
+   01 · TOKENS & BASE
+   "Research notebook" theme: warm paper (bright, default) and
+   deep ink-green (dark). Viridian + sienna accents.
+   ═══════════════════════════════════════════════════════════ */
+
+:root,
+[data-theme="bright"] {
+  color-scheme: light;
+
+  --bg: #f4efe4;
+  --bg-2: #ebe4d5;
+  --surface: #fbf8f1;
+  --surface-2: #f1ebdf;
+  --ink: #1b2321;
+  --ink-2: #47524e;
+  --ink-3: #6f7873;
+  --line: rgba(27, 35, 33, 0.13);
+  --line-strong: rgba(27, 35, 33, 0.26);
+
+  --accent: #1d6a5b;
+  --accent-ink: #165547;
+  --accent-soft: rgba(29, 106, 91, 0.1);
+  --accent-2: #a95a24;
+  --accent-2-soft: rgba(169, 90, 36, 0.11);
+
+  --nav-bg: rgba(244, 239, 228, 0.88);
+  --shadow: 0 1px 0 rgba(27, 35, 33, 0.04), 0 14px 34px -18px rgba(27, 35, 33, 0.28);
+  --shadow-lg: 0 30px 80px -30px rgba(27, 35, 33, 0.45);
+  --overlay: rgba(20, 26, 24, 0.55);
+
+  /* Neural network + XAI background (js/neural-canvas.js): relevance colour map */
+  --heat-cold: #d9d2c2;
+  --heat-low: #9cc4b8;
+  --heat-mid: #3f8f7d;
+  --heat-high: #c98545;
+  --canvas-opacity: 0.62;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0f1514;
+  --bg-2: #141c1a;
+  --surface: #172120;
+  --surface-2: #1c2826;
+  --ink: #ebe6da;
+  --ink-2: #bcc1b8;
+  --ink-3: #8b948e;
+  --line: rgba(235, 230, 218, 0.11);
+  --line-strong: rgba(235, 230, 218, 0.24);
+
+  --accent: #7cc6b2;
+  --accent-ink: #9ad8c6;
+  --accent-soft: rgba(124, 198, 178, 0.12);
+  --accent-2: #e2a066;
+  --accent-2-soft: rgba(226, 160, 102, 0.13);
+
+  --nav-bg: rgba(15, 21, 20, 0.86);
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 18px 40px -20px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 30px 80px -24px rgba(0, 0, 0, 0.8);
+  --overlay: rgba(4, 8, 7, 0.72);
+
+  --heat-cold: #142220;
+  --heat-low: #1f4a42;
+  --heat-mid: #3b8a78;
+  --heat-high: #c9894c;
+  --canvas-opacity: 0.66;
+}
+
+:root {
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --max: 1160px;
+  --gutter: clamp(20px, 4vw, 40px);
+  --section-y: clamp(72px, 10vw, 128px);
+  --nav-h: 68px;
+
+  --r-s: 6px;
+  --r: 10px;
+  --r-l: 16px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t: 0.3s var(--ease);
+  --t-slow: 0.7s var(--ease);
+
+  /* Aliases used by the inline styles of Blog/ posts */
+  --text-primary: var(--ink);
+  --text-muted: var(--ink-2);
+  --muted: var(--ink-2);
+  --card-bg: var(--surface);
+  --surface-solid: var(--surface);
+  --border: var(--line);
+  --cyan: var(--accent);
+  --page-pad: var(--gutter);
+  --shadow-soft: var(--shadow);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--t-slow), color var(--t);
+}
+
+img,
+svg,
+video,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  overflow-wrap: break-word;
+}
+
+p,
+li,
+dd,
+h1,
+h2,
+h3,
+a {
+  overflow-wrap: break-word;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Utilities ── */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+  z-index: 1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 200;
+  padding: 10px 16px;
+  border-radius: var(--r-s);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.9rem;
+  transform: translateY(-160%);
+  transition: transform var(--t);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.link {
+  color: var(--accent-ink);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--t);
+}
+
+.link:hover {
+  background-size: 100% 1px;
+}
+
+/* ── Background canvas ── */
+#neural-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--canvas-opacity);
+  transition: opacity var(--t-slow);
+  -webkit-mask-image: radial-gradient(ellipse 75% 80% at 66% 48%, #000 45%, transparent 92%);
+  mask-image: radial-gradient(ellipse 75% 80% at 66% 48%, #000 45%, transparent 92%);
+}
+
+/* Paper grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: radial-gradient(var(--line) 0.7px, transparent 0.7px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 70%);
+  mask-image: linear-gradient(180deg, #000, transparent 70%);
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Google Translate leftovers */
+#google-translate-mount,
+.goog-te-banner-frame,
+.skiptranslate iframe {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}

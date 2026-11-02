@@ -1,0 +1,193 @@
+/* ═══════════════════════════════════════════════════════════
+   08 · BLOG & STANDALONE PAGES
+   Post pages keep their own inline layout styles; they read the
+   alias variables defined in 01-tokens-base.css.
+   ═══════════════════════════════════════════════════════════ */
+
+.page-head {
+  padding: clamp(48px, 9vw, 112px) 0 clamp(36px, 6vw, 64px);
+}
+
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.crumb a {
+  color: var(--accent-ink);
+}
+
+.crumb a:hover {
+  color: var(--accent-2);
+}
+
+.page-title {
+  font-size: clamp(2.8rem, 8vw, 5.6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.page-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+}
+
+.page-lead {
+  max-width: 56ch;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: var(--ink-2);
+}
+
+.page-head .hero-actions {
+  margin-top: 28px;
+}
+
+/* Blog index */
+.blog-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: start;
+}
+
+.blog-intro p {
+  color: var(--ink-2);
+}
+
+.blog-intro p + p {
+  margin-top: 14px;
+}
+
+.shelf {
+  display: grid;
+  gap: 0;
+  padding: 8px 24px;
+}
+
+.shelf li {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px dashed var(--line-strong);
+  font-size: 0.94rem;
+  color: var(--ink-2);
+}
+
+.shelf li:first-child {
+  border-top: 0;
+}
+
+.shelf .label {
+  padding-top: 3px;
+  color: var(--accent);
+}
+
+.notes {
+  border-top: 1px solid var(--line-strong);
+}
+
+.note {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 8px 28px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.note-meta {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+}
+
+.note h3 {
+  font-size: 1.2rem;
+}
+
+.note p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+
+.note .chips {
+  margin-top: 12px;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.topic-grid .focus-card p {
+  flex: none;
+}
+
+/* Post pages: align the inline post styles with the notebook type scale */
+body .post-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+
+body .post-body h2,
+body .post-body h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+body .post-eyebrow a,
+body .post-eyebrow span,
+body .post-eyebrow time,
+body .post-tags span {
+  font-family: var(--font-mono);
+}
+
+body .post-quote p {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* Post pages: back link under the article */
+.post-back {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(56px, 8vw, 96px);
+}
+
+@media (max-width: 960px) {
+  .blog-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .topic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .note,
+  .shelf li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .topic-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
