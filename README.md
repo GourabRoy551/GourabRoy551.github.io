@@ -62,7 +62,7 @@ All papers live in `js/publications-data.js`. Each entry has:
 
 ### Projects
 
-Projects live in `js/projects-data.js` (card text, metrics, case-study sections, links, and the schematic SVG illustrations in `projectArt`). `featured: true` makes the wide first card, `wide: true` the full-width closing card. Rendering and the modal are in `js/projects.js`.
+Projects live in `js/projects-data.js` (card text, metrics, case-study sections, links). Each project has a figure in `projectFigures`, keyed by project id: a chart drawn from the reported numbers (bars, lollipops, slope) or a "method index" of the pipeline steps. `featured: true` makes the wide first card, `wide: true` the full-width closing card. Rendering and the modal are in `js/projects.js`.
 
 ### Navigation and footer
 

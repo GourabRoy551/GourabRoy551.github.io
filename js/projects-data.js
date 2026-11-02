@@ -1,156 +1,190 @@
 // Project cards and case-study modals. Content follows the CV and the
-// earlier case-study pages; illustrations are schematic, not results.
+// earlier case-study pages. Figures are drawn from the reported numbers
+// (charts) or from the method steps (method index); nothing is invented.
 
-var projectArt = {
-  shap: `
-    <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <text class="art-text" x="40" y="46">BERT · fine-tuned</text>
-      <text class="art-text" x="226" y="46">CLIP · zero-shot</text>
-      <g>
-        <text class="art-text" x="40" y="80">a</text>
-        <rect class="art-fill-soft" x="92" y="71" width="14" height="12" rx="2"/>
-        <text class="art-text" x="40" y="104">deeply</text>
-        <rect class="art-fill-accent" x="92" y="95" width="62" height="12" rx="2"/>
-        <text class="art-text" x="40" y="128">moving</text>
-        <rect class="art-fill-accent" x="92" y="119" width="88" height="12" rx="2"/>
-        <text class="art-text" x="40" y="152">but</text>
-        <rect class="art-fill-warm" x="92" y="143" width="26" height="12" rx="2"/>
-        <text class="art-text" x="40" y="176">slow</text>
-        <rect class="art-fill-warm" x="92" y="167" width="44" height="12" rx="2"/>
-        <text class="art-text" x="40" y="200">film</text>
-        <rect class="art-fill-soft" x="92" y="191" width="10" height="12" rx="2"/>
-      </g>
-      <g>
-        <text class="art-text" x="226" y="80">a</text>
-        <rect class="art-fill-soft" x="278" y="71" width="40" height="12" rx="2"/>
-        <text class="art-text" x="226" y="104">deeply</text>
-        <rect class="art-fill-accent" x="278" y="95" width="30" height="12" rx="2"/>
-        <text class="art-text" x="226" y="128">moving</text>
-        <rect class="art-fill-accent" x="278" y="119" width="52" height="12" rx="2"/>
-        <text class="art-text" x="226" y="152">but</text>
-        <rect class="art-fill-warm-soft" x="278" y="143" width="12" height="12" rx="2"/>
-        <text class="art-text" x="226" y="176">slow</text>
-        <rect class="art-fill-warm" x="278" y="167" width="20" height="12" rx="2"/>
-        <text class="art-text" x="226" y="200">film</text>
-        <rect class="art-fill-soft" x="278" y="191" width="34" height="12" rx="2"/>
-      </g>
-      <line class="art-line" x1="200" y1="60" x2="200" y2="212" stroke-dasharray="3 4"/>
-    </svg>`,
-  ppe: `
-    <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <line class="art-line" x1="20" y1="214" x2="380" y2="214"/>
-      <g fill="none" stroke-width="2" class="art-ink">
-        <circle cx="128" cy="92" r="13"/>
-        <path d="M128 105 L128 160 M128 118 L106 142 M128 118 L150 142 M128 160 L112 208 M128 160 L144 208"/>
-        <circle cx="268" cy="96" r="13"/>
-        <path d="M268 109 L268 164 M268 122 L246 146 M268 122 L290 146 M268 164 L252 208 M268 164 L284 208"/>
-      </g>
-      <path class="art-fill-warm" d="M113 88 Q128 66 143 88 Z"/>
-      <rect class="art-fill-warm-soft" x="117" y="114" width="22" height="34" rx="3"/>
-      <g fill="none" stroke-width="1.5">
-        <rect class="art-accent" x="92" y="62" width="72" height="152" rx="2"/>
-        <rect class="art-warm" x="108" y="70" width="40" height="24" rx="2"/>
-        <rect class="art-accent" x="232" y="66" width="72" height="148" rx="2"/>
-        <rect class="art-warm" x="250" y="78" width="36" height="32" rx="2" stroke-dasharray="4 3"/>
-      </g>
-      <rect class="art-fill-accent" x="92" y="48" width="86" height="14"/>
-      <text x="96" y="58" style="fill:var(--bg);font:10px var(--font-mono)">person ✓ PPE</text>
-      <rect class="art-fill-warm" x="232" y="52" width="70" height="14"/>
-      <text x="236" y="62" style="fill:#fff;font:10px var(--font-mono)">no-helmet</text>
-    </svg>`,
-  retrieval: `
-    <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <rect class="art-fill-surface art-ink" x="34" y="56" width="120" height="96" rx="4" fill-opacity="1" stroke-width="1.5"/>
-      <path class="art-fill-soft" d="M34 152 L74 104 L100 130 L120 112 L154 152 Z"/>
-      <circle class="art-fill-warm" cx="128" cy="80" r="10"/>
-      <g class="art-line" stroke-width="6" stroke-linecap="round">
-        <line x1="34" y1="176" x2="150" y2="176"/>
-        <line x1="34" y1="194" x2="118" y2="194"/>
-      </g>
-      <text class="art-text" x="34" y="44">image ↔ বাংলা caption</text>
-      <path class="art-accent" fill="none" stroke-width="1.5" d="M166 120 C190 120 196 120 214 120" marker-end="url(#arrowR)"/>
-      <defs>
-        <marker id="arrowR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="art-fill-accent"/></marker>
-      </defs>
-      <g transform="translate(226 52)">
-        <rect class="art-fill-soft" width="140" height="140"/>
-        <g class="art-fill-accent">
-          <rect x="0" y="0" width="28" height="28"/>
-          <rect x="28" y="28" width="28" height="28"/>
-          <rect x="56" y="56" width="28" height="28" opacity="0.7"/>
-          <rect x="84" y="84" width="28" height="28"/>
-          <rect x="112" y="112" width="28" height="28" opacity="0.8"/>
-        </g>
-        <rect class="art-fill-warm" x="84" y="28" width="28" height="28" opacity="0.6"/>
-        <rect class="art-line" fill="none" width="140" height="140"/>
-      </g>
-      <text class="art-text" x="226" y="210">similarity matrix · R@1</text>
-    </svg>`,
-  geometry: `
-    <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <g class="art-line" stroke-width="1">
-        <line x1="70" y1="196" x2="200" y2="96"/><line x1="70" y1="196" x2="230" y2="120"/><line x1="70" y1="196" x2="182" y2="132"/>
-        <line x1="330" y1="196" x2="200" y2="96"/><line x1="330" y1="196" x2="230" y2="120"/><line x1="330" y1="196" x2="182" y2="132"/>
-        <line x1="200" y1="226" x2="200" y2="96"/><line x1="200" y1="226" x2="230" y2="120"/><line x1="200" y1="226" x2="182" y2="132"/>
-      </g>
-      <g class="art-ink" fill="none" stroke-width="1.6">
-        <path d="M56 186 L84 186 L70 206 Z"/>
-        <path d="M316 186 L344 186 L330 206 Z"/>
-        <path d="M188 214 L212 214 L200 234 Z"/>
-      </g>
-      <g class="art-fill-accent">
-        <circle cx="200" cy="96" r="4"/><circle cx="230" cy="120" r="4"/><circle cx="182" cy="132" r="4"/>
-        <circle cx="214" cy="80" r="2.5"/><circle cx="246" cy="98" r="2.5"/><circle cx="168" cy="108" r="2.5"/>
-        <circle cx="190" cy="70" r="2"/><circle cx="222" cy="142" r="2.5"/><circle cx="160" cy="88" r="2"/>
-        <circle cx="252" cy="130" r="2"/><circle cx="236" cy="66" r="2"/>
-      </g>
-      <circle class="art-warm" cx="230" cy="120" r="9" fill="none" stroke-width="1.5"/>
-      <text class="art-text" x="244" y="152">reprojected track</text>
-      <text class="art-text" x="34" y="44">calibrate → match → RANSAC → bundle adjust</text>
-    </svg>`,
-  signal: `
-    <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <line class="art-line" x1="24" y1="150" x2="376" y2="150"/>
-      <path class="art-accent" fill="none" stroke-width="2" stroke-linejoin="round"
-        d="M24 150 C40 150 44 148 52 140 C60 92 66 92 72 140 C78 168 92 160 104 150 C118 142 122 140 130 132 C138 86 144 86 150 132 C156 164 170 158 182 150 C196 142 200 140 210 130 C218 80 224 80 230 130 C236 164 250 158 262 150 C276 142 280 140 288 134 C296 90 302 90 308 134 C314 164 328 158 340 150 C352 144 362 150 376 150"/>
-      <g class="art-fill-warm">
-        <circle cx="62" cy="104" r="4"/><circle cx="140" cy="98" r="4"/><circle cx="220" cy="92" r="4"/><circle cx="298" cy="100" r="4"/>
-      </g>
-      <g class="art-ink" stroke-width="1" fill="none">
-        <path d="M62 190 L140 190 M62 184 L62 196 M140 184 L140 196"/>
-        <path d="M140 210 L220 210 M140 204 L140 216 M220 204 L220 216"/>
-        <path d="M220 190 L298 190 M220 184 L220 196 M298 184 L298 196"/>
-      </g>
-      <text class="art-text" x="88" y="184">IBI</text>
-      <text class="art-text" x="168" y="226">IBI</text>
-      <text class="art-text" x="248" y="184">IBI</text>
-      <text class="art-text" x="24" y="44">PPG → peaks → inter-beat intervals → HRV</text>
-    </svg>`,
-  charts: `
-    <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <line class="art-line" x1="40" y1="200" x2="190" y2="200"/>
-      <line class="art-line" x1="40" y1="60" x2="40" y2="200"/>
-      <g class="art-fill-accent">
-        <rect x="54" y="140" width="20" height="60"/><rect x="84" y="104" width="20" height="96"/>
-        <rect x="114" y="122" width="20" height="78" opacity="0.7"/><rect x="144" y="78" width="20" height="122"/>
-      </g>
-      <line class="art-line" x1="220" y1="200" x2="370" y2="200"/>
-      <line class="art-line" x1="220" y1="60" x2="220" y2="200"/>
-      <g class="art-fill-ink" opacity="0.7">
-        <circle cx="236" cy="182" r="3"/><circle cx="252" cy="170" r="3"/><circle cx="262" cy="176" r="3"/>
-        <circle cx="280" cy="150" r="3"/><circle cx="296" cy="140" r="3"/><circle cx="306" cy="148" r="3"/>
-        <circle cx="322" cy="118" r="3"/><circle cx="338" cy="110" r="3"/><circle cx="352" cy="92" r="3"/>
-        <circle cx="270" cy="160" r="3"/><circle cx="330" cy="126" r="3"/>
-      </g>
-      <line class="art-warm" x1="228" y1="190" x2="364" y2="88" stroke-width="2"/>
-      <text class="art-text" x="40" y="44">clean → explore → visualise</text>
-    </svg>`,
-};
+var projectFigures = (() => {
+  const W = 400;
+  const H = 250;
+  const svg = (body) =>
+    `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">${body}</svg>`;
+  const title = (text, sub) =>
+    `<text class="fig-title" x="28" y="34">${text}</text>` +
+    (sub ? `<text class="fig-sub" x="28" y="50">${sub}</text>` : "");
+
+  // Horizontal bars on a 0–1 scale with labelled values.
+  function bars({ heading, sub, rows }) {
+    const x0 = 128;
+    const span = 236;
+    const top = 76;
+    const gap = 46;
+    let body = title(heading, sub);
+    [0, 0.25, 0.5, 0.75, 1].forEach((tick) => {
+      const x = x0 + span * tick;
+      body += `<line class="fig-rule" x1="${x}" y1="${top - 10}" x2="${x}" y2="${top + gap * rows.length - 14}"/>`;
+      body += `<text class="fig-tick" x="${x}" y="${top + gap * rows.length}" text-anchor="middle">${tick}</text>`;
+    });
+    rows.forEach(([label, value, strong, shown], i) => {
+      const y = top + i * gap;
+      body += `<text class="fig-label" x="28" y="${y + 15}">${label}</text>`;
+      body += `<rect class="${strong ? "fig-bar-strong" : "fig-bar"}" x="${x0}" y="${y + 2}" width="${span * value}" height="18"/>`;
+      body += `<text class="fig-value" x="${x0 + span * value - 6}" y="${y + 15}" text-anchor="end">${shown || value.toFixed(3)}</text>`;
+    });
+    return svg(body);
+  }
+
+  // Lollipops on a zoomed scale, so close metrics stay readable.
+  function lollipops({ heading, sub, rows, min, max }) {
+    const x0 = 128;
+    const span = 236;
+    const top = 84;
+    const gap = 40;
+    const at = (value) => x0 + ((value - min) / (max - min)) * span;
+    let body = title(heading, sub);
+    for (let tick = min; tick <= max + 1e-9; tick += 0.1) {
+      const x = at(tick);
+      body += `<line class="fig-rule" x1="${x}" y1="${top - 14}" x2="${x}" y2="${top + gap * (rows.length - 1) + 12}"/>`;
+      body += `<text class="fig-tick" x="${x}" y="${top + gap * (rows.length - 1) + 30}" text-anchor="middle">${tick.toFixed(1)}</text>`;
+    }
+    rows.forEach(([label, value, strong], i) => {
+      const y = top + i * gap;
+      body += `<text class="fig-label" x="28" y="${y + 4}">${label}</text>`;
+      body += `<line class="fig-stem" x1="${x0}" y1="${y}" x2="${at(value)}" y2="${y}"/>`;
+      body += `<circle class="${strong ? "fig-dot-strong" : "fig-dot"}" cx="${at(value)}" cy="${y}" r="${strong ? 7 : 5.5}"/>`;
+      body += `<text class="fig-value" x="${at(value) + 12}" y="${y + 4}">${value.toFixed(3)}</text>`;
+    });
+    return svg(body);
+  }
+
+  // Before/after slope chart.
+  function slope({ heading, sub, left, right, rows, max }) {
+    const xl = 120;
+    const xr = 300;
+    const top = 70;
+    const bottom = 214;
+    const at = (value) => bottom - (value / max) * (bottom - top);
+    let body = title(heading, sub);
+    body += `<line class="fig-axis" x1="${xl}" y1="${top - 6}" x2="${xl}" y2="${bottom}"/>`;
+    body += `<line class="fig-axis" x1="${xr}" y1="${top - 6}" x2="${xr}" y2="${bottom}"/>`;
+    body += `<text class="fig-tick" x="${xl}" y="${bottom + 18}" text-anchor="middle">${left}</text>`;
+    body += `<text class="fig-tick" x="${xr}" y="${bottom + 18}" text-anchor="middle">${right}</text>`;
+    rows.forEach(([label, from, to, strong]) => {
+      const cls = strong ? "strong" : "soft";
+      body += `<line class="fig-slope-${cls}" x1="${xl}" y1="${at(from)}" x2="${xr}" y2="${at(to)}"/>`;
+      body += `<circle class="fig-dot${strong ? "-strong" : ""}" cx="${xl}" cy="${at(from)}" r="4.5"/>`;
+      body += `<circle class="fig-dot${strong ? "-strong" : ""}" cx="${xr}" cy="${at(to)}" r="5.5"/>`;
+      body += `<text class="fig-value" x="${xl - 10}" y="${at(from) + 4}" text-anchor="end">${from}</text>`;
+      body += `<text class="fig-value" x="${xr + 10}" y="${at(to) + 4}">${to}</text>`;
+      body += `<text class="fig-label" x="${xr + 50}" y="${at(to) + 4}">${label}</text>`;
+    });
+    return svg(body);
+  }
+
+  // Method index: numbered steps with dotted leaders, like a notebook contents page.
+  function methodIndex({ heading, sub, steps, result }) {
+    const top = 72;
+    const gap = steps.length > 5 ? 22 : 25;
+    let body = title(heading, sub);
+    steps.forEach(([step, note], i) => {
+      const y = top + i * gap;
+      body += `<text class="fig-num" x="28" y="${y}">${String(i + 1).padStart(2, "0")}</text>`;
+      body += `<text class="fig-step" x="56" y="${y}">${step}</text>`;
+      body += `<line class="fig-leader" x1="${70 + step.length * 6.4}" y1="${y - 3}" x2="${364 - note.length * 6.1}" y2="${y - 3}"/>`;
+      body += `<text class="fig-note" x="372" y="${y}" text-anchor="end">${note}</text>`;
+    });
+    const y = top + steps.length * gap + 8;
+    body += `<line class="fig-axis" x1="28" y1="${y}" x2="372" y2="${y}"/>`;
+    body += `<text class="fig-result" x="28" y="${y + 26}">${result}</text>`;
+    return svg(body);
+  }
+
+  return {
+    "bert-clip": {
+      note: "reported results",
+      svg: bars({
+        heading: "MACRO-F1 · 500 SST-2 SENTENCES",
+        sub: "whole-word Partition SHAP on both models",
+        rows: [
+          ["BERT (tuned)", 0.936, true],
+          ["CLIP (0-shot)", 0.702, false],
+          ["additivity", 1, false, "100%"],
+        ],
+      }),
+    },
+    siteguard: {
+      note: "reported results",
+      svg: lollipops({
+        heading: "YOLO26n · HELD-OUT TEST SET",
+        sub: "five PPE classes, worker-to-PPE matching",
+        min: 0.7,
+        max: 1,
+        rows: [
+          ["precision", 0.906, false],
+          ["recall", 0.835, false],
+          ["mAP50", 0.878, true],
+        ],
+      }),
+    },
+    banglacaption: {
+      note: "reported results",
+      svg: slope({
+        heading: "RECALL@1 · BANGLACAPTION40K",
+        sub: "tuning 0.33% of CLIP parameters",
+        left: "baseline",
+        right: "fine-tuned",
+        max: 20,
+        rows: [
+          ["I→T", 6.17, 17.64, true],
+          ["T→I", 1.59, 11.26, false],
+        ],
+      }),
+    },
+    reconstruction: {
+      note: "method outline",
+      svg: methodIndex({
+        heading: "MULTI-VIEW PIPELINE · MATLAB",
+        steps: [
+          ["Calibrate cameras", "intrinsics"],
+          ["Match features", "SIFT · SURF · ORB"],
+          ["Verify matches", "RANSAC"],
+          ["Two-view geometry", "F-matrix · pose"],
+          ["Refine structure", "bundle adjust"],
+        ],
+        result: "672 tracks · 4.47 px reprojection",
+      }),
+    },
+    "ppg-hrv": {
+      note: "method outline",
+      svg: methodIndex({
+        heading: "PPG → HRV PIPELINE · PYTHON",
+        steps: [
+          ["Filter signal", "Butterworth"],
+          ["Detect peaks", "adaptive"],
+          ["Clean intervals", "IBI"],
+          ["HRV features", "time · freq"],
+          ["Test conditions", "Friedman · Wilcoxon"],
+        ],
+        result: "10 participants · baseline vs music",
+      }),
+    },
+    "data-analysis": {
+      note: "method outline",
+      svg: methodIndex({
+        heading: "NOTEBOOK STUDIES · PANDAS",
+        steps: [
+          ["Housing", "EDA"],
+          ["Global COVID-19 outcomes", "EDA"],
+          ["Mobile-app ratings", "EDA"],
+          ["Clean, explore, plot", "each study"],
+        ],
+        result: "8 notebooks · written interpretation",
+      }),
+    },
+  };
+})();
 
 var projects = [
   {
     id: "bert-clip",
-    art: "shap",
     featured: true,
     status: { text: "Ongoing research", kind: "live" },
     context: "TRDP · Université de Bordeaux & UAM · 2026",
@@ -187,7 +221,6 @@ var projects = [
   },
   {
     id: "siteguard",
-    art: "ppe",
     status: { text: "In development", kind: "live" },
     context: "Team project · Bordeaux · Sep 2026 – Present",
     title: "SiteGuard AI: PPE Detection for Construction Safety",
@@ -220,7 +253,6 @@ var projects = [
   },
   {
     id: "banglacaption",
-    art: "retrieval",
     status: { text: "Completed", kind: "done" },
     context: "Multimodal retrieval · 2026",
     title: "BanglaCaption40K: Bengali Image-Text Retrieval",
@@ -252,7 +284,6 @@ var projects = [
   },
   {
     id: "reconstruction",
-    art: "geometry",
     status: { text: "Code available", kind: "done" },
     context: "3DVMMC Lab · UAM Madrid · 2026",
     title: "Calibrated Multi-View 3D Reconstruction",
@@ -279,7 +310,6 @@ var projects = [
   },
   {
     id: "ppg-hrv",
-    art: "signal",
     status: { text: "Code available", kind: "done" },
     context: "BMSP · PPKE Budapest · Dec 2025",
     title: "Cardiac Autonomic Assessment via PPG-Derived HRV",
@@ -304,7 +334,6 @@ var projects = [
   {
     id: "data-analysis",
     wide: true,
-    art: "charts",
     status: { text: "Code available", kind: "done" },
     context: "Data analysis portfolio",
     title: "Exploratory Analysis and Visualization",

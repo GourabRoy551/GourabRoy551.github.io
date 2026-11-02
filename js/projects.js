@@ -20,8 +20,8 @@ function renderProjects() {
         <article class="card project-card${project.featured ? " is-featured" : ""}${project.wide ? " is-wide" : ""}" data-reveal
           style="--reveal-delay:${(index % 3) * 0.06}s" data-project="${project.id}">
           <div class="project-art">
-            ${projectArt[project.art]}
-            <span class="fig-caption"><b>Fig. ${index + 1}</b> · schematic</span>
+            ${projectFigures[project.id].svg}
+            <span class="fig-caption"><b>Fig. ${index + 1}</b> · ${projectFigures[project.id].note}</span>
           </div>
           <div class="project-body">
             <div class="project-meta">
@@ -51,8 +51,12 @@ function renderCaseStudy(project) {
   const list = (items) => `<ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
   return `
     <article class="case">
-      <div class="case-art">${projectArt[project.art]}</div>
-      <p class="fig-caption case-note">Schematic illustration of the method, not an experimental result.</p>
+      <div class="case-art">${projectFigures[project.id].svg}</div>
+      <p class="fig-caption case-note"><b>Fig. ${projects.indexOf(project) + 1}</b> · ${
+        projectFigures[project.id].note === "reported results"
+          ? "Reported results, as stated in the project write-up."
+          : "Method outline: the steps of the pipeline, in order."
+      }</p>
       <div class="project-meta">${statusBadge(project.status)}<span class="label">${project.context}</span></div>
       <h2 id="project-modal-title">${project.title}</h2>
       <p class="case-lead">${project.summary}</p>

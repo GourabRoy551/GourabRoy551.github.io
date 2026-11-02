@@ -103,10 +103,7 @@ body.modal-open {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--r);
-  background:
-    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
-    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
-    var(--surface-2);
+  background: var(--surface-2);
 }
 
 .case-art svg {
