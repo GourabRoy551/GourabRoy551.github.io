@@ -68,8 +68,13 @@
 }
 
 .stack-row dd {
+  min-width: 0;
   font-size: 0.96rem;
   color: var(--ink-2);
+}
+
+.stack-row dd.chips {
+  align-self: center;
 }
 
 .keywords {

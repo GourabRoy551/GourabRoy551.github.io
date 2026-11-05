@@ -86,6 +86,23 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="scroll-progress" aria-hidden="true"></div>
     <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="g-cnn" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="7" width="8" height="12" rx="1"/><rect x="7" y="5" width="8" height="12" rx="1"/><rect x="11" y="3" width="8" height="12" rx="1"/><path d="M19 9h2"/></g></symbol>
+        <symbol id="g-vit" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1" fill="currentColor" fill-opacity=".35"/></g></symbol>
+        <symbol id="g-bbox" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"/><rect x="8" y="8" width="8" height="8" rx="1"/></g></symbol>
+        <symbol id="g-clip" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="8" height="8" rx="1"/><path d="m3.5 12 3-3 3 3"/><path d="M14 6h7.5M14 9.5h6M14 13h7.5"/><path d="M6.5 16v3h11v-3"/></g></symbol>
+        <symbol id="g-text" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 6h18M3 12h6M15 12h6M3 18h12"/><rect x="10" y="9.5" width="4" height="5" rx="1" fill="currentColor" fill-opacity=".35"/></g></symbol>
+        <symbol id="g-seg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17c-1-4 1-9 6-9 3 0 5 2 4 5s-4 5-10 4Z" fill="currentColor" fill-opacity=".35"/></g></symbol>
+        <symbol id="g-cube" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7Z"/><path d="M3.5 7 12 11.5 20.5 7M12 11.5v10"/></g></symbol>
+        <symbol id="g-shap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v18"/><path d="M12 6h8M12 10H6M12 14h5M12 18H4" stroke-width="2.6"/></g></symbol>
+        <symbol id="g-lime" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 10c4 1 6-2 9-1s3 5 9 4M10 3c1 4-1 8 2 10s1 6 1 8"/><path d="M12 13c-.6-2 .4-3.6 0-4 3 1 3 5 9 4v8h-8c0-2 2-5-1-8Z" fill="currentColor" fill-opacity=".35" stroke="none"/></g></symbol>
+        <symbol id="g-attn" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9" stroke-opacity=".4"/><circle cx="12" cy="12" r="5.5" stroke-opacity=".7"/><circle cx="12" cy="12" r="2" fill="currentColor"/></g></symbol>
+        <symbol id="g-curve" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M6 6c2 0 3 7 6 9s5 2 8 2"/></g></symbol>
+        <symbol id="g-eda" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20V13M8 20V8M12 20v-5"/><circle cx="16.5" cy="9.5" r="4"/><path d="m19.5 12.5 2.5 2.5"/></g></symbol>
+        <symbol id="g-db" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></g></symbol>
+      </defs>
+    </svg>
 
     <header class="site-header">
       <div class="container nav-inner">
@@ -303,6 +320,7 @@
                 <div class="semesters">
                   <div class="semester">
                     <div class="semester-top"><span class="semester-num">S1</span><span class="country" title="Hungary">HU</span></div>
+                    <span class="inst-logo"><img src="assets/logos/ppke.webp" alt="Pázmány Péter Catholic University logo" width="104" height="200" loading="lazy" decoding="async" /></span>
                     <h4>Pázmány Péter Catholic University</h4>
                     <p>Budapest · Sep 2025 – Jan 2026 · 30/30 ECTS</p>
                     <details class="more">
@@ -320,6 +338,7 @@
                   </div>
                   <div class="semester">
                     <div class="semester-top"><span class="semester-num">S2</span><span class="country" title="Spain">ES</span></div>
+                    <span class="inst-logo"><img src="assets/logos/uam.webp" alt="Universidad Autónoma de Madrid logo" width="190" height="200" loading="lazy" decoding="async" /></span>
                     <h4>Universidad Autónoma de Madrid</h4>
                     <p>Madrid · Feb 2026 – Jun 2026 · 30 ECTS</p>
                     <details class="more">
@@ -337,6 +356,7 @@
                   </div>
                   <div class="semester is-current">
                     <div class="semester-top"><span class="semester-num">S3 · now</span><span class="country" title="France">FR</span></div>
+                    <span class="inst-logo is-wide"><img src="assets/logos/ubx.webp" alt="Université de Bordeaux logo" width="387" height="120" loading="lazy" decoding="async" /></span>
                     <h4>Université de Bordeaux</h4>
                     <p>Bordeaux · Sep 2026 – present · 30 ECTS</p>
                     <details class="more">
@@ -361,8 +381,13 @@
                   <span class="tl-date">2018 – 2023</span>
                   <span class="country" title="Bangladesh">BD</span>
                 </div>
-                <h3>B.Sc. in Computer Science and Engineering</h3>
-                <p class="tl-org">Sylhet Engineering College <span>· Sylhet, Bangladesh</span></p>
+                <div class="tl-head">
+                  <div>
+                    <h3>B.Sc. in Computer Science and Engineering</h3>
+                    <p class="tl-org">Sylhet Engineering College <span>· Sylhet, Bangladesh</span></p>
+                  </div>
+                  <span class="inst-logo"><img src="assets/logos/sec.webp" alt="Sylhet Engineering College logo" width="240" height="240" loading="lazy" decoding="async" /></span>
+                </div>
                 <ul class="tl-points">
                   <li>CGPA 3.56 / 4.00</li>
                   <li>Thesis: CerebralNet, brain CT/MRI analysis</li>
@@ -602,7 +627,7 @@
                 <span class="label">Vision AI</span>
                 <h3>Computer vision &amp; multimodal modelling</h3>
                 <p>Classification, segmentation, detection, 3D vision, image-text retrieval, and calibrated evaluation for applied vision work.</p>
-                <div class="chips"><span class="chip">CNNs</span><span class="chip">ViT</span><span class="chip">YOLO</span><span class="chip">CLIP</span><span class="chip">BERT</span><span class="chip">Segmentation</span><span class="chip">3D vision</span><span class="chip">OpenCV</span></div>
+                <div class="chips"><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-cnn"/></svg>CNNs</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-vit"/></svg>ViT</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-bbox"/></svg>YOLO</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-clip"/></svg>CLIP</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-text"/></svg>BERT</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-seg"/></svg>Segmentation</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-cube"/></svg>3D vision</span><span class="chip"><img class="chip-ico" src="assets/skills/opencv.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />OpenCV</span></div>
               </div>
             </article>
             <article class="card skill-card" data-reveal style="--reveal-delay: 0.06s">
@@ -611,7 +636,7 @@
                 <span class="label">ML stack</span>
                 <h3>Explainability &amp; model evaluation</h3>
                 <p>Attention rollout and RFEM, Partition SHAP, LIME, deletion tests, bootstrap confidence intervals, and cross-model comparisons.</p>
-                <div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Scikit-learn</span><span class="chip">SHAP</span><span class="chip">LIME</span><span class="chip">Attention rollout</span><span class="chip">Transformers</span><span class="chip">Faithfulness</span></div>
+                <div class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/pytorch.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />PyTorch</span><span class="chip"><img class="chip-ico" src="assets/skills/tensorflow.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />TensorFlow</span><span class="chip"><img class="chip-ico" src="assets/skills/scikitlearn.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Scikit-learn</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-shap"/></svg>SHAP</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-lime"/></svg>LIME</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-attn"/></svg>Attention rollout</span><span class="chip"><img class="chip-ico" src="assets/skills/huggingface.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Transformers</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-curve"/></svg>Faithfulness</span></div>
               </div>
             </article>
             <article class="card skill-card" data-reveal>
@@ -620,7 +645,7 @@
                 <span class="label">Software</span>
                 <h3>Software, testing &amp; research communication</h3>
                 <p>Git-based collaboration, tested Python packages, FastAPI and Docker serving, LaTeX writing, and peer review.</p>
-                <div class="chips"><span class="chip">C/C++</span><span class="chip">Java</span><span class="chip">JavaScript/TypeScript</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">SQLite</span><span class="chip">Git</span><span class="chip">pytest</span><span class="chip">Docker</span><span class="chip">FastAPI</span><span class="chip">LaTeX</span></div>
+                <div class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/cplusplus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />C/C++</span><span class="chip"><img class="chip-ico" src="assets/skills/java.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Java</span><span class="chip"><img class="chip-ico" src="assets/skills/typescript.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />JavaScript/TypeScript</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-db"/></svg>SQL</span><span class="chip"><img class="chip-ico is-dark" src="assets/skills/mysql.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />MySQL</span><span class="chip"><img class="chip-ico" src="assets/skills/sqlite.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />SQLite</span><span class="chip"><img class="chip-ico" src="assets/skills/git.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Git</span><span class="chip"><img class="chip-ico" src="assets/skills/pytest.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />pytest</span><span class="chip"><img class="chip-ico" src="assets/skills/docker.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Docker</span><span class="chip"><img class="chip-ico" src="assets/skills/fastapi.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />FastAPI</span><span class="chip"><img class="chip-ico is-dark" src="assets/skills/latex.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />LaTeX</span></div>
               </div>
             </article>
             <article class="card skill-card" data-reveal style="--reveal-delay: 0.06s">
@@ -629,17 +654,18 @@
                 <span class="label">Data</span>
                 <h3>Scientific Python &amp; visualization</h3>
                 <p>Exploratory analysis, dataset cleaning, notebook workflows, visual summaries, and publication-ready figures.</p>
-                <div class="chips"><span class="chip">NumPy</span><span class="chip">SciPy</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">Jupyter</span><span class="chip">EDA</span></div>
+                <div class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/numpy.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />NumPy</span><span class="chip"><img class="chip-ico" src="assets/skills/scipy.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />SciPy</span><span class="chip"><img class="chip-ico is-dark" src="assets/skills/pandas.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Pandas</span><span class="chip"><img class="chip-ico" src="assets/skills/matplotlib.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Matplotlib</span><span class="chip"><img class="chip-ico" src="assets/skills/jupyter.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Jupyter</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-eda"/></svg>EDA</span></div>
               </div>
             </article>
           </div>
 
           <dl class="stack" data-reveal>
-            <div class="stack-row"><dt><span>01</span>Languages</dt><dd>Python, C, C++, MATLAB, Java, JavaScript/TypeScript, SQL</dd></div>
-            <div class="stack-row"><dt><span>02</span>Models &amp; XAI</dt><dd>PyTorch, TensorFlow, Scikit-learn, Transformers; CLIP, BERT, ViT; SHAP, LIME, attention rollout</dd></div>
-            <div class="stack-row"><dt><span>03</span>Vision systems</dt><dd>OpenCV, YOLO; classification, segmentation, detection, 3D vision</dd></div>
-            <div class="stack-row"><dt><span>04</span>Scientific computing</dt><dd>NumPy, SciPy, Pandas, Matplotlib, Jupyter; exploratory analysis and publication-ready figures</dd></div>
-            <div class="stack-row"><dt><span>05</span>Research workflow</dt><dd>Git, Linux, Windows, Docker, FastAPI, pytest, MySQL, SQLite, LaTeX</dd></div>          </dl>
+            <div class="stack-row"><dt><span>01</span>Languages</dt><dd class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/python.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Python</span><span class="chip"><img class="chip-ico" src="assets/skills/c.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />C</span><span class="chip"><img class="chip-ico" src="assets/skills/cplusplus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />C++</span><span class="chip"><img class="chip-ico" src="assets/skills/matlab.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />MATLAB</span><span class="chip"><img class="chip-ico" src="assets/skills/java.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Java</span><span class="chip"><img class="chip-ico" src="assets/skills/javascript.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />JavaScript</span><span class="chip"><img class="chip-ico" src="assets/skills/typescript.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />TypeScript</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-db"/></svg>SQL</span></dd></div>
+            <div class="stack-row"><dt><span>02</span>Models &amp; XAI</dt><dd class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/pytorch.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />PyTorch</span><span class="chip"><img class="chip-ico" src="assets/skills/tensorflow.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />TensorFlow</span><span class="chip"><img class="chip-ico" src="assets/skills/scikitlearn.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Scikit-learn</span><span class="chip"><img class="chip-ico" src="assets/skills/huggingface.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Transformers</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-clip"/></svg>CLIP</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-text"/></svg>BERT</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-vit"/></svg>ViT</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-shap"/></svg>SHAP</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-lime"/></svg>LIME</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-attn"/></svg>Attention rollout</span></dd></div>
+            <div class="stack-row"><dt><span>03</span>Vision systems</dt><dd class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/opencv.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />OpenCV</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-bbox"/></svg>YOLO</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-cnn"/></svg>Classification</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-seg"/></svg>Segmentation</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-bbox"/></svg>Detection</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-cube"/></svg>3D vision</span></dd></div>
+            <div class="stack-row"><dt><span>04</span>Scientific computing</dt><dd class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/numpy.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />NumPy</span><span class="chip"><img class="chip-ico" src="assets/skills/scipy.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />SciPy</span><span class="chip"><img class="chip-ico is-dark" src="assets/skills/pandas.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Pandas</span><span class="chip"><img class="chip-ico" src="assets/skills/matplotlib.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Matplotlib</span><span class="chip"><img class="chip-ico" src="assets/skills/jupyter.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Jupyter</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-eda"/></svg>EDA</span><span class="chip"><svg class="chip-ico" aria-hidden="true"><use href="#g-eda"/></svg>Publication figures</span></dd></div>
+            <div class="stack-row"><dt><span>05</span>Research workflow</dt><dd class="chips"><span class="chip"><img class="chip-ico" src="assets/skills/git.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Git</span><span class="chip"><img class="chip-ico" src="assets/skills/linux.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Linux</span><span class="chip"><img class="chip-ico" src="assets/skills/windows11.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Windows</span><span class="chip"><img class="chip-ico" src="assets/skills/docker.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />Docker</span><span class="chip"><img class="chip-ico" src="assets/skills/fastapi.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />FastAPI</span><span class="chip"><img class="chip-ico" src="assets/skills/pytest.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />pytest</span><span class="chip"><img class="chip-ico is-dark" src="assets/skills/mysql.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />MySQL</span><span class="chip"><img class="chip-ico" src="assets/skills/sqlite.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />SQLite</span><span class="chip"><img class="chip-ico is-dark" src="assets/skills/latex.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />LaTeX</span></dd></div>
+          </dl>
         </div>
       </section>
 

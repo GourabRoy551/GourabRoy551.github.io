@@ -563,6 +563,12 @@ body.modal-open {
     padding: 20px 18px;
   }
 
+  .tl-head .inst-logo {
+    width: 52px;
+    height: 52px;
+    padding: 4px;
+  }
+
   .skill-card {
     grid-template-columns: minmax(0, 1fr);
     gap: 6px;

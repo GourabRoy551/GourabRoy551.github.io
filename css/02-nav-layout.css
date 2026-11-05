@@ -386,6 +386,31 @@
   white-space: nowrap;
 }
 
+/* Skill logo / concept glyph inside a chip */
+.chip-ico {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  margin-left: -2px;
+  object-fit: contain;
+}
+
+svg.chip-ico {
+  color: var(--accent);
+}
+
+[data-theme="dark"] img.chip-ico.is-dark {
+  filter: invert(1) hue-rotate(180deg) brightness(1.15);
+}
+
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
